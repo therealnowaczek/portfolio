@@ -4,6 +4,14 @@
     <meta charset="utf-8" />
     <title>Marcin Nowak — CV</title>
     <style>
+      @font-face {
+        font-family: "Roboto";
+        src: url("./fonts/Roboto-Variable.ttf") format("truetype");
+        font-weight: 100 900;
+        font-style: normal;
+        font-display: block;
+      }
+
       @page {
         size: A4;
         margin: 0;
@@ -15,432 +23,495 @@
         padding: 0;
       }
 
+      :root {
+        --magenta: #e91e63;
+        --ink: #2f3b4c;
+        --ink-muted: #5c6b7d;
+        --line: #e3e8ee;
+        --pill: #eef1f5;
+        --gdpr: #9aa6b4;
+      }
+
       body {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        color: #1a1a1a;
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: var(--ink);
         background: #fff;
         width: 210mm;
-        min-height: 297mm;
-        padding: 11mm 12mm 10mm;
-        font-size: 8.6pt;
-        line-height: 1.35;
+        height: 297mm;
+        padding: 13mm 15mm 11mm;
+        font-size: 9.75pt;
+        line-height: 1.45;
+        font-weight: 400;
+        display: flex;
+        flex-direction: column;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
 
-      .top {
+      .header {
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        align-items: flex-start;
-        gap: 14px;
-        margin-bottom: 8px;
+        gap: 18px;
+        flex-shrink: 0;
       }
 
       .identity {
-        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 14px;
         min-width: 0;
       }
 
+      .avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
       h1 {
-        font-size: 22pt;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        color: #e91e63;
+        font-size: 23pt;
+        font-weight: 500;
+        letter-spacing: -0.025em;
+        color: var(--magenta);
         line-height: 1.05;
       }
 
       .role {
         margin-top: 3px;
-        font-size: 10pt;
-        font-weight: 600;
-        color: #2d3748;
-      }
-
-      .portfolio-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        flex-shrink: 0;
-        background: #e91e63;
-        color: #fff !important;
-        text-decoration: none;
-        font-size: 9pt;
-        font-weight: 700;
-        letter-spacing: 0.01em;
-        padding: 9px 14px;
-        border-radius: 6px;
-        white-space: nowrap;
-        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
-      }
-
-      .portfolio-btn svg {
-        width: 12px;
-        height: 12px;
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 2.2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-      }
-
-      .portfolio-btn small {
-        display: block;
-        font-size: 7pt;
+        font-size: 10.25pt;
         font-weight: 500;
-        opacity: 0.92;
-        margin-top: 1px;
-        letter-spacing: 0;
-      }
-
-      .portfolio-btn-inner {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        line-height: 1.15;
+        color: var(--ink);
+        letter-spacing: -0.01em;
       }
 
       .contact {
         display: flex;
-        flex-wrap: wrap;
-        gap: 4px 14px;
-        margin: 8px 0 10px;
-        font-size: 8pt;
-        color: #4a5568;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+        flex-shrink: 0;
       }
 
-      .contact a {
-        color: #4a5568;
+      .contact-row {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        font-size: 9.5pt;
+        font-weight: 500;
+        color: var(--ink);
+      }
+
+      .contact-row a.phone {
+        color: var(--ink);
+        text-decoration: none;
+        letter-spacing: 0.01em;
+      }
+
+      .icon-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 17px;
+        height: 17px;
+        color: var(--ink);
         text-decoration: none;
       }
 
-      .contact a:hover {
-        color: #e91e63;
+      .icon-link.at {
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: 0;
+        width: auto;
+        padding: 0 1px;
+        transform: translateY(-0.5px);
       }
 
-      .summary {
-        color: #2d3748;
-        margin-bottom: 10px;
+      .icon-link svg {
+        display: block;
+        width: 14px;
+        height: 14px;
+      }
+
+      .portfolio-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        color: var(--magenta);
+        text-decoration: none;
+        font-size: 9.5pt;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        border-bottom: 1.5px solid var(--magenta);
+        padding-bottom: 1px;
+        line-height: 1.2;
+      }
+
+      .portfolio-link svg {
+        width: 11px;
+        height: 11px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2.25;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      hr.rule {
+        border: 0;
+        border-top: 1px solid var(--line);
+        margin: 13px 0 0;
+        flex-shrink: 0;
+      }
+
+      .flow {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 12px;
+        min-height: 0;
+      }
+
+      .summary p {
+        color: var(--ink);
+        font-size: 9.75pt;
+        line-height: 1.5;
+        font-weight: 400;
       }
 
       .summary p + p {
-        margin-top: 5px;
+        margin-top: 9px;
+      }
+
+      .block {
+        flex-shrink: 0;
       }
 
       h2 {
-        font-size: 9.5pt;
-        font-weight: 700;
-        color: #e91e63;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        border-bottom: 1.5px solid #e91e63;
-        padding-bottom: 2px;
-        margin: 0 0 6px;
-      }
-
-      .section {
-        margin-bottom: 8px;
+        font-size: 12.5pt;
+        font-weight: 500;
+        color: var(--magenta);
+        margin: 0 0 10px;
+        letter-spacing: -0.015em;
       }
 
       .job {
         display: grid;
-        grid-template-columns: 78px 1fr;
-        gap: 8px;
-        margin-bottom: 5px;
+        grid-template-columns: 74px 1fr;
+        column-gap: 14px;
+        margin-bottom: 11px;
+      }
+
+      .job:last-child {
+        margin-bottom: 0;
       }
 
       .years {
-        font-size: 7.8pt;
-        font-weight: 600;
-        color: #718096;
+        font-size: 9pt;
+        font-weight: 500;
+        color: var(--ink-muted);
         padding-top: 1px;
+        white-space: nowrap;
       }
 
       .job-title {
-        font-weight: 700;
-        font-size: 8.8pt;
-        color: #1a1a1a;
-      }
-
-      .job-title span {
+        font-size: 10pt;
         font-weight: 500;
-        color: #4a5568;
+        color: var(--ink);
+        line-height: 1.3;
+        letter-spacing: -0.01em;
       }
 
       .job-blurb {
-        margin-top: 1px;
-        color: #4a5568;
-        font-size: 8.2pt;
+        margin-top: 2px;
+        font-size: 9.4pt;
+        font-weight: 400;
+        color: var(--ink);
+        line-height: 1.42;
       }
 
-      .edu .job-title {
-        font-size: 8.5pt;
-      }
-
-      .grid-3 {
+      .bottom {
         display: grid;
-        grid-template-columns: 1fr 1.35fr 1.5fr;
-        gap: 10px;
+        grid-template-columns: 1fr 1.55fr 1.7fr;
+        gap: 20px;
       }
 
-      .col h3 {
-        font-size: 8pt;
-        font-weight: 700;
-        color: #2d3748;
-        margin-bottom: 3px;
+      .bottom h2 {
+        margin-bottom: 8px;
       }
 
-      .col ul {
+      .lang-list {
         list-style: none;
-        color: #4a5568;
-        font-size: 7.8pt;
-        line-height: 1.4;
+        font-size: 9.5pt;
+        color: var(--ink);
+        line-height: 1.6;
+        font-weight: 500;
       }
 
-      .col li {
-        margin-bottom: 1px;
-      }
-
-      .chips {
+      .pills {
         display: flex;
         flex-wrap: wrap;
-        gap: 3px;
+        gap: 5px;
       }
 
-      .chip {
-        background: #f7fafc;
-        border: 1px solid #e2e8f0;
-        color: #2d3748;
-        font-size: 7.2pt;
-        padding: 1.5px 5px;
-        border-radius: 3px;
-      }
-
-      .chip.accent {
-        background: #fce4ec;
-        border-color: #f8bbd0;
-        color: #ad1457;
+      .pill {
+        display: inline-block;
+        background: var(--pill);
+        color: var(--ink);
+        font-size: 8.25pt;
+        font-weight: 500;
+        padding: 3.5px 8px;
+        border-radius: 4px;
+        line-height: 1.3;
+        letter-spacing: -0.005em;
       }
 
       .gdpr {
-        margin-top: 8px;
-        padding-top: 6px;
-        border-top: 1px solid #e2e8f0;
-        font-size: 6.2pt;
-        line-height: 1.35;
-        color: #a0aec0;
+        flex-shrink: 0;
+        margin-top: 12px;
+        padding-top: 9px;
+        border-top: 1px solid var(--line);
+        font-size: 6.5pt;
+        line-height: 1.4;
+        color: var(--gdpr);
+        text-align: center;
+        font-weight: 400;
       }
     </style>
   </head>
   <body>
-    <header class="top">
+    <header class="header">
       <div class="identity">
-        <h1>Marcin Nowak</h1>
-        <p class="role">UX Leader · Design Ops · AI Transformation</p>
+        <img
+          class="avatar"
+          src="../public/avatar.jpg"
+          alt="Marcin Nowak"
+        />
+        <div>
+          <h1>Marcin Nowak</h1>
+          <p class="role">UX Leader · Design Ops · AI Transformation</p>
+        </div>
       </div>
-      <a
-        class="portfolio-btn"
-        href="https://therealnowaczek.github.io/portfolio/"
-      >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M7 17L17 7" />
-          <path d="M8 7h9v9" />
-        </svg>
-        <span class="portfolio-btn-inner">
-          View portfolio
-          <small>therealnowaczek.github.io/portfolio</small>
-        </span>
-      </a>
+
+      <div class="contact">
+        <div class="contact-row">
+          <a class="phone" href="tel:+48792792290">(+48) 792 792 290</a>
+          <a
+            class="icon-link at"
+            href="mailto:pl.nowak.marcin@gmail.com"
+            aria-label="Email"
+            >@</a
+          >
+          <a
+            class="icon-link"
+            href="https://www.linkedin.com/in/therealnowaczek/"
+            aria-label="LinkedIn"
+            target="_blank"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2ZM8 19H5v-9h3v9ZM6.5 8.25A1.75 1.75 0 1 1 6.5 4.75a1.75 1.75 0 0 1 0 3.5ZM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93-.79 0-1.39.58-1.62 1.14-.09.2-.08.48-.08.76V19h-3s.04-8.18 0-9h3v1.3a3.1 3.1 0 0 1 2.78-1.53c1.87 0 3.3 1.22 3.3 3.85V19Z"
+              />
+            </svg>
+          </a>
+          <a
+            class="icon-link"
+            href="https://x.com/therealnowaczek"
+            aria-label="X / Twitter"
+            target="_blank"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M13.712 10.562 20.41 3h-1.587l-5.806 6.562L8.23 3H3.15l7.023 10.003L3.15 21h1.588l6.144-6.937L15.77 21h5.08l-7.138-10.438Zm-2.174 2.456-.712-.996L5.31 4.17h2.437l4.57 6.394.712.996 6.042 8.456h-2.437l-5.096-7.0Z"
+              />
+            </svg>
+          </a>
+        </div>
+        <a
+          class="portfolio-link"
+          href="https://therealnowaczek.github.io/portfolio/"
+        >
+          Portfolio
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 17L17 7" />
+            <path d="M8 7h9v9" />
+          </svg>
+        </a>
+      </div>
     </header>
 
-    <div class="contact">
-      <a href="tel:+48792792290">(+48) 792 792 290</a>
-      <a href="mailto:pl.nowak.marcin@gmail.com">pl.nowak.marcin@gmail.com</a>
-      <a href="https://www.linkedin.com/in/therealnowaczek/">LinkedIn</a>
-      <a href="https://x.com/therealnowaczek">X / Twitter</a>
-      <a href="https://costradar.ai">CostRadar.ai</a>
-    </div>
+    <hr class="rule" />
 
-    <section class="summary">
-      <p>
-        After 10+ years at Appfire and BigPicture, I am open to new
-        opportunities as a UX Orchestrator and AI-UX Transformation Leader.
-        Standard design ops no longer cut it — over the past year I have
-        engineered AI-driven pipelines and agentic workflows that revolutionize
-        how digital products get built.
-      </p>
-      <p>
-        By deploying specialized AI agents, I streamlined the end-to-end UX
-        lifecycle and boosted operational efficiency by ~65% vs. traditional
-        frameworks. I don’t just implement tools; I orchestrate organizational
-        change — transitioning legacy design teams into AI-augmented
-        powerhouses with KPI frameworks, agent output benchmarking, design
-        system integrity, and human-in-the-loop feedback loops that continuously
-        refine how teams work.
-      </p>
-    </section>
+    <div class="flow">
+      <section class="summary block">
+        <p>
+          After 10+ years at Appfire and BigPicture, I am open to new
+          opportunities as a UX Orchestrator and AI-UX Transformation Leader.
+          Standard design ops no longer cut it — over the past year I have
+          engineered AI-driven pipelines and agentic workflows that
+          revolutionize how digital products get built.
+        </p>
+        <p>
+          By deploying specialized AI agents, I streamlined the end-to-end UX
+          lifecycle and boosted operational efficiency by ~65% vs. traditional
+          frameworks. I don’t just implement tools; I orchestrate organizational
+          change — transitioning legacy design teams into AI-augmented
+          powerhouses with KPI frameworks, agent output benchmarking, design
+          system integrity, and human-in-the-loop feedback loops that
+          continuously refine how teams work.
+        </p>
+      </section>
 
-    <section class="section">
-      <h2>Experience</h2>
+      <section class="block">
+        <h2>Experience</h2>
 
-      <div class="job">
-        <div class="years">2025 – now</div>
-        <div>
-          <div class="job-title">
-            Founder &amp; AI Design Engineer
-            <span>at CostRadar.ai (Radrly)</span>
+        <div class="job">
+          <div class="years">2025 - now</div>
+          <div>
+            <div class="job-title">
+              Founder &amp; AI Design Engineer at CostRadar.ai (Radrly)
+            </div>
+            <p class="job-blurb">
+              AI-native SaaS for Shopify, Amazon, and WooCommerce — designed,
+              prompted, and shipped in 90 days. Agentic analysis deliver 15–25%
+              annual savings for premium merchants.
+            </p>
           </div>
-          <p class="job-blurb">
-            AI-native SaaS for Shopify, Amazon, and WooCommerce — designed,
-            prompted, and shipped in 90 days. Agentic analysis deliver 15–25%
-            annual savings for premium merchants.
-          </p>
         </div>
-      </div>
 
-      <div class="job">
-        <div class="years">2023 – 2026</div>
-        <div>
-          <div class="job-title">
-            Senior UX Manager <span>at Appfire</span>
+        <div class="job">
+          <div class="years">2023 - 2026</div>
+          <div>
+            <div class="job-title">Senior UX Manager at Appfire</div>
+            <p class="job-blurb">
+              Led 35+ distributed UX professionals across BigPicture, 7pace, and
+              AI initiatives. Built estimation framework, Figma governance,
+              research ops, and org-wide AI adoption program.
+            </p>
           </div>
-          <p class="job-blurb">
-            Led 35+ distributed UX professionals across BigPicture, 7pace, and
-            AI initiatives. Built estimation framework, Figma governance,
-            research ops, and org-wide AI adoption program.
-          </p>
         </div>
-      </div>
 
-      <div class="job">
-        <div class="years">2019 – 2023</div>
-        <div>
-          <div class="job-title">
-            Head of Design
-            <span>at SoftwarePlant (acquired by Appfire)</span>
+        <div class="job">
+          <div class="years">2019 - 2023</div>
+          <div>
+            <div class="job-title">
+              Head of Design at SoftwarePlant (acquired by Appfire)
+            </div>
+            <p class="job-blurb">
+              Grew and led a 16+ person team of designers, researchers, and
+              writers. Established design system governance for Atlassian
+              Marketplace products and led post-acquisition integration into
+              Appfire.
+            </p>
           </div>
-          <p class="job-blurb">
-            Grew and led a 16+ person team of designers, researchers, and
-            writers. Established design system governance for Atlassian
-            Marketplace products and led post-acquisition integration into
-            Appfire.
-          </p>
         </div>
-      </div>
 
-      <div class="job">
-        <div class="years">2016 – 2019</div>
-        <div>
-          <div class="job-title">
-            UX &amp; UI Designer
-            <span>at SoftwarePlant (acquired by Appfire)</span>
+        <div class="job">
+          <div class="years">2016 - 2019</div>
+          <div>
+            <div class="job-title">
+              UX &amp; UI Designer at SoftwarePlant (acquired by Appfire)
+            </div>
+            <p class="job-blurb">
+              Principal designer on BigPicture — one of Atlassian Marketplace’s
+              best-selling apps. Led from discovery through delivery, with
+              measurable adoption and satisfaction gains.
+            </p>
           </div>
-          <p class="job-blurb">
-            Principal designer on BigPicture — one of Atlassian Marketplace’s
-            best-selling apps. Led from discovery through delivery, with
-            measurable adoption and satisfaction gains.
-          </p>
         </div>
-      </div>
 
-      <div class="job">
-        <div class="years">2013 – 2016</div>
-        <div>
-          <div class="job-title">
-            Product Manager, UX Designer <span>at TVP 3</span>
+        <div class="job">
+          <div class="years">2013 - 2016</div>
+          <div>
+            <div class="job-title">Product Manager, UX Designer at TVP 3</div>
+            <p class="job-blurb">
+              Coordinated 16 distributed teams building web services for
+              Poland’s public broadcaster. Bridged product strategy, UX design,
+              and cross-team delivery in a complex, multi-stakeholder
+              environment.
+            </p>
           </div>
-          <p class="job-blurb">
-            Coordinated 16 distributed teams building web services for Poland’s
-            public broadcaster. Bridged product strategy, UX design, and
-            cross-team delivery in a complex, multi-stakeholder environment.
-          </p>
         </div>
-      </div>
 
-      <div class="job">
-        <div class="years">2011 – 2013</div>
-        <div>
-          <div class="job-title">
-            Co-runner, UX Designer <span>at TVP Parlament</span>
+        <div class="job">
+          <div class="years">2011 - 2013</div>
+          <div>
+            <div class="job-title">Co-runner, UX Designer at TVP Parlament</div>
+            <p class="job-blurb">
+              Created a new e-television channel from scratch.
+            </p>
           </div>
-          <p class="job-blurb">Created a new e-television channel from scratch.</p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section edu">
-      <h2>Education</h2>
-      <div class="job">
-        <div class="years">2008 – 2011</div>
-        <div>
-          <div class="job-title">
-            Warszawska Wyższa Szkoła Humanistyczna im. B. Prusa (now MODERNA)
+      <section class="block">
+        <h2>Education</h2>
+        <div class="job">
+          <div class="years">2008 - 2011</div>
+          <div>
+            <div class="job-title">
+              Warszawska Wyższa Szkoła Humanistyczna im. B. Prusa (now MODERNA)
+            </div>
+            <p class="job-blurb">
+              Journalism and Social Communication, Warsaw, Poland
+            </p>
           </div>
-          <p class="job-blurb">
-            Journalism and Social Communication, Warsaw, Poland
-          </p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section">
-      <h2>Languages · Expertise · Tools</h2>
-      <div class="grid-3">
-        <div class="col">
-          <h3>Languages</h3>
-          <ul>
+      <section class="bottom block">
+        <div>
+          <h2>Languages</h2>
+          <ul class="lang-list">
             <li>Polish (native)</li>
             <li>English (C1)</li>
           </ul>
-          <h3 style="margin-top: 8px">Selected outcomes</h3>
-          <ul>
-            <li>OKR adoption +47%</li>
-            <li>Unclear reports −58%</li>
-            <li>Gantt retrieval 42% faster</li>
-            <li>~65% UX ops efficiency</li>
-            <li>35+ designers led</li>
-          </ul>
         </div>
-        <div class="col">
-          <h3>Expertise</h3>
-          <div class="chips">
-            <span class="chip accent">AI-Driven Design</span>
-            <span class="chip accent">Agentic Workflows</span>
-            <span class="chip">Design Systems</span>
-            <span class="chip">Design Engineering</span>
-            <span class="chip">Product Strategy</span>
-            <span class="chip">Interaction Design</span>
-            <span class="chip">LLM Prompting</span>
-            <span class="chip">Conversational UI</span>
-            <span class="chip">Human-Centered Leadership</span>
-            <span class="chip">UX Ops</span>
+        <div>
+          <h2>Expertise</h2>
+          <div class="pills">
+            <span class="pill">AI-Driven Design</span>
+            <span class="pill">Design Engineering</span>
+            <span class="pill">Design Systems</span>
+            <span class="pill">Product Strategy</span>
+            <span class="pill">Interaction Design</span>
+            <span class="pill">Agentic Workflows</span>
+            <span class="pill">LLM Prompting</span>
+            <span class="pill">Conversational UI</span>
+            <span class="pill">Human-Centered Leadership</span>
+            <span class="pill">UX Ops</span>
           </div>
         </div>
-        <div class="col">
-          <h3>Tools</h3>
-          <div class="chips">
-            <span class="chip">Figma</span>
-            <span class="chip accent">Cursor</span>
-            <span class="chip accent">Claude</span>
-            <span class="chip accent">GPT</span>
-            <span class="chip">GitHub Copilot</span>
-            <span class="chip">React</span>
-            <span class="chip">Supabase</span>
-            <span class="chip">Amplitude</span>
-            <span class="chip">Notion</span>
-            <span class="chip">Jira</span>
-            <span class="chip">Maze</span>
-            <span class="chip">Dovetail</span>
-            <span class="chip">Hotjar</span>
-            <span class="chip">FigJam</span>
-            <span class="chip">Miro</span>
-            <span class="chip">Adobe CC</span>
-            <span class="chip">Loom</span>
-            <span class="chip">Slack</span>
+        <div>
+          <h2>Tools</h2>
+          <div class="pills">
+            <span class="pill">Figma</span>
+            <span class="pill">Amplitude</span>
+            <span class="pill">Google Data Studio</span>
+            <span class="pill">Cursor</span>
+            <span class="pill">GitHub Copilot</span>
+            <span class="pill">Claude</span>
+            <span class="pill">GPT</span>
+            <span class="pill">Notion</span>
+            <span class="pill">Jira</span>
+            <span class="pill">Slack</span>
+            <span class="pill">React</span>
+            <span class="pill">Maze</span>
+            <span class="pill">Dovetail</span>
+            <span class="pill">Adobe CC</span>
+            <span class="pill">Supabase</span>
+            <span class="pill">Hotjar</span>
+            <span class="pill">FigJam</span>
+            <span class="pill">Loom</span>
+            <span class="pill">Miro</span>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <p class="gdpr">
       I agree to the processing of personal data provided in this document for

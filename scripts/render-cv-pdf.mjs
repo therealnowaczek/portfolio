@@ -1,6 +1,6 @@
 import { chromium } from "playwright";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const htmlPath = path.resolve(__dirname, "cv-onepage.html");
@@ -13,7 +13,9 @@ const outPath = path.resolve(
 
 const browser = await chromium.launch();
 const page = await browser.newPage();
-await page.goto(`file://${htmlPath}`, { waitUntil: "networkidle" });
+await page.goto(pathToFileURL(htmlPath).href, { waitUntil: "networkidle" });
+await page.evaluate(() => document.fonts.ready);
+await page.waitForTimeout(200);
 await page.pdf({
   path: outPath,
   format: "A4",
