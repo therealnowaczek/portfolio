@@ -1,0 +1,306 @@
+{
+  "northline": {
+    "projectId": "8564180205273741249",
+    "deviceType": "DESKTOP",
+    "screens": [
+      {
+        "title": "Profitability Overview",
+        "screenId": "6d9c909426a1467ba8549263dfed042d"
+      },
+      {
+        "title": "Finding Detail \u2014 SKU Margin Leak",
+        "screenId": "53a281ef215146b6a875324366bbb913"
+      },
+      {
+        "title": "Ads & ROAS Intelligence",
+        "screenId": "3f5927b5fbd7465d9f8c1527722d2507"
+      },
+      {
+        "title": "COGS & Landed Costs Ledger",
+        "screenId": "d104faa69b944a9c970729f65d3a0bc9"
+      },
+      {
+        "title": "Autonomous Rules & Guardrails",
+        "screenId": "4092b7c196194198892e1c52487b16a7"
+      },
+      {
+        "title": "Empty State \u2014 Connect Store",
+        "screenId": "778f9889bb614f628a1cd987a3608ce4"
+      }
+    ]
+  },
+  "harbor": {
+    "projectId": "4680342275414464604",
+    "deviceType": "MOBILE",
+    "screens": [
+      {
+        "title": "Harbor Home",
+        "screenId": "88b08a24063b4c94963c5b83f6ef4dbb"
+      },
+      {
+        "title": "Harbor Repayments",
+        "screenId": "5dbd6a3f96bf4493afc737b536fbffb3"
+      },
+      {
+        "title": "Repayment Flow",
+        "screenId": "7eec0ea41b434e978604701422395619"
+      },
+      {
+        "title": "Payment Scheduled Success",
+        "screenId": "4529aa956d464c65ae5c9242c4b34128"
+      },
+      {
+        "title": "Harbor Insights",
+        "screenId": "68db1fb2c3814933a15b771f27975114"
+      },
+      {
+        "title": "Harbor Settings",
+        "screenId": "53fce3224e2d4ab58ef12a43185605f9"
+      }
+    ]
+  },
+  "circuit": {
+    "projectId": "15690636404924658439",
+    "deviceType": "DESKTOP",
+    "screens": [
+      {
+        "title": "Deployments List",
+        "screenId": "d71d131c335e45a78e1374444ff6f312"
+      },
+      {
+        "title": "Deploy Detail & Logs",
+        "screenId": "cb82b21644784d44ac4cdc09d826bdce"
+      },
+      {
+        "title": "Incident State & Failing Checks",
+        "screenId": "679ec97c98b04edc98c5f91b86b351a6"
+      },
+      {
+        "title": "Metrics & Performance",
+        "screenId": "320aa213778d4dca9b74efe5c826b68d"
+      },
+      {
+        "title": "Logs & Traces Explorer",
+        "screenId": "9a557da80ab049f0a5f3ff8c02d48c0d"
+      },
+      {
+        "title": "Environment Variables & Secrets",
+        "screenId": "6ecf6fb8653c43a981e1528f0afa0ce5"
+      }
+    ]
+  },
+  "folio": {
+    "projectId": "17169663027373237772",
+    "deviceType": "MOBILE",
+    "screens": [
+      {
+        "title": "Feed",
+        "screenId": "b632db6a85554364a14d7e37459248ca"
+      },
+      {
+        "title": "Project Detail \u2014 Linear Mobile",
+        "screenId": "597f339f795241c9b8c362d3c763c4c7"
+      },
+      {
+        "title": "Frames",
+        "screenId": "42eb6378f48a44f7b11c9ddfb811f86a"
+      },
+      {
+        "title": "Compose Critique",
+        "screenId": "774dabfb93e649569cf3e6f083237736"
+      },
+      {
+        "title": "Upload Frame \u2014 Annotations",
+        "screenId": "1d777e7c1c6e486fa943a3a1ed81b430"
+      },
+      {
+        "title": "Critiques & Activity",
+        "screenId": "08977f71317648a59734909975a5c7bc"
+      },
+      {
+        "title": "Profile \u2014 Maya Lin",
+        "screenId": "d594f313b2844547bfee09e8f45919e7"
+      }
+    ]
+  },
+  "quorum": {
+    "projectId": "14449387995366829325",
+    "deviceType": "DESKTOP",
+    "screens": [
+      {
+        "title": "Partner Activation \u2014 Directory & Connect Wizard",
+        "screenId": "53e7c88c809d45d28df7b1b94b1a48fa"
+      },
+      {
+        "title": "Roles & Permissions \u2014 Matrix",
+        "screenId": "e2e2ffdf604c4ca9b840f6293c623bbb"
+      },
+      {
+        "title": "Partner Activation \u2014 Checklist Drawer",
+        "screenId": "40b9e426b83645b983589a81631843d4"
+      },
+      {
+        "title": "Roles & Permissions \u2014 Review Diff & Approval Modal",
+        "screenId": "3ad643ab720b4af6a8f1fc5d59d20d33"
+      },
+      {
+        "title": "Audit Trail \u2014 Activity Log",
+        "screenId": "82da2d3e169347faa28a6a58d1a96489"
+      },
+      {
+        "title": "API & Webhooks \u2014 Developer Gateway",
+        "screenId": "9d1ca135bcad4fa6b1ad620ca0978d93"
+      },
+      {
+        "title": "Organization Settings \u2014 SSO & Identity",
+        "screenId": "8710344cdc654174aa560341df72a97a"
+      }
+    ]
+  },
+  "pulse": {
+    "projectId": "13742769213974223768",
+    "deviceType": "MOBILE",
+    "screens": [
+      {
+        "title": "Today Recovery",
+        "screenId": "8d4890431ab94d329b34792b94e6e1fd"
+      },
+      {
+        "title": "Daily Check-in",
+        "screenId": "fb291b3718a9407abd0491db0fc38a13"
+      },
+      {
+        "title": "Check-in Summary",
+        "screenId": "3b20f6b26715420e88040f999ce09e71"
+      },
+      {
+        "title": "Weekly Trends",
+        "screenId": "c9fcf69423d74b1882c22e24139b83c8"
+      },
+      {
+        "title": "Sleep Breakdown",
+        "screenId": "06eae4f218b64ac284c43a67a2eae51c"
+      },
+      {
+        "title": "Evening Wind-down",
+        "screenId": "da0ab64e8aa0414682f78d6b81a85184"
+      },
+      {
+        "title": "Profile & Devices",
+        "screenId": "33eb1dbf3e7547698a397a39c6120cde"
+      }
+    ]
+  },
+  "atlas-cms": {
+    "projectId": "10625654400267550602",
+    "deviceType": "DESKTOP",
+    "screens": [
+      {
+        "title": "Getting Started / Introduction",
+        "screenId": "d8ff246cc15541178b6ec9fac6906374"
+      },
+      {
+        "title": "Foundations / Spacing",
+        "screenId": "1fcfbe214ceb4d1190ca6dc761cddd41"
+      },
+      {
+        "title": "Tokens / Color",
+        "screenId": "7c0bbb8ed6664495913eea028fd5158a"
+      },
+      {
+        "title": "Tokens / Theme Studio",
+        "screenId": "76d588a58f9b42d4a5246a02cc9f6f43"
+      },
+      {
+        "title": "Components / Button",
+        "screenId": "7fec57fb16d846f597182a6081c20885"
+      },
+      {
+        "title": "Components / Input",
+        "screenId": "56801ce646c44386b68c6ce0a450b0dd"
+      }
+    ]
+  },
+  "nest": {
+    "projectId": "5578506665934280808",
+    "deviceType": "MIXED",
+    "screens": [
+      {
+        "title": "Mobile iOS Home",
+        "screenId": "50c0cf769f5f42589ee9e7fd8e30ff47"
+      },
+      {
+        "title": "Mobile Pro Profile & Reviews",
+        "screenId": "a8adc6b7ba9540fd9be8855081decd89"
+      },
+      {
+        "title": "Mobile Booking & Checkout",
+        "screenId": "d5b12a678e0944a0988e82b502fa5adb"
+      },
+      {
+        "title": "Mobile Bookings & Activity",
+        "screenId": "37ae5d29d55d4f21a203a66b4541ccd7"
+      },
+      {
+        "title": "Mobile Live Pro Tracking & ETA",
+        "screenId": "9e086c2d3bb24bc08a4524667aec995a"
+      },
+      {
+        "title": "Desktop Web Results & Booking Drawer",
+        "screenId": "9eeef91e35c14496b35d87e6c51e5b4d"
+      },
+      {
+        "title": "Desktop Web Results (Full Map & List)",
+        "screenId": "107cc7deb5f444bbadb883ab5d0fed9a"
+      }
+    ]
+  },
+  "signal-rooms": {
+    "projectId": "283851095924186462",
+    "deviceType": "MOBILE",
+    "screens": [
+      {
+        "title": "Discover \u2014 Live Signal Rooms",
+        "screenId": "b009771d58004fdd8ce0c7ec007a893a"
+      },
+      {
+        "title": "Browse \u2014 Communities & Niches",
+        "screenId": "d888c2d818ef4c379f4570cb87b30c12"
+      },
+      {
+        "title": "In-Room \u2014 Audio Stage",
+        "screenId": "5bd4785873804ad8b119da3ccdc72313"
+      },
+      {
+        "title": "In-Room \u2014 Live Chat & Reactions",
+        "screenId": "8a5caf1a87184a0ab2e4204965bd1caa"
+      },
+      {
+        "title": "Schedule Room \u2014 Plan Hangout",
+        "screenId": "a1333bdccbde4ecaa6f5fd3b7d76868f"
+      },
+      {
+        "title": "Profile \u2014 Host Studio & Replays",
+        "screenId": "9ee1355043f048e495ebc330ec385c73"
+      }
+    ]
+  },
+  "ledgerly-studio": {
+    "projectId": "17594159713071269913",
+    "deviceType": "DESKTOP",
+    "screens": [
+      {
+        "title": "Experiments Board",
+        "screenId": "c1861d6f976840649516b4f66a5a4f2d"
+      },
+      {
+        "title": "Experiment Detail",
+        "screenId": "a2719d22d41d4471b3e009520c002252"
+      },
+      {
+        "title": "Metric Library",
+        "screenId": "1ccb15c3d4fe47bcb95f8a8814f442b9"
+      }
+    ]
+  }
+}

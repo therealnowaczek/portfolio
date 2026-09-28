@@ -1,0 +1,353 @@
+[
+  {
+    "id": "01",
+    "slug": "northline",
+    "title": "Northline",
+    "oneLiner": "AI ops profitability console for B2B SaaS",
+    "badge": "Product design",
+    "role": "Lead Product Designer",
+    "platform": "Web desktop",
+    "timeline": "2\u20133 week design sprint",
+    "tags": [
+      "AI",
+      "B2B SaaS",
+      "Ops console",
+      "Data density",
+      "Quiet enterprise"
+    ],
+    "order": 1,
+    "accent": "#0D9488",
+    "styleLabel": "Quiet enterprise",
+    "screens": [
+      "Profitability Overview",
+      "Finding Detail \u2014 SKU Margin Leak",
+      "Ads & ROAS Intelligence",
+      "COGS & Landed Costs Ledger",
+      "Autonomous Rules & Guardrails",
+      "Empty State \u2014 Connect Store"
+    ],
+    "portfolioSignals": [
+      "AI product UX",
+      "Dense B2B SaaS",
+      "Trust and lineage",
+      "Accessibility in data UI",
+      "E2E concept ownership"
+    ]
+  },
+  {
+    "id": "02",
+    "slug": "harbor",
+    "title": "Harbor",
+    "oneLiner": "Fintech repayments and insights companion",
+    "badge": "Product design",
+    "role": "Lead Product Designer",
+    "platform": "iOS",
+    "timeline": "2\u20133 week design sprint",
+    "tags": [
+      "Fintech",
+      "iOS",
+      "HIG",
+      "Trust UX",
+      "Repayments"
+    ],
+    "order": 2,
+    "accent": "#2563EB",
+    "styleLabel": "HIG trust UX",
+    "screens": [
+      "Harbor Home",
+      "Harbor Repayments",
+      "Repayment Flow",
+      "Payment Scheduled Success",
+      "Harbor Insights",
+      "Harbor Settings"
+    ],
+    "portfolioSignals": [
+      "Fintech trust UX",
+      "Native iOS HIG",
+      "Consequence-before-commit",
+      "Accessible money UI",
+      "Regulated-feel microcopy"
+    ]
+  },
+  {
+    "id": "03",
+    "slug": "circuit",
+    "title": "Circuit",
+    "oneLiner": "Deploy and observability console for engineers",
+    "badge": "Product design",
+    "role": "Lead Product Designer",
+    "platform": "Web dark",
+    "timeline": "2\u20133 week design sprint",
+    "tags": [
+      "Developer tools",
+      "Observability",
+      "Dark UI",
+      "Dense UX",
+      "Web"
+    ],
+    "order": 3,
+    "accent": "#34D399",
+    "styleLabel": "Vercel/Raycast dense",
+    "screens": [
+      "Deployments List",
+      "Deploy Detail & Logs",
+      "Incident State & Failing Checks",
+      "Metrics & Performance",
+      "Logs & Traces Explorer",
+      "Environment Variables & Secrets"
+    ],
+    "portfolioSignals": [
+      "Developer tools craft",
+      "Keyboard-first UX",
+      "Systems thinking",
+      "Dense dark UI",
+      "Safe rollback patterns"
+    ]
+  },
+  {
+    "id": "04",
+    "slug": "folio",
+    "title": "Folio",
+    "oneLiner": "Social critique network for designers",
+    "badge": "Product design",
+    "role": "Lead Product Designer",
+    "platform": "Android",
+    "timeline": "2\u20133 week design sprint",
+    "tags": [
+      "Android",
+      "Community",
+      "Critique",
+      "Editorial",
+      "Social"
+    ],
+    "order": 4,
+    "accent": "#C2410C",
+    "styleLabel": "Warm editorial",
+    "screens": [
+      "Feed",
+      "Project Detail",
+      "Frames",
+      "Upload Frame \u2014 Annotations",
+      "Compose Critique",
+      "Critiques & Activity",
+      "Profile \u2014 Maya Lin"
+    ],
+    "portfolioSignals": [
+      "Android Material craft",
+      "Community product design",
+      "Structured critique rituals",
+      "Editorial visual systems",
+      "Creator feedback loops"
+    ]
+  },
+  {
+    "id": "05",
+    "slug": "quorum",
+    "title": "Quorum",
+    "oneLiner": "B2B roles, permissions, and partner activation",
+    "badge": "Product design",
+    "role": "Lead Product Designer",
+    "platform": "Web enterprise",
+    "timeline": "2\u20133 week design sprint",
+    "tags": [
+      "B2B",
+      "Permissions",
+      "Partner activation",
+      "Enterprise",
+      "Lifecycle"
+    ],
+    "order": 5,
+    "accent": "#4F46E5",
+    "styleLabel": "Enterprise clarity",
+    "screens": [
+      "Partner Activation \u2014 Directory & Connect Wizard",
+      "Roles & Permissions \u2014 Matrix",
+      "Partner Activation \u2014 Checklist Drawer",
+      "Roles & Permissions \u2014 Review Diff & Approval",
+      "Organization Settings \u2014 SSO & Identity",
+      "API & Webhooks \u2014 Developer Gateway",
+      "Audit Trail \u2014 Activity Log"
+    ],
+    "portfolioSignals": [
+      "B2B lifecycle",
+      "Roles and permissions",
+      "Partner activation",
+      "Enterprise audit trust",
+      "Least-privilege UX"
+    ]
+  },
+  {
+    "id": "06",
+    "slug": "pulse",
+    "title": "Pulse",
+    "oneLiner": "Energy and recovery wellness companion",
+    "badge": "Product design",
+    "role": "Lead Product Designer",
+    "platform": "iOS",
+    "timeline": "2\u20133 week design sprint",
+    "tags": [
+      "Wellness",
+      "iOS",
+      "Soft humanist",
+      "Habit",
+      "Health-adjacent"
+    ],
+    "order": 6,
+    "accent": "#A78BFA",
+    "styleLabel": "Soft humanist",
+    "screens": [
+      "Today Recovery",
+      "Daily Check-in",
+      "Check-in Summary",
+      "Weekly Trends",
+      "Sleep Breakdown",
+      "Evening Wind-down",
+      "Profile & Devices"
+    ],
+    "portfolioSignals": [
+      "Soft mobile craft",
+      "Habit UX ethics",
+      "Inclusive health-adjacent",
+      "Dynamic Type and Reduce Motion",
+      "Shame-free product copy"
+    ]
+  },
+  {
+    "id": "07",
+    "slug": "atlas-cms",
+    "title": "Atlas CMS",
+    "oneLiner": "Design system docs and playground",
+    "badge": "Product design",
+    "role": "Lead Product Designer",
+    "platform": "Web docs",
+    "timeline": "2\u20133 week design sprint",
+    "tags": [
+      "Design system",
+      "Docs",
+      "Playground",
+      "Tokens",
+      "Web"
+    ],
+    "order": 7,
+    "accent": "#0F172A",
+    "styleLabel": "Docs product",
+    "screens": [
+      "Getting Started / Introduction",
+      "Foundations / Spacing",
+      "Tokens / Color",
+      "Tokens / Theme Studio",
+      "Components / Button",
+      "Components / Input"
+    ],
+    "portfolioSignals": [
+      "Design systems",
+      "Docs UX",
+      "Designer\u2013engineer bridge",
+      "Token literacy",
+      "Playground adoption"
+    ]
+  },
+  {
+    "id": "08",
+    "slug": "nest",
+    "title": "Nest",
+    "oneLiner": "Local services marketplace",
+    "badge": "Product design",
+    "role": "Lead Product Designer",
+    "platform": "iOS + desktop web",
+    "timeline": "2\u20133 week design sprint",
+    "tags": [
+      "Marketplace",
+      "Cross-platform",
+      "Local services",
+      "Trust",
+      "Booking"
+    ],
+    "order": 8,
+    "accent": "#F43F5E",
+    "styleLabel": "Friendly utilitarian",
+    "screens": [
+      "Mobile iOS Home",
+      "Mobile Pro Profile & Reviews",
+      "Mobile Booking & Checkout",
+      "Mobile Bookings & Activity",
+      "Mobile Live Pro Tracking & ETA",
+      "Desktop Web Results & Booking Drawer",
+      "Desktop Web Results (Full Map & List)"
+    ],
+    "portfolioSignals": [
+      "Multi-platform marketplace",
+      "Trust and verification UX",
+      "Fee transparency",
+      "Shared IA native shells",
+      "Two-sided product thinking"
+    ]
+  },
+  {
+    "id": "09",
+    "slug": "signal-rooms",
+    "title": "Signal Rooms",
+    "oneLiner": "Live audio community rooms",
+    "badge": "Product design",
+    "role": "Lead Product Designer",
+    "platform": "iOS dark expressive",
+    "timeline": "2\u20133 week design sprint",
+    "tags": [
+      "Live audio",
+      "Community",
+      "iOS",
+      "Dark expressive",
+      "Social"
+    ],
+    "order": 9,
+    "accent": "#8B5CF6",
+    "styleLabel": "Dark expressive",
+    "screens": [
+      "Discover \u2014 Live Signal Rooms",
+      "Browse \u2014 Communities & Niches",
+      "In-Room \u2014 Audio Stage",
+      "In-Room \u2014 Live Chat & Reactions",
+      "Schedule Room \u2014 Plan Hangout",
+      "Profile \u2014 Host Studio & Replays"
+    ],
+    "portfolioSignals": [
+      "Expressive mobile brand",
+      "Live social UX",
+      "Role clarity and safety",
+      "Moderation affordances",
+      "Motion with a11y fallbacks"
+    ]
+  },
+  {
+    "id": "10",
+    "slug": "ledgerly-studio",
+    "title": "Ledgerly Studio",
+    "oneLiner": "Growth experimentation lab",
+    "badge": "Product design",
+    "role": "Lead Product Designer",
+    "platform": "Web analytics",
+    "timeline": "2\u20133 week design sprint",
+    "tags": [
+      "Growth",
+      "Experimentation",
+      "Analytics",
+      "Web",
+      "Metrics"
+    ],
+    "order": 10,
+    "accent": "#059669",
+    "styleLabel": "Growth analytics",
+    "screens": [
+      "Experiments Board",
+      "Experiment Detail",
+      "Metric Library"
+    ],
+    "portfolioSignals": [
+      "Growth experimentation",
+      "Metrics and guardrails",
+      "Hypothesis-first UX",
+      "Designer-in-the-loop A/B",
+      "Decision ritual design"
+    ]
+  }
+]

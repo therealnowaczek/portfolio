@@ -1,0 +1,83 @@
+{
+  "northline": [
+    "Profitability Overview",
+    "Finding Detail \u2014 SKU Margin Leak",
+    "Ads & ROAS Intelligence",
+    "COGS & Landed Costs Ledger",
+    "Autonomous Rules & Guardrails",
+    "Empty State \u2014 Connect Store"
+  ],
+  "harbor": [
+    "Harbor Home",
+    "Harbor Repayments",
+    "Repayment Flow",
+    "Payment Scheduled Success",
+    "Harbor Insights",
+    "Harbor Settings"
+  ],
+  "circuit": [
+    "Deployments List",
+    "Deploy Detail & Logs",
+    "Incident State & Failing Checks",
+    "Metrics & Performance",
+    "Logs & Traces Explorer",
+    "Environment Variables & Secrets"
+  ],
+  "folio": [
+    "Feed",
+    "Project Detail",
+    "Frames",
+    "Upload Frame \u2014 Annotations",
+    "Compose Critique",
+    "Critiques & Activity",
+    "Profile \u2014 Maya Lin"
+  ],
+  "quorum": [
+    "Partner Activation \u2014 Directory & Connect Wizard",
+    "Roles & Permissions \u2014 Matrix",
+    "Partner Activation \u2014 Checklist Drawer",
+    "Roles & Permissions \u2014 Review Diff & Approval",
+    "Organization Settings \u2014 SSO & Identity",
+    "API & Webhooks \u2014 Developer Gateway",
+    "Audit Trail \u2014 Activity Log"
+  ],
+  "pulse": [
+    "Today Recovery",
+    "Daily Check-in",
+    "Check-in Summary",
+    "Weekly Trends",
+    "Sleep Breakdown",
+    "Evening Wind-down",
+    "Profile & Devices"
+  ],
+  "atlas-cms": [
+    "Getting Started / Introduction",
+    "Foundations / Spacing",
+    "Tokens / Color",
+    "Tokens / Theme Studio",
+    "Components / Button",
+    "Components / Input"
+  ],
+  "nest": [
+    "Mobile iOS Home",
+    "Mobile Pro Profile & Reviews",
+    "Mobile Booking & Checkout",
+    "Mobile Bookings & Activity",
+    "Mobile Live Pro Tracking & ETA",
+    "Desktop Web Results & Booking Drawer",
+    "Desktop Web Results (Full Map & List)"
+  ],
+  "signal-rooms": [
+    "Discover \u2014 Live Signal Rooms",
+    "Browse \u2014 Communities & Niches",
+    "In-Room \u2014 Audio Stage",
+    "In-Room \u2014 Live Chat & Reactions",
+    "Schedule Room \u2014 Plan Hangout",
+    "Profile \u2014 Host Studio & Replays"
+  ],
+  "ledgerly-studio": [
+    "Experiments Board",
+    "Experiment Detail",
+    "Metric Library"
+  ]
+}
