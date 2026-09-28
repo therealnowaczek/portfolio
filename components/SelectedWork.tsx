@@ -14,18 +14,29 @@ type Props = {
   onOpen: (slug: string) => void;
 };
 
+/**
+ * 12-col mosaic (all / filter=all). Every row must sum to 12.
+ * 11 projects → row1: 7+5, then three rows of 4+4+4. No orphans.
+ * md (2-col): featured full-width, everyone else half → 1 + 5 pairs.
+ */
 const SPAN: Record<string, string> = {
-  northline: "md:col-span-2 lg:col-span-7 lg:row-span-2",
-  harbor: "md:col-span-1 lg:col-span-5 lg:row-span-2",
+  costradar: "md:col-span-2 lg:col-span-7 lg:row-span-2",
+  northline: "md:col-span-1 lg:col-span-5 lg:row-span-2",
+  harbor: "md:col-span-1 lg:col-span-4 lg:row-span-2",
   circuit: "md:col-span-1 lg:col-span-4 lg:row-span-2",
   folio: "md:col-span-1 lg:col-span-4 lg:row-span-2",
-  quorum: "md:col-span-2 lg:col-span-4 lg:row-span-2",
-  pulse: "md:col-span-1 lg:col-span-6 lg:row-span-2",
-  "atlas-cms": "md:col-span-2 lg:col-span-6 lg:row-span-2",
+  quorum: "md:col-span-1 lg:col-span-4 lg:row-span-2",
+  pulse: "md:col-span-1 lg:col-span-4 lg:row-span-2",
+  "atlas-cms": "md:col-span-1 lg:col-span-4 lg:row-span-2",
   nest: "md:col-span-1 lg:col-span-4 lg:row-span-2",
   "signal-rooms": "md:col-span-1 lg:col-span-4 lg:row-span-2",
-  "ledgerly-studio": "md:col-span-2 lg:col-span-4 lg:row-span-2",
+  "ledgerly-studio": "md:col-span-1 lg:col-span-4 lg:row-span-2",
 };
+
+const DEFAULT_SPAN = "md:col-span-1 lg:col-span-4 lg:row-span-2";
+const FILTER_SPAN = "md:col-span-1 lg:col-span-6 lg:row-span-2";
+const FILTER_SPAN_LAST_ODD =
+  "md:col-span-2 lg:col-span-12 lg:row-span-2";
 
 export function SelectedWork({ projects, onOpen }: Props) {
   const [filter, setFilter] = useState<FilterId>("all");
@@ -42,12 +53,11 @@ export function SelectedWork({ projects, onOpen }: Props) {
           <h2 id="work-heading" className="section-title mb-0">
             Portfolio
           </h2>
-          <p className="text-sm text-muted">
-            {visible.length} of {projects.length} projects
-            {filter !== "all"
-              ? ` · ${FILTERS.find((f) => f.id === filter)?.label}`
-              : null}
-          </p>
+          {filter !== "all" ? (
+            <p className="text-sm text-muted">
+              {FILTERS.find((f) => f.id === filter)?.label}
+            </p>
+          ) : null}
         </div>
         <p className="text-sm leading-relaxed text-muted sm:text-[15px]">
           Selected product work across AI, fintech, enterprise SaaS, and mobile.
@@ -82,19 +92,27 @@ export function SelectedWork({ projects, onOpen }: Props) {
       </div>
 
       <div className="grid auto-rows-[160px] grid-cols-1 gap-4 md:grid-cols-2 md:auto-rows-[180px] lg:grid-cols-12 lg:auto-rows-[200px] lg:gap-5">
-        {visible.map((project, index) => (
-          <ProjectCard
-            key={project.slug}
-            project={project}
-            onOpen={onOpen}
-            featured={filter === "all" && index === 0}
-            spanClass={
-              filter === "all"
-                ? (SPAN[project.slug] ?? "md:col-span-1 lg:col-span-4")
-                : "md:col-span-1 lg:col-span-6 lg:row-span-2"
-            }
-          />
-        ))}
+        {visible.map((project, index) => {
+          const isLast = index === visible.length - 1;
+          const oddFilterOrphan =
+            filter !== "all" && visible.length % 2 === 1 && isLast;
+          const spanClass =
+            filter === "all"
+              ? (SPAN[project.slug] ?? DEFAULT_SPAN)
+              : oddFilterOrphan
+                ? FILTER_SPAN_LAST_ODD
+                : FILTER_SPAN;
+
+          return (
+            <ProjectCard
+              key={project.slug}
+              project={project}
+              onOpen={onOpen}
+              featured={filter === "all" && index === 0}
+              spanClass={spanClass}
+            />
+          );
+        })}
       </div>
 
       {visible.length === 0 ? (

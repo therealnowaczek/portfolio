@@ -151,6 +151,9 @@ export function ProjectModal({
                   >
                     {project.title}
                   </h2>
+                  <p className="mt-1.5 text-sm font-medium text-accent">
+                    {project.badge}
+                  </p>
                   <p className="mt-2 max-w-2xl text-[15px] text-muted sm:text-base">
                     {project.oneLiner}
                   </p>
@@ -175,54 +178,6 @@ export function ProjectModal({
                 </div>
               </div>
             </header>
-
-            <section aria-labelledby="screens-heading">
-              <h3 id="screens-heading" className="section-title">
-                Screens
-              </h3>
-              <div
-                className={
-                  isPhoneCover
-                    ? "flex gap-3 overflow-x-auto pb-2 sm:grid sm:grid-cols-3 sm:overflow-visible lg:grid-cols-4"
-                    : "flex gap-3 overflow-x-auto pb-2 sm:grid sm:grid-cols-3 sm:overflow-visible lg:grid-cols-3"
-                }
-              >
-                {project.screens.map((label, i) => {
-                  const src = project.screenPaths[i] ?? null;
-                  // Nest: first five screens are phone, last two desktop.
-                  const defaultTall =
-                    isPhoneProject ||
-                    (project.slug === "nest" && i < 5);
-                  return (
-                    <button
-                      key={`${label}-${i}`}
-                      type="button"
-                      className="min-w-[200px] shrink-0 overflow-hidden rounded-[8px] border border-border text-left transition-shadow duration-[160ms] hover:shadow-md sm:min-w-0"
-                      onClick={() => setLightbox({ src, title: label })}
-                    >
-                      {src ? (
-                        <ScreenFrame
-                          src={src}
-                          alt={label}
-                          defaultTall={defaultTall}
-                          variant="thumb"
-                        />
-                      ) : (
-                        <ProjectPlaceholder
-                          title={label}
-                          accent={project.accent}
-                          aspect={defaultTall ? "tall" : "video"}
-                          className="rounded-none"
-                        />
-                      )}
-                      <p className="border-t border-border px-3 py-2 text-xs text-muted">
-                        {label}
-                      </p>
-                    </button>
-                  );
-                })}
-              </div>
-            </section>
 
             <section aria-labelledby="snapshot-heading" className="space-y-3">
               <h3 id="snapshot-heading" className="section-title">
