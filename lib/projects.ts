@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import projectsJson from "@/data/projects.json";
+import { withBasePath } from "@/lib/base-path";
 import type {
   CaseStudy,
   ProcessStep,
@@ -27,7 +28,9 @@ const CASES = path.join(process.cwd(), "content", "projects");
 function resolveAsset(slug: string, name: string): string | null {
   for (const ext of ["jpg", "jpeg", "png", "webp", "svg"]) {
     const disk = path.join(PUBLIC, "projects", slug, `${name}.${ext}`);
-    if (fs.existsSync(disk)) return `/projects/${slug}/${name}.${ext}?v=phone1`;
+    if (fs.existsSync(disk)) {
+      return withBasePath(`/projects/${slug}/${name}.${ext}?v=phone1`);
+    }
   }
   return null;
 }
