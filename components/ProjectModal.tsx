@@ -282,17 +282,19 @@ export function ProjectModal({
                 {caseStudy.process.map((step) => (
                   <li
                     key={step.n}
-                    className="grid gap-1 sm:grid-cols-[2.25rem_minmax(11.5rem,max-content)_1fr] sm:items-baseline sm:gap-x-5"
+                    className="grid grid-cols-[2.25rem_1fr] items-baseline gap-x-4 sm:gap-x-5"
                   >
                     <span className="text-sm font-semibold tabular-nums text-accent">
                       {String(step.n).padStart(2, "0")}
                     </span>
-                    <span className="text-sm font-medium whitespace-nowrap text-foreground">
-                      {step.label}
-                    </span>
-                    <p className="text-sm leading-relaxed text-muted sm:text-[15px]">
-                      {step.text}
-                    </p>
+                    <div className="min-w-0">
+                      <p className="text-sm font-medium text-foreground">
+                        {step.label}
+                      </p>
+                      <p className="mt-1 text-sm leading-relaxed text-muted sm:text-[15px]">
+                        {step.text}
+                      </p>
+                    </div>
                   </li>
                 ))}
               </ol>
