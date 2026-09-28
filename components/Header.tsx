@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { withBasePath } from "@/lib/base-path";
 import { SITE } from "@/lib/cv";
 
 function IconPhone() {
@@ -65,13 +65,16 @@ export function Header() {
     <header className="sticky top-0 z-50 -mx-4 border-b border-border/80 bg-background/90 px-4 py-3 backdrop-blur-md sm:-mx-6 sm:px-6 lg:mx-0 lg:border-border lg:bg-background/85 lg:px-0 lg:py-4">
       <div className="flex items-center justify-between gap-4">
         <div className="flex min-w-0 flex-1 items-center gap-3">
-          <Image
-            src="/avatar.jpg"
+          {/* Plain img: next/image skips basePath under static export + Turbopack. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={withBasePath("/avatar.jpg")}
             alt={SITE.name}
             width={40}
             height={40}
             className="h-9 w-9 shrink-0 rounded-full object-cover sm:h-10 sm:w-10 lg:h-11 lg:w-11"
-            priority
+            decoding="async"
+            fetchPriority="high"
           />
           <div className="min-w-0 flex-1">
             <h1 className="text-base font-semibold tracking-tight text-accent sm:text-lg lg:text-xl">
