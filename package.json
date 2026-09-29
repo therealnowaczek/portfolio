@@ -7,9 +7,9 @@
     "build": "next build",
     "start": "next start",
     "split-cases": "npx tsx scripts/split-case-studies.ts",
-    "stitch:assets": "node scripts/render-stitch-assets.mjs",
-    "stitch:assets:desktop": "node scripts/render-stitch-assets.mjs --desktop",
-    "stitch:assets:mobile": "node scripts/render-stitch-assets.mjs --mobile"
+    "export:assets": "node scripts/render-project-assets.mjs",
+    "export:assets:desktop": "node scripts/render-project-assets.mjs --desktop",
+    "export:assets:mobile": "node scripts/render-project-assets.mjs --mobile"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

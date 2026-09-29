@@ -2,8 +2,8 @@
 slug: folio
 title: "Folio"
 oneLiner: "Warm editorial Android network where designers get structured critique, not empty likes"
-badge: "Concept · Portfolio exploration"
-role: "Lead Product Designer (concept)"
+badge: "Personal exploration"
+role: "Lead Product Designer"
 platform: "Android"
 timeline: "2–3 week design sprint"
 tags:
@@ -43,7 +43,7 @@ Designers want feedback that improves the work, not engagement farming. Persona:
 
 **Constraints**
 - Android Material 3; dynamic color optional
-- Moderation assumed lightweight for concept
+- Moderation assumed lightweight for this exploration
 - Timeboxed sprint
 - Editorial warmth without looking non-native
 - a11y: scalable type, content descriptions for mock images
@@ -53,7 +53,7 @@ Designers want feedback that improves the work, not engagement farming. Persona:
 2. **Flows & IA** - Feed → Piece → Critique composer → Thank / iterate. Profile shows critique given/received ratio.
 3. **Options explored** - (A) Anonymous roast mode (rejected: toxic). (B) Live video rooms only (rejected: scheduling friction). (C) Async structured critique cards (chosen).
 4. **Visual & DS** - Warm paper backgrounds, serif for titles, sans for UI, terracotta accent. Soft elevation, generous image crops.
-5. **Prototype & critique** - Stitch Feed, Piece detail, Critique composer; Figma contrast on warm paper.
+5. **Prototype & critique** - High-fidelity prototype: Feed, Piece detail, Critique composer; Figma contrast on warm paper.
 6. **Validation notes** - Risk: structure feels homework-like. Softened prompts to optional chips, not mandatory forms.
 
 ### Key decisions
@@ -74,7 +74,7 @@ Empty: "Your feed is quiet - follow three craft accounts." Error: "Upload failed
 Tokens: `color.paper.warm`, `color.accent.terracotta`, `type.display.serif`. Components: PieceCard, CritiqueChip, ComposerSheet, RatioBadge. Pattern: show goals → critique on axes → thank.
 
 ### Outcomes & learnings
-- **Illustrative target:** average critique length and specificity above unstructured social baselines (qualitative)
-- **Assumed success metric for the concept:** creators mark ≥50% of critiques "useful" in prototype survey
+- **Design target:** average critique length and specificity above unstructured social baselines (qualitative)
+- **Prototype success target:** creators mark ≥50% of critiques "useful" in prototype survey
 - Ship-test next: moderation queues, private critique circles, Figma embed
 - Hiring signal: community product craft, Android Material fluency, editorial systems

@@ -3,21 +3,25 @@ import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 
-const mapPath = path.join(process.cwd(), "scripts", "stitch-assets.json");
-const STITCH_ASSETS = JSON.parse(fs.readFileSync(mapPath, "utf8"));
+const mapPath = path.join(process.cwd(), "scripts", "project-assets.json");
+const PROJECT_ASSETS = JSON.parse(fs.readFileSync(mapPath, "utf8"));
 
 const ROOT = path.join(process.cwd(), "public", "projects");
-const TMP = path.join(process.cwd(), ".tmp-stitch-html");
+const TMP = path.join(process.cwd(), ".tmp-project-html");
 fs.mkdirSync(TMP, { recursive: true });
 
-/** Stitch artboards ≥ this width are desktop SaaS, not phones. */
+/** Artboards ≥ this width are treated as desktop SaaS, not phones. */
 const DESKTOP_MIN_WIDTH = 900;
-/** Capture phones at real iPhone logical size so HTML reflows to phone, not tablet. */
-const MOBILE_WIDTH = 390;
-const MOBILE_HEIGHT = 844;
-/** Desktop SaaS screens capture as a real Full HD browser window. */
-const DESKTOP_WIDTH = 1920;
-const DESKTOP_HEIGHT = 1080;
+/** Capture phones at iPhone Pro Max logical size so layouts aren't cramped at 390. */
+const MOBILE_WIDTH = 430;
+const MOBILE_HEIGHT = 932;
+/**
+ * Portfolio desktop capture — 1600×900 @2x (exact 16:9).
+ * Smaller than Full HD so UI reads larger in mosaic/modal; still wide enough
+ * for dense enterprise chrome. Matches ScreenFrame aspect-video.
+ */
+const DESKTOP_WIDTH = 1600;
+const DESKTOP_HEIGHT = 900;
 
 const onlySlug = process.argv.find((a) => a.startsWith("--slug="))?.slice(7);
 const desktopOnly = process.argv.includes("--desktop");
@@ -33,7 +37,7 @@ function viewportFor(asset) {
       width: DESKTOP_WIDTH,
       height: DESKTOP_HEIGHT,
       scale: 2,
-      kind: "desktop-fhd",
+      kind: "desktop-showcase",
     };
   }
   return {
@@ -54,13 +58,64 @@ async function downloadHtml(url, dest) {
   return buf.length;
 }
 
+/**
+ * Folio Feed chips: remote HTML often lags local edits. After download, force
+ * single-line tab pills (whitespace-nowrap + flex-shrink-0) and Material
+ * Symbol `spa` for First Looks — never `spark` (ligatures to spa + literal "RK").
+ */
+function patchFolioHtml(htmlPath) {
+  let html = fs.readFileSync(htmlPath, "utf8");
+  const before = html;
+  html = html.replaceAll(">spark</span>", ">spa</span>");
+  html = html.replace(
+    /<button class="(tab-pill[^"]*)"/g,
+    (full, cls) => {
+      const extras = [];
+      if (!cls.includes("whitespace-nowrap")) extras.push("whitespace-nowrap");
+      if (!cls.includes("flex-shrink-0")) extras.push("flex-shrink-0");
+      if (!extras.length) return full;
+      return `<button class="${cls} ${extras.join(" ")}"`;
+    },
+  );
+  if (html !== before) fs.writeFileSync(htmlPath, html);
+}
+
+/**
+ * Anonymize product chrome for gallery cases (Stitch CDN can lag edit_screens).
+ * OKRs / Gantt only — never rewrite Impact/CV copy.
+ */
+function scrubCaseBrandHtml(htmlPath, productName) {
+  let html = fs.readFileSync(htmlPath, "utf8");
+  const before = html;
+  html = html
+    .replaceAll("BigPicture OKR Module", productName)
+    .replaceAll("BigPicture OKR", productName)
+    .replaceAll("BigPicture Enterprise", productName)
+    .replaceAll("BigPicture", productName)
+    .replaceAll("Meridian PPM", productName)
+    .replaceAll("Meridian Precision", productName)
+    .replaceAll("Meridian", productName)
+    .replaceAll("EnterpriseHub", productName);
+  // Issue-key prefixes that leak the old product (BP-1234)
+  const keyPrefix = productName === "Gantt" ? "GN" : "OK";
+  html = html.replace(/\bBP-(\d+)/g, `${keyPrefix}-$1`);
+  // Collapse "OKRs OKR" / "Gantt Gantt" chrome after replacements
+  html = html.replace(
+    new RegExp(`${productName}\\s*<span[^>]*>\\s*OKR\\s*</span>`, "g"),
+    productName,
+  );
+  html = html.replaceAll(`${productName} OKR`, productName);
+  html = html.replace(/>BP</g, `>${productName.slice(0, 2).toUpperCase()}<`);
+  if (html !== before) fs.writeFileSync(htmlPath, html);
+}
+
 async function main() {
   const browser = await chromium.launch({ headless: true });
   let ok = 0;
   let fail = 0;
   let skip = 0;
 
-  for (const [slug, assets] of Object.entries(STITCH_ASSETS)) {
+  for (const [slug, assets] of Object.entries(PROJECT_ASSETS)) {
     if (onlySlug && slug !== onlySlug) continue;
 
     const dir = path.join(ROOT, slug);
@@ -92,6 +147,9 @@ async function main() {
         const htmlPath = path.join(TMP, `${slug}-${asset.file}.html`);
         const bytes = await downloadHtml(asset.htmlUrl, htmlPath);
         if (bytes < 500) throw new Error(`HTML too small (${bytes})`);
+        if (slug === "folio") patchFolioHtml(htmlPath);
+        if (slug === "okrs") scrubCaseBrandHtml(htmlPath, "OKRs");
+        if (slug === "gantt") scrubCaseBrandHtml(htmlPath, "Gantt");
 
         const vp = viewportFor(asset);
         const context = await browser.newContext({
@@ -105,9 +163,9 @@ async function main() {
         });
         await page.waitForTimeout(900);
 
-        // Desktop: clip to the live document width so Full HD layout isn't
-        // letterboxed by leftover artboard sizing from Stitch.
-        if (vp.kind === "desktop-fhd") {
+        // Desktop: clip to the live document width so artboard sizing
+        // doesn't letterbox the 1600×900 showcase viewport.
+        if (vp.kind === "desktop-showcase") {
           await page.evaluate(() => {
             document.documentElement.style.width = "100%";
             document.body.style.width = "100%";
@@ -119,7 +177,7 @@ async function main() {
         }
 
         const out = path.join(dir, `${asset.file}.png`);
-        // Desktop: true Full HD browser frame (preserves UI scale).
+        // Desktop: 1600×900 showcase frame (16:9, larger UI presence).
         // Mobile: one iPhone viewport — phone ratio, not a squat tablet crop.
         await page.screenshot({
           path: out,

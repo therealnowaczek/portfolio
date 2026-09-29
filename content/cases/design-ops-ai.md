@@ -1,25 +1,22 @@
-# Design Ops & AI rollout — case outline (in progress)
+# Design Ops & AI rollout — case outline (promoted)
 
-**Status:** Draft for public portfolio · not yet a gallery card  
+**Status:** Gallery card live as **DesignOS** (`/?project=designos`) · `Enterprise case · Design Ops`  
 **Employer:** Appfire · UX org (BigPicture, 7pace, AI workstreams)  
-**Honesty:** Organizational transformation. Efficiency % must not lead without method (what was measured, n, before/after). Prefer qualitative until sourced.
+**Evidence bar:** Organizational transformation. Prefer qualitative until efficiency % method is documented. Screens use fictional DesignOS chrome — not an Appfire product release.
 
 ## Problem
-A 35+ person distributed UX org needed predictable intake, estimation, Figma governance, and research ops — then practical AI (agentic workflows, design-to-code) without collapsing craft or design-system integrity.
+A 35+ person distributed UX org needed predictable intake, estimation, Figma governance, and research ops — then practical AI without collapsing craft or design-system integrity.
 
 ## Role
 Senior UX Manager: set operating rhythms, quality bars, and an AI workstreams program with human review and output benchmarking.
 
 ## Decision
-Treat UX as **delivery infrastructure** (intake → estimate → craft → handoff → learn), then introduce agents where they compress exploration — not where unsupervised output would lower the bar.
+Treat UX as **delivery infrastructure** (intake → estimate → craft → handoff → learn), then introduce agents where they compress exploration — Craft/Ship stay human gates.
 
-## Outcome (tone carefully)
-- Often cited internally: roughly **60–65% efficiency** vs traditional frameworks — **do not present as bare fact** until method, sample, and before/after definition are documented.
-- Qualitative (safe now): clearer planning for engineering, shared Figma standards, research ops (Dovetail), fewer late redesigns on critical paths.
-- Optional adjacent: 7pace / AI workstream touch — only if you can speak to a concrete decision and your contribution.
+## Outcome
+- Qualitative (safe): clearer planning for engineering, shared Figma standards, research ops, fewer late redesigns
+- Overview + Intake exported from Stitch; Estimation → Agentic still pending (MCP timeouts)
 
 ## Next content steps
-1. Write the measurement method or drop the % from Impact until sourced.
-2. One-page ops diagram: Sense → Frame → Agent → Craft → Ship → Learn (already on Hire-me).
-3. Before/after on one squad ritual (intake or estimation) with anonymized numbers if possible.
-4. Ship as Portfolio “Enterprise case” when ready; until then keep concepts clearly labeled and CostRadar as the only shipped gallery card.
+1. Generate remaining Stitch screens (Estimation, Standards, Research, Agentic) and re-export.
+2. Document efficiency measurement method before any % on Impact.

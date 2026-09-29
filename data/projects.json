@@ -38,12 +38,119 @@
     "status": "shipped"
   },
   {
+    "id": "12",
+    "slug": "designos",
+    "title": "DesignOS",
+    "oneLiner": "Org-scale UX operating system \u2014 intake, estimation, standards, research ops, and human-gated AI",
+    "badge": "Enterprise case \u00b7 Design Ops",
+    "role": "Senior UX Manager \u00b7 Appfire",
+    "platform": "Web desktop",
+    "timeline": "Appfire \u00b7 org UX OS",
+    "tags": [
+      "Design Ops",
+      "AI UX",
+      "Enterprise",
+      "Research Ops",
+      "Design Systems"
+    ],
+    "order": 2,
+    "accent": "#4F46E5",
+    "styleLabel": "Quiet enterprise indigo",
+    "screens": [
+      "Org pulse \u2014 Overview",
+      "Intake queue & triage",
+      "Estimation board",
+      "Figma / standards hub",
+      "Research ops library",
+      "Agentic loop workspace"
+    ],
+    "portfolioSignals": [
+      "Design Ops leadership at org scale",
+      "Intake \u2192 estimate \u2192 craft predictability",
+      "Figma / design-system governance",
+      "Research ops as shared infrastructure",
+      "Human-gated agentic delivery (Sense\u2192Learn)"
+    ],
+    "status": "shipped"
+  },
+  {
+    "id": "13",
+    "slug": "okrs",
+    "title": "OKRs",
+    "oneLiner": "Strategy-to-work hierarchy leaders use in weekly planning",
+    "badge": "Enterprise case \u00b7 OKRs",
+    "role": "Lead Product Designer",
+    "platform": "Web desktop",
+    "timeline": "Enterprise PPM \u00b7 shipped",
+    "tags": [
+      "OKRs",
+      "Enterprise",
+      "PPM",
+      "Information architecture",
+      "Strategy"
+    ],
+    "order": 3,
+    "accent": "#2563EB",
+    "styleLabel": "Quiet enterprise blue",
+    "screens": [
+      "Leadership weekly ritual",
+      "Goals \u2192 KR \u2192 Work hierarchy",
+      "Key Result detail",
+      "At-risk / stale health",
+      "Empty first-run hierarchy"
+    ],
+    "portfolioSignals": [
+      "Staff/Principal hierarchy IA under cognitive load",
+      "Strategy \u2194 execution without Jira noise",
+      "Weekly leadership ritual design",
+      "Ownership, staleness, and trust states",
+      "Enterprise PPM density"
+    ],
+    "status": "shipped"
+  },
+  {
+    "id": "14",
+    "slug": "gantt",
+    "title": "BigPicture Gantt",
+    "oneLiner": "Dense program Gantt \u2014 retrieval speed as a design constraint",
+    "badge": "Enterprise case \u00b7 Planning",
+    "role": "Lead craft \u00b7 BigPicture (SoftwarePlant \u2192 Appfire)",
+    "platform": "Web desktop",
+    "timeline": "BigPicture \u00b7 shipped enterprise",
+    "tags": [
+      "Gantt",
+      "Enterprise",
+      "PPM",
+      "Planning",
+      "Information architecture"
+    ],
+    "order": 4,
+    "accent": "#2563EB",
+    "styleLabel": "Quiet enterprise blue",
+    "screens": [
+      "Program Gantt overview",
+      "Dense timeline / quarters zoom",
+      "Dependency / critical path",
+      "Baselines & slip compare",
+      "Task detail drawer",
+      "Search jump & highlight"
+    ],
+    "portfolioSignals": [
+      "Performance as a design constraint on dense timelines",
+      "Synced WBS grid + Gantt under cognitive load",
+      "Critical path, baselines, and retrieval interactions",
+      "Keyboard / power-user cues without sacrificing clarity",
+      "Enterprise PPM planning density (Marketplace-grade)"
+    ],
+    "status": "shipped"
+  },
+  {
     "id": "02",
     "slug": "northline",
     "title": "Northline",
     "oneLiner": "AI ops profitability console for B2B SaaS",
-    "badge": "Concept \u00b7 Portfolio exploration",
-    "role": "Lead Product Designer (concept)",
+    "badge": "Personal exploration",
+    "role": "Lead Product Designer",
     "platform": "Web desktop",
     "timeline": "2\u20133 week design sprint",
     "tags": [
@@ -53,7 +160,7 @@
       "Data density",
       "Quiet enterprise"
     ],
-    "order": 2,
+    "order": 5,
     "accent": "#0D9488",
     "styleLabel": "Quiet enterprise",
     "screens": [
@@ -69,17 +176,17 @@
       "Dense B2B SaaS",
       "Trust and lineage",
       "Accessibility in data UI",
-      "E2E concept ownership"
+      "E2E product exploration"
     ],
-    "status": "concept"
+    "status": "exploration"
   },
   {
     "id": "03",
     "slug": "harbor",
     "title": "Harbor",
     "oneLiner": "Fintech repayments and insights companion",
-    "badge": "Concept \u00b7 Portfolio exploration",
-    "role": "Lead Product Designer (concept)",
+    "badge": "Personal exploration",
+    "role": "Lead Product Designer",
     "platform": "iOS",
     "timeline": "2\u20133 week design sprint",
     "tags": [
@@ -89,7 +196,7 @@
       "Trust UX",
       "Repayments"
     ],
-    "order": 3,
+    "order": 6,
     "accent": "#2563EB",
     "styleLabel": "HIG trust UX",
     "screens": [
@@ -107,15 +214,15 @@
       "Accessible money UI",
       "Regulated-feel microcopy"
     ],
-    "status": "concept"
+    "status": "exploration"
   },
   {
     "id": "04",
     "slug": "circuit",
     "title": "Circuit",
     "oneLiner": "Deploy and observability console for engineers",
-    "badge": "Concept \u00b7 Portfolio exploration",
-    "role": "Lead Product Designer (concept)",
+    "badge": "Personal exploration",
+    "role": "Lead Product Designer",
     "platform": "Web dark",
     "timeline": "2\u20133 week design sprint",
     "tags": [
@@ -125,7 +232,7 @@
       "Dense UX",
       "Web"
     ],
-    "order": 4,
+    "order": 7,
     "accent": "#34D399",
     "styleLabel": "Vercel/Raycast dense",
     "screens": [
@@ -143,15 +250,15 @@
       "Dense dark UI",
       "Safe rollback patterns"
     ],
-    "status": "concept"
+    "status": "exploration"
   },
   {
     "id": "05",
     "slug": "folio",
     "title": "Folio",
     "oneLiner": "Social critique network for designers",
-    "badge": "Concept \u00b7 Portfolio exploration",
-    "role": "Lead Product Designer (concept)",
+    "badge": "Personal exploration",
+    "role": "Lead Product Designer",
     "platform": "Android",
     "timeline": "2\u20133 week design sprint",
     "tags": [
@@ -161,7 +268,7 @@
       "Editorial",
       "Social"
     ],
-    "order": 5,
+    "order": 8,
     "accent": "#C2410C",
     "styleLabel": "Warm editorial",
     "screens": [
@@ -180,15 +287,15 @@
       "Editorial visual systems",
       "Creator feedback loops"
     ],
-    "status": "concept"
+    "status": "exploration"
   },
   {
     "id": "06",
     "slug": "quorum",
     "title": "Quorum",
     "oneLiner": "B2B roles, permissions, and partner activation",
-    "badge": "Concept \u00b7 Portfolio exploration",
-    "role": "Lead Product Designer (concept)",
+    "badge": "Personal exploration",
+    "role": "Lead Product Designer",
     "platform": "Web enterprise",
     "timeline": "2\u20133 week design sprint",
     "tags": [
@@ -198,7 +305,7 @@
       "Enterprise",
       "Lifecycle"
     ],
-    "order": 6,
+    "order": 9,
     "accent": "#4F46E5",
     "styleLabel": "Enterprise clarity",
     "screens": [
@@ -217,15 +324,15 @@
       "Enterprise audit trust",
       "Least-privilege UX"
     ],
-    "status": "concept"
+    "status": "exploration"
   },
   {
     "id": "07",
     "slug": "pulse",
     "title": "Pulse",
     "oneLiner": "Energy and recovery wellness companion",
-    "badge": "Concept \u00b7 Portfolio exploration",
-    "role": "Lead Product Designer (concept)",
+    "badge": "Personal exploration",
+    "role": "Lead Product Designer",
     "platform": "iOS",
     "timeline": "2\u20133 week design sprint",
     "tags": [
@@ -235,7 +342,7 @@
       "Habit",
       "Health-adjacent"
     ],
-    "order": 7,
+    "order": 10,
     "accent": "#A78BFA",
     "styleLabel": "Soft humanist",
     "screens": [
@@ -254,15 +361,15 @@
       "Dynamic Type and Reduce Motion",
       "Shame-free product copy"
     ],
-    "status": "concept"
+    "status": "exploration"
   },
   {
     "id": "08",
     "slug": "atlas-cms",
     "title": "Atlas CMS",
     "oneLiner": "Design system docs and playground",
-    "badge": "Concept \u00b7 Portfolio exploration",
-    "role": "Lead Product Designer (concept)",
+    "badge": "Personal exploration",
+    "role": "Lead Product Designer",
     "platform": "Web docs",
     "timeline": "2\u20133 week design sprint",
     "tags": [
@@ -272,7 +379,7 @@
       "Tokens",
       "Web"
     ],
-    "order": 8,
+    "order": 11,
     "accent": "#0F172A",
     "styleLabel": "Docs product",
     "screens": [
@@ -290,15 +397,15 @@
       "Token literacy",
       "Playground adoption"
     ],
-    "status": "concept"
+    "status": "exploration"
   },
   {
     "id": "09",
     "slug": "nest",
     "title": "Nest",
     "oneLiner": "Local services marketplace",
-    "badge": "Concept \u00b7 Portfolio exploration",
-    "role": "Lead Product Designer (concept)",
+    "badge": "Personal exploration",
+    "role": "Lead Product Designer",
     "platform": "iOS + desktop web",
     "timeline": "2\u20133 week design sprint",
     "tags": [
@@ -308,7 +415,7 @@
       "Trust",
       "Booking"
     ],
-    "order": 9,
+    "order": 12,
     "accent": "#F43F5E",
     "styleLabel": "Friendly utilitarian",
     "screens": [
@@ -327,15 +434,15 @@
       "Shared IA native shells",
       "Two-sided product thinking"
     ],
-    "status": "concept"
+    "status": "exploration"
   },
   {
     "id": "10",
     "slug": "signal-rooms",
     "title": "Signal Rooms",
     "oneLiner": "Live audio community rooms",
-    "badge": "Concept \u00b7 Portfolio exploration",
-    "role": "Lead Product Designer (concept)",
+    "badge": "Personal exploration",
+    "role": "Lead Product Designer",
     "platform": "iOS dark expressive",
     "timeline": "2\u20133 week design sprint",
     "tags": [
@@ -345,7 +452,7 @@
       "Dark expressive",
       "Social"
     ],
-    "order": 10,
+    "order": 13,
     "accent": "#8B5CF6",
     "styleLabel": "Dark expressive",
     "screens": [
@@ -363,15 +470,15 @@
       "Moderation affordances",
       "Motion with a11y fallbacks"
     ],
-    "status": "concept"
+    "status": "exploration"
   },
   {
     "id": "11",
     "slug": "ledgerly-studio",
     "title": "Ledgerly Studio",
     "oneLiner": "Growth experimentation lab",
-    "badge": "Concept \u00b7 Portfolio exploration",
-    "role": "Lead Product Designer (concept)",
+    "badge": "Personal exploration",
+    "role": "Lead Product Designer",
     "platform": "Web analytics",
     "timeline": "2\u20133 week design sprint",
     "tags": [
@@ -381,7 +488,7 @@
       "Web",
       "Metrics"
     ],
-    "order": 11,
+    "order": 14,
     "accent": "#059669",
     "styleLabel": "Growth analytics",
     "screens": [
@@ -396,6 +503,6 @@
       "Designer-in-the-loop A/B",
       "Decision ritual design"
     ],
-    "status": "concept"
+    "status": "exploration"
   }
 ]

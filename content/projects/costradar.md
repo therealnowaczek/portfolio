@@ -33,7 +33,7 @@ portfolioSignals:
 ---
 
 ### Snapshot
-CostRadar is a live Profitability OS for multi-channel merchants: true net profit (not vanity ROAS) plus an AI Profit Agent that names cost leaks and acts only behind Approve. Channels live: Shopify, Amazon, WooCommerce, BigCommerce, Allegro, eBay. Design bet: one ledger and one morning action beat a chart graveyard of channel dashboards that disagree. Live at costradar.ai. Early-stage / fundraising = craft and trust proof — not a verified growth ROI case.
+CostRadar is a live Profitability OS for multi-channel merchants: true net profit (not vanity ROAS) plus an AI Profit Agent that names cost leaks and acts only behind Approve. Channels live: Shopify, Amazon, WooCommerce, BigCommerce, Allegro, eBay. Design bet: one ledger and one morning action beat a chart graveyard of channel dashboards that disagree. Live at costradar.ai.
 
 ### Problem
 Merchants see revenue and ROAS in native dashboards or Triple Whale–class tools, but costs are fragmented (platform fees, apps, shipping, COGS, ads, opex, taxes/FX) — so they don’t know what they kept. JTBD: “Show me true net of what I kept, and name the leak worth fixing this morning.” Persona: solo/small e-com operator or agency AM across several stores; tired of Excel + channel UIs that don’t reconcile.
@@ -49,7 +49,7 @@ Merchants see revenue and ROAS in native dashboards or Triple Whale–class tool
 **Constraints**
 - Desktop/web first (Capacitor native rejected); PWA glance for Today
 - Trust: propose + confirm; quiet hours; no unsupervised pause-ads / bid changes
-- Honesty in portfolio: no verified merchant ROI %; use savings estimates + tracker language only
+- Savings language uses estimates + tracker — not unverified merchant ROI %
 - Solo-shipped end-to-end — depth of system craft is the signal
 - Dropship native connectors NO-GO; COGS via rules/CSV/Zapier
 - SafeRadar and NDA mobile apps are separate — not this card
@@ -86,6 +86,6 @@ Stack: React + TypeScript, Supabase (Postgres, Auth, Edge Functions), OpenAI, Ta
 ### Outcomes & learnings
 - **Shipped live** on costradar.ai — solo design-engineer Profitability OS: widgets, reports, multi-platform sync, Premium AI loop + Savings Tracker, Slack/Teams Profit Agent, MCP tool surface.
 - **UX decisions that matter:** Approve gate, true-net ledger, and “morning leak” focus — denser than a feature inventory dump.
-- **Honesty:** Early-stage / fundraising = craft and trust proof, not growth-case proof. Savings estimates + tracker — no invented ROI % or customer logos.
+- **Early-stage signal:** craft and trust proof via savings estimates + tracker.
 - **Trust spine:** Approve-gated actions only; findings grounded in synced store data; quiet hours and a narrow write catalog.
 - **Learning:** Autonomy marketing must stay behind what the agent can actually do — one high-impact, confirmable action beats chat wallpaper.

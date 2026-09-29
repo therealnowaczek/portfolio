@@ -2,8 +2,8 @@
 slug: ledgerly-studio
 title: "Ledgerly Studio"
 oneLiner: "Hypothesis-first growth lab for A/B experiments — setup, variants, and ship/kill decisions in one place"
-badge: "Concept · Portfolio exploration"
-role: "Lead Product Designer (concept)"
+badge: "Personal exploration"
+role: "Lead Product Designer"
 platform: "Web analytics"
 timeline: "2–3 week design sprint"
 tags:
@@ -53,8 +53,8 @@ Growth teams lose signal when experiment setup, design variants, and analytics l
 2. **Flows & IA** - Experiments list → Create (hypothesis) → Variants → Results → Decision.
 3. **Options explored** - (A) Pure BI dashboards (rejected: no experiment object). (B) Code-only flags UI (rejected: excludes design). (C) Lab notebook + variants + results decision (chosen).
 4. **Visual & DS** - Light analytics chrome, emerald for wins, restrained red for losses, tabular nums. Chart + table twins.
-5. **Prototype & critique** - Stitch List, Create, Results; Figma table fallback and decision modal copy.
-6. **Validation notes** - Risk: overclaiming causality. Added "Illustrative results · not causal proof" on concept screens.
+5. **Prototype & critique** - High-fidelity prototype: List, Create, Results; Figma table fallback and decision modal copy.
+6. **Validation notes** - Risk: overclaiming causality. Added "Prototype results · not causal proof" on exploration screens.
 
 ### Key decisions
 - I chose **hypothesis as required field** because tool-led tests without questions waste traffic; I rejected metric-first blank experiments.
@@ -74,7 +74,7 @@ Empty: "No experiments yet - write your first hypothesis." Error: "Stats engine 
 Tokens: `color.win.emerald`, `color.lose.rose`, `type.tabular`. Components: ExperimentRow, HypothesisForm, VariantFrame, MetricPair, DecisionModal. Pattern: ask → variant → read guardrails → decide.
 
 ### Outcomes & learnings
-- **Illustrative target:** cross-functional pair can create a complete experiment object in one sitting
-- **Assumed success metric for the concept:** users correctly explain primary vs guardrail in a teach-back
+- **Design target:** cross-functional pair can create a complete experiment object in one sitting
+- **Prototype success target:** users correctly explain primary vs guardrail in a teach-back
 - Ship-test next: real stats engine, design tool embeds, rollout checklist
 - Hiring signal: growth experimentation literacy, metrics thinking, designer-in-the-loop A/B UX

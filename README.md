@@ -15,7 +15,7 @@ Shareable case links: `/?project=northline` (any project slug).
 
 ## Project images
 
-Drop Stitch / Figma exports here:
+Drop design exports here:
 
 ```text
 public/projects/{slug}/cover.jpg      # 16:9
@@ -28,10 +28,10 @@ Supported extensions: `.jpg`, `.jpeg`, `.png`, `.webp`, `.svg`.
 
 Until a file exists, the UI shows an accent-tinted placeholder labeled with the project title (never a broken image).
 
-**Stitch assets:** screenshots are rendered from original Stitch HTML at 2× device scale (`cover.png`, `screen-1..3.png`). Re-export:
+Optional HTML→PNG re-export (when `scripts/project-assets.json` is present locally):
 
 ```bash
-npm run stitch:assets
+npm run export:assets
 ```
 
 Slugs: `northline`, `harbor`, `circuit`, `folio`, `quorum`, `pulse`, `atlas-cms`, `nest`, `signal-rooms`, `ledgerly-studio`.

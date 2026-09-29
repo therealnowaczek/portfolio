@@ -291,7 +291,7 @@ export const ROLE_LENSES: RoleLens[] = [
     pitch:
       "When the role needs strong Product Design, that is still how I work: frame the problem, prototype with real constraints, and ship interfaces finance, PMs, and engineers can trust. BigPicture modules and CostRadar.ai are the proof.",
     proof: [
-      "Lead designer on BigPicture financials, OKRs, and Gantt",
+      "Lead designer on enterprise financials, OKRs, and Gantt — see OKRs + Gantt cases",
       "CostRadar.ai: end-to-end product UX live at costradar.ai",
       "Dense enterprise and money-adjacent UI with clear empty and trust states",
     ],
@@ -318,8 +318,8 @@ export const ROLE_LENSES: RoleLens[] = [
     pitch:
       "Principal-level work on BigPicture financials, OKRs, and Gantt: clear hierarchy, performance as a design constraint, and dashboards finance and PMs both trust. I still prototype and ship when the problem needs it.",
     proof: [
+      "OKRs + Gantt cases: hierarchy and dense planning under load",
       "Financials: clearer reporting (−58% unclear reports — see Impact)",
-      "Gantt: faster information retrieval and NPS lift on planning workflows",
       "CostRadar: true-net ledger + Approve-gated AI shipped end-to-end",
     ],
     ninetyDays: [
@@ -345,9 +345,9 @@ export const ROLE_LENSES: RoleLens[] = [
     pitch:
       "Intake, estimation from velocity, research ops, and Figma standards turned UX from local heroics into shared infrastructure — clearer status, fewer late redesigns.",
     proof: [
+      "DesignOS case: intake, estimation, standards, research ops, human-gated AI",
       "Org-wide estimation, Figma standards, and research ops at Appfire",
       "Design-system contribution model through SoftwarePlant → Appfire",
-      "Predictable rhythm for stakeholders across a global team",
     ],
     ninetyDays: [
       "Instrument the UX lifecycle: intake → ship → learn",
@@ -373,7 +373,7 @@ export const ROLE_LENSES: RoleLens[] = [
     proof: [
       "Design-system standards through SoftwarePlant → Appfire integration",
       "Org-wide Figma standards for a 35+ team I co-led",
-      "Atlas CMS concept: tokens, specs, and a live props playground",
+      "Atlas CMS exploration: tokens, specs, and a live props playground",
     ],
     ninetyDays: [
       "Inventory components, debt, and adoption gaps across products",
@@ -446,11 +446,11 @@ export const BUSINESS_IMPACT: NarrativeBlock[] = [
   },
   {
     title: "Product outcomes (enterprise)",
-    body: "On BigPicture (OKRs, financials, Gantt) design choices were tied to adoption and clarity. The numbers on this page include short scope notes. Fuller case write-ups (baseline, timeframe, my part vs the team) are still in progress.",
+    body: "On BigPicture (OKRs, financials, Gantt) design choices were tied to adoption and clarity. Impact numbers on this page include short scope notes for each result.",
   },
   {
     title: "Founder craft (CostRadar)",
-    body: "CostRadar.ai is live. I designed and engineered it solo: true-net P&L, savings estimates and tracker, and an AI Profit Agent that only acts after Approve. That proves craft and trust UX at early stage — not a verified growth ROI story. No invented customer logos or merchant savings percentages.",
+    body: "CostRadar.ai is live. I designed and engineered it solo: true-net P&L, savings estimates and tracker, and an AI Profit Agent that only acts after Approve — early-stage craft and trust UX.",
   },
 ];
 
@@ -465,13 +465,13 @@ export const IMPACT_METRICS: ImpactMetric[] = [
     value: "+47%",
     label: "OKR adoption among leadership teams",
     footnote:
-      "BigPicture OKR module · Appfire / SoftwarePlant · team outcome. Fuller write-up of my individual contribution still in progress.",
+      "BigPicture OKR module · Appfire / SoftwarePlant · team outcome",
   },
   {
     value: "53→84%",
     label: "Financial module adoption in 3 months",
     footnote:
-      "BigPicture Financials · about 3 months after redesign · product analytics. Case write-up in progress.",
+      "BigPicture Financials · about 3 months after redesign · product analytics",
   },
   {
     value: "−58%",

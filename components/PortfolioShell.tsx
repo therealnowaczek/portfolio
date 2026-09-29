@@ -33,11 +33,19 @@ const NAV: NavItem[] = [
   { id: "connect", label: "Connect" },
 ];
 
+/** Legacy share URLs → anonymized gallery slugs */
+const SLUG_ALIASES: Record<string, string> = {
+  "bigpicture-okr": "okrs",
+  "bigpicture-gantt": "gantt",
+  okr: "okrs",
+};
+
 export function PortfolioShell({ projects }: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const slug = searchParams.get("project");
+  const rawSlug = searchParams.get("project");
+  const slug = rawSlug ? (SLUG_ALIASES[rawSlug] ?? rawSlug) : null;
 
   const [returnFocusSlug, setReturnFocusSlug] = useState<string | null>(null);
 
@@ -87,10 +95,14 @@ export function PortfolioShell({ projects }: Props) {
   }, [active?.slug, returnFocusSlug, setProject]);
 
   useEffect(() => {
+    if (rawSlug && SLUG_ALIASES[rawSlug]) {
+      setProject(SLUG_ALIASES[rawSlug]);
+      return;
+    }
     if (slug && !projects.some((p) => p.slug === slug)) {
       setProject(null);
     }
-  }, [slug, projects, setProject]);
+  }, [rawSlug, slug, projects, setProject]);
 
   return (
     <>

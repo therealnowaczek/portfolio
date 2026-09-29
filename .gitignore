@@ -41,4 +41,9 @@ yarn-error.log*
 next-env.d.ts
 
 .tmp-stitch-html/
+.tmp-project-html/
 scripts/stitch-assets.json
+scripts/project-assets.json
+scripts/stitch-asset-map.ts
+scripts/stitch-screen-ids.json
+content/stitch-*.md

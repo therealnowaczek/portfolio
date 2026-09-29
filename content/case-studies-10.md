@@ -1,17 +1,17 @@
 # Portfolio case-study pack - Marcin Nowak
 
-Concept product explorations for a future personal portfolio gallery. Generated via Stitch → Figma concept sprints. These are **not** client engagements, employment claims, or shipped production case studies. CostRadar / SafeRadar and Appfire / SoftwarePlant work live elsewhere in the portfolio.
+Personal product explorations for the gallery. CostRadar.ai is the shipped founder case; Appfire / SoftwarePlant employment work is covered on the CV and Impact sections. These ten explorations are speculative product design — not client engagements.
 
-**Honesty rule:** every case wears a Concept badge. Outcomes use prototype goals, design targets, and labeled illustrative metrics only.
+Each case uses a **Personal exploration** badge. Outcomes use design targets and prototype success targets.
 
 ---
 
 ## 1. Northline - AI ops profitability console for B2B SaaS
 
-**Badge:** Concept product · Portfolio exploration 
-**Role:** Lead Product Designer (concept) 
+**Badge:** Personal exploration 
+**Role:** Lead Product Designer 
 **Platform:** Web desktop 
-**Timeline:** 2-3 week concept sprint (illustrative) 
+**Timeline:** 2–3 week design sprint 
 **Tags:** AI, B2B SaaS, Ops console, Data density, Quiet enterprise
 
 ### Snapshot
@@ -32,16 +32,16 @@ RevOps managers can see revenue and burn, but not which AI workloads, infra tier
 - Desktop-first; no mobile redesign this sprint
 - Trust: AI suggestions show confidence + lineage
 - a11y: WCAG 2.2 AA for tables, focus, color-only status
-- Time: 2-3 week concept sprint
+- Time: 2–3 week design sprint
 - Visual: Linear/Stripe quiet enterprise, teal `#0D9488` only
 
 ### Process
-1. **Frame & research** - Assumed inputs: SaaS P&L patterns, AI usage invoices, competitive glance at Stripe-like dashboards and Linear. CostRadar-style margin UX as personal craft inspiration only (not a client claim). Assumption: users know contribution margin vocabulary.
+1. **Frame & research** - Assumed inputs: SaaS P&L patterns, AI usage invoices, competitive glance at Stripe-like dashboards and Linear. Assumption: users know contribution margin vocabulary.
 2. **Flows & information architecture** - Primary path: Overview → Margin leak list → Detail drawer → Action confirm. Secondary: Saved views, Export board pack, AI explain panel.
 3. **Options explored** - (A) Mega-dashboard with 12 widgets (rejected: overload). (B) "Week in review" story UI (rejected: too slow for daily ops). (C) Dense table + drawer + AI cite panel (chosen: power-user scan + local actions).
 4. **Visual & design system decisions** - Neutral gray canvas, 13/14px UI sans, teal for interactive + positive delta only. Status via icon + text, never color alone. Density tokens: `comfortable` / `compact` toggle for finance vs ops personas.
-5. **Prototype & critique** - Stitch: Overview, Leak detail, AI explain. Figma: table keyboard nav, drawer focus trap, confidence chip readability.
-6. **Validation notes** - Heuristic pass on Nielsen "visibility of system status"; assumed risk: users misread "illustrative savings" as guaranteed cash. Copy guardrails added.
+5. **Prototype & critique** - High-fidelity prototype: Overview, Leak detail, AI explain. Figma: table keyboard nav, drawer focus trap, confidence chip readability.
+6. **Validation notes** - Heuristic pass on Nielsen "visibility of system status"; risk: users misread estimated savings as guaranteed cash. Copy guardrails added.
 
 ### Key decisions
 - I chose a **leak-first list** because margin problems are exceptions, not averages; I rejected a KPI-hero wall.
@@ -60,8 +60,8 @@ Empty: "No leaks above threshold." Error: "Live feed delayed; last sync 14:02." 
 Tokens: `color.accent.teal`, `color.delta.pos/neg`, `space.dense`, `type.tabular`. Components: DataTable compact, LeakRow, ConfidenceChip, CitePanel, SoftConfirm. Pattern: anomaly → local action → undo.
 
 ### Outcomes & learnings
-- **Illustrative target:** time-to-first-insight under 10s on Overview
-- **Assumed success metric for the concept:** ≥70% of guerrilla testers name the top leak without coaching
+- **Design target:** time-to-first-insight under 10s on Overview
+- **Prototype success target:** ≥70% of prototype reviewers name the top leak without coaching
 - Ship-test next: invoice connectors, role-based leak visibility, board-ready export
 - Hiring signal: AI + dense B2B SaaS ops UX with trust and a11y
 
@@ -75,10 +75,10 @@ Tokens: `color.accent.teal`, `color.delta.pos/neg`, `space.dense`, `type.tabular
 
 ## 2. Harbor - Fintech repayments and insights companion
 
-**Badge:** Concept product · Portfolio exploration 
-**Role:** Lead Product Designer (concept) 
+**Badge:** Personal exploration 
+**Role:** Lead Product Designer 
 **Platform:** iOS 
-**Timeline:** 2-3 week concept sprint (illustrative) 
+**Timeline:** 2–3 week design sprint 
 **Tags:** Fintech, iOS, HIG, Trust UX, Repayments
 
 ### Snapshot
@@ -98,7 +98,7 @@ Borrowers understand the minimum due, but not the interest trajectory or the emo
 **Constraints**
 - iOS HIG; native tab + sheet patterns
 - Regulated-feel trust: no dark patterns, no confetti on debt
-- Timeboxed concept sprint
+- Timeboxed design sprint
 - Assumed bank-grade data; no live API in prototype
 - Accessibility: Skin Tone-independent iconography; high-contrast money states
 
@@ -107,14 +107,14 @@ Borrowers understand the minimum due, but not the interest trajectory or the emo
 2. **Flows & IA** - Home balance → Plan repayment → Confirm → Insights. Settings for due reminders only.
 3. **Options explored** - (A) Chatbot coach as home (rejected: trust risk). (B) Spreadsheet-like planner (rejected: cold, un-iOS). (C) Card stack + interactive slider with live interest delta (chosen: tactile, HIG-aligned).
 4. **Visual & DS** - Soft neutrals, system SF Pro, blue trust accent, large tabular numerals. Motion: 200ms sheets, no bounce on money.
-5. **Prototype & critique** - Stitch Home, Plan slider, Confirm; Figma VoiceOver labels and Reduce Motion paths.
+5. **Prototype & critique** - High-fidelity prototype: Home, Plan slider, Confirm; Figma VoiceOver labels and Reduce Motion paths.
 6. **Validation notes** - Heuristic on error prevention; risk that "recommended" reads as bank advice. Relabeled to "Suggested for lower interest (not advice)".
 
 ### Key decisions
 - I chose a **live interest delta on the slider** because abstract APR fails; I rejected static tip cards.
 - I chose **suggested vs due** as two distinct CTAs because conflating them creates regret; I rejected a single smart default button.
 - I chose **no gamification** because debt UX that celebrates feels manipulative; I rejected streaks and badges.
-- I chose **plain-language footnotes** over legalese walls for the concept; production would still need compliance review.
+- I chose **plain-language footnotes** over legalese walls for this exploration; production would still need compliance review.
 
 ### Solution
 1. **Home - Balance & next due** - Amount due, days left, `Plan repayment`. Proves calm hierarchy.
@@ -127,8 +127,8 @@ Empty: "Link a card to see repayments." Error: "Bank timeout - try again; nothin
 Tokens: `color.trust.blue`, `type.money.lg`, `space.sheet`. Components: MoneyHero, PaySlider, DeltaPill, TrustFootnote, ConfirmSheet. Pattern: preview consequence → confirm → quiet success.
 
 ### Outcomes & learnings
-- **Illustrative target:** users can state interest impact of +€50 payment after one pass
-- **Assumed success metric for the concept:** fewer "is this advice?" confusions after footnote redesign
+- **Design target:** users can state interest impact of +€50 payment after one pass
+- **Prototype success target:** fewer "is this advice?" confusions after footnote redesign
 - Ship-test next: real schedule conflicts, multi-card allocation, biometric confirm
 - Hiring signal: regulated-feel mobile fintech with HIG craft and trust microcopy
 
@@ -142,10 +142,10 @@ Tokens: `color.trust.blue`, `type.money.lg`, `space.sheet`. Components: MoneyHer
 
 ## 3. Circuit - Deploy and observability console for engineers
 
-**Badge:** Concept product · Portfolio exploration 
-**Role:** Lead Product Designer (concept) 
+**Badge:** Personal exploration 
+**Role:** Lead Product Designer 
 **Platform:** Web dark 
-**Timeline:** 2-3 week concept sprint (illustrative) 
+**Timeline:** 2–3 week design sprint 
 **Tags:** Developer tools, Observability, Dark UI, Dense UX, Web
 
 ### Snapshot
@@ -174,7 +174,7 @@ After a deploy, engineers bounce between CI, logs, and status pages to answer "i
 2. **Flows & IA** - Projects → Deploy timeline → Incident drawer → Rollback. Global `⌘K`.
 3. **Options explored** - (A) Separate Deploy and Observe apps (rejected: context switch). (B) Full IDE-in-browser (rejected: scope). (C) Unified timeline with deploy pins + signal bands (chosen).
 4. **Visual & DS** - Zinc-950 canvas, 12px mono for IDs, semantic green/amber/red with patterns (not color-only). Accent electric mint for focus.
-5. **Prototype & critique** - Stitch Timeline, Incident, Rollback; Figma keyboard map and contrast audit.
+5. **Prototype & critique** - High-fidelity prototype: Timeline, Incident, Rollback; Figma keyboard map and contrast audit.
 6. **Validation notes** - Risk: density scares less senior engineers. Added progressive disclosure for "Simple status" mode.
 
 ### Key decisions
@@ -194,8 +194,8 @@ Empty: "No deploys in range - widen window." Error: "Live metrics lagging." Succ
 Tokens: `color.canvas.void`, `color.signal.*`, `type.mono.xs`. Components: TimelineTrack, DeployPin, SignalBand, CmdK, BlastRadiusCard. Pattern: correlate → diagnose → reversible action.
 
 ### Outcomes & learnings
-- **Illustrative target:** median "find bad deploy" under 30s in prototype walkthroughs
-- **Assumed success metric for the concept:** keyboard-only completion of rollback happy path
+- **Design target:** median "find bad deploy" under 30s in prototype walkthroughs
+- **Prototype success target:** keyboard-only completion of rollback happy path
 - Ship-test next: real log deep-links, multi-env switcher, SLO burn alerts
 - Hiring signal: dense developer-tool craft, systems thinking, keyboard UX
 
@@ -209,10 +209,10 @@ Tokens: `color.canvas.void`, `color.signal.*`, `type.mono.xs`. Components: Timel
 
 ## 4. Folio - Social critique network for designers
 
-**Badge:** Concept product · Portfolio exploration 
-**Role:** Lead Product Designer (concept) 
+**Badge:** Personal exploration 
+**Role:** Lead Product Designer 
 **Platform:** Android 
-**Timeline:** 2-3 week concept sprint (illustrative) 
+**Timeline:** 2–3 week design sprint 
 **Tags:** Android, Community, Critique, Editorial, Social
 
 ### Snapshot
@@ -231,7 +231,7 @@ Designers want feedback that improves the work, not engagement farming. Persona:
 
 **Constraints**
 - Android Material 3; dynamic color optional
-- Moderation assumed lightweight for concept
+- Moderation assumed lightweight for this exploration
 - Timeboxed sprint
 - Editorial warmth without looking non-native
 - a11y: scalable type, content descriptions for mock images
@@ -241,7 +241,7 @@ Designers want feedback that improves the work, not engagement farming. Persona:
 2. **Flows & IA** - Feed → Piece → Critique composer → Thank / iterate. Profile shows critique given/received ratio.
 3. **Options explored** - (A) Anonymous roast mode (rejected: toxic). (B) Live video rooms only (rejected: scheduling friction). (C) Async structured critique cards (chosen).
 4. **Visual & DS** - Warm paper backgrounds, serif for titles, sans for UI, terracotta accent. Soft elevation, generous image crops.
-5. **Prototype & critique** - Stitch Feed, Piece detail, Critique composer; Figma contrast on warm paper.
+5. **Prototype & critique** - High-fidelity prototype: Feed, Piece detail, Critique composer; Figma contrast on warm paper.
 6. **Validation notes** - Risk: structure feels homework-like. Softened prompts to optional chips, not mandatory forms.
 
 ### Key decisions
@@ -261,8 +261,8 @@ Empty: "Your feed is quiet - follow three craft accounts." Error: "Upload failed
 Tokens: `color.paper.warm`, `color.accent.terracotta`, `type.display.serif`. Components: PieceCard, CritiqueChip, ComposerSheet, RatioBadge. Pattern: show goals → critique on axes → thank.
 
 ### Outcomes & learnings
-- **Illustrative target:** average critique length and specificity above unstructured social baselines (qualitative)
-- **Assumed success metric for the concept:** creators mark ≥50% of critiques "useful" in prototype survey
+- **Design target:** average critique length and specificity above unstructured social baselines (qualitative)
+- **Prototype success target:** creators mark ≥50% of critiques "useful" in prototype survey
 - Ship-test next: moderation queues, private critique circles, Figma embed
 - Hiring signal: community product craft, Android Material fluency, editorial systems
 
@@ -276,10 +276,10 @@ Tokens: `color.paper.warm`, `color.accent.terracotta`, `type.display.serif`. Com
 
 ## 5. Quorum - B2B roles, permissions, and partner activation
 
-**Badge:** Concept product · Portfolio exploration 
-**Role:** Lead Product Designer (concept) 
+**Badge:** Personal exploration 
+**Role:** Lead Product Designer 
 **Platform:** Web enterprise 
-**Timeline:** 2-3 week concept sprint (illustrative) 
+**Timeline:** 2–3 week design sprint 
 **Tags:** B2B, Permissions, Partner activation, Enterprise, Lifecycle
 
 ### Snapshot
@@ -308,7 +308,7 @@ Partner managers lose days to "who can see what" email threads after a new resel
 2. **Flows & IA** - Partners list → Invite → Role pick → Activation checklist → Audit.
 3. **Options explored** - (A) Raw permission matrix first (rejected: expert-only). (B) Wizard with no escape hatch (rejected: inflexible). (C) Role cards + progressive permission detail + checklist (chosen).
 4. **Visual & DS** - Cool gray enterprise, indigo accent, 14px UI. Role cards with risk chips (Low/Med/High).
-5. **Prototype & critique** - Stitch Partners, Role picker, Activation; Figma focus order on multi-step invite.
+5. **Prototype & critique** - High-fidelity prototype: Partners, Role picker, Activation; Figma focus order on multi-step invite.
 6. **Validation notes** - Risk: "Admin" label overused. Renamed to scoped names: `Billing viewer`, `Catalog editor`, `Partner admin`.
 
 ### Key decisions
@@ -328,8 +328,8 @@ Empty: "No partners yet - invite your first reseller." Error: "Invite email boun
 Tokens: `color.accent.indigo`, `color.risk.*`. Components: PartnerRow, RoleCard, RiskChip, ChecklistItem, AuditEvent. Pattern: invite → scoped role → activate → audit.
 
 ### Outcomes & learnings
-- **Illustrative target:** partner admin completes invite + role without reading a help article
-- **Assumed success metric for the concept:** time-to-first partner action simulated under 1 guided session
+- **Design target:** partner admin completes invite + role without reading a help article
+- **Prototype success target:** time-to-first partner action simulated under 1 guided session
 - Ship-test next: SCIM/SSO mapping, custom roles, bulk invites
 - Hiring signal: B2B lifecycle, permissions systems thinking, enterprise clarity
 
@@ -343,10 +343,10 @@ Tokens: `color.accent.indigo`, `color.risk.*`. Components: PartnerRow, RoleCard,
 
 ## 6. Pulse - Energy and recovery wellness companion
 
-**Badge:** Concept product · Portfolio exploration 
-**Role:** Lead Product Designer (concept) 
+**Badge:** Personal exploration 
+**Role:** Lead Product Designer 
 **Platform:** iOS 
-**Timeline:** 2-3 week concept sprint (illustrative) 
+**Timeline:** 2–3 week design sprint 
 **Tags:** Wellness, iOS, Soft humanist, Habit, Health-adjacent
 
 ### Snapshot
@@ -360,12 +360,12 @@ People track steps and sleep in different apps, then feel judged by red rings. P
 - One daily "energy snapshot" without spreadsheet overload
 - Recovery suggestions that respect calendar reality
 - Soft visuals; zero shame copy
-- HealthKit-shaped assumptions (concept only)
+- HealthKit-shaped assumptions (exploration only)
 - Inclusive motion and Dynamic Type
 
 **Constraints**
 - iOS soft humanist; not clinical EHR
-- Not a medical device; disclaimer required
+- Wellness companion — not clinical or medical advice
 - Timeboxed sprint
 - Privacy-forward empty states
 - a11y: Reduce Motion alternatives for breathing cues
@@ -375,7 +375,7 @@ People track steps and sleep in different apps, then feel judged by red rings. P
 2. **Flows & IA** - Today snapshot → Check-in → Recovery suggestion → Weekly pattern.
 3. **Options explored** - (A) Hard gamification rings (rejected: shame). (B) Therapist chatbot (rejected: scope/trust). (C) Snapshot + one suggestion + optional journal (chosen).
 4. **Visual & DS** - Mist gradients, rounded 24pt cards, humanist sans, lavender accent. Illustration sparingly.
-5. **Prototype & critique** - Stitch Today, Check-in, Weekly; Figma Dynamic Type overflow and Reduce Motion.
+5. **Prototype & critique** - High-fidelity prototype: Today, Check-in, Weekly; Figma Dynamic Type overflow and Reduce Motion.
 6. **Validation notes** - Risk: users expect clinical accuracy. Added "Not medical advice" persistently but quietly.
 
 ### Key decisions
@@ -395,8 +395,8 @@ Empty: "Grant Health permissions when you're ready." Error: "Couldn't sync sleep
 Tokens: `color.mist.*`, `color.accent.lavender`, `radius.xl`. Components: SnapshotCard, CheckInSheet, SoftChart, SuggestionPill, QuietDisclaimer. Pattern: notice → tiny input → one action.
 
 ### Outcomes & learnings
-- **Illustrative target:** check-in completion feels under 20 seconds in prototype tests
-- **Assumed success metric for the concept:** qualitative "I don't feel judged" majority in guerrilla feedback
+- **Design target:** check-in completion feels under 20 seconds in prototype tests
+- **Prototype success target:** qualitative "I don't feel judged" majority in prototype feedback
 - Ship-test next: real HealthKit, Focus mode integration, clinician-safe copy review
 - Hiring signal: soft mobile craft, habit UX ethics, inclusive health-adjacent design
 
@@ -410,10 +410,10 @@ Tokens: `color.mist.*`, `color.accent.lavender`, `radius.xl`. Components: Snapsh
 
 ## 7. Atlas CMS - Design system docs and playground
 
-**Badge:** Concept product · Portfolio exploration 
-**Role:** Lead Product Designer (concept) 
+**Badge:** Personal exploration 
+**Role:** Lead Product Designer 
 **Platform:** Web docs 
-**Timeline:** 2-3 week concept sprint (illustrative) 
+**Timeline:** 2–3 week design sprint 
 **Tags:** Design system, Docs, Playground, Tokens, Web
 
 ### Snapshot
@@ -442,8 +442,8 @@ Designers and engineers disagree because the "source of truth" is a stale Figma 
 2. **Flows & IA** - Home → Component page → Playground → Tokens. Global search.
 3. **Options explored** - (A) Storybook skin only (rejected: weak guidance). (B) Marketing site for DS (rejected: hollow). (C) Docs + playground + tokens explorer (chosen).
 4. **Visual & DS** - White/gray docs chrome, monospace for props, accent for interactive playground only.
-5. **Prototype & critique** - Stitch Component page, Playground, Tokens; Figma heading outline and skip-link.
-6. **Validation notes** - Risk: playground code drifts from real package. Labeled "Concept playground · wire to package in production".
+5. **Prototype & critique** - High-fidelity prototype: Component page, Playground, Tokens; Figma heading outline and skip-link.
+6. **Validation notes** - Risk: playground code drifts from real package. Labeled "Exploration playground · wire to package in production".
 
 ### Key decisions
 - I chose **playground beside guidance** because isolated Storybook tabs lose narrative; I rejected docs-without-play.
@@ -462,8 +462,8 @@ Empty: "No matches - try token names." Error: "Playground runtime failed." Succe
 Meta-DS for the docs site itself: DocShell, PropTable, PlaygroundFrame, DoDont, TokenSwatch, VersionSelect. Pattern: teach → try → copy → contribute.
 
 ### Outcomes & learnings
-- **Illustrative target:** designer and engineer both complete "find + copy Button" in under 2 minutes
-- **Assumed success metric for the concept:** playground used in majority of concept walkthroughs
+- **Design target:** designer and engineer both complete "find + copy Button" in under 2 minutes
+- **Prototype success target:** playground used in majority of design walkthroughs
 - Ship-test next: real package wiring, visual regression embeds, RFC workflow
 - Hiring signal: design systems thinking, docs UX, designer-engineer bridge
 
@@ -477,10 +477,10 @@ Meta-DS for the docs site itself: DocShell, PropTable, PlaygroundFrame, DoDont, 
 
 ## 8. Nest - Local services marketplace
 
-**Badge:** Concept product · Portfolio exploration 
-**Role:** Lead Product Designer (concept) 
+**Badge:** Personal exploration 
+**Role:** Lead Product Designer 
 **Platform:** iOS + desktop web 
-**Timeline:** 2-3 week concept sprint (illustrative) 
+**Timeline:** 2–3 week design sprint 
 **Tags:** Marketplace, Cross-platform, Local services, Trust, Booking
 
 ### Snapshot
@@ -509,7 +509,7 @@ Hiring a local pro is fragmented across chats and Facebook groups with unclear p
 2. **Flows & IA** - Search → Pro profile → Get quote / Book → Chat. Pro side sketched only.
 3. **Options explored** - (A) Chat-first, price later (rejected: distrust). (B) Instant book only (rejected: too rigid for repairs). (C) Profile with clear rate + request-to-book (chosen).
 4. **Visual & DS** - Shared tokens; iOS uses HIG bars, web uses sidebar filters. Accent coral for CTAs.
-5. **Prototype & critique** - Stitch iOS Search, Profile, Booking; web Search results; Figma parity checklist.
+5. **Prototype & critique** - High-fidelity prototype: iOS Search, Profile, Booking; web Search results; Figma parity checklist.
 6. **Validation notes** - Risk: "Verified" implies background check depth. Relabeled "ID checked · details" with expandable meaning.
 
 ### Key decisions
@@ -523,14 +523,14 @@ Hiring a local pro is fragmented across chats and Facebook groups with unclear p
 2. **Pro profile** - Portfolio, reviews, fee breakdown, `Request to book`. Proves transparency.
 3. **Booking confirm (web)** - Slot, address, total, `Confirm request`. Proves desktop form comfort.
 
-Empty: "No pros in range - widen radius." Error: "Payment method failed - request not sent." Success: "Request sent · usually replies in 2h (illustrative)".
+Empty: "No pros in range - widen radius." Error: "Payment method failed - request not sent." Success: "Request sent · usually replies in 2h".
 
 ### Design system notes
 Shared: PriceBreakdown, TrustBadge, ProCard, SlotPicker. Platform shells differ. Pattern: search → trust → transparent total → request.
 
 ### Outcomes & learnings
-- **Illustrative target:** seekers can state total cost before messaging in prototype tests
-- **Assumed success metric for the concept:** cross-platform task success parity on core booking
+- **Design target:** seekers can state total cost before messaging in prototype tests
+- **Prototype success target:** cross-platform task success parity on core booking
 - Ship-test next: pro onboarding, dispute flow, real maps performance
 - Hiring signal: multi-platform marketplace UX, trust design, fee transparency
 
@@ -544,14 +544,14 @@ Shared: PriceBreakdown, TrustBadge, ProCard, SlotPicker. Platform shells differ.
 
 ## 9. Signal Rooms - Live audio community rooms
 
-**Badge:** Concept product · Portfolio exploration 
-**Role:** Lead Product Designer (concept) 
+**Badge:** Personal exploration 
+**Role:** Lead Product Designer 
 **Platform:** iOS dark expressive 
-**Timeline:** 2-3 week concept sprint (illustrative) 
+**Timeline:** 2–3 week design sprint 
 **Tags:** Live audio, Community, iOS, Dark expressive, Social
 
 ### Snapshot
-Signal Rooms is a live audio community product (not affiliated with Signal messenger) for topic rooms, speakers, and listeners with expressive dark UI. The bet: expressive motion and clear stage roles make audio social feel alive without chaotic moderation UX.
+Signal Rooms is a live audio community product for topic rooms, speakers, and listeners with expressive dark UI. The bet: expressive motion and clear stage roles make audio social feel alive without chaotic moderation UX.
 
 ### Problem
 People miss serendipitous conversation but hate Zoom formality and Twitter Spaces chaos. JTBD: "Drop into a design-career room, raise hand, speak for two minutes, leave without social hangover."
@@ -576,8 +576,8 @@ People miss serendipitous conversation but hate Zoom formality and Twitter Space
 2. **Flows & IA** - Lobby → Live room → Raise hand → On stage → Leave. Create room flow secondary.
 3. **Options explored** - (A) Flat everyone-can-talk (rejected: chaos). (B) Ticketed webinar (rejected: cold). (C) Stage + hand queue + expressive presence (chosen).
 4. **Visual & DS** - Deep charcoal, neon violet accent, bold display type for room titles, soft glow on active speaker (with solid fallback).
-5. **Prototype & critique** - Stitch Lobby, Live room, Hand queue; Figma Reduce Motion (glow → border).
-6. **Validation notes** - Risk: name collision with Signal messenger. Portfolio badge and subtitle stress "audio rooms product · unrelated brand".
+5. **Prototype & critique** - High-fidelity prototype: Lobby, Live room, Hand queue; Figma Reduce Motion (glow → border).
+6. **Validation notes** - Prototype covers Lobby → Live room → Hand queue; Reduce Motion swaps glow for a solid border.
 
 ### Key decisions
 - I chose **explicit stage roles** because audio without structure fails; I rejected open-mic default.
@@ -596,8 +596,8 @@ Empty: "No live rooms - start one." Error: "Mic permission denied." Success: "Yo
 Tokens: `color.void`, `color.accent.violet`, `effect.speakGlow`. Components: RoomCard, StageGrid, HandQueue, SafetySheet. Pattern: enter → role-aware participate → exit cleanly.
 
 ### Outcomes & learnings
-- **Illustrative target:** new users identify host vs speaker vs listener in under 5 seconds
-- **Assumed success metric for the concept:** raise-hand → speak path completed without host coaching in prototype
+- **Design target:** new users identify host vs speaker vs listener in under 5 seconds
+- **Prototype success target:** raise-hand → speak path completed without host coaching in prototype
 - Ship-test next: captions, report flow depth, network degradation states
 - Hiring signal: expressive mobile brand systems, live social UX, safety affordances
 
@@ -611,10 +611,10 @@ Tokens: `color.void`, `color.accent.violet`, `effect.speakGlow`. Components: Roo
 
 ## 10. Ledgerly Studio - Growth experimentation lab
 
-**Badge:** Concept product · Portfolio exploration 
-**Role:** Lead Product Designer (concept) 
+**Badge:** Personal exploration 
+**Role:** Lead Product Designer 
 **Platform:** Web analytics 
-**Timeline:** 2-3 week concept sprint (illustrative) 
+**Timeline:** 2–3 week design sprint 
 **Tags:** Growth, Experimentation, Analytics, Web, Metrics
 
 ### Snapshot
@@ -643,8 +643,8 @@ Growth teams lose signal when experiment setup, design variants, and analytics l
 2. **Flows & IA** - Experiments list → Create (hypothesis) → Variants → Results → Decision.
 3. **Options explored** - (A) Pure BI dashboards (rejected: no experiment object). (B) Code-only flags UI (rejected: excludes design). (C) Lab notebook + variants + results decision (chosen).
 4. **Visual & DS** - Light analytics chrome, emerald for wins, restrained red for losses, tabular nums. Chart + table twins.
-5. **Prototype & critique** - Stitch List, Create, Results; Figma table fallback and decision modal copy.
-6. **Validation notes** - Risk: overclaiming causality. Added "Illustrative results · not causal proof" on concept screens.
+5. **Prototype & critique** - High-fidelity prototype: List, Create, Results; Figma table fallback and decision modal copy.
+6. **Validation notes** - Risk: overclaiming causality. Added "Prototype results · not causal proof" on exploration screens.
 
 ### Key decisions
 - I chose **hypothesis as required field** because tool-led tests without questions waste traffic; I rejected metric-first blank experiments.
@@ -663,8 +663,8 @@ Empty: "No experiments yet - write your first hypothesis." Error: "Stats engine 
 Tokens: `color.win.emerald`, `color.lose.rose`, `type.tabular`. Components: ExperimentRow, HypothesisForm, VariantFrame, MetricPair, DecisionModal. Pattern: ask → variant → read guardrails → decide.
 
 ### Outcomes & learnings
-- **Illustrative target:** cross-functional pair can create a complete experiment object in one sitting
-- **Assumed success metric for the concept:** users correctly explain primary vs guardrail in a teach-back
+- **Design target:** cross-functional pair can create a complete experiment object in one sitting
+- **Prototype success target:** users correctly explain primary vs guardrail in a teach-back
 - Ship-test next: real stats engine, design tool embeds, rollout checklist
 - Hiring signal: growth experimentation literacy, metrics thinking, designer-in-the-loop A/B UX
 
@@ -679,19 +679,19 @@ Tokens: `color.win.emerald`, `color.lose.rose`, `type.tabular`. Components: Expe
 ## Gallery site map (suggested)
 
 ### Routes
-- `/` - Gallery grid of 10 concept cards
+- `/` - Gallery grid of 10 exploration cards
 - `/work/:slug` - Case study page (parses H2/H3 structure above)
 - `/work` - Filtered index (same grid, query params)
 - `/about` - Positioning (Senior UX Manager + Design Engineer; real products called out separately)
-- `/lab` optional - AI/Stitch process note
+- `/lab` optional - process notes
 
 ### Filters
 - **Platform:** Web desktop, Web dark, Web docs, Web enterprise, Web analytics, iOS, Android, iOS + desktop web
 - **Domain:** AI ops, Fintech, Devtools, Community, B2B permissions, Wellness, Design system, Marketplace, Live audio, Growth
 - **Style:** Quiet enterprise, HIG trust, Dense dark, Warm editorial, Soft humanist, Docs, Expressive dark, Analytics
 
-### Honesty badge on cards
-Every card shows a persistent pill: `Concept product · Portfolio exploration` above the title. Case pages repeat the badge under H2. Footer note: "Speculative explorations · not client work. Shipped products (e.g. CostRadar, SafeRadar) and leadership work (Appfire/SoftwarePlant) are documented separately."
+### Gallery badge on cards
+Every card shows a persistent pill: `Personal exploration` above the title (CostRadar uses `Shipped product · Founder case study`). Case pages repeat the badge under the title.
 
 ### Card anatomy
 Cover image · badge · title · one-liner · platform · tags (max 3 visible) · accent bar.
@@ -704,10 +704,10 @@ Cover image · badge · title · one-liner · platform · tags (max 3 visible) �
 slug: northline
 title: Northline
 oneLiner: AI ops profitability console for B2B SaaS
-badge: Concept product · Portfolio exploration
-role: Lead Product Designer (concept)
+badge: Personal exploration
+role: Lead Product Designer
 platform: Web desktop
-timeline: 2-3 week concept sprint (illustrative)
+timeline: 2–3 week design sprint
 tags:
  - AI
  - B2B SaaS

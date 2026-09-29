@@ -2,8 +2,8 @@
 slug: northline
 title: "Northline"
 oneLiner: "AI ops console that surfaces margin leaks and model-driven savings for RevOps and finance"
-badge: "Concept · Portfolio exploration"
-role: "Lead Product Designer (concept)"
+badge: "Personal exploration"
+role: "Lead Product Designer"
 platform: "Web desktop"
 timeline: "2–3 week design sprint"
 tags:
@@ -24,7 +24,7 @@ portfolioSignals:
   - "Dense B2B SaaS"
   - "Trust and lineage"
   - "Accessibility in data UI"
-  - "E2E concept ownership"
+  - "E2E product exploration"
 ---
 
 ### Snapshot
@@ -45,16 +45,16 @@ RevOps managers can see revenue and burn, but not which AI workloads, infra tier
 - Desktop-first; no mobile redesign this sprint
 - Trust: AI suggestions show confidence + lineage
 - a11y: WCAG 2.2 AA for tables, focus, color-only status
-- Time: 2-3 week concept sprint
+- Time: 2–3 week design sprint
 - Visual: Linear/Stripe quiet enterprise, teal `#0D9488` only
 
 ### Process
-1. **Frame & research** - Assumed inputs: SaaS P&L patterns, AI usage invoices, competitive glance at Stripe-like dashboards and Linear. CostRadar-style margin UX as personal craft inspiration only (not a client claim). Assumption: users know contribution margin vocabulary.
+1. **Frame & research** - Assumed inputs: SaaS P&L patterns, AI usage invoices, competitive glance at Stripe-like dashboards and Linear. Assumption: users know contribution margin vocabulary.
 2. **Flows & information architecture** - Primary path: Overview → Margin leak list → Detail drawer → Action confirm. Secondary: Saved views, Export board pack, AI explain panel.
 3. **Options explored** - (A) Mega-dashboard with 12 widgets (rejected: overload). (B) "Week in review" story UI (rejected: too slow for daily ops). (C) Dense table + drawer + AI cite panel (chosen: power-user scan + local actions).
 4. **Visual & design system decisions** - Neutral gray canvas, 13/14px UI sans, teal for interactive + positive delta only. Status via icon + text, never color alone. Density tokens: `comfortable` / `compact` toggle for finance vs ops personas.
-5. **Prototype & critique** - Stitch: Overview, Leak detail, AI explain. Figma: table keyboard nav, drawer focus trap, confidence chip readability.
-6. **Validation notes** - Heuristic pass on Nielsen "visibility of system status"; assumed risk: users misread "illustrative savings" as guaranteed cash. Copy guardrails added.
+5. **Prototype & critique** - High-fidelity prototype: Overview, Leak detail, AI explain. Figma: table keyboard nav, drawer focus trap, confidence chip readability.
+6. **Validation notes** - Heuristic pass on Nielsen "visibility of system status"; risk: users misread estimated savings as guaranteed cash. Copy guardrails added.
 
 ### Key decisions
 - I chose a **leak-first list** because margin problems are exceptions, not averages; I rejected a KPI-hero wall.
@@ -74,7 +74,7 @@ Empty: "No leaks above threshold." Error: "Live feed delayed; last sync 14:02." 
 Tokens: `color.accent.teal`, `color.delta.pos/neg`, `space.dense`, `type.tabular`. Components: DataTable compact, LeakRow, ConfidenceChip, CitePanel, SoftConfirm. Pattern: anomaly → local action → undo.
 
 ### Outcomes & learnings
-- **Illustrative target:** time-to-first-insight under 10s on Overview
-- **Assumed success metric for the concept:** ≥70% of guerrilla testers name the top leak without coaching
+- **Design target:** time-to-first-insight under 10s on Overview
+- **Prototype success target:** ≥70% of prototype reviewers name the top leak without coaching
 - Ship-test next: invoice connectors, role-based leak visibility, board-ready export
 - Hiring signal: AI + dense B2B SaaS ops UX with trust and a11y

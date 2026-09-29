@@ -2,8 +2,8 @@
 slug: pulse
 title: "Pulse"
 oneLiner: "Soft iOS companion for energy and recovery — sleep debt, focus blocks, shame-free check-ins"
-badge: "Concept · Portfolio exploration"
-role: "Lead Product Designer (concept)"
+badge: "Personal exploration"
+role: "Lead Product Designer"
 platform: "iOS"
 timeline: "2–3 week design sprint"
 tags:
@@ -38,12 +38,12 @@ People track steps and sleep in different apps, then feel judged by red rings. P
 - One daily "energy snapshot" without spreadsheet overload
 - Recovery suggestions that respect calendar reality
 - Soft visuals; zero shame copy
-- HealthKit-shaped assumptions (concept only)
+- HealthKit-shaped assumptions (exploration only)
 - Inclusive motion and Dynamic Type
 
 **Constraints**
 - iOS soft humanist; not clinical EHR
-- Not a medical device; disclaimer required
+- Wellness companion — not clinical or medical advice
 - Timeboxed sprint
 - Privacy-forward empty states
 - a11y: Reduce Motion alternatives for breathing cues
@@ -53,7 +53,7 @@ People track steps and sleep in different apps, then feel judged by red rings. P
 2. **Flows & IA** - Today snapshot → Check-in → Recovery suggestion → Weekly pattern.
 3. **Options explored** - (A) Hard gamification rings (rejected: shame). (B) Therapist chatbot (rejected: scope/trust). (C) Snapshot + one suggestion + optional journal (chosen).
 4. **Visual & DS** - Mist gradients, rounded 24pt cards, humanist sans, lavender accent. Illustration sparingly.
-5. **Prototype & critique** - Stitch Today, Check-in, Weekly; Figma Dynamic Type overflow and Reduce Motion.
+5. **Prototype & critique** - High-fidelity prototype: Today, Check-in, Weekly; Figma Dynamic Type overflow and Reduce Motion.
 6. **Validation notes** - Risk: users expect clinical accuracy. Added "Not medical advice" persistently but quietly.
 
 ### Key decisions
@@ -74,7 +74,7 @@ Empty: "Grant Health permissions when you're ready." Error: "Couldn't sync sleep
 Tokens: `color.mist.*`, `color.accent.lavender`, `radius.xl`. Components: SnapshotCard, CheckInSheet, SoftChart, SuggestionPill, QuietDisclaimer. Pattern: notice → tiny input → one action.
 
 ### Outcomes & learnings
-- **Illustrative target:** check-in completion feels under 20 seconds in prototype tests
-- **Assumed success metric for the concept:** qualitative "I don't feel judged" majority in guerrilla feedback
+- **Design target:** check-in completion feels under 20 seconds in prototype tests
+- **Prototype success target:** qualitative "I don't feel judged" majority in prototype feedback
 - Ship-test next: real HealthKit, Focus mode integration, clinician-safe copy review
 - Hiring signal: soft mobile craft, habit UX ethics, inclusive health-adjacent design

@@ -2,8 +2,8 @@
 slug: nest
 title: "Nest"
 oneLiner: "Cross-platform marketplace connecting neighbors with vetted local pros — trust, pricing, booking"
-badge: "Concept · Portfolio exploration"
-role: "Lead Product Designer (concept)"
+badge: "Personal exploration"
+role: "Lead Product Designer"
 platform: "iOS + desktop web"
 timeline: "2–3 week design sprint"
 tags:
@@ -53,7 +53,7 @@ Hiring a local pro is fragmented across chats and Facebook groups with unclear p
 2. **Flows & IA** - Search → Pro profile → Get quote / Book → Chat. Pro side sketched only.
 3. **Options explored** - (A) Chat-first, price later (rejected: distrust). (B) Instant book only (rejected: too rigid for repairs). (C) Profile with clear rate + request-to-book (chosen).
 4. **Visual & DS** - Shared tokens; iOS uses HIG bars, web uses sidebar filters. Accent coral for CTAs.
-5. **Prototype & critique** - Stitch iOS Search, Profile, Booking; web Search results; Figma parity checklist.
+5. **Prototype & critique** - High-fidelity prototype: iOS Search, Profile, Booking; web Search results; Figma parity checklist.
 6. **Validation notes** - Risk: "Verified" implies background check depth. Relabeled "ID checked · details" with expandable meaning.
 
 ### Key decisions
@@ -67,14 +67,14 @@ Hiring a local pro is fragmented across chats and Facebook groups with unclear p
 2. **Mobile Pro Profile & Reviews** — Portfolio, reviews, and fee breakdown. Proves transparency before booking.
 3. **Mobile Booking & Checkout** — Slot, address, total, and request confirm. Proves transparent commit.
 
-Empty: "No pros in range - widen radius." Error: "Payment method failed - request not sent." Success: "Request sent · usually replies in 2h (illustrative)".
+Empty: "No pros in range - widen radius." Error: "Payment method failed - request not sent." Success: "Request sent · usually replies in 2h".
 
 
 ### Design system notes
 Shared: PriceBreakdown, TrustBadge, ProCard, SlotPicker. Platform shells differ. Pattern: search → trust → transparent total → request.
 
 ### Outcomes & learnings
-- **Illustrative target:** seekers can state total cost before messaging in prototype tests
-- **Assumed success metric for the concept:** cross-platform task success parity on core booking
+- **Design target:** seekers can state total cost before messaging in prototype tests
+- **Prototype success target:** cross-platform task success parity on core booking
 - Ship-test next: pro onboarding, dispute flow, real maps performance
 - Hiring signal: multi-platform marketplace UX, trust design, fee transparency

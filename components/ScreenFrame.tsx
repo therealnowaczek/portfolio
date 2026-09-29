@@ -6,9 +6,10 @@ import { ProjectImage } from "./ProjectImage";
 const PHONE =
   "relative mx-auto aspect-[390/844] w-full max-w-[280px] bg-surface sm:max-w-[320px]";
 const PHONE_THUMB = "relative aspect-[390/844] w-full bg-surface";
+/** Matches desktop capture 1600×900 (exact 16:9 / aspect-video). */
 const DESKTOP = "relative aspect-video w-full bg-surface";
 
-/** FHD ≈ 1.78; iPhone ≈ 0.46 — anything under ~0.85 is a phone frame. */
+/** 16:9 ≈ 1.78; iPhone ≈ 0.46 — anything under ~0.85 is a phone frame. */
 function isTallRatio(width: number, height: number) {
   return height > 0 && width / height < 0.85;
 }

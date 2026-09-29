@@ -2,8 +2,8 @@
 slug: harbor
 title: "Harbor"
 oneLiner: "Calm iOS companion for revolving credit — see what you owe, plan repayments, stay in control"
-badge: "Concept · Portfolio exploration"
-role: "Lead Product Designer (concept)"
+badge: "Personal exploration"
+role: "Lead Product Designer"
 platform: "iOS"
 timeline: "2–3 week design sprint"
 tags:
@@ -44,7 +44,7 @@ Borrowers understand the minimum due, but not the interest trajectory or the emo
 **Constraints**
 - iOS HIG; native tab + sheet patterns
 - Regulated-feel trust: no dark patterns, no confetti on debt
-- Timeboxed concept sprint
+- Timeboxed design sprint
 - Assumed bank-grade data; no live API in prototype
 - Accessibility: Skin Tone-independent iconography; high-contrast money states
 
@@ -53,14 +53,14 @@ Borrowers understand the minimum due, but not the interest trajectory or the emo
 2. **Flows & IA** - Home balance → Plan repayment → Confirm → Insights. Settings for due reminders only.
 3. **Options explored** - (A) Chatbot coach as home (rejected: trust risk). (B) Spreadsheet-like planner (rejected: cold, un-iOS). (C) Card stack + interactive slider with live interest delta (chosen: tactile, HIG-aligned).
 4. **Visual & DS** - Soft neutrals, system SF Pro, blue trust accent, large tabular numerals. Motion: 200ms sheets, no bounce on money.
-5. **Prototype & critique** - Stitch Home, Plan slider, Confirm; Figma VoiceOver labels and Reduce Motion paths.
+5. **Prototype & critique** - High-fidelity prototype: Home, Plan slider, Confirm; Figma VoiceOver labels and Reduce Motion paths.
 6. **Validation notes** - Heuristic on error prevention; risk that "recommended" reads as bank advice. Relabeled to "Suggested for lower interest (not advice)".
 
 ### Key decisions
 - I chose a **live interest delta on the slider** because abstract APR fails; I rejected static tip cards.
 - I chose **suggested vs due** as two distinct CTAs because conflating them creates regret; I rejected a single smart default button.
 - I chose **no gamification** because debt UX that celebrates feels manipulative; I rejected streaks and badges.
-- I chose **plain-language footnotes** over legalese walls for the concept; production would still need compliance review.
+- I chose **plain-language footnotes** over legalese walls for this exploration; production would still need compliance review.
 
 ### Solution
 1. **Harbor Home** — Balance, next due, and calm hierarchy into plan-or-pay. Proves trust-first money UI.
@@ -74,7 +74,7 @@ Empty: "Link a card to see repayments." Error: "Bank timeout - try again; nothin
 Tokens: `color.trust.blue`, `type.money.lg`, `space.sheet`. Components: MoneyHero, PaySlider, DeltaPill, TrustFootnote, ConfirmSheet. Pattern: preview consequence → confirm → quiet success.
 
 ### Outcomes & learnings
-- **Illustrative target:** users can state interest impact of +€50 payment after one pass
-- **Assumed success metric for the concept:** fewer "is this advice?" confusions after footnote redesign
+- **Design target:** users can state interest impact of +€50 payment after one pass
+- **Prototype success target:** fewer "is this advice?" confusions after footnote redesign
 - Ship-test next: real schedule conflicts, multi-card allocation, biometric confirm
 - Hiring signal: regulated-feel mobile fintech with HIG craft and trust microcopy

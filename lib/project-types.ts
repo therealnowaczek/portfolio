@@ -1,4 +1,4 @@
-export type ProjectStatus = "shipped" | "concept";
+export type ProjectStatus = "shipped" | "exploration";
 
 export type ProjectMeta = {
   id: string;

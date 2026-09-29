@@ -10,10 +10,9 @@ export function Impact() {
         </h2>
         <p className="max-w-2xl text-sm leading-relaxed text-muted sm:text-[15px]">
           Results from <RichText>BigPicture</RichText> and{" "}
-          <RichText>Appfire</RichText> work. Each number has a short note on
-          scope — fuller case write-ups are still in progress. CostRadar.ai
-          shows I can design and ship a live product; it is not a verified
-          growth ROI claim.
+          <RichText>Appfire</RichText> work — each number includes a short
+          scope note. CostRadar.ai is the live product I designed and shipped
+          end-to-end.
         </p>
       </div>
 

@@ -2,8 +2,8 @@
 slug: circuit
 title: "Circuit"
 oneLiner: "Keyboard-first deploy and observability console — ship, watch signals, and roll back safely"
-badge: "Concept · Portfolio exploration"
-role: "Lead Product Designer (concept)"
+badge: "Personal exploration"
+role: "Lead Product Designer"
 platform: "Web dark"
 timeline: "2–3 week design sprint"
 tags:
@@ -53,7 +53,7 @@ After a deploy, engineers bounce between CI, logs, and status pages to answer "i
 2. **Flows & IA** - Projects → Deploy timeline → Incident drawer → Rollback. Global `⌘K`.
 3. **Options explored** - (A) Separate Deploy and Observe apps (rejected: context switch). (B) Full IDE-in-browser (rejected: scope). (C) Unified timeline with deploy pins + signal bands (chosen).
 4. **Visual & DS** - Zinc-950 canvas, 12px mono for IDs, semantic green/amber/red with patterns (not color-only). Accent electric mint for focus.
-5. **Prototype & critique** - Stitch Timeline, Incident, Rollback; Figma keyboard map and contrast audit.
+5. **Prototype & critique** - High-fidelity prototype: Timeline, Incident, Rollback; Figma keyboard map and contrast audit.
 6. **Validation notes** - Risk: density scares less senior engineers. Added progressive disclosure for "Simple status" mode.
 
 ### Key decisions
@@ -74,7 +74,7 @@ Empty: "No deploys in range - widen window." Error: "Live metrics lagging." Succ
 Tokens: `color.canvas.void`, `color.signal.*`, `type.mono.xs`. Components: TimelineTrack, DeployPin, SignalBand, CmdK, BlastRadiusCard. Pattern: correlate → diagnose → reversible action.
 
 ### Outcomes & learnings
-- **Illustrative target:** median "find bad deploy" under 30s in prototype walkthroughs
-- **Assumed success metric for the concept:** keyboard-only completion of rollback happy path
+- **Design target:** median "find bad deploy" under 30s in prototype walkthroughs
+- **Prototype success target:** keyboard-only completion of rollback happy path
 - Ship-test next: real log deep-links, multi-env switcher, SLO burn alerts
 - Hiring signal: dense developer-tool craft, systems thinking, keyboard UX

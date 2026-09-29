@@ -49,10 +49,6 @@ export function RoleFit() {
           <RichText>Appfire</RichText>, <RichText>BigPicture</RichText>, or
           CostRadar.ai, plus a concrete first 90 days.
         </p>
-        <p className="text-[15px] leading-relaxed text-muted sm:text-base">
-          Same person, different emphasis. You will not get the same three
-          bullets pasted under every job title.
-        </p>
       </div>
 
       <div className="grid gap-4">

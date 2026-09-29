@@ -2,8 +2,8 @@
 slug: atlas-cms
 title: "Atlas CMS"
 oneLiner: "Productized design-system docs with tokens, component specs, and a live props playground"
-badge: "Concept · Portfolio exploration"
-role: "Lead Product Designer (concept)"
+badge: "Personal exploration"
+role: "Lead Product Designer"
 platform: "Web docs"
 timeline: "2–3 week design sprint"
 tags:
@@ -53,8 +53,8 @@ Designers and engineers disagree because the "source of truth" is a stale Figma 
 2. **Flows & IA** - Home → Component page → Playground → Tokens. Global search.
 3. **Options explored** - (A) Storybook skin only (rejected: weak guidance). (B) Marketing site for DS (rejected: hollow). (C) Docs + playground + tokens explorer (chosen).
 4. **Visual & DS** - White/gray docs chrome, monospace for props, accent for interactive playground only.
-5. **Prototype & critique** - Stitch Component page, Playground, Tokens; Figma heading outline and skip-link.
-6. **Validation notes** - Risk: playground code drifts from real package. Labeled "Concept playground · wire to package in production".
+5. **Prototype & critique** - High-fidelity prototype: Component page, Playground, Tokens; Figma heading outline and skip-link.
+6. **Validation notes** - Risk: playground code drifts from real package. Labeled "Exploration playground · wire to package in production".
 
 ### Key decisions
 - I chose **playground beside guidance** because isolated Storybook tabs lose narrative; I rejected docs-without-play.
@@ -74,7 +74,7 @@ Empty: "No matches - try token names." Error: "Playground runtime failed." Succe
 Meta-DS for the docs site itself: DocShell, PropTable, PlaygroundFrame, DoDont, TokenSwatch, VersionSelect. Pattern: teach → try → copy → contribute.
 
 ### Outcomes & learnings
-- **Illustrative target:** designer and engineer both complete "find + copy Button" in under 2 minutes
-- **Assumed success metric for the concept:** playground used in majority of concept walkthroughs
+- **Design target:** designer and engineer both complete "find + copy Button" in under 2 minutes
+- **Prototype success target:** playground used in majority of design walkthroughs
 - Ship-test next: real package wiring, visual regression embeds, RFC workflow
 - Hiring signal: design systems thinking, docs UX, designer-engineer bridge

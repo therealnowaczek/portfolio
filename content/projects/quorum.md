@@ -2,8 +2,8 @@
 slug: quorum
 title: "Quorum"
 oneLiner: "Invite partners, assign plain-language roles, and activate them without a permissions spreadsheet"
-badge: "Concept · Portfolio exploration"
-role: "Lead Product Designer (concept)"
+badge: "Personal exploration"
+role: "Lead Product Designer"
 platform: "Web enterprise"
 timeline: "2–3 week design sprint"
 tags:
@@ -53,7 +53,7 @@ Partner managers lose days to "who can see what" email threads after a new resel
 2. **Flows & IA** - Partners list → Invite → Role pick → Activation checklist → Audit.
 3. **Options explored** - (A) Raw permission matrix first (rejected: expert-only). (B) Wizard with no escape hatch (rejected: inflexible). (C) Role cards + progressive permission detail + checklist (chosen).
 4. **Visual & DS** - Cool gray enterprise, indigo accent, 14px UI. Role cards with risk chips (Low/Med/High).
-5. **Prototype & critique** - Stitch Partners, Role picker, Activation; Figma focus order on multi-step invite.
+5. **Prototype & critique** - High-fidelity prototype: Partners, Role picker, Activation; Figma focus order on multi-step invite.
 6. **Validation notes** - Risk: "Admin" label overused. Renamed to scoped names: `Billing viewer`, `Catalog editor`, `Partner admin`.
 
 ### Key decisions
@@ -74,7 +74,7 @@ Empty: "No partners yet - invite your first reseller." Error: "Invite email boun
 Tokens: `color.accent.indigo`, `color.risk.*`. Components: PartnerRow, RoleCard, RiskChip, ChecklistItem, AuditEvent. Pattern: invite → scoped role → activate → audit.
 
 ### Outcomes & learnings
-- **Illustrative target:** partner admin completes invite + role without reading a help article
-- **Assumed success metric for the concept:** time-to-first partner action simulated under 1 guided session
+- **Design target:** partner admin completes invite + role without reading a help article
+- **Prototype success target:** time-to-first partner action simulated under 1 guided session
 - Ship-test next: SCIM/SSO mapping, custom roles, bulk invites
 - Hiring signal: B2B lifecycle, permissions systems thinking, enterprise clarity
