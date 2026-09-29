@@ -19,8 +19,8 @@ screens:
   - "Org pulse — Overview"
   - "Intake queue & triage"
   - "Estimation board"
-  - "Research ops library"
   - "Figma / standards hub"
+  - "Research ops library"
   - "Agentic loop workspace"
 portfolioSignals:
   - "Design Ops leadership at org scale"
@@ -31,10 +31,10 @@ portfolioSignals:
 ---
 
 ### Snapshot
-DesignOS is the internal UX operating system I shaped as Senior UX Manager at Appfire for a 35+ person distributed org across BigPicture, 7pace, and AI workstreams — intake, velocity-based estimation, Figma/standards governance, research ops, and a Sense→Frame→Agent→Craft→Ship→Learn loop with Craft and Ship as human gates.
+DesignOS is the internal UX operating system I shaped as Senior UX Manager at Appfire for a 35+ person distributed org spanning BigPicture, 7pace, and AI workstreams. It turns intake, velocity-based estimation, Figma/standards governance, research ops, and a Sense→Frame→Agent→Craft→Ship→Learn loop into shared infrastructure — with Craft and Ship as human gates.
 
 ### Problem
-A large distributed UX org needed predictable demand management and quality bars engineering could schedule against. Intake lived in Slack; estimates were tribal; Figma and research knowledge did not travel; AI drafts risked unsupervised ship without craft review.
+Demand arrived in Slack. Estimates lived in people’s heads. Figma libraries and research insights didn’t travel across squads. Engineering needed a UX status they could schedule against; AI drafts risked skipping craft review. The org needed an operating system, not more heroics from senior designers.
 
 ### Goals & constraints
 **Goals**
@@ -42,35 +42,34 @@ A large distributed UX org needed predictable demand management and quality bars
 - Turn intake → triage → estimate → commit into a shared ritual with SLA and completeness scoring
 - Govern Figma / design-system contributions with a11y, tokens, and docs gates
 - Treat research ops as reusable infrastructure (insight → decision), not one-off files
-- Introduce agents where they compress exploration — Craft/Ship stay human
+- Use agents where they compress exploration — Craft and Ship stay human
 
 **Constraints**
-- Desktop enterprise density; quiet indigo accent; WCAG-friendly status (never color-only)
+- Desktop enterprise density; quiet indigo accent; status never color-only
 - Agent drafts show lineage + confidence; Craft review required before Ship
-- Sample work items use anonymized product names (Orbit, Harbor Plan)
 - Ops console for a multi-product UX org — not a consumer marketing surface
 
 ### Process
-1. **Frame & research** - Mapped friction across intake, estimation, standards, and research reuse with squad leads and eng/PM stakeholders who needed predictable UX status.
-2. **Flows & information architecture** - Modules: Overview, Intake, Estimation, Standards, Research, Agentic loop, Squads. Primary path: New intake → completeness score → triage → estimate → commit.
-3. **Options explored** - (A) Spreadsheet + Slack ops (rejected: no shared source of truth). (B) Pure AI auto-ship pipeline (rejected: craft and system integrity). (C) Ops console with human Craft/Ship gates (chosen).
-4. **Visual & design system decisions** - Cool-gray canvas, single indigo accent, dense tables, pipeline as first-class motif. Status via icon + text.
-5. **Prototype & critique** - High-fidelity screens for Overview through Agentic workspace; empty and permission states treated as first-class.
-6. **Validation notes** - Success measured in planning clarity, standards adoption, and research reuse — not vanity efficiency banners.
+1. **Diagnose the friction with squad leads** - Interviewed UX leads and eng/PM partners on where work stalled: incomplete briefs, tribal estimates, standards drift, research that never got reused.
+2. **Design the operating modules** - Overview, Intake, Estimation, Standards, Research, Agentic loop, Squads. Primary path: new intake → completeness score → triage → estimate → commit.
+3. **Choose an ops console over shortcuts** - Spreadsheet + Slack kept failing as a source of truth. A pure AI auto-ship pipeline would burn craft integrity. Chose a console where agents draft and humans gate Craft/Ship.
+4. **Set a quiet visual language** - Cool-gray canvas, single indigo accent, dense tables, pipeline as a first-class motif. Empty and permission states treated as real screens, not leftovers.
+5. **Critique the loop end-to-end** - Walked Overview through Agentic with leads who would live in the tool weekly; tightened completeness scoring and Craft gate copy.
+6. **Measure what ops actually cares about** - Planning clarity, standards adoption, and research reuse — not vanity “efficiency” banners.
 
 ### Key decisions
 - Treat UX as **delivery infrastructure** (intake → estimate → craft → handoff → learn), not local heroics.
 - Agents compress exploration; **Craft and Ship remain human gates** — no unsupervised production ship.
-- Completeness scoring on intake so triage is about problem quality, not volume theater.
-- Standards contribution checklist (a11y, tokens, docs) before merge to library.
-- Research: “reuse before re-research” with insights linked to decision records.
+- Completeness scoring on intake so triage judges problem quality, not ticket volume.
+- Standards contribution checklist (a11y, tokens, docs) before merge to the library.
+- Research default: reuse before re-research, with insights linked to decision records.
 
 ### Solution
-1. **Org pulse — Overview** — KPI row plus Sense→Learn pipeline and Needs attention. Proves ops leadership at a glance.
+1. **Org pulse — Overview** — KPI row, Sense→Learn pipeline, and Needs attention. Proves ops leadership at a glance.
 2. **Intake queue & triage** — Completeness score, SLA, priority, squad; drawer with problem framing. Proves predictable demand management.
 3. **Estimation board** — Velocity bands and commit-to-sprint with risk notes. Proves engineering can schedule against UX.
-4. **Research ops library** — Insights tagged to products and decisions. Proves research as shared infrastructure.
-5. **Figma / standards hub** — Contribution queue with review gates. Proves design-system governance at org scale.
+4. **Figma / standards hub** — Contribution queue with review gates. Proves design-system governance at org scale.
+5. **Research ops library** — Insights tagged to products and decisions. Proves research as shared infrastructure.
 6. **Agentic loop workspace** — Agent drafts with confidence/citations; Craft approve/edit/reject before Ship. Proves AI UX leadership with trust.
 
 Empty: “No open briefs — create intake or sync from Jira.” Trust: “Agent drafts require human Craft review.”
@@ -79,6 +78,6 @@ Empty: “No open briefs — create intake or sync from Jira.” Trust: “Agent
 Quiet enterprise: cool-gray canvas, indigo accent only. Components: OpsNav, KpiRow, PipelineSteps, CompletenessChecklist, VelocityLane, ContributionReview, InsightCard, CraftGateModal. Pattern: status never color-only; dense tables keyboard-reachable.
 
 ### Outcomes & learnings
-- Clearer planning for engineering, shared Figma standards, research ops habit, fewer late redesigns on critical paths
-- Hiring signal: Design Ops + AI UX leadership — org-scale OS for a multi-product UX org
-- Learning: agents only earn trust when Craft and Ship stay human gates
+- Clearer planning for engineering, shared Figma standards, a research-ops habit, fewer late redesigns on critical paths.
+- Hiring signal: Design Ops + AI UX leadership — an org-scale OS for a multi-product UX org.
+- Learning: agents only earn trust when Craft and Ship stay human gates.

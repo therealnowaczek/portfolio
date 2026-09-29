@@ -1,7 +1,7 @@
 ---
 slug: folio
 title: "Folio"
-oneLiner: "Warm editorial Android network where designers get structured critique, not empty likes"
+oneLiner: "Social critique network for designers"
 badge: "Personal exploration"
 role: "Lead Product Designer"
 platform: "Android"
@@ -12,13 +12,17 @@ tags:
   - "Critique"
   - "Editorial"
   - "Social"
-order: 4
+order: 8
 accent: "#C2410C"
 styleLabel: "Warm editorial"
 screens:
-  - "Feed  -  Warm editorial"
-  - "Piece detail"
-  - "Critique composer"
+  - "Feed"
+  - "Project Detail"
+  - "Frames"
+  - "Upload Frame — Annotations"
+  - "Compose Critique"
+  - "Critiques & Activity"
+  - "Profile — Maya Lin"
 portfolioSignals:
   - "Android Material craft"
   - "Community product design"
@@ -28,53 +32,54 @@ portfolioSignals:
 ---
 
 ### Snapshot
-Folio is a warm editorial Android app where designers post work-in-progress and get structured critique instead of empty likes. The bet: Material You warmth plus critique rituals beats generic social feeds for craft growth.
+Folio is a personal exploration of a warm editorial Android network where designers post work-in-progress and get structured critique instead of empty likes. Material warmth plus critique rituals — not another engagement farm with a design skin.
 
 ### Problem
-Designers want feedback that improves the work, not engagement farming. Persona: Amir, mid-level product designer, posts on Discord and gets emoji. JTBD: "Get specific, kind, actionable critique on this flow before Friday's review."
+Designers want feedback that improves the work. Discord and social feeds give emoji and taste opinions. Persona: a mid-level product designer who needs specific, kind, actionable critique on a flow before Friday’s review — without roasting culture.
 
 ### Goals & constraints
 **Goals**
-- Structure critique prompts (clarity, hierarchy, edge cases)
+- Structure critique on axes (clarity, hierarchy, edge cases, copy)
 - Warm, magazine-like browsing that still feels native Android
-- Reduce drive-by negativity with critique norms
-- Support image + short loom-style video notes
-- Make "request critique" a first-class CTA
+- Make “request critique” a first-class CTA
+- Support frame-level annotation and activity that rewards giving
+- Profile that shows craft contribution, not follower vanity as the hero
 
 **Constraints**
-- Android Material 3; dynamic color optional
-- Moderation assumed lightweight for this exploration
-- Timeboxed sprint
-- Editorial warmth without looking non-native
+- Android Material 3; editorial warmth without looking non-native
+- Timeboxed sprint; lightweight moderation assumed
 - a11y: scalable type, content descriptions for mock images
 
 ### Process
-1. **Frame & research** - Glance at Dribbble, Are.na, Writers' workshops. Assumption: structure beats volume of comments.
-2. **Flows & IA** - Feed → Piece → Critique composer → Thank / iterate. Profile shows critique given/received ratio.
-3. **Options explored** - (A) Anonymous roast mode (rejected: toxic). (B) Live video rooms only (rejected: scheduling friction). (C) Async structured critique cards (chosen).
-4. **Visual & DS** - Warm paper backgrounds, serif for titles, sans for UI, terracotta accent. Soft elevation, generous image crops.
-5. **Prototype & critique** - High-fidelity prototype: Feed, Piece detail, Critique composer; Figma contrast on warm paper.
-6. **Validation notes** - Risk: structure feels homework-like. Softened prompts to optional chips, not mandatory forms.
+1. **Borrow from workshops, not feeds** - Glance at Dribbble, Are.na, writers’ workshops. Structure beats comment volume.
+2. **Design the critique loop** - Feed → Project → Frames → Annotate upload → Compose critique → Activity. Profile shows critique given/received.
+3. **Reject roast mode and live-only** - Anonymous roast turns toxic. Live video rooms add scheduling friction. Chose async structured critique cards with optional chips.
+4. **Warm editorial system** - Paper backgrounds, serif titles, sans UI, terracotta accent, generous crops.
+5. **Soften structure so it doesn’t feel like homework** - Critique chips optional; free text still welcome.
+6. **Prototype feed → profile as one culture** - Ratio and activity make giving visible without turning it into a points game.
 
 ### Key decisions
-- I chose **structured critique chips** ("Hierarchy", "Edge cases", "Copy") because free text alone drifts to taste; I rejected pure star ratings.
-- I chose **warm editorial visual** to signal craft culture; I rejected cold blue social chrome.
-- I chose **critique ratio on profile** to reward giving; I rejected follower vanity as the hero metric.
-- I chose **async first** because designers critique across time zones; I rejected live-only.
+- **Structured critique chips** — free text alone drifts to taste; stars alone teach nothing.
+- **Warm editorial visual** — signals craft culture; cold blue social chrome doesn’t.
+- **Frame-level annotation** — critique needs a place on the work, not only a thread under it.
+- **Async first** — designers critique across time zones.
 
 ### Solution
-1. **Feed** — Warm editorial crops with critique intent badges. Proves browsing joy + purpose.
-2. **Project Detail** — Context, goals, and threaded critiques. Proves useful reading order.
-3. **Frames** — Frame-level critique axes and composer entry. Proves structured contribution.
+1. **Feed** — Warm editorial crops with critique-intent badges. Proves browsing joy with purpose.
+2. **Project Detail** — Goals, context, and threaded critiques. Proves useful reading order.
+3. **Frames** — Frame-level entry into critique. Proves work is discussed at the right altitude.
+4. **Upload Frame — Annotations** — Mark areas before asking for feedback. Proves intent-rich requests.
+5. **Compose Critique** — Axes + note composer. Proves structured contribution.
+6. **Critiques & Activity** — Given/received loop and notifications. Proves the community ritual.
+7. **Profile — Maya Lin** — Work, critique ratio, craft identity. Proves contribution over vanity metrics.
 
-Empty: "Your feed is quiet - follow three craft accounts." Error: "Upload failed - draft saved." Success: "Critique sent · Amir will be notified".
-
+Empty: “Your feed is quiet — follow three craft accounts.” Error: “Upload failed — draft saved.” Success: “Critique sent.”
 
 ### Design system notes
-Tokens: `color.paper.warm`, `color.accent.terracotta`, `type.display.serif`. Components: PieceCard, CritiqueChip, ComposerSheet, RatioBadge. Pattern: show goals → critique on axes → thank.
+Tokens: warm paper, terracotta accent, display serif. Components: PieceCard, CritiqueChip, ComposerSheet, AnnotationLayer, RatioBadge. Pattern: show goals → critique on axes → thank.
 
 ### Outcomes & learnings
-- **Design target:** average critique length and specificity above unstructured social baselines (qualitative)
-- **Prototype success target:** creators mark ≥50% of critiques "useful" in prototype survey
-- Ship-test next: moderation queues, private critique circles, Figma embed
-- Hiring signal: community product craft, Android Material fluency, editorial systems
+- Exploration of community product craft, Android Material fluency, and editorial systems.
+- Learning: optional structure raises specificity without scaring off quick notes.
+- Next if productized: moderation queues, private critique circles, Figma embed.
+- Hiring signal: social UX that optimizes for craft growth, not engagement theater.

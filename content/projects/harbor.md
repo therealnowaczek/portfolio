@@ -1,7 +1,7 @@
 ---
 slug: harbor
 title: "Harbor"
-oneLiner: "Calm iOS companion for revolving credit — see what you owe, plan repayments, stay in control"
+oneLiner: "Fintech repayments and insights companion"
 badge: "Personal exploration"
 role: "Lead Product Designer"
 platform: "iOS"
@@ -12,13 +12,16 @@ tags:
   - "HIG"
   - "Trust UX"
   - "Repayments"
-order: 2
+order: 6
 accent: "#2563EB"
 styleLabel: "HIG trust UX"
 screens:
-  - "Home  -  Balance & next due"
-  - "Plan  -  Amount slider"
-  - "Confirm  -  Receipt sheet"
+  - "Harbor Home"
+  - "Harbor Repayments"
+  - "Repayment Flow"
+  - "Payment Scheduled Success"
+  - "Harbor Insights"
+  - "Harbor Settings"
 portfolioSignals:
   - "Fintech trust UX"
   - "Native iOS HIG"
@@ -28,53 +31,53 @@ portfolioSignals:
 ---
 
 ### Snapshot
-Harbor helps people with revolving credit see what they owe, what happens if they pay early, and how to stay in control without panic. The design bet: Apple HIG clarity plus calm motion beats gamified debt apps that shame users into taps.
+Harbor is a personal exploration of a calm iOS companion for revolving credit: what you owe, what a payment changes, and how to schedule it without panic UI. Apple HIG clarity and consequence-before-commit beat gamified debt apps that shame people into taps.
 
 ### Problem
-Borrowers understand the minimum due, but not the interest trajectory or the emotional cost of "pay later" defaults. Persona: Lena, 34, two cards, wants one trustworthy place to plan repayments before payday. JTBD: "Help me choose a repayment that shrinks interest without wrecking this month's rent."
+Borrowers understand the minimum due, not the interest trajectory or the emotional cost of “pay later” defaults. Persona: someone juggling cards who wants one trustworthy place to plan a repayment before payday — without a coach chatbot or confetti on debt.
 
 ### Goals & constraints
 **Goals**
-- Make impact of payment amount visible before confirm
-- Reduce anxiety copy; increase plain-language outcomes
+- Show impact of payment amount before confirm
+- Keep copy plain; separate “due” from “suggested”
 - Support Dynamic Type and VoiceOver for money figures
-- Prototype insights that educate, not upsell
-- Clear separation between "due" and "recommended"
+- Educate with insights that don’t upsell
+- Quiet success after schedule — no celebration theater
 
 **Constraints**
-- iOS HIG; native tab + sheet patterns
-- Regulated-feel trust: no dark patterns, no confetti on debt
-- Timeboxed design sprint
-- Assumed bank-grade data; no live API in prototype
-- Accessibility: Skin Tone-independent iconography; high-contrast money states
+- iOS HIG sheets and tabs; regulated-feel trust (no dark patterns)
+- Timeboxed sprint; assumed bank-grade data, no live API
+- Accessibility: high-contrast money states; Reduce Motion paths
 
 ### Process
-1. **Frame & research** - Glance at Apple Wallet sheets, Revolut/Monzo calm finance, and Finom-style repayment trust cues. Assumption: users fear hidden fees more than they fear math.
-2. **Flows & IA** - Home balance → Plan repayment → Confirm → Insights. Settings for due reminders only.
-3. **Options explored** - (A) Chatbot coach as home (rejected: trust risk). (B) Spreadsheet-like planner (rejected: cold, un-iOS). (C) Card stack + interactive slider with live interest delta (chosen: tactile, HIG-aligned).
-4. **Visual & DS** - Soft neutrals, system SF Pro, blue trust accent, large tabular numerals. Motion: 200ms sheets, no bounce on money.
-5. **Prototype & critique** - High-fidelity prototype: Home, Plan slider, Confirm; Figma VoiceOver labels and Reduce Motion paths.
-6. **Validation notes** - Heuristic on error prevention; risk that "recommended" reads as bank advice. Relabeled to "Suggested for lower interest (not advice)".
+1. **Frame around regret, not math lectures** - Glance at Wallet sheets and calm banking apps. Assumption: people fear hidden outcomes more than they fear numbers.
+2. **Flow: see → plan → confirm → learn** - Home balance → Repayments → Flow with live delta → Success → Insights. Settings for reminders only.
+3. **Reject coach-home and spreadsheet coldness** - Chatbot-as-home fails trust. Spreadsheet planners feel un-iOS. Chose card hierarchy + slider with live interest delta.
+4. **HIG visual language** - Soft neutrals, SF Pro, blue trust accent, large tabular numerals. 200ms sheets; no bounce on money.
+5. **Prototype VoiceOver and footnotes** - Labels for money figures; “suggested” carefully footnoted as not advice.
+6. **Tone pass** - Removed anything that read like bank advice or shame. Success is quiet confirmation.
 
 ### Key decisions
-- I chose a **live interest delta on the slider** because abstract APR fails; I rejected static tip cards.
-- I chose **suggested vs due** as two distinct CTAs because conflating them creates regret; I rejected a single smart default button.
-- I chose **no gamification** because debt UX that celebrates feels manipulative; I rejected streaks and badges.
-- I chose **plain-language footnotes** over legalese walls for this exploration; production would still need compliance review.
+- **Live interest delta on the slider** — abstract APR fails; consequence must move with the thumb.
+- **Suggested vs due as distinct CTAs** — conflating them creates regret.
+- **No gamification** — debt UX that celebrates feels manipulative.
+- **Quiet scheduled success** — receipt clarity over confetti.
 
 ### Solution
-1. **Harbor Home** — Balance, next due, and calm hierarchy into plan-or-pay. Proves trust-first money UI.
-2. **Harbor Repayments** — Schedule, history, and status of upcoming payments. Proves clarity without alarm.
-3. **Repayment Flow** — Amount, consequence preview, and confirm before commit. Proves consequence-before-commit.
+1. **Harbor Home** — Balance, next due, calm path into plan-or-pay. Proves trust-first money UI.
+2. **Harbor Repayments** — Schedule, history, upcoming status. Proves clarity without alarm.
+3. **Repayment Flow** — Amount, consequence preview, confirm before commit. Proves consequence-before-commit.
+4. **Payment Scheduled Success** — Quiet receipt of what happens next. Proves regulated-feel confirmation.
+5. **Harbor Insights** — Interest trajectory and plain-language education. Proves insight without upsell.
+6. **Harbor Settings** — Reminders and linked-card controls. Proves control without cluttering Home.
 
-Empty: "Link a card to see repayments." Error: "Bank timeout - try again; nothing was charged." Success: "Payment scheduled for Fri 09:00".
-
+Empty: “Link a card to see repayments.” Error: “Bank timeout — try again; nothing was charged.” Success: “Payment scheduled for Fri 09:00.”
 
 ### Design system notes
-Tokens: `color.trust.blue`, `type.money.lg`, `space.sheet`. Components: MoneyHero, PaySlider, DeltaPill, TrustFootnote, ConfirmSheet. Pattern: preview consequence → confirm → quiet success.
+Tokens: trust blue, money type scale, sheet spacing. Components: MoneyHero, PaySlider, DeltaPill, TrustFootnote, ConfirmSheet. Pattern: preview consequence → confirm → quiet success.
 
 ### Outcomes & learnings
-- **Design target:** users can state interest impact of +€50 payment after one pass
-- **Prototype success target:** fewer "is this advice?" confusions after footnote redesign
-- Ship-test next: real schedule conflicts, multi-card allocation, biometric confirm
-- Hiring signal: regulated-feel mobile fintech with HIG craft and trust microcopy
+- Exploration of regulated-feel mobile fintech with HIG craft and trust microcopy.
+- Learning: consequence-before-commit reduces “did I just…?” moments more than longer help text.
+- Next if productized: multi-card allocation, biometric confirm, compliance review on suggestion language.
+- Hiring signal: calm money UI under real anxiety constraints.

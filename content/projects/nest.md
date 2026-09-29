@@ -1,7 +1,7 @@
 ---
 slug: nest
 title: "Nest"
-oneLiner: "Cross-platform marketplace connecting neighbors with vetted local pros — trust, pricing, booking"
+oneLiner: "Local services marketplace"
 badge: "Personal exploration"
 role: "Lead Product Designer"
 platform: "iOS + desktop web"
@@ -12,13 +12,17 @@ tags:
   - "Local services"
   - "Trust"
   - "Booking"
-order: 8
+order: 12
 accent: "#F43F5E"
 styleLabel: "Friendly utilitarian"
 screens:
-  - "Search results (iOS)"
-  - "Pro profile"
-  - "Booking confirm (web)"
+  - "Mobile iOS Home"
+  - "Mobile Pro Profile & Reviews"
+  - "Mobile Booking & Checkout"
+  - "Mobile Bookings & Activity"
+  - "Mobile Live Pro Tracking & ETA"
+  - "Desktop Web Results & Booking Drawer"
+  - "Desktop Web Results (Full Map & List)"
 portfolioSignals:
   - "Multi-platform marketplace"
   - "Trust and verification UX"
@@ -28,53 +32,54 @@ portfolioSignals:
 ---
 
 ### Snapshot
-Nest connects neighbors with local service pros (cleaning, repairs, tutoring) across iOS and desktop web with shared IA and platform-honest UI. The bet: trust scaffolding (reviews, verified badges, clear pricing) matters more than novelty in two-sided local markets.
+Nest is a personal exploration of a local-services marketplace across iOS and desktop web: find a vetted pro, see price and fees before chat, book, track, and manage activity. Shared IA with platform-honest shells — trust scaffolding matters more than novelty in two-sided local markets.
 
 ### Problem
-Hiring a local pro is fragmented across chats and Facebook groups with unclear pricing and safety. JTBD (seeker): "Book a vetted pro for Saturday, know the price, and message in-app." JTBD (pro): "Get qualified requests without lead-fee surprises."
+Hiring a cleaner, repair pro, or tutor still fragments across chats and Facebook groups with unclear pricing and safety. Seeker JTBD: book a vetted pro for Saturday, know the total, message in-app. Pro JTBD (sketched): get qualified requests without lead-fee surprises.
 
 ### Goals & constraints
 **Goals**
 - Shared object model across iOS and web
 - Transparent price and fee display before chat
-- Booking + messaging happy path
-- Trust markers that are earned, not decorative
-- Responsive web that doesn't ape a stretched phone
+- Booking, activity, and live ETA on mobile
+- Desktop results that use map + list without aping a stretched phone
+- Honest verification labels — earned, not decorative shields
 
 **Constraints**
-- Two platforms in one sprint: prioritize seeker path
-- Trust/safety copy carefully (no overclaim)
-- Timeboxed
-- a11y on both: VoiceOver + web keyboard
-- Style: friendly utilitarian, not luxury marketplace
+- Two platforms in one sprint; seeker path prioritized
+- Timeboxed; careful trust/safety copy (no overclaim)
+- a11y: VoiceOver on iOS, keyboard on web
 
 ### Process
-1. **Frame & research** - Glance at TaskRabbit, Bark, local Facebook UX failures. Assumption: fee surprises kill conversion.
-2. **Flows & IA** - Search → Pro profile → Get quote / Book → Chat. Pro side sketched only.
-3. **Options explored** - (A) Chat-first, price later (rejected: distrust). (B) Instant book only (rejected: too rigid for repairs). (C) Profile with clear rate + request-to-book (chosen).
-4. **Visual & DS** - Shared tokens; iOS uses HIG bars, web uses sidebar filters. Accent coral for CTAs.
-5. **Prototype & critique** - High-fidelity prototype: iOS Search, Profile, Booking; web Search results; Figma parity checklist.
-6. **Validation notes** - Risk: "Verified" implies background check depth. Relabeled "ID checked · details" with expandable meaning.
+1. **Start from fee-surprise failure** - Glance at TaskRabbit-class flows and local Facebook pain. Opacity kills conversion.
+2. **Shared IA, native chrome** - Search → Profile → Book → Activity → Live tracking. Desktop gets full map/list and a booking drawer.
+3. **Reject chat-first and instant-only** - Price-later chat breeds distrust. Instant-only is too rigid for repairs. Chose clear rates + request-to-book hybrid.
+4. **Friendly utilitarian system** - Shared tokens; coral CTAs; iOS HIG bars; web sidebar filters.
+5. **Prototype parity checklist** - Same objects, different shells; verification language expandable (“ID checked · details”).
+6. **Design post-book calm** - Activity and live ETA so the product doesn’t end at checkout.
 
 ### Key decisions
-- I chose **price before chat** because opacity is the local-market failure mode; I rejected chat-gated quotes as default.
-- I chose **shared IA, native chrome** so cross-platform doesn't mean identical pixels.
-- I chose **request-to-book hybrid** for categories that need scoping; instant book for fixed-price SKUs.
-- I chose **honest verification labels** over vague shield icons.
+- **Price before chat** — local-market failure mode is opacity.
+- **Shared IA, native chrome** — cross-platform ≠ identical pixels.
+- **Request-to-book hybrid** — scoping for repairs; instant where SKUs are fixed.
+- **Live tracking as a trust screen** — “where’s my pro?” is part of the product, not a SMS afterthought.
 
 ### Solution
-1. **Mobile iOS Home** — Search, map/list, and rate range into pro cards. Proves scan + trust at list level.
-2. **Mobile Pro Profile & Reviews** — Portfolio, reviews, and fee breakdown. Proves transparency before booking.
-3. **Mobile Booking & Checkout** — Slot, address, total, and request confirm. Proves transparent commit.
+1. **Mobile iOS Home** — Search, map/list, rate ranges into pro cards. Proves scan + trust at list level.
+2. **Mobile Pro Profile & Reviews** — Portfolio, reviews, fee breakdown. Proves transparency before booking.
+3. **Mobile Booking & Checkout** — Slot, address, total, request confirm. Proves transparent commit.
+4. **Mobile Bookings & Activity** — Upcoming and past jobs in one place. Proves post-book continuity.
+5. **Mobile Live Pro Tracking & ETA** — Map + status while the pro is en route. Proves operational trust.
+6. **Desktop Web Results & Booking Drawer** — Results with booking without leaving search context. Proves desktop efficiency.
+7. **Desktop Web Results (Full Map & List)** — Full-bleed map + list for spatial browse. Proves web-native density.
 
-Empty: "No pros in range - widen radius." Error: "Payment method failed - request not sent." Success: "Request sent · usually replies in 2h".
-
+Empty: “No pros in range — widen radius.” Error: “Payment method failed — request not sent.” Success: “Request sent · usually replies in 2h.”
 
 ### Design system notes
-Shared: PriceBreakdown, TrustBadge, ProCard, SlotPicker. Platform shells differ. Pattern: search → trust → transparent total → request.
+Shared: PriceBreakdown, TrustBadge, ProCard, SlotPicker, TrackingMap. Platform shells differ. Pattern: search → trust → transparent total → request → track.
 
 ### Outcomes & learnings
-- **Design target:** seekers can state total cost before messaging in prototype tests
-- **Prototype success target:** cross-platform task success parity on core booking
-- Ship-test next: pro onboarding, dispute flow, real maps performance
-- Hiring signal: multi-platform marketplace UX, trust design, fee transparency
+- Exploration of multi-platform marketplace UX, trust design, and fee transparency.
+- Learning: verification labels need expandable meaning or they become decorative lies.
+- Next if productized: pro onboarding, dispute flow, real maps performance.
+- Hiring signal: two-sided thinking with seeker-path craft across phone and desktop.

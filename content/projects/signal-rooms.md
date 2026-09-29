@@ -1,7 +1,7 @@
 ---
 slug: signal-rooms
 title: "Signal Rooms"
-oneLiner: "Live audio rooms with clear stage roles, expressive dark UI, and moderation that stays calm"
+oneLiner: "Live audio community rooms"
 badge: "Personal exploration"
 role: "Lead Product Designer"
 platform: "iOS dark expressive"
@@ -12,13 +12,16 @@ tags:
   - "iOS"
   - "Dark expressive"
   - "Social"
-order: 9
+order: 13
 accent: "#8B5CF6"
 styleLabel: "Dark expressive"
 screens:
-  - "Lobby"
-  - "Live room"
-  - "Hand queue (host)"
+  - "Discover — Live Signal Rooms"
+  - "Browse — Communities & Niches"
+  - "In-Room — Audio Stage"
+  - "In-Room — Live Chat & Reactions"
+  - "Schedule Room — Plan Hangout"
+  - "Profile — Host Studio & Replays"
 portfolioSignals:
   - "Expressive mobile brand"
   - "Live social UX"
@@ -28,53 +31,53 @@ portfolioSignals:
 ---
 
 ### Snapshot
-Signal Rooms is a live audio community product for topic rooms, speakers, and listeners with expressive dark UI. The bet: expressive motion and clear stage roles make audio social feel alive without chaotic moderation UX.
+Signal Rooms is a personal exploration of live audio community on iOS: discover rooms, browse niches, join a stage with clear roles, chat/react without chaos, schedule hangouts, and host replays. Expressive dark UI with moderation that stays calm — alive without Spaces-era pile-ons.
 
 ### Problem
-People miss serendipitous conversation but hate Zoom formality and Twitter Spaces chaos. JTBD: "Drop into a design-career room, raise hand, speak for two minutes, leave without social hangover."
+People miss serendipitous conversation but hate Zoom formality and open-mic chaos. The job: drop into a topic room, raise a hand, speak briefly, leave cleanly — with host tools that feel fair and exits that are always one tap away.
 
 ### Goals & constraints
 **Goals**
 - Crystal-clear roles: host, speaker, listener
 - Low-friction raise hand → invite to speak
-- Expressive dark visual without harming legibility
-- Recording/consent cues when relevant
-- Exit and mute always one tap
+- In-room chat/reactions that don’t bury the stage
+- Schedule and host studio for people who plan community, not only drop in
+- Expressive dark visual with Reduce Motion fallbacks; block/report reachable
 
 **Constraints**
 - iOS dark expressive; original brand language
-- Safety: block/report reachable
 - Timeboxed; simulated live state
-- a11y: VoiceOver for role changes; captions placeholder
-- Performance: avatar grids that don't thrash
+- VoiceOver for role changes; captions as a placeholder, not a fake claim
 
 ### Process
-1. **Frame & research** - Glance at Clubhouse-era patterns, Discord stage, Twitter Spaces. Assumption: role clarity prevents pile-ons.
-2. **Flows & IA** - Lobby → Live room → Raise hand → On stage → Leave. Create room flow secondary.
-3. **Options explored** - (A) Flat everyone-can-talk (rejected: chaos). (B) Ticketed webinar (rejected: cold). (C) Stage + hand queue + expressive presence (chosen).
-4. **Visual & DS** - Deep charcoal, neon violet accent, bold display type for room titles, soft glow on active speaker (with solid fallback).
-5. **Prototype & critique** - High-fidelity prototype: Lobby, Live room, Hand queue; Figma Reduce Motion (glow → border).
-6. **Validation notes** - Prototype covers Lobby → Live room → Hand queue; Reduce Motion swaps glow for a solid border.
+1. **Role clarity as the safety feature** - Glance at stage products and Discord stage. Open-mic defaults create pile-ons.
+2. **Discover → room → host tools** - Live discover, browse niches, in-room stage + chat, schedule, host profile/replays.
+3. **Reject flat talk and webinar coldness** - Everyone-can-talk fails. Ticketed webinar is too cold. Chose stage + hand queue + expressive presence.
+4. **Expressive system with a11y brakes** - Charcoal, violet accent, bold room titles; glow on active speaker with solid-border Reduce Motion fallback.
+5. **Prototype host fairness** - Hand queue visibility, always-visible Leave/Mute, safety sheet reachability.
+6. **Design beyond the live moment** - Schedule and replays so community isn’t only FOMO lobbies.
 
 ### Key decisions
-- I chose **explicit stage roles** because audio without structure fails; I rejected open-mic default.
-- I chose **expressive dark brand** to show visual range beyond enterprise; I still capped glow for a11y.
-- I chose **always-visible Leave/Mute** as safety rails; I rejected gesture-only exit.
-- I chose **hand queue visibility for hosts** to make moderation fair.
+- **Explicit stage roles** — audio without structure fails.
+- **Chat beside stage, not instead of it** — reactions shouldn’t hide who’s speaking.
+- **Always-visible Leave/Mute** — safety rails beat gesture-only exit.
+- **Host studio + schedule** — community products need planners, not only lurkers.
 
 ### Solution
 1. **Discover — Live Signal Rooms** — Live-now cards and enter CTAs. Proves discovery energy.
-2. **Browse — Communities & Niches** — Topics and communities beyond the live lobby. Proves browse beyond FOMO.
-3. **In-Room — Audio Stage** — Stage, listeners, and raise-hand. Proves role clarity mid-session.
+2. **Browse — Communities & Niches** — Topics beyond the live lobby. Proves browse without FOMO-only IA.
+3. **In-Room — Audio Stage** — Stage, listeners, raise-hand. Proves role clarity mid-session.
+4. **In-Room — Live Chat & Reactions** — Side channel that stays secondary to audio. Proves social texture without chaos.
+5. **Schedule Room — Plan Hangout** — Create/schedule flow for hosts. Proves intentional community building.
+6. **Profile — Host Studio & Replays** — Host identity and replay access. Proves continuity after the live moment.
 
-Empty: "No live rooms - start one." Error: "Mic permission denied." Success: "You're on stage · mute anytime".
-
+Empty: “No live rooms — start one.” Error: “Mic permission denied.” Success: “You’re on stage · mute anytime.”
 
 ### Design system notes
-Tokens: `color.void`, `color.accent.violet`, `effect.speakGlow`. Components: RoomCard, StageGrid, HandQueue, SafetySheet. Pattern: enter → role-aware participate → exit cleanly.
+Tokens: void, violet accent, speakGlow with solid fallback. Components: RoomCard, StageGrid, HandQueue, ReactionRail, SafetySheet, HostStudio. Pattern: enter → role-aware participate → exit cleanly.
 
 ### Outcomes & learnings
-- **Design target:** new users identify host vs speaker vs listener in under 5 seconds
-- **Prototype success target:** raise-hand → speak path completed without host coaching in prototype
-- Ship-test next: captions, report flow depth, network degradation states
-- Hiring signal: expressive mobile brand systems, live social UX, safety affordances
+- Exploration of expressive mobile brand systems, live social UX, and safety affordances.
+- Learning: role clarity is moderation UX — not just a badge color.
+- Next if productized: captions depth, report flow, network degradation states.
+- Hiring signal: dark expressive craft that still stays operable and safe.

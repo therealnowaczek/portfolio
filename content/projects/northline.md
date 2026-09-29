@@ -1,7 +1,7 @@
 ---
 slug: northline
 title: "Northline"
-oneLiner: "AI ops console that surfaces margin leaks and model-driven savings for RevOps and finance"
+oneLiner: "AI ops profitability console for B2B SaaS"
 badge: "Personal exploration"
 role: "Lead Product Designer"
 platform: "Web desktop"
@@ -12,13 +12,16 @@ tags:
   - "Ops console"
   - "Data density"
   - "Quiet enterprise"
-order: 1
+order: 5
 accent: "#0D9488"
 styleLabel: "Quiet enterprise"
 screens:
-  - "Overview  -  Margin pulse"
-  - "Leak detail drawer"
-  - "AI explain panel"
+  - "Profitability Overview"
+  - "Finding Detail — SKU Margin Leak"
+  - "Ads & ROAS Intelligence"
+  - "COGS & Landed Costs Ledger"
+  - "Autonomous Rules & Guardrails"
+  - "Empty State — Connect Store"
 portfolioSignals:
   - "AI product UX"
   - "Dense B2B SaaS"
@@ -28,53 +31,54 @@ portfolioSignals:
 ---
 
 ### Snapshot
-Northline is a profitability and AI-ops console for SaaS finance and RevOps leads who already live in Linear-grade tools. The bet: surface margin leaks and model-driven savings without a chart graveyard. Quiet enterprise chrome, teal accent, one primary action per view.
+Northline is a personal exploration of a profitability console for B2B SaaS finance and RevOps. Quiet enterprise chrome, teal accent, leak-first IA: find where contribution margin is slipping, explain it with lineage, and offer a reversible next step — without a twelve-widget chart graveyard.
 
 ### Problem
-RevOps managers can see revenue and burn, but not which AI workloads, infra tiers, or discount cohorts are quietly destroying contribution margin. Job-to-be-done: "Show me where margin is leaking this week, and what I can change before Friday's board pack."
+RevOps can see revenue and burn, but not which AI workloads, infra tiers, discount cohorts, or ad channels are quietly destroying contribution margin. The weekly board pack needs a short list of leaks with evidence — not another dashboard that agrees with itself and contradicts finance.
 
 ### Goals & constraints
 **Goals**
-- Make contribution margin and AI spend readable in under 10 seconds on first open
-- Pair every anomaly with a reversible action (pause model tier, re-tag cohort, open savings playbook)
-- Keep density high without sacrificing scan order for non-analyst users
-- Prototype an "Explain this delta" AI panel that cites sources, not vibes
-- Design empty and permission-denied states as first-class
+- Make contribution margin and top leaks readable in seconds on first open
+- Pair every finding with a reversible action and a cited explanation
+- Keep density high without losing scan order for non-analyst users
+- Prototype rules/guardrails that stay supervised
+- Treat empty and connect states as part of the product story
 
 **Constraints**
-- Desktop-first; no mobile redesign this sprint
-- Trust: AI suggestions show confidence + lineage
-- a11y: WCAG 2.2 AA for tables, focus, color-only status
-- Time: 2–3 week design sprint
-- Visual: Linear/Stripe quiet enterprise, teal `#0D9488` only
+- Desktop-first exploration; no mobile redesign
+- AI suggestions show confidence + lineage — no vibes-only chat as primary
+- WCAG-minded tables and status (never color alone)
+- Timeboxed 2–3 week sprint; quiet enterprise teal only
 
 ### Process
-1. **Frame & research** - Assumed inputs: SaaS P&L patterns, AI usage invoices, competitive glance at Stripe-like dashboards and Linear. Assumption: users know contribution margin vocabulary.
-2. **Flows & information architecture** - Primary path: Overview → Margin leak list → Detail drawer → Action confirm. Secondary: Saved views, Export board pack, AI explain panel.
-3. **Options explored** - (A) Mega-dashboard with 12 widgets (rejected: overload). (B) "Week in review" story UI (rejected: too slow for daily ops). (C) Dense table + drawer + AI cite panel (chosen: power-user scan + local actions).
-4. **Visual & design system decisions** - Neutral gray canvas, 13/14px UI sans, teal for interactive + positive delta only. Status via icon + text, never color alone. Density tokens: `comfortable` / `compact` toggle for finance vs ops personas.
-5. **Prototype & critique** - High-fidelity prototype: Overview, Leak detail, AI explain. Figma: table keyboard nav, drawer focus trap, confidence chip readability.
-6. **Validation notes** - Heuristic pass on Nielsen "visibility of system status"; risk: users misread estimated savings as guaranteed cash. Copy guardrails added.
+1. **Start from the board-pack question** - Assumed SaaS P&L patterns and AI/infra invoices. Framed JTBD as “where is margin leaking this week, and what can I change before Friday?”
+2. **Leak-first IA** - Overview → finding list → detail drawer → action confirm. Ads, COGS ledger, and rules as supporting depth — not competing home screens.
+3. **Trade off dashboard shapes** - Mega-widget walls lose the exception. Story UIs are too slow for daily ops. Chose dense table + drawer + cited explain panel.
+4. **Quiet visual system** - Neutral canvas, teal for interactive and positive delta only. Status via icon + text. Compact density as default for RevOps.
+5. **Prototype the trust edges** - Overview through empty connect; special attention to confidence chips, undo windows, and “estimated vs booked” language.
+6. **Guard the copy** - Biggest risk: estimated savings read as guaranteed cash. Exploration keeps estimates labeled and actions reversible.
 
 ### Key decisions
-- I chose a **leak-first list** because margin problems are exceptions, not averages; I rejected a KPI-hero wall.
-- I chose **source-cited AI** ("Based on invoice lines 14-22") because unverified chat destroys finance trust; I rejected freeform chat as primary.
-- I chose **teal sparingly** so attention lands on deltas and CTAs; I rejected multi-accent theming.
-- I chose **compact density as default** for RevOps; comfortable stays one toggle away.
+- **Leak-first list** over a KPI-hero wall — margin problems are exceptions.
+- **Source-cited AI** (“based on invoice lines…”) over freeform chat as primary.
+- **Supervised rules** with guardrails — autonomy without a kill switch is not finance UX.
+- **Connect empty state as onboarding** — the console is useless until a store or billing source is linked.
 
 ### Solution
-1. **Profitability Overview** — Contribution margin, AI spend, and top leaks with CTAs to inspect. Proves glanceable ops health.
-2. **Finding Detail — SKU Margin Leak** — Cohort, model tier, estimated impact, and reversible actions with lineage. Proves action locality.
-3. **Ads & ROAS Intelligence** — Channel ROAS, spend efficiency, and confidence-backed explanations. Proves accountable AI UX.
+1. **Profitability Overview** — Contribution margin, AI spend, and top leaks with inspect CTAs. Proves glanceable ops health.
+2. **Finding Detail — SKU Margin Leak** — Cohort, model tier, estimated impact, lineage, reversible actions. Proves action locality.
+3. **Ads & ROAS Intelligence** — Channel efficiency with confidence-backed explanations. Proves accountable AI reading of spend.
+4. **COGS & Landed Costs Ledger** — Cost lines that feed the same true-margin story. Proves the ledger behind the leak.
+5. **Autonomous Rules & Guardrails** — Threshold rules with scope, quiet hours, and confirm-before-write. Proves supervised automation.
+6. **Empty State — Connect Store** — First-run connect path without fake data theater. Proves honest onboarding.
 
-Empty: "No leaks above threshold." Error: "Live feed delayed; last sync 14:02." Success: "Tier paused · undo 30s".
-
+Empty: “No leaks above threshold.” Delay: “Live feed delayed; last sync 14:02.” Success: “Tier paused · undo 30s.”
 
 ### Design system notes
-Tokens: `color.accent.teal`, `color.delta.pos/neg`, `space.dense`, `type.tabular`. Components: DataTable compact, LeakRow, ConfidenceChip, CitePanel, SoftConfirm. Pattern: anomaly → local action → undo.
+Tokens: accent teal, delta pos/neg, dense spacing, tabular type. Components: DataTable compact, LeakRow, ConfidenceChip, CitePanel, SoftConfirm, RulesEditor. Pattern: anomaly → local action → undo.
 
 ### Outcomes & learnings
-- **Design target:** time-to-first-insight under 10s on Overview
-- **Prototype success target:** ≥70% of prototype reviewers name the top leak without coaching
-- Ship-test next: invoice connectors, role-based leak visibility, board-ready export
-- Hiring signal: AI + dense B2B SaaS ops UX with trust and a11y
+- Exploration of AI + dense B2B SaaS ops UX with trust and a11y as first-class constraints.
+- Learning: lineage and undo matter more than clever chat for finance-adjacent AI.
+- Next if productized: real invoice connectors, role-based leak visibility, board-pack export.
+- Hiring signal: end-to-end product exploration for profitability systems.

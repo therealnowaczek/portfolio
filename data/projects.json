@@ -111,12 +111,12 @@
   {
     "id": "14",
     "slug": "gantt",
-    "title": "BigPicture Gantt",
+    "title": "Gantt",
     "oneLiner": "Dense program Gantt \u2014 retrieval speed as a design constraint",
     "badge": "Enterprise case \u00b7 Planning",
-    "role": "Lead craft \u00b7 BigPicture (SoftwarePlant \u2192 Appfire)",
+    "role": "Lead Product Designer",
     "platform": "Web desktop",
-    "timeline": "BigPicture \u00b7 shipped enterprise",
+    "timeline": "Enterprise PPM \u00b7 shipped",
     "tags": [
       "Gantt",
       "Enterprise",
@@ -140,7 +140,7 @@
       "Synced WBS grid + Gantt under cognitive load",
       "Critical path, baselines, and retrieval interactions",
       "Keyboard / power-user cues without sacrificing clarity",
-      "Enterprise PPM planning density (Marketplace-grade)"
+      "Enterprise PPM-adjacent planning density"
     ],
     "status": "shipped"
   },

@@ -1,7 +1,7 @@
 ---
 slug: pulse
 title: "Pulse"
-oneLiner: "Soft iOS companion for energy and recovery — sleep debt, focus blocks, shame-free check-ins"
+oneLiner: "Energy and recovery wellness companion"
 badge: "Personal exploration"
 role: "Lead Product Designer"
 platform: "iOS"
@@ -12,13 +12,17 @@ tags:
   - "Soft humanist"
   - "Habit"
   - "Health-adjacent"
-order: 6
+order: 10
 accent: "#A78BFA"
 styleLabel: "Soft humanist"
 screens:
-  - "Today  -  Energy snapshot"
-  - "Check-in sheet"
-  - "Weekly pattern"
+  - "Today Recovery"
+  - "Daily Check-in"
+  - "Check-in Summary"
+  - "Weekly Trends"
+  - "Sleep Breakdown"
+  - "Evening Wind-down"
+  - "Profile & Devices"
 portfolioSignals:
   - "Soft mobile craft"
   - "Habit UX ethics"
@@ -28,53 +32,55 @@ portfolioSignals:
 ---
 
 ### Snapshot
-Pulse is a soft humanist iOS companion for energy and recovery: sleep debt, focus blocks, and gentle check-ins without punishing streaks. The bet: warmth and honesty beat quantified-self severity for long-term adherence.
+Pulse is a personal exploration of a soft humanist iOS companion for energy and recovery: sleep debt, check-ins, weekly patterns, and evening wind-down — without punishing streaks. Warmth and honesty beat quantified-self severity for anything people might actually keep using.
 
 ### Problem
-People track steps and sleep in different apps, then feel judged by red rings. Persona: Ola, 29, knowledge worker, wants to notice burnout earlier. JTBD: "Help me see when I'm running hot and suggest one recovery move I might actually do."
+People track steps and sleep in different apps, then feel judged by red rings. Persona: a knowledge worker who wants to notice burnout earlier and get one recovery move they might actually do — not a clinic UI or a scolding coach.
 
 ### Goals & constraints
 **Goals**
-- One daily "energy snapshot" without spreadsheet overload
-- Recovery suggestions that respect calendar reality
-- Soft visuals; zero shame copy
-- HealthKit-shaped assumptions (exploration only)
-- Inclusive motion and Dynamic Type
+- One daily energy snapshot without spreadsheet overload
+- Few-tap check-in with a gentle summary
+- Weekly and sleep views that inform without alarm
+- Evening wind-down that respects calendar reality
+- Inclusive motion and Dynamic Type; shame-free copy
 
 **Constraints**
-- iOS soft humanist; not clinical EHR
-- Wellness companion — not clinical or medical advice
-- Timeboxed sprint
-- Privacy-forward empty states
-- a11y: Reduce Motion alternatives for breathing cues
+- iOS soft humanist; wellness companion — not clinical advice
+- Timeboxed sprint; HealthKit-shaped assumptions only
+- Reduce Motion alternatives for breathing/wind-down cues
+- Privacy-forward empty states for devices and permissions
 
 ### Process
-1. **Frame & research** - Glance at Apple Fitness calm moments, Daylio, Rise. Assumption: adherence dies when UI scolds.
-2. **Flows & IA** - Today snapshot → Check-in → Recovery suggestion → Weekly pattern.
-3. **Options explored** - (A) Hard gamification rings (rejected: shame). (B) Therapist chatbot (rejected: scope/trust). (C) Snapshot + one suggestion + optional journal (chosen).
-4. **Visual & DS** - Mist gradients, rounded 24pt cards, humanist sans, lavender accent. Illustration sparingly.
-5. **Prototype & critique** - High-fidelity prototype: Today, Check-in, Weekly; Figma Dynamic Type overflow and Reduce Motion.
-6. **Validation notes** - Risk: users expect clinical accuracy. Added "Not medical advice" persistently but quietly.
+1. **Assume adherence dies when UI scolds** - Glance at calm Fitness moments and gentle journaling apps. Designed against red-ring shame.
+2. **Day → week → night arc** - Today → Check-in → Summary → Trends / Sleep → Wind-down → Profile & devices.
+3. **Reject hard gamification and therapist-chat scope** - Streak punishment and clinical chat were out. Chose snapshot + one suggestion + optional journal depth.
+4. **Soft visual system** - Mist gradients, large radius, lavender accent, solid text containers so contrast survives the aesthetic.
+5. **Prototype Dynamic Type and Reduce Motion** - Overflow and motion fallbacks treated as product requirements.
+6. **Keep medical boundaries quiet but clear** - Not-medical-advice present without dominating the UI.
 
 ### Key decisions
-- I chose **one suggestion per day** because choice overload kills recovery; I rejected tip carousels.
-- I chose **no punishing streaks** because missed days should not clear progress theater; I rejected Duolingo-style pressure.
-- I chose **soft gradients with solid text containers** so contrast survives the aesthetic.
-- I chose **calendar-aware suggestions** ("15 min walk between meetings") over generic advice.
+- **One suggestion per day** — choice overload kills recovery.
+- **No punishing streaks** — missed days should not erase the relationship with the app.
+- **Sleep and weekly as context, not scoreboards** — patterns over grades.
+- **Wind-down as a designed evening ritual** — recovery isn’t only a morning screen.
 
 ### Solution
 1. **Today Recovery** — Qualitative energy snapshot and soft next step. Proves calm daily entry.
 2. **Daily Check-in** — Few-tap mood/energy/load with optional note. Proves low friction.
-3. **Check-in Summary** — Confirmation and gentle pattern hint without clinic UI. Proves insight without overwhelm.
+3. **Check-in Summary** — Confirmation and gentle pattern hint. Proves insight without clinic UI.
+4. **Weekly Trends** — Soft pattern view across days. Proves longer-arc noticing.
+5. **Sleep Breakdown** — Sleep debt and quality without alarm red. Proves health-adjacent clarity.
+6. **Evening Wind-down** — Calendar-aware wind-down prompts. Proves recovery timing craft.
+7. **Profile & Devices** — Permissions and device links when ready. Proves privacy-forward setup.
 
-Empty: "Grant Health permissions when you're ready." Error: "Couldn't sync sleep - enter manually." Success: "Check-in saved".
-
+Empty: “Grant Health permissions when you’re ready.” Error: “Couldn’t sync sleep — enter manually.” Success: “Check-in saved.”
 
 ### Design system notes
-Tokens: `color.mist.*`, `color.accent.lavender`, `radius.xl`. Components: SnapshotCard, CheckInSheet, SoftChart, SuggestionPill, QuietDisclaimer. Pattern: notice → tiny input → one action.
+Tokens: mist surfaces, lavender accent, xl radius. Components: SnapshotCard, CheckInSheet, SoftChart, SuggestionPill, WindDownList. Pattern: notice → tiny input → one action.
 
 ### Outcomes & learnings
-- **Design target:** check-in completion feels under 20 seconds in prototype tests
-- **Prototype success target:** qualitative "I don't feel judged" majority in prototype feedback
-- Ship-test next: real HealthKit, Focus mode integration, clinician-safe copy review
-- Hiring signal: soft mobile craft, habit UX ethics, inclusive health-adjacent design
+- Exploration of soft mobile craft, habit UX ethics, and inclusive health-adjacent design.
+- Learning: shame-free copy and streak absence change whether people reopen the app after a bad week.
+- Next if productized: real HealthKit, Focus integration, clinician-safe copy review.
+- Hiring signal: wellness UX that protects dignity.

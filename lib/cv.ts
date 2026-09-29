@@ -483,7 +483,7 @@ export const IMPACT_METRICS: ImpactMetric[] = [
     value: "42% faster",
     label: "Gantt information retrieval · NPS +36%",
     footnote:
-      "BigPicture Gantt usability · timed tasks + NPS · delivered with the team under design leadership.",
+      "Enterprise Gantt usability · timed tasks + NPS · delivered with the team under design leadership.",
   },
   {
     value: "35+",
