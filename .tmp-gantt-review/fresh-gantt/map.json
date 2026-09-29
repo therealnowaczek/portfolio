@@ -5,44 +5,42 @@
     {
       "file": "cover",
       "id": "4dd3d3d6289b439b81b12c54b89acd21",
-      "title": "Gantt Program Overview",
-      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2Y2YjY1YmI3ZjY0YjQ0ZTk5OGY5NTE1M2FjOTM1ZjFlEgsSBxCyr6b88wUYAZIBIwoKcHJvamVjdF9pZBIVQhMxNjQ2NTY1MDA3MzAzMTEwNDgw&filename=&opi=96797242"
+      "title": "Gantt Program Overview"
     },
     {
       "file": "screen-1",
       "id": "4dd3d3d6289b439b81b12c54b89acd21",
-      "title": "Program Gantt overview",
-      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2Y2YjY1YmI3ZjY0YjQ0ZTk5OGY5NTE1M2FjOTM1ZjFlEgsSBxCyr6b88wUYAZIBIwoKcHJvamVjdF9pZBIVQhMxNjQ2NTY1MDA3MzAzMTEwNDgw&filename=&opi=96797242"
+      "title": "Program Gantt overview"
     },
     {
       "file": "screen-2",
       "id": "30f929a3f8694bfdb0a171f5ff2aecac",
-      "title": "Gantt Quarters Density Zoom",
-      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzYwNjQ1ZjhhZDQyNjQ1ODQ4OTI1MzUwN2U3ZjU5MDc4EgsSBxCyr6b88wUYAZIBIwoKcHJvamVjdF9pZBIVQhMxNjQ2NTY1MDA3MzAzMTEwNDgw&filename=&opi=96797242"
+      "title": "Gantt Quarters Density Zoom"
     },
     {
       "file": "screen-3",
-      "id": "df6a511627ec441e8604c9eab76786da",
-      "title": "Gantt Critical Path View",
-      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzVhMzdhMTVkNjc5YTRjZWZhOTExZTk3YjcyODEwYzg1EgsSBxCyr6b88wUYAZIBIwoKcHJvamVjdF9pZBIVQhMxNjQ2NTY1MDA3MzAzMTEwNDgw&filename=&opi=96797242"
+      "id": "a1e39f8a1eb44753bd050efe579d0be1",
+      "title": "Gantt Critical Path View"
     },
     {
       "file": "screen-4",
       "id": "985954babe3640cfa555af437b314a04",
-      "title": "Gantt Baselines Compare",
-      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzNlMWUyMDk0MTU3NTQyNDhiOWU1M2UwMGIxNjVmMDczEgsSBxCyr6b88wUYAZIBIwoKcHJvamVjdF9pZBIVQhMxNjQ2NTY1MDA3MzAzMTEwNDgw&filename=&opi=96797242"
+      "title": "Gantt Baselines Compare"
     },
     {
       "file": "screen-5",
       "id": "05cf569a90ba47fa9db58c67611da7dd",
-      "title": "Gantt Task Detail Drawer",
-      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzFlNWYyOWZhNzEyODRmMzViMTE3NTMzYjkwMmNiZjE4EgsSBxCyr6b88wUYAZIBIwoKcHJvamVjdF9pZBIVQhMxNjQ2NTY1MDA3MzAzMTEwNDgw&filename=&opi=96797242"
+      "title": "Gantt Task Detail Drawer"
     },
     {
       "file": "screen-6",
       "id": "fd88df603809433087b9ac7ab3a32709",
-      "title": "Gantt Search Jump Highlight",
-      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2YxMTViMmZjMTExYzRkMmE4MzY5ZDA0NjlhZGM2NTY5EgsSBxCyr6b88wUYAZIBIwoKcHJvamVjdF9pZBIVQhMxNjQ2NTY1MDA3MzAzMTEwNDgw&filename=&opi=96797242"
+      "title": "Gantt Search Jump Highlight"
     }
+  ],
+  "notes": [
+    "Abandoned empty new projects 3577207190657250714 / 1928929917500900594 (generate_screen_from_text -32001 without landing)",
+    "Salvaged 164656 set; regenerated critical path via edit_screens",
+    "Avoid 873559 contaminated project"
   ]
 }

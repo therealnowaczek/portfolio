@@ -113,7 +113,6 @@
     "slug": "gantt",
     "title": "Gantt",
     "oneLiner": "Dense program Gantt: retrieval speed as a design constraint",
-    "hidden": true,
     "badge": "Enterprise case \u00b7 Planning",
     "role": "Lead Product Designer",
     "platform": "Web desktop",

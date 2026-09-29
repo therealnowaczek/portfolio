@@ -25,7 +25,7 @@ type Props = {
  * Filtered views: even 6+6 pairs; odd last → full width.
  */
 
-const FEATURED_ORDER = ["costradar", "designos", "okrs"] as const;
+const FEATURED_ORDER = ["costradar", "designos", "okrs", "gantt"] as const;
 
 /** Exploration row recipes: each array sums to 12. */
 const EXPLORATION_ROWS: number[][] = [
