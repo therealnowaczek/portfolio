@@ -53,7 +53,7 @@ const links = [
 
 export function Header() {
   return (
-    <header className="border-b border-border bg-background pb-3 lg:sticky lg:top-0 lg:z-50 lg:bg-background lg:py-4">
+    <header className="border-b border-border bg-background pb-3 lg:border-b lg:py-4">
       <div className="flex items-center justify-between gap-3 sm:gap-4">
         <div className="flex min-w-0 flex-1 items-center gap-3">
           {/* Plain img: next/image skips basePath under static export + Turbopack. */}

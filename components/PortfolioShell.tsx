@@ -98,7 +98,7 @@ export function PortfolioShell({ projects }: Props) {
         Skip to content
       </a>
       <div className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 sm:pb-14 lg:px-8 lg:pb-14 lg:pl-48 lg:pt-6 xl:pl-52">
-        <div className="sticky top-0 z-50 -mx-4 mb-8 bg-background px-4 pt-4 sm:-mx-6 sm:px-6 sm:pt-6 lg:static lg:mx-0 lg:mb-0 lg:bg-transparent lg:p-0">
+        <div className="sticky top-0 z-50 -mx-4 mb-8 bg-background px-4 pt-4 sm:-mx-6 sm:px-6 sm:pt-6 lg:mx-0 lg:mb-10 lg:px-0 lg:pt-0">
           <Header />
           <SideNav items={NAV} />
         </div>
