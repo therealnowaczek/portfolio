@@ -2,7 +2,7 @@
 slug: harbor
 title: "Harbor"
 oneLiner: "Fintech repayments and insights companion"
-badge: "Personal exploration"
+badge: "Product design · iOS"
 role: "Lead Product Designer"
 platform: "iOS"
 timeline: "2–3 week design sprint"
@@ -31,7 +31,7 @@ portfolioSignals:
 ---
 
 ### Snapshot
-Harbor is a personal exploration of a calm iOS companion for revolving credit: what you owe, what a payment changes, and how to schedule it without panic UI. Apple HIG clarity and consequence-before-commit beat gamified debt apps that shame people into taps.
+Harbor is a calm iOS companion for revolving credit: what you owe, what a payment changes, and how to schedule it without panic UI. Apple HIG clarity and consequence-before-commit beat gamified debt apps that shame people into taps.
 
 ### Problem
 Borrowers understand the minimum due, not the interest trajectory or the emotional cost of “pay later” defaults. Persona: someone juggling cards who wants one trustworthy place to plan a repayment before payday, without a coach chatbot or confetti on debt.

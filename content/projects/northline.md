@@ -2,7 +2,7 @@
 slug: northline
 title: "Northline"
 oneLiner: "AI ops profitability console for B2B SaaS"
-badge: "Personal exploration"
+badge: "Product design · Web"
 role: "Lead Product Designer"
 platform: "Web desktop"
 timeline: "2–3 week design sprint"
@@ -27,11 +27,11 @@ portfolioSignals:
   - "Dense B2B SaaS"
   - "Trust and lineage"
   - "Accessibility in data UI"
-  - "E2E product exploration"
+  - "E2E product design"
 ---
 
 ### Snapshot
-Northline is a personal exploration of a profitability console for B2B SaaS finance and RevOps. Quiet enterprise chrome, teal accent, leak-first IA: find where contribution margin is slipping, explain it with lineage, and offer a reversible next step, without a twelve-widget chart graveyard.
+Northline is a profitability console for B2B SaaS finance and RevOps. Quiet enterprise chrome, teal accent, leak-first IA: find where contribution margin is slipping, explain it with lineage, and offer a reversible next step, without a twelve-widget chart graveyard.
 
 ### Problem
 RevOps can see revenue and burn, but not which AI workloads, infra tiers, discount cohorts, or ad channels are quietly destroying contribution margin. The weekly board pack needs a short list of leaks with evidence, not another dashboard that agrees with itself and contradicts finance.
@@ -45,7 +45,7 @@ RevOps can see revenue and burn, but not which AI workloads, infra tiers, discou
 - Treat empty and connect states as part of the product story
 
 **Constraints**
-- Desktop-first exploration: no mobile redesign
+- Desktop-first scope: no mobile redesign
 - AI suggestions show confidence + lineage, no vibes-only chat as primary
 - WCAG-minded tables and status (never color alone)
 - Timeboxed 2–3 week sprint; quiet enterprise teal only
@@ -81,4 +81,4 @@ Tokens: accent teal, delta pos/neg, dense spacing, tabular type. Components: Dat
 - Exploration of AI + dense B2B SaaS ops UX with trust and a11y as first-class constraints.
 - Learning: lineage and undo matter more than clever chat for finance-adjacent AI.
 - Next if productized: real invoice connectors, role-based leak visibility, board-pack export.
-- Hiring signal: end-to-end product exploration for profitability systems.
+- Hiring signal: end-to-end product design for profitability systems.

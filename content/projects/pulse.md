@@ -2,7 +2,7 @@
 slug: pulse
 title: "Pulse"
 oneLiner: "Energy and recovery wellness companion"
-badge: "Personal exploration"
+badge: "Product design · iOS"
 role: "Lead Product Designer"
 platform: "iOS"
 timeline: "2–3 week design sprint"
@@ -32,7 +32,7 @@ portfolioSignals:
 ---
 
 ### Snapshot
-Pulse is a personal exploration of a soft humanist iOS companion for energy and recovery: sleep debt, check-ins, weekly patterns, and evening wind-down, without punishing streaks. Warmth and honesty beat quantified-self severity for anything people might actually keep using.
+Pulse is a soft humanist iOS companion for energy and recovery: sleep debt, check-ins, weekly patterns, and evening wind-down, without punishing streaks. Warmth and honesty beat quantified-self severity for anything people might actually keep using.
 
 ### Problem
 People track steps and sleep in different apps, then feel judged by red rings. Persona: a knowledge worker who wants to notice burnout earlier and get one recovery move they might actually do, not a clinic UI or a scolding coach.

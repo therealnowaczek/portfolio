@@ -2,7 +2,7 @@
 slug: nest
 title: "Nest"
 oneLiner: "Local services marketplace"
-badge: "Personal exploration"
+badge: "Product design · Cross-platform"
 role: "Lead Product Designer"
 platform: "iOS + desktop web"
 timeline: "2–3 week design sprint"
@@ -32,7 +32,7 @@ portfolioSignals:
 ---
 
 ### Snapshot
-Nest is a personal exploration of a local-services marketplace across iOS and desktop web: find a vetted pro, see price and fees before chat, book, track, and manage activity. Shared IA with platform-honest shells: trust scaffolding matters more than novelty in two-sided local markets.
+Nest is a local-services marketplace across iOS and desktop web: find a vetted pro, see price and fees before chat, book, track, and manage activity. Shared IA with platform-honest shells: trust scaffolding matters more than novelty in two-sided local markets.
 
 ### Problem
 Hiring a cleaner, repair pro, or tutor still fragments across chats and Facebook groups with unclear pricing and safety. Seeker JTBD: book a vetted pro for Saturday, know the total, message in-app. Pro JTBD (sketched): get qualified requests without lead-fee surprises.

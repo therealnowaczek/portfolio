@@ -34,7 +34,7 @@ Optional HTML→PNG re-export (when `scripts/project-assets.json` is present loc
 npm run export:assets
 ```
 
-Slugs: `northline`, `harbor`, `circuit`, `folio`, `quorum`, `pulse`, `atlas-cms`, `nest`, `signal-rooms`, `ledgerly-studio`.
+Slugs: `northline`, `harbor`, `circuit`, `folio`, `quorum`, `pulse`, `atlas-cms`, `nest`, `glowcast`, `signal-rooms`, `ledgerly-studio`.
 
 ## Content
 

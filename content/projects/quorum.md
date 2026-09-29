@@ -2,7 +2,7 @@
 slug: quorum
 title: "Quorum"
 oneLiner: "B2B roles, permissions, and partner activation"
-badge: "Personal exploration"
+badge: "Product design · Web"
 role: "Lead Product Designer"
 platform: "Web enterprise"
 timeline: "2–3 week design sprint"
@@ -32,7 +32,7 @@ portfolioSignals:
 ---
 
 ### Snapshot
-Quorum is a personal exploration of B2B partner activation: invite an org, give them understandable roles, walk them to first value, and keep an audit trail admins trust. Least-privilege should read in business language, an ACL matrix is not a homepage.
+Quorum is a B2B partner activation product: invite an org, give them understandable roles, walk them to first value, and keep an audit trail admins trust. Least-privilege should read in business language, an ACL matrix is not a homepage.
 
 ### Problem
 Partner managers lose days to “who can see what” threads after a reseller joins. Access without activation fails the lifecycle; activation without scoped roles creates security debt. The job: invite, grant the right access, and reach first successful action this week.

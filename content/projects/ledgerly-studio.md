@@ -2,7 +2,7 @@
 slug: ledgerly-studio
 title: "Ledgerly Studio"
 oneLiner: "Growth experimentation lab"
-badge: "Personal exploration"
+badge: "Product design · Web"
 role: "Lead Product Designer"
 platform: "Web analytics"
 timeline: "2–3 week design sprint"
@@ -12,7 +12,7 @@ tags:
   - "Analytics"
   - "Web"
   - "Metrics"
-order: 14
+order: 15
 accent: "#2563EB"
 styleLabel: "Growth lab blue"
 screens:
@@ -28,7 +28,7 @@ portfolioSignals:
 ---
 
 ### Snapshot
-Ledgerly Studio is a personal exploration of a growth experimentation lab where PMs and designers define hypotheses, attach variants, and decide ship/kill without drowning in BI charts. A lab notebook with guardrails, not a metrics graveyard.
+Ledgerly Studio is a growth experimentation lab where PMs and designers define hypotheses, attach variants, and decide ship/kill without drowning in BI charts. A lab notebook with guardrails, not a metrics graveyard.
 
 ### Problem
 Growth teams lose signal when experiment setup, design variants, and analytics live in three tools. The job: write a hypothesis, attach variants, monitor primary and guardrail metrics, and decide with shared language, including “inconclusive.”

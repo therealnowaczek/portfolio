@@ -374,7 +374,7 @@ export const ROLE_LENSES: RoleLens[] = [
     proof: [
       "Design-system standards through SoftwarePlant → Appfire integration",
       "Org-wide Figma standards for a 35+ team I co-led",
-      "Atlas CMS exploration: tokens, specs, and a live props playground",
+      "Atlas CMS: tokens, specs, and a live props playground",
     ],
     ninetyDays: [
       "Inventory components, debt, and adoption gaps across products",

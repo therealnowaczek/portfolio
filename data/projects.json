@@ -4,7 +4,7 @@
     "slug": "costradar",
     "title": "CostRadar.ai",
     "oneLiner": "Profitability OS for multi-channel e-commerce: true net P&L plus an Approve-gated AI Profit Agent",
-    "badge": "Shipped product · Founder case study",
+    "badge": "Shipped product \u00b7 Founder case study",
     "role": "Founder & AI Design Engineer (solo)",
     "platform": "Web SaaS (+ PWA glance)",
     "timeline": "Solo-shipped live product",
@@ -42,10 +42,10 @@
     "slug": "designos",
     "title": "DesignOS",
     "oneLiner": "Org-scale UX operating system: intake, estimation, standards, research ops, and human-gated AI",
-    "badge": "Enterprise case · Design Ops",
-    "role": "Senior UX Manager · Appfire",
+    "badge": "Enterprise case \u00b7 Design Ops",
+    "role": "Senior UX Manager \u00b7 Appfire",
     "platform": "Web desktop",
-    "timeline": "Appfire · org UX OS",
+    "timeline": "Appfire \u00b7 org UX OS",
     "tags": [
       "Design Ops",
       "AI UX",
@@ -66,10 +66,10 @@
     ],
     "portfolioSignals": [
       "Design Ops leadership at org scale",
-      "Intake → estimate → craft predictability",
+      "Intake \u2192 estimate \u2192 craft predictability",
       "Figma / design-system governance",
       "Research ops as shared infrastructure",
-      "Human-gated agentic delivery (Sense→Learn)"
+      "Human-gated agentic delivery (Sense\u2192Learn)"
     ],
     "status": "shipped"
   },
@@ -78,10 +78,10 @@
     "slug": "okrs",
     "title": "OKRs",
     "oneLiner": "Strategy-to-work hierarchy leaders use in weekly planning",
-    "badge": "Enterprise case · OKRs",
+    "badge": "Enterprise case \u00b7 OKRs",
     "role": "Lead Product Designer",
     "platform": "Web desktop",
-    "timeline": "Enterprise PPM · shipped",
+    "timeline": "Enterprise PPM \u00b7 shipped",
     "tags": [
       "OKRs",
       "Enterprise",
@@ -94,14 +94,14 @@
     "styleLabel": "Quiet enterprise blue",
     "screens": [
       "Leadership weekly ritual",
-      "Goals → KR → Work hierarchy",
+      "Goals \u2192 KR \u2192 Work hierarchy",
       "Key Result detail",
       "At-risk / stale health",
       "Empty first-run hierarchy"
     ],
     "portfolioSignals": [
       "Staff/Principal hierarchy IA under cognitive load",
-      "Strategy ↔ execution without Jira noise",
+      "Strategy \u2194 execution without Jira noise",
       "Weekly leadership ritual design",
       "Ownership, staleness, and trust states",
       "Enterprise PPM density"
@@ -113,10 +113,10 @@
     "slug": "gantt",
     "title": "Gantt",
     "oneLiner": "Dense program Gantt: retrieval speed as a design constraint",
-    "badge": "Enterprise case · Planning",
+    "badge": "Enterprise case \u00b7 Planning",
     "role": "Lead Product Designer",
     "platform": "Web desktop",
-    "timeline": "Enterprise PPM · shipped",
+    "timeline": "Enterprise PPM \u00b7 shipped",
     "tags": [
       "Gantt",
       "Enterprise",
@@ -149,10 +149,10 @@
     "slug": "northline",
     "title": "Northline",
     "oneLiner": "AI ops profitability console for B2B SaaS",
-    "badge": "Personal exploration",
+    "badge": "Product design \u00b7 Web",
     "role": "Lead Product Designer",
     "platform": "Web desktop",
-    "timeline": "2–3 week design sprint",
+    "timeline": "2\u20133 week design sprint",
     "tags": [
       "AI",
       "B2B SaaS",
@@ -176,7 +176,7 @@
       "Dense B2B SaaS",
       "Trust and lineage",
       "Accessibility in data UI",
-      "E2E product exploration"
+      "E2E product design"
     ],
     "status": "exploration"
   },
@@ -185,10 +185,10 @@
     "slug": "harbor",
     "title": "Harbor",
     "oneLiner": "Fintech repayments and insights companion",
-    "badge": "Personal exploration",
+    "badge": "Product design \u00b7 iOS",
     "role": "Lead Product Designer",
     "platform": "iOS",
-    "timeline": "2–3 week design sprint",
+    "timeline": "2\u20133 week design sprint",
     "tags": [
       "Fintech",
       "iOS",
@@ -221,10 +221,10 @@
     "slug": "circuit",
     "title": "Circuit",
     "oneLiner": "Deploy and observability console for engineers",
-    "badge": "Personal exploration",
+    "badge": "Product design \u00b7 Web",
     "role": "Lead Product Designer",
     "platform": "Web dark",
-    "timeline": "2–3 week design sprint",
+    "timeline": "2\u20133 week design sprint",
     "tags": [
       "Developer tools",
       "Observability",
@@ -257,10 +257,10 @@
     "slug": "folio",
     "title": "Folio",
     "oneLiner": "Social critique network for designers",
-    "badge": "Personal exploration",
+    "badge": "Product design \u00b7 Android",
     "role": "Lead Product Designer",
     "platform": "Android",
-    "timeline": "2–3 week design sprint",
+    "timeline": "2\u20133 week design sprint",
     "tags": [
       "Android",
       "Community",
@@ -294,10 +294,10 @@
     "slug": "quorum",
     "title": "Quorum",
     "oneLiner": "B2B roles, permissions, and partner activation",
-    "badge": "Personal exploration",
+    "badge": "Product design \u00b7 Web",
     "role": "Lead Product Designer",
     "platform": "Web enterprise",
-    "timeline": "2–3 week design sprint",
+    "timeline": "2\u20133 week design sprint",
     "tags": [
       "B2B",
       "Permissions",
@@ -331,10 +331,10 @@
     "slug": "pulse",
     "title": "Pulse",
     "oneLiner": "Energy and recovery wellness companion",
-    "badge": "Personal exploration",
+    "badge": "Product design \u00b7 iOS",
     "role": "Lead Product Designer",
     "platform": "iOS",
-    "timeline": "2–3 week design sprint",
+    "timeline": "2\u20133 week design sprint",
     "tags": [
       "Wellness",
       "iOS",
@@ -368,10 +368,10 @@
     "slug": "atlas-cms",
     "title": "Atlas CMS",
     "oneLiner": "Design system docs and playground",
-    "badge": "Personal exploration",
+    "badge": "Product design \u00b7 Web",
     "role": "Lead Product Designer",
     "platform": "Web docs",
-    "timeline": "2–3 week design sprint",
+    "timeline": "2\u20133 week design sprint",
     "tags": [
       "Design system",
       "Docs",
@@ -393,7 +393,7 @@
     "portfolioSignals": [
       "Design systems",
       "Docs UX",
-      "Designer–engineer bridge",
+      "Designer\u2013engineer bridge",
       "Token literacy",
       "Playground adoption"
     ],
@@ -404,10 +404,10 @@
     "slug": "nest",
     "title": "Nest",
     "oneLiner": "Local services marketplace",
-    "badge": "Personal exploration",
+    "badge": "Product design \u00b7 Cross-platform",
     "role": "Lead Product Designer",
     "platform": "iOS + desktop web",
-    "timeline": "2–3 week design sprint",
+    "timeline": "2\u20133 week design sprint",
     "tags": [
       "Marketplace",
       "Cross-platform",
@@ -437,11 +437,45 @@
     "status": "exploration"
   },
   {
+    "id": "15",
+    "slug": "glowcast",
+    "title": "Glowcast",
+    "oneLiner": "Video live streaming with creator discovery, gifts, and safer Match",
+    "badge": "Mobile product · Live entertainment",
+    "role": "Lead Product Designer",
+    "platform": "iOS",
+    "timeline": "2–3 week design sprint",
+    "tags": [
+      "Live video",
+      "Social",
+      "iOS",
+      "Entertainment",
+      "Safety"
+    ],
+    "order": 13,
+    "accent": "#FF6B5B",
+    "styleLabel": "Nightlife coral dark",
+    "screens": [
+      "Discover: Live Now",
+      "Live Room: Stream + Chat + Gifts",
+      "Gift Confirm Sheet",
+      "Match Consent Bridge"
+    ],
+    "portfolioSignals": [
+      "Live entertainment mobile UX",
+      "Creator discovery cold-start",
+      "Gift trust before commit",
+      "Face-safe live chrome",
+      "Consent-first Match entry"
+    ],
+    "status": "exploration"
+  },
+  {
     "id": "10",
     "slug": "signal-rooms",
     "title": "Signal Rooms",
-    "oneLiner": "Live audio community rooms",
-    "badge": "Personal exploration",
+    "oneLiner": "Live audio community rooms (not video live)",
+    "badge": "Product design · iOS",
     "role": "Lead Product Designer",
     "platform": "iOS dark expressive",
     "timeline": "2–3 week design sprint",
@@ -452,7 +486,7 @@
       "Dark expressive",
       "Social"
     ],
-    "order": 13,
+    "order": 14,
     "accent": "#B8F53A",
     "styleLabel": "Neon lime dark",
     "screens": [
@@ -477,10 +511,10 @@
     "slug": "ledgerly-studio",
     "title": "Ledgerly Studio",
     "oneLiner": "Growth experimentation lab",
-    "badge": "Personal exploration",
+    "badge": "Product design \u00b7 Web",
     "role": "Lead Product Designer",
     "platform": "Web analytics",
-    "timeline": "2–3 week design sprint",
+    "timeline": "2\u20133 week design sprint",
     "tags": [
       "Growth",
       "Experimentation",
@@ -488,7 +522,7 @@
       "Web",
       "Metrics"
     ],
-    "order": 14,
+    "order": 15,
     "accent": "#2563EB",
     "styleLabel": "Growth lab blue",
     "screens": [

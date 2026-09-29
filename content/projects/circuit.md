@@ -2,7 +2,7 @@
 slug: circuit
 title: "Circuit"
 oneLiner: "Deploy and observability console for engineers"
-badge: "Personal exploration"
+badge: "Product design · Web"
 role: "Lead Product Designer"
 platform: "Web dark"
 timeline: "2–3 week design sprint"
@@ -31,7 +31,7 @@ portfolioSignals:
 ---
 
 ### Snapshot
-Circuit is a personal exploration of a dark deploy + observability console for engineers: ship, watch signals, bisect a bad release, and roll back with blast-radius clarity. Vercel-speed ship energy meets Raycast-grade keyboard density, without becoming another noisy APM.
+Circuit is a dark deploy + observability console for engineers: ship, watch signals, bisect a bad release, and roll back with blast-radius clarity. Vercel-speed ship energy meets Raycast-grade keyboard density, without becoming another noisy APM.
 
 ### Problem
 After a deploy, engineers bounce between CI, logs, and status pages to answer “is prod healthy?” The job is one keyboard-first surface: redeploy, correlate signals to a release, and reverse a bad ship before Slack catches fire.

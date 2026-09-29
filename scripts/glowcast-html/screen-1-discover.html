@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Glowcast - Discover Live Now</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Sora:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed": "#2a1800",
+            "secondary-fixed": "#ffddb6",
+            "on-primary-container": "#6d0003",
+            "tertiary": "#58ddab",
+            "surface-container-low": "#1d1a23",
+            "tertiary-fixed-dim": "#58ddab",
+            "on-error-container": "#ffdad6",
+            "on-background": "#e6e0ec",
+            "on-tertiary-fixed": "#002115",
+            "surface": "#14121a",
+            "on-secondary": "#462a00",
+            "inverse-primary": "#ae3026",
+            "error": "#ffb4ab",
+            "tertiary-fixed": "#77fac6",
+            "primary-fixed-dim": "#ffb4aa",
+            "surface-variant": "#36333c",
+            "on-primary-fixed-variant": "#8c1712",
+            "inverse-on-surface": "#322f38",
+            "surface-container-highest": "#36333c",
+            "primary-fixed": "#ffdad5",
+            "surface-bright": "#3b3841",
+            "background": "#14121a",
+            "primary-container": "#ff6b5b",
+            "on-error": "#690005",
+            "surface-container-high": "#2b2931",
+            "surface-container": "#211e27",
+            "on-surface": "#e6e0ec",
+            "outline-variant": "#59413e",
+            "surface-dim": "#14121a",
+            "on-tertiary-container": "#003a28",
+            "surface-tint": "#ffb4aa",
+            "on-surface-variant": "#e0bfba",
+            "primary": "#ffb4aa",
+            "inverse-surface": "#e6e0ec",
+            "tertiary-container": "#12af81",
+            "on-secondary-container": "#3d2400",
+            "secondary-container": "#c68315",
+            "on-primary": "#690003",
+            "on-primary-fixed": "#410001",
+            "on-secondary-fixed-variant": "#643f00",
+            "secondary-fixed-dim": "#ffb95a",
+            "secondary": "#ffb95a",
+            "outline": "#a88a86",
+            "on-tertiary-fixed-variant": "#00513a",
+            "on-tertiary": "#003827",
+            "surface-container-lowest": "#0f0d15",
+            "error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1rem",
+            "margin": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Sora"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Sora"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Sora"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.5px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    .animate-live-glow {
+      animation: pulse-dot 1.5s ease-in-out infinite;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen pb-28">
+<!-- Top Navigation Anchor (Shared Component: TopAppBar) -->
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-space-md h-14 max-w-md mx-auto bg-surface/80 backdrop-blur-md">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Search" class="flex items-center justify-center w-10 h-10 rounded-full hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="search">search</span>
+</button>
+</div>
+<div class="flex items-center gap-1 cursor-pointer">
+<span class="font-headline-md text-headline-md font-bold tracking-tight text-primary">Glowcast</span>
+<span class="w-2 h-2 rounded-full bg-primary-container mb-2 inline-block"></span>
+</div>
+<div class="flex items-center justify-end">
+<div class="relative cursor-pointer active:scale-95 transition-transform duration-150">
+<div class="w-9 h-9 rounded-full ring-2 ring-primary-container/30 overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Modern close up avatar portrait of an energetic young female creator wearing stylish headphones bathed in subtle warm amber and deep purple nightlife neon lighting. Highly detailed clean photography with a smooth dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALL7oOb8K78NcZ61gRaecaXFGe_rHHA2aTlBcOTwFRZFvijEz8gYPSa1bST-n74Hpr9hUmEtU--J8DzEwp7MuhS4ntYna0rlpQeJ8wvArXg_DKy2-cCogr3SMXInz9hAoJaee0t_RmdtCggNzANefh1SuI17FPAGWxyHvVeOuq9uTO-SFMh-YM-7DfD0HKEEQ7MUbDunQTJeVk3zFvl_kLzgUZLtdUwOkPLX9BT-ayif-_HIxUpBeihgeOlBo0UZoXeaf0gC4za-Ww"/>
+</div>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-tertiary-container ring-2 ring-surface"></span>
+</div>
+</div>
+</header>
+<!-- Main Container -->
+<main class="max-w-md mx-auto pt-16 px-space-md">
+<!-- Screen Section Title & Live Count Metric -->
+<div class="flex items-baseline justify-between pt-2 pb-3">
+<div>
+<h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight flex items-center gap-2">
+          Discover
+          <span class="font-headline-sm text-headline-sm text-primary">Live Now</span>
+</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time nightlife streams &amp; sessions</p>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high/60 backdrop-blur-md">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-live-glow"></span>
+<span class="font-label-sm text-label-sm text-tertiary">2.4k Rooms</span>
+</div>
+</div>
+<!-- Category Filter Chips (Horizontal Scroll) -->
+<section class="mb-4 -mx-space-md px-space-md overflow-x-auto no-scrollbar flex items-center gap-2 py-1">
+<!-- Active Pill -->
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md font-bold shadow-lg shadow-primary-container/20 whitespace-nowrap active:scale-95 transition-all">
+<span class="w-2 h-2 rounded-full bg-on-primary-container animate-live-glow"></span>
+        Live now
+      </button>
+<!-- Inactive Filter Pills -->
+<button class="px-4 py-2 rounded-full bg-surface-container-high/80 text-on-surface hover:text-primary font-label-md text-label-md whitespace-nowrap border border-outline-variant/30 active:scale-95 transition-all">
+        For you
+      </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-high/80 text-on-surface hover:text-primary font-label-md text-label-md whitespace-nowrap border border-outline-variant/30 active:scale-95 transition-all">
+        Music
+      </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-high/80 text-on-surface hover:text-primary font-label-md text-label-md whitespace-nowrap border border-outline-variant/30 active:scale-95 transition-all">
+        Cooking
+      </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-high/80 text-on-surface hover:text-primary font-label-md text-label-md whitespace-nowrap border border-outline-variant/30 active:scale-95 transition-all">
+        Gaming
+      </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-high/80 text-on-surface hover:text-primary font-label-md text-label-md whitespace-nowrap border border-outline-variant/30 active:scale-95 transition-all">
+        Art &amp; Design
+      </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-high/80 text-on-surface hover:text-primary font-label-md text-label-md whitespace-nowrap border border-outline-variant/30 active:scale-95 transition-all">
+        Late Night
+      </button>
+</section>
+<!-- Feed of Live Stream Cards -->
+<div class="flex flex-col gap-4">
+<!-- Stream Card 1: Elena & The Echoes -->
+<article class="group relative rounded-xl overflow-hidden bg-surface-container-low shadow-xl shadow-surface-container-lowest/80 cursor-pointer transition-transform duration-200 active:scale-[0.99]">
+<!-- Full-Bleed Video Thumbnail Preview -->
+<div class="relative w-full h-80 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Atmospheric warm rooftop concert stream at midnight with a soulful female singer illuminated by dim amber bistro string lights and soft deep indigo sky. City skyline glowing softly in the blurred bokeh background with acoustic instruments and stage equipment clearly visible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCYisOclSNpBDyqpn2U7TXfLswjd1DJeL4etzhTo2zAcmTh2VvPtja3w9pPADlFa3p6Mdsij3INf964PMMN90wXCAvbIscQDuNWMSm-akl9Uymj0ORwhWZfHjLWZDNtDbQ0iXKOuc5kcMLjfFQd-rgvOcIx7rhJNLMDTlpSdv3dOBY598hTxiPDqcAZavz8QbU2Xm5T7kKVgPocR2p6arr0-L3u0DQZl_9Da91fNakLYj3rZ9TNK2-9bEW7aCapQQlZw4wdjD5dN4k"/>
+<!-- Top Gradient Scrim -->
+<div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#121018]/80 via-[#121018]/30 to-transparent pointer-events-none"></div>
+<!-- Bottom Gradient Scrim for Face-Safe readability -->
+<div class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#121018] via-[#121018]/80 to-transparent pointer-events-none"></div>
+<!-- Top Badges Overlay -->
+<div class="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+<div class="flex items-center gap-2">
+<!-- Mint Green Pulse LIVE Badge -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md border border-tertiary/40">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-live-glow"></span>
+<span class="font-label-sm text-label-sm font-bold text-tertiary tracking-wider">LIVE</span>
+</div>
+<!-- Category Pill -->
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest/60 backdrop-blur-md font-label-sm text-label-sm text-on-surface-variant font-medium">
+                Live Music
+              </span>
+</div>
+<!-- Viewer Metric Chip -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest/70 backdrop-blur-md text-on-surface">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="visibility">visibility</span>
+<span class="font-label-sm text-label-sm font-bold">14.8k</span>
+</div>
+</div>
+<!-- Bottom Streamer Metadata & Controls -->
+<div class="absolute bottom-3 left-3 right-3 z-10 flex flex-col gap-2">
+<!-- Host Info Row -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="relative w-10 h-10 rounded-full ring-2 ring-primary-container overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Intimate portrait of an indie female singer songwriter with stylish braided hair and subtle glitter makeup smiling gently under warm tungsten stage lights with a dark aesthetic ambiance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRylnJVtkuvoLnKNMsLcG2OBujfP-uZgZzauoFDCLwQtdTHr8CfJAt-8S_fAiRu1qTGZLna7jX-DJwLB-gTW0gyz348ujyVZQqhMTVDu064aqZZHyEbPYst44fx7QhXDTYFH0HehHHGPBNoYMLRnDU46hlKb0yEmgIUhZLZ7HEskMZSNTGJw1c4NkGpH2tpWjZYPVeJyCdQzauq47Itx9RhJaFrUQ5AmDqAbKZ0FRkkYvShBnvL0dp3Iummfns7sK3nqwP8eu5cbG7"/>
+</div>
+<div>
+<div class="flex items-center gap-1">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Elena &amp; The Echoes</span>
+<span class="material-symbols-outlined text-tertiary text-base" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Rooftop Lounge • Brooklyn, NY</p>
+</div>
+</div>
+<!-- Stream Interaction Pill -->
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary-container/20 backdrop-blur-md border border-primary-container/30 text-primary hover:bg-primary-container/30 transition-colors">
+<span class="material-symbols-outlined text-sm text-primary-container" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">2.4k</span>
+</button>
+</div>
+<!-- Stream Title -->
+<p class="font-headline-sm text-headline-sm font-semibold text-on-surface line-clamp-1 group-hover:text-primary transition-colors">
+              Late Night Rooftop Jam Session 🌙 Request your favorites
+            </p>
+</div>
+</div>
+</article>
+<!-- Stream Card 2: Chef Kenji -->
+<article class="group relative rounded-xl overflow-hidden bg-surface-container-low shadow-xl shadow-surface-container-lowest/80 cursor-pointer transition-transform duration-200 active:scale-[0.99]">
+<div class="relative w-full h-80 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Steaming hot artisanal Tokyo street ramen bowl prepared live in a cozy dark wood izakaya kitchen at midnight. Soft steam rising into warm amber hanging pendant lights, with rich broth, glistening chashu pork, and fresh scallions perfectly composed under cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJeRDh-V7nhEuifAOUFMR1GlQJM1gq98gUGx1sib_plIlnaOOuinuHgd8AwL2ud49aTrVv2BlDBkDJr9KR6LJCz43YFa7npKgvoBqOzDg0R80ARf02Ssvc5uepSR4LxqDo95Zj7Kb0uk2LkDPHUB3Sl-0v1t5qtOqDy_IwJRlp9Ob93CArFn28Cr592sNFtcSAO1diW5bpsC7P43y1Q5dJ5qQEg5Um6mLyiFkIrZiEfSbkXIksG8zNwbaUlBo20XjIAnCYtFcugKnA"/>
+<div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#121018]/80 via-[#121018]/30 to-transparent pointer-events-none"></div>
+<div class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#121018] via-[#121018]/80 to-transparent pointer-events-none"></div>
+<!-- Top Badges Overlay -->
+<div class="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md border border-tertiary/40">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-live-glow"></span>
+<span class="font-label-sm text-label-sm font-bold text-tertiary tracking-wider">LIVE</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest/60 backdrop-blur-md font-label-sm text-label-sm text-on-surface-variant font-medium">
+                Cooking
+              </span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest/70 backdrop-blur-md text-on-surface">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="visibility">visibility</span>
+<span class="font-label-sm text-label-sm font-bold">6.2k</span>
+</div>
+</div>
+<!-- Bottom Streamer Metadata & Controls -->
+<div class="absolute bottom-3 left-3 right-3 z-10 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="relative w-10 h-10 rounded-full ring-2 ring-secondary-container overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Focused Japanese master chef in a clean dark indigo chef coat preparing street food with authentic concentration, warm lighting highlighting his face and traditional izakaya setting in soft focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVxTgF3SzU9fqMVMGzWnia9Z1K-BCwvCgMWaJ0ilGSU6MoT1lRoIoTzqqTxJOxFRnIL3GeV07ldBpBFDt8xGKWgKErSpmssbUIPPMVwEHSeXkcpEc3b6JKlmxwZ4ooXzdv3hvhJ5Wi2nKTZsYzzVp288uzXj8rhHOLJos8qHY_9fqgTu80iIXSvwhkEsqE-rBuo2OJOvu4t7pGoZwzQsrY95dNegoGa7I3gyVtlDX8oBDxCAVXGatfFMP83lZ24Vyquen6YDAxQIuG"/>
+</div>
+<div>
+<div class="flex items-center gap-1">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Chef Kenji</span>
+<span class="material-symbols-outlined text-tertiary text-base" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Shinjuku Kitchen • Tokyo</p>
+</div>
+</div>
+<!-- Flame/Hype Reaction Pill -->
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-secondary-container/20 backdrop-blur-md border border-secondary-container/30 text-secondary hover:bg-secondary-container/30 transition-colors">
+<span class="material-symbols-outlined text-sm text-secondary-fixed-dim" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">940</span>
+</button>
+</div>
+<p class="font-headline-sm text-headline-sm font-semibold text-on-surface line-clamp-1 group-hover:text-primary transition-colors">
+              Midnight Umami: Tokyo Street Ramen from scratch 🍜
+            </p>
+</div>
+</div>
+</article>
+<!-- Stream Card 3: Maya Synth -->
+<article class="group relative rounded-xl overflow-hidden bg-surface-container-low shadow-xl shadow-surface-container-lowest/80 cursor-pointer transition-transform duration-200 active:scale-[0.99] mb-4">
+<div class="relative w-full h-80 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Vibrant cyberpunk synthwave electronic music studio at night featuring racks of glowing modular analog synthesizers, neon cyan and coral LED strips, geometric audio visualizer projections on the dark background walls." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJoLWhVAO1C8IVulXQQW4h-mtMUExJU4yxpNpfENo2qz-kIltKScBfdBmnGlfxSABvnYNZYXTR-0SpDQ5pBf5-PZVsqUEm-mTwB-n1Q4bm8ZhbUSJd5wOgxuEIgaBqWvKPE7PYh6_rBAKyrSvx9TFr3Ad0OAvbsj5TZwouVIhgy-86tkRot9zARw_S6x4_wstzvdNxwP6fVYEseGRO4NKuaaLJdy4nGeeKEn37W0ZwiLdJFA9BVh8EWMzM_EDXlEbD6nd5xyubgTqf"/>
+<div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#121018]/80 via-[#121018]/30 to-transparent pointer-events-none"></div>
+<div class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#121018] via-[#121018]/80 to-transparent pointer-events-none"></div>
+<!-- Top Badges Overlay -->
+<div class="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md border border-tertiary/40">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-live-glow"></span>
+<span class="font-label-sm text-label-sm font-bold text-tertiary tracking-wider">LIVE</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest/60 backdrop-blur-md font-label-sm text-label-sm text-on-surface-variant font-medium">
+                Gaming &amp; Music
+              </span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest/70 backdrop-blur-md text-on-surface">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="visibility">visibility</span>
+<span class="font-label-sm text-label-sm font-bold">4.1k</span>
+</div>
+</div>
+<!-- Bottom Streamer Metadata & Controls -->
+<div class="absolute bottom-3 left-3 right-3 z-10 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="relative w-10 h-10 rounded-full ring-2 ring-primary-container overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Futuristic electronic music producer with short neon-tinted hair wearing studio headphones, framed by glowing synthesizer knobs and digital audio meters in an atmospheric dark studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQpRKLWeDLJpFvYlLSe-VCoi1NZt4uquwmSnpdPST0cRYrKUymLYNM4k37fZBDIsvAa64Fs088REM4Xt4FyaWUu_qmCVEohMQRS2ujMHkFJa8jpHlH0fLesLWfQ8p1Bn_YdkyXPpCDuxcTNlpuIwSFYyfYVRWWlbDu8A3Fm5AQKy4Z0OIOcBdIJgts-7dpN387KzEKQvQiYJKT4fmrIMBWjHHbR8ugs5zrCOkGeyxOTrxTOMz9_fYBwpbk3ctv20irwJ-XFnnkfmVZ"/>
+</div>
+<div>
+<div class="flex items-center gap-1">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Maya Synth</span>
+<span class="material-symbols-outlined text-tertiary text-base" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cyber Grid Studio • Berlin</p>
+</div>
+</div>
+<!-- Stream Interaction Pill -->
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary-container/20 backdrop-blur-md border border-primary-container/30 text-primary hover:bg-primary-container/30 transition-colors">
+<span class="material-symbols-outlined text-sm text-primary-container" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">1.8k</span>
+</button>
+</div>
+<p class="font-headline-sm text-headline-sm font-semibold text-on-surface line-clamp-1 group-hover:text-primary transition-colors">
+              Cyberpunk Chill Synthwave Jam &amp; Visuals 🎹⚡
+            </p>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Contextual Floating Action Button (+ Go Live) -->
+<aside class="fixed bottom-24 right-4 z-40 max-w-md mx-auto pointer-events-auto">
+<button class="flex items-center gap-2 px-5 py-3 rounded-full bg-primary-container text-on-primary font-label-lg text-label-lg font-bold shadow-xl shadow-primary-container/30 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="videocam">videocam</span>
+<span>Go Live</span>
+</button>
+</aside>
+<!-- Bottom Navigation Anchor (Shared Component: BottomNavBar) -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around px-space-md py-space-sm pb-6 max-w-md mx-auto bg-surface/90 backdrop-blur-xl shadow-2xl shadow-surface-container-lowest/80">
+<!-- Discover Tab (Active Intent Match) -->
+<a class="flex flex-col items-center justify-center text-primary gap-1 active:scale-90 transition-transform duration-150" href="#discover">
+<span class="material-symbols-outlined text-2xl" data-icon="explore" data-weight="fill" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-sm text-label-sm font-bold">Discover</span>
+</a>
+<!-- Match Tab (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:text-primary transition-colors active:scale-90 transition-transform duration-150" href="#match">
+<span class="material-symbols-outlined text-2xl" data-icon="videocam">videocam</span>
+<span class="font-label-sm text-label-sm font-medium">Match</span>
+</a>
+<!-- Gifts Tab (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:text-primary transition-colors active:scale-90 transition-transform duration-150" href="#gifts">
+<span class="material-symbols-outlined text-2xl" data-icon="featured_seasonal_and_gifts">featured_seasonal_and_gifts</span>
+<span class="font-label-sm text-label-sm font-medium">Gifts</span>
+</a>
+<!-- Me Tab (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:text-primary transition-colors active:scale-90 transition-transform duration-150" href="#me">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm font-medium">Me</span>
+</a>
+</nav>
+<!-- iOS Home Bar Indicator -->
+<div class="fixed bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-on-surface/20 rounded-full z-50 pointer-events-none"></div>
+</body></html>

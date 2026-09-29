@@ -1,8 +1,8 @@
 ---
 slug: signal-rooms
 title: "Signal Rooms"
-oneLiner: "Live audio community rooms"
-badge: "Personal exploration"
+oneLiner: "Live audio community rooms (not video live)"
+badge: "Product design · iOS"
 role: "Lead Product Designer"
 platform: "iOS dark expressive"
 timeline: "2–3 week design sprint"
@@ -12,7 +12,7 @@ tags:
   - "iOS"
   - "Dark expressive"
   - "Social"
-order: 13
+order: 14
 accent: "#B8F53A"
 styleLabel: "Neon lime dark"
 screens:
@@ -31,7 +31,7 @@ portfolioSignals:
 ---
 
 ### Snapshot
-Signal Rooms is a personal exploration of live audio community on iOS: discover rooms, browse niches, join a stage with clear roles, chat/react without chaos, schedule hangouts, and host replays. Expressive dark UI with moderation that stays calm and alive, without Spaces-era pile-ons.
+Signal Rooms is a **live audio** community product for iOS: topic rooms, speakers, and listeners with clear stage roles. It is not video live streaming and has no virtual gifts. Discover rooms, browse niches, join a stage, chat/react without chaos, schedule hangouts, and host replays. Expressive dark UI with moderation that stays calm and operable. For entertainment-first **video** live rooms and gifts, see Glowcast.
 
 ### Problem
 People miss serendipitous conversation but hate Zoom formality and open-mic chaos. The job: drop into a topic room, raise a hand, speak briefly, leave cleanly, with host tools that feel fair and exits that are always one tap away.

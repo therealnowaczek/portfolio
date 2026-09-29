@@ -1,14 +1,14 @@
 # Portfolio case-study pack - Marcin Nowak
 
-Personal product explorations for the gallery. CostRadar.ai is the shipped founder case; Appfire / SoftwarePlant employment work is covered on the CV and Impact sections. These ten explorations are speculative product design, not client engagements.
+Product design cases for the gallery. CostRadar.ai is the shipped founder case; Appfire / SoftwarePlant employment work is covered on the CV and Impact sections. These ten cases cover product design across web, iOS, and Android.
 
-Each case uses a **Personal exploration** badge. Outcomes use design targets and prototype success targets.
+Each case uses a platform-framed product design badge. Outcomes use design targets and prototype success targets.
 
 ---
 
 ## 1. Northline - AI ops profitability console for B2B SaaS
 
-**Badge:** Personal exploration 
+**Badge:** Product design · Web
 **Role:** Lead Product Designer 
 **Platform:** Web desktop 
 **Timeline:** 2–3 week design sprint 
@@ -75,7 +75,7 @@ Tokens: `color.accent.teal`, `color.delta.pos/neg`, `space.dense`, `type.tabular
 
 ## 2. Harbor - Fintech repayments and insights companion
 
-**Badge:** Personal exploration 
+**Badge:** Product design · iOS
 **Role:** Lead Product Designer 
 **Platform:** iOS 
 **Timeline:** 2–3 week design sprint 
@@ -114,7 +114,7 @@ Borrowers understand the minimum due, but not the interest trajectory or the emo
 - I chose a **live interest delta on the slider** because abstract APR fails: I rejected static tip cards.
 - I chose **suggested vs due** as two distinct CTAs because conflating them creates regret: I rejected a single smart default button.
 - I chose **no gamification** because debt UX that celebrates feels manipulative: I rejected streaks and badges.
-- I chose **plain-language footnotes** over legalese walls for this exploration: production would still need compliance review.
+- I chose **plain-language footnotes** over legalese walls in this pass: production would still need compliance review.
 
 ### Solution
 1. **Home - Balance & next due** - Amount due, days left, `Plan repayment`. Proves calm hierarchy.
@@ -142,7 +142,7 @@ Tokens: `color.trust.blue`, `type.money.lg`, `space.sheet`. Components: MoneyHer
 
 ## 3. Circuit - Deploy and observability console for engineers
 
-**Badge:** Personal exploration 
+**Badge:** Product design · Web
 **Role:** Lead Product Designer 
 **Platform:** Web dark 
 **Timeline:** 2–3 week design sprint 
@@ -209,7 +209,7 @@ Tokens: `color.canvas.void`, `color.signal.*`, `type.mono.xs`. Components: Timel
 
 ## 4. Folio - Social critique network for designers
 
-**Badge:** Personal exploration 
+**Badge:** Product design · Android
 **Role:** Lead Product Designer 
 **Platform:** Android 
 **Timeline:** 2–3 week design sprint 
@@ -231,7 +231,7 @@ Designers want feedback that improves the work, not engagement farming. Persona:
 
 **Constraints**
 - Android Material 3: dynamic color optional
-- Moderation assumed lightweight for this exploration
+- Moderation assumed lightweight for this pass
 - Timeboxed sprint
 - Editorial warmth without looking non-native
 - a11y: scalable type, content descriptions for mock images
@@ -276,7 +276,7 @@ Tokens: `color.paper.warm`, `color.accent.terracotta`, `type.display.serif`. Com
 
 ## 5. Quorum - B2B roles, permissions, and partner activation
 
-**Badge:** Personal exploration 
+**Badge:** Product design · Web
 **Role:** Lead Product Designer 
 **Platform:** Web enterprise 
 **Timeline:** 2–3 week design sprint 
@@ -343,7 +343,7 @@ Tokens: `color.accent.indigo`, `color.risk.*`. Components: PartnerRow, RoleCard,
 
 ## 6. Pulse - Energy and recovery wellness companion
 
-**Badge:** Personal exploration 
+**Badge:** Product design · iOS
 **Role:** Lead Product Designer 
 **Platform:** iOS 
 **Timeline:** 2–3 week design sprint 
@@ -360,7 +360,7 @@ People track steps and sleep in different apps, then feel judged by red rings. P
 - One daily "energy snapshot" without spreadsheet overload
 - Recovery suggestions that respect calendar reality
 - Soft visuals: zero shame copy
-- HealthKit-shaped assumptions (exploration only)
+- HealthKit-shaped assumptions for the prototype
 - Inclusive motion and Dynamic Type
 
 **Constraints**
@@ -410,7 +410,7 @@ Tokens: `color.mist.*`, `color.accent.lavender`, `radius.xl`. Components: Snapsh
 
 ## 7. Atlas CMS - Design system docs and playground
 
-**Badge:** Personal exploration 
+**Badge:** Product design · Web
 **Role:** Lead Product Designer 
 **Platform:** Web docs 
 **Timeline:** 2–3 week design sprint 
@@ -477,7 +477,7 @@ Meta-DS for the docs site itself: DocShell, PropTable, PlaygroundFrame, DoDont, 
 
 ## 8. Nest - Local services marketplace
 
-**Badge:** Personal exploration 
+**Badge:** Product design · Cross-platform
 **Role:** Lead Product Designer 
 **Platform:** iOS + desktop web 
 **Timeline:** 2–3 week design sprint 
@@ -544,7 +544,7 @@ Shared: PriceBreakdown, TrustBadge, ProCard, SlotPicker. Platform shells differ.
 
 ## 9. Signal Rooms - Live audio community rooms
 
-**Badge:** Personal exploration 
+**Badge:** Product design · iOS
 **Role:** Lead Product Designer 
 **Platform:** iOS dark expressive 
 **Timeline:** 2–3 week design sprint 
@@ -611,7 +611,7 @@ Tokens: `color.void`, `color.accent.violet`, `effect.speakGlow`. Components: Roo
 
 ## 10. Ledgerly Studio - Growth experimentation lab
 
-**Badge:** Personal exploration 
+**Badge:** Product design · Web
 **Role:** Lead Product Designer 
 **Platform:** Web analytics 
 **Timeline:** 2–3 week design sprint 
@@ -644,7 +644,7 @@ Growth teams lose signal when experiment setup, design variants, and analytics l
 3. **Options explored** - (A) Pure BI dashboards (rejected: no experiment object). (B) Code-only flags UI (rejected: excludes design). (C) Lab notebook + variants + results decision (chosen).
 4. **Visual & DS** - Light analytics chrome, emerald for wins, restrained red for losses, tabular nums. Chart + table twins.
 5. **Prototype & critique** - High-fidelity prototype: List, Create, Results: Figma table fallback and decision modal copy.
-6. **Validation notes** - Risk: overclaiming causality. Added "Prototype results · not causal proof" on exploration screens.
+6. **Validation notes** - Risk: overclaiming causality. Added "Prototype results · not causal proof" on lab screens.
 
 ### Key decisions
 - I chose **hypothesis as required field** because tool-led tests without questions waste traffic: I rejected metric-first blank experiments.
@@ -679,7 +679,7 @@ Tokens: `color.win.emerald`, `color.lose.rose`, `type.tabular`. Components: Expe
 ## Gallery site map (suggested)
 
 ### Routes
-- `/` - Gallery grid of 10 exploration cards
+- `/` - Gallery grid of 10 product design cards
 - `/work/:slug` - Case study page (parses H2/H3 structure above)
 - `/work` - Filtered index (same grid, query params)
 - `/about` - Positioning (Senior UX Manager + Design Engineer: real products called out separately)
@@ -691,7 +691,7 @@ Tokens: `color.win.emerald`, `color.lose.rose`, `type.tabular`. Components: Expe
 - **Style:** Quiet enterprise, HIG trust, Dense dark, Warm editorial, Soft humanist, Docs, Expressive dark, Analytics
 
 ### Gallery badge on cards
-Every card shows a persistent pill: `Personal exploration` above the title (CostRadar uses `Shipped product · Founder case study`). Case pages repeat the badge under the title.
+Every card shows a persistent platform-framed pill above the title (for example `Product design · Web`, `Product design · iOS`; CostRadar uses `Shipped product · Founder case study`; enterprise cases use `Enterprise case · …`). Case pages repeat the badge under the title.
 
 ### Card anatomy
 Cover image · badge · title · one-liner · platform · tags (max 3 visible) · accent bar.
@@ -704,7 +704,7 @@ Cover image · badge · title · one-liner · platform · tags (max 3 visible) �
 slug: northline
 title: Northline
 oneLiner: AI ops profitability console for B2B SaaS
-badge: Personal exploration
+badge: Product design · Web
 role: Lead Product Designer
 platform: Web desktop
 timeline: 2–3 week design sprint

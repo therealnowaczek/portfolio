@@ -2,7 +2,7 @@
 slug: folio
 title: "Folio"
 oneLiner: "Social critique network for designers"
-badge: "Personal exploration"
+badge: "Product design · Android"
 role: "Lead Product Designer"
 platform: "Android"
 timeline: "2–3 week design sprint"
@@ -32,7 +32,7 @@ portfolioSignals:
 ---
 
 ### Snapshot
-Folio is a personal exploration of a warm editorial Android network where designers post work-in-progress and get structured critique instead of empty likes. Material warmth plus critique rituals, not another engagement farm with a design skin.
+Folio is a warm editorial Android network where designers post work-in-progress and get structured critique instead of empty likes. Material warmth plus critique rituals, not another engagement farm with a design skin.
 
 ### Problem
 Designers want feedback that improves the work. Discord and social feeds give emoji and taste opinions. Persona: a mid-level product designer who needs specific, kind, actionable critique on a flow before Friday’s review, without roasting culture.

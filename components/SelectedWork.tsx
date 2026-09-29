@@ -173,7 +173,7 @@ export function SelectedWork({ projects, onOpen }: Props) {
         </div>
         <p className="text-sm leading-relaxed text-muted sm:text-[15px]">
           CostRadar.ai (live product I shipped solo), enterprise cases (Design
-          Ops, OKRs, Gantt), plus personal explorations in AI, fintech, and
+          Ops, OKRs, Gantt), plus product design across AI, fintech, and
           mobile. Open a card for the story, screens, and what I learned.
         </p>
       </div>

@@ -44,9 +44,10 @@ export function RoleFit() {
   }, []);
 
   const selectRole = useCallback((id: string) => {
+    if (id === activeId) return;
     setEntered(false);
     setActiveId(id);
-  }, []);
+  }, [activeId]);
 
   const updateFades = useCallback(() => {
     const el = tablistRef.current;

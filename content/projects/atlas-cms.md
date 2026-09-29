@@ -2,7 +2,7 @@
 slug: atlas-cms
 title: "Atlas CMS"
 oneLiner: "Design system docs and playground"
-badge: "Personal exploration"
+badge: "Product design · Web"
 role: "Lead Product Designer"
 platform: "Web docs"
 timeline: "2–3 week design sprint"
@@ -31,7 +31,7 @@ portfolioSignals:
 ---
 
 ### Snapshot
-Atlas CMS is a personal exploration of design-system documentation as a product: getting started, foundations, tokens, theme studio, and component pages with a live props playground. Docs that feel searchable and tryable get adopted; stale Figma pages and bookmark-orphaned Storybooks do not.
+Atlas CMS is design-system documentation as a product: getting started, foundations, tokens, theme studio, and component pages with a live props playground. Docs that feel searchable and tryable get adopted; stale Figma pages and bookmark-orphaned Storybooks do not.
 
 ### Problem
 Designers and engineers disagree because the “source of truth” is a forgotten Figma page and a Storybook nobody opens. The job: find the Button spec, understand spacing and color tokens, tweak props, copy a snippet, and trust it matches the system’s intent.
@@ -55,7 +55,7 @@ Designers and engineers disagree because the “source of truth” is a forgotte
 3. **Reject Storybook-skin-only and marketing-hollow DS sites** - Guidance without try fails engineers: marketing without API fails both. Chose docs + playground + tokens explorer.
 4. **Clean docs chrome** - White/gray shell, mono for props, accent only in interactive playground.
 5. **Prototype Button and Input as representative depth** - Prop tables, do/don’t, a11y callouts, copy snippet CTA.
-6. **Label exploration honesty** - Playground is exploratory: production would wire to the real package.
+6. **Label prototype honesty** - Playground is a try-before-commit layer: production would wire to the real package.
 
 ### Key decisions
 - **Playground beside guidance**: isolated Storybook tabs lose narrative.
