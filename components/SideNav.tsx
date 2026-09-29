@@ -102,23 +102,23 @@ export function SideNav({ items }: Props) {
       aria-label="Sections"
       className="border-b border-border bg-background py-3"
     >
-      <div className="relative -mx-1 px-1">
+      <div className="relative min-w-0 max-w-full -mx-1 px-1">
         <div
           aria-hidden
-          className={`pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background from-35% via-background/85 to-transparent transition-opacity duration-200 ${
+          className={`pointer-events-none absolute inset-y-0 left-0 z-10 w-12 max-w-[20%] bg-gradient-to-r from-background from-35% via-background/85 to-transparent transition-opacity duration-200 ${
             fadeLeft ? "opacity-100" : "opacity-0"
           }`}
         />
         <div
           aria-hidden
-          className={`pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-background from-35% via-background/85 to-transparent transition-opacity duration-200 ${
+          className={`pointer-events-none absolute inset-y-0 right-0 z-10 w-12 max-w-[20%] bg-gradient-to-l from-background from-35% via-background/85 to-transparent transition-opacity duration-200 ${
             fadeRight ? "opacity-100" : "opacity-0"
           }`}
         />
         <ul
           ref={listRef}
           onScroll={updateFades}
-          className="flex gap-1.5 overflow-x-auto scroll-px-1 pb-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="flex w-full min-w-0 max-w-full gap-1.5 overflow-x-auto overscroll-x-contain scroll-px-1 pb-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {items.map((item) => {
             const active = activeId === item.id;

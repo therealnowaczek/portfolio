@@ -181,7 +181,7 @@ export function SelectedWork({ projects, onOpen }: Props) {
       <div
         role="tablist"
         aria-label="Filter projects"
-        className="flex gap-1.5 overflow-x-auto pb-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex w-full min-w-0 max-w-full gap-1.5 overflow-x-auto overscroll-x-contain pb-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {FILTERS.map((f) => {
           const active = filter === f.id;

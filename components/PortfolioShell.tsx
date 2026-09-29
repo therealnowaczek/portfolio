@@ -107,14 +107,14 @@ export function PortfolioShell({ projects }: Props) {
       <a href="#main" className="skip-link">
         Skip to content
       </a>
-      <div className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 sm:pb-14 lg:px-8 lg:pb-14 lg:pt-6">
-        <div className="sticky top-0 z-50 -mx-4 mb-8 bg-background px-4 pt-4 sm:-mx-6 sm:px-6 sm:pt-6 lg:mx-0 lg:mb-10 lg:px-0 lg:pt-0">
+      <div className="mx-auto min-w-0 max-w-6xl overflow-x-clip px-4 pb-24 sm:px-6 sm:pb-14 lg:px-8 lg:pb-14 lg:pt-6">
+        <div className="sticky top-0 z-50 -mx-4 mb-8 min-w-0 bg-background px-4 pt-4 sm:-mx-6 sm:px-6 sm:pt-6 lg:mx-0 lg:mb-10 lg:px-0 lg:pt-0">
           <Header />
           <SideNav items={NAV} />
         </div>
-        <main id="main" className="mt-10 space-y-16 sm:mt-14 sm:space-y-20">
+        <main id="main" className="mt-10 min-w-0 space-y-16 sm:mt-14 sm:space-y-20">
           {/* 1. Who: intro copy + role chapters (scroll-spy stays Intro) */}
-          <div id="about" className="scroll-mt-36 space-y-10 sm:space-y-12">
+          <div id="about" className="min-w-0 max-w-full scroll-mt-36 space-y-10 sm:space-y-12">
             <Intro />
             <RoleFit />
           </div>

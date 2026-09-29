@@ -134,20 +134,23 @@ export function RoleFit() {
   if (!lens) return null;
 
   return (
-    <div className="space-y-8">
-      <div className="grid gap-8 lg:grid-cols-[11rem_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[12.5rem_minmax(0,1fr)]">
+    <div className="min-w-0 max-w-full space-y-8">
+      <div className="grid min-w-0 max-w-full gap-8 lg:grid-cols-[11rem_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[12.5rem_minmax(0,1fr)]">
         {/* Role chapters: numbered editorial list; not nav pills */}
-        <nav aria-label="Role chapters" className="lg:sticky lg:top-36 lg:self-start">
-          <div className="relative -mx-1 px-1 lg:mx-0 lg:px-0">
+        <nav
+          aria-label="Role chapters"
+          className="min-w-0 max-w-full lg:sticky lg:top-36 lg:self-start"
+        >
+          <div className="relative min-w-0 max-w-full -mx-1 px-1 lg:mx-0 lg:px-0">
             <div
               aria-hidden
-              className={`pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background from-35% via-background/85 to-transparent transition-opacity duration-200 lg:hidden ${
+              className={`pointer-events-none absolute inset-y-0 left-0 z-10 w-12 max-w-[20%] bg-gradient-to-r from-background from-35% via-background/85 to-transparent transition-opacity duration-200 lg:hidden ${
                 fadeLeft ? "opacity-100" : "opacity-0"
               }`}
             />
             <div
               aria-hidden
-              className={`pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-background from-35% via-background/85 to-transparent transition-opacity duration-200 lg:hidden ${
+              className={`pointer-events-none absolute inset-y-0 right-0 z-10 w-12 max-w-[20%] bg-gradient-to-l from-background from-35% via-background/85 to-transparent transition-opacity duration-200 lg:hidden ${
                 fadeRight ? "opacity-100" : "opacity-0"
               }`}
             />
@@ -155,7 +158,7 @@ export function RoleFit() {
               ref={tablistRef}
               role="tablist"
               onScroll={updateFades}
-              className="flex items-start gap-5 overflow-x-auto scroll-px-3 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:block lg:space-y-6 lg:overflow-visible lg:pb-0"
+              className="flex w-full min-w-0 max-w-full items-start gap-5 overflow-x-auto overscroll-x-contain scroll-px-3 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:block lg:space-y-6 lg:overflow-visible lg:pb-0"
             >
               {grouped.map((group, gi) => (
                 <div
@@ -324,12 +327,12 @@ function LensPanel({
           <h4 className="text-xs font-semibold uppercase tracking-[0.06em] text-muted">
             First 90 days
           </h4>
-          <ol className="mt-4 grid gap-4 sm:grid-cols-3 sm:gap-6">
+          <ol className="mt-4 grid min-w-0 gap-4 overflow-x-clip sm:grid-cols-3 sm:gap-6">
             {lens.ninetyDays.map((item, i) => (
               <li key={item} className="relative min-w-0">
                 {i < lens.ninetyDays.length - 1 ? (
                   <span
-                    className="pointer-events-none absolute top-3 left-[2.25rem] hidden h-px right-[-1.5rem] bg-border sm:block"
+                    className="pointer-events-none absolute top-3 left-[2.25rem] hidden h-px right-0 bg-border sm:block"
                     aria-hidden
                   />
                 ) : null}
