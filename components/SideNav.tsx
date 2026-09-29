@@ -14,7 +14,10 @@ type Props = {
 export function SideNav({ items }: Props) {
   const [activeId, setActiveId] = useState(items[0]?.id ?? "");
   const [indicator, setIndicator] = useState({ top: 0, height: 0 });
+  const [fadeLeft, setFadeLeft] = useState(false);
+  const [fadeRight, setFadeRight] = useState(false);
   const listRef = useRef<HTMLUListElement>(null);
+  const mobileListRef = useRef<HTMLUListElement>(null);
   const clickingRef = useRef(false);
 
   const updateIndicator = useCallback((id: string) => {
@@ -25,9 +28,50 @@ export function SideNav({ items }: Props) {
     setIndicator({ top: btn.offsetTop, height: btn.offsetHeight });
   }, []);
 
+  const updateFades = useCallback(() => {
+    const el = mobileListRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    setFadeLeft(el.scrollLeft > 4);
+    setFadeRight(max > 4 && el.scrollLeft < max - 4);
+  }, []);
+
   useEffect(() => {
     updateIndicator(activeId);
   }, [activeId, updateIndicator]);
+
+  useEffect(() => {
+    const el = mobileListRef.current;
+    if (!el) return;
+    updateFades();
+    const ro = new ResizeObserver(updateFades);
+    ro.observe(el);
+    window.addEventListener("resize", updateFades);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", updateFades);
+    };
+  }, [items, updateFades]);
+
+  useEffect(() => {
+    const el = mobileListRef.current;
+    if (!el) return;
+    const btn = el.querySelector<HTMLElement>(`[data-mobile-nav="${activeId}"]`);
+    if (!btn) return;
+    const btnLeft = btn.offsetLeft;
+    const btnRight = btnLeft + btn.offsetWidth;
+    const viewLeft = el.scrollLeft;
+    const viewRight = viewLeft + el.clientWidth;
+    const pad = 40;
+    if (btnLeft < viewLeft + pad) {
+      el.scrollTo({ left: Math.max(btnLeft - pad, 0), behavior: "smooth" });
+    } else if (btnRight > viewRight - pad) {
+      el.scrollTo({
+        left: btnRight - el.clientWidth + pad,
+        behavior: "smooth",
+      });
+    }
+  }, [activeId]);
 
   useEffect(() => {
     const sections = items
@@ -69,31 +113,50 @@ export function SideNav({ items }: Props) {
 
   return (
     <>
-      {/* Mobile / tablet: sticky under header */}
+      {/* Mobile / tablet: sits in sticky chrome stack with Header */}
       <nav
         aria-label="Sections"
-        className="sticky top-[4.25rem] z-40 -mx-4 mb-8 border-b border-border/80 bg-background/90 px-4 py-3 backdrop-blur-md sm:top-[4.5rem] sm:-mx-6 sm:px-6 lg:hidden"
+        className="border-b border-border bg-background py-3 lg:hidden"
       >
-        <ul className="flex gap-1 overflow-x-auto pb-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          {items.map((item) => {
-            const active = activeId === item.id;
-            return (
-              <li key={item.id} className="shrink-0">
-                <button
-                  type="button"
-                  onClick={() => scrollTo(item.id)}
-                  className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors duration-200 ease-out ${
-                    active
-                      ? "bg-accent text-white"
-                      : "bg-surface text-muted hover:text-foreground"
-                  }`}
-                >
-                  {item.label}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="relative -mx-1 px-1">
+          <div
+            aria-hidden
+            className={`pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background from-35% via-background/85 to-transparent transition-opacity duration-200 ${
+              fadeLeft ? "opacity-100" : "opacity-0"
+            }`}
+          />
+          <div
+            aria-hidden
+            className={`pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-background from-35% via-background/85 to-transparent transition-opacity duration-200 ${
+              fadeRight ? "opacity-100" : "opacity-0"
+            }`}
+          />
+          <ul
+            ref={mobileListRef}
+            onScroll={updateFades}
+            className="flex gap-1.5 overflow-x-auto scroll-px-1 pb-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {items.map((item) => {
+              const active = activeId === item.id;
+              return (
+                <li key={item.id} className="shrink-0">
+                  <button
+                    type="button"
+                    data-mobile-nav={item.id}
+                    onClick={() => scrollTo(item.id)}
+                    className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors duration-200 ease-out ${
+                      active
+                        ? "bg-accent text-white"
+                        : "bg-surface text-muted hover:text-foreground"
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </nav>
 
       {/* Desktop: sticky left rail */}

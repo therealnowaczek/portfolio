@@ -29,13 +29,14 @@ export type NarrativeBlock = {
 
 export const SITE = {
   name: "Marcin Nowak",
-  subtitle: "UX Leadership · AI UX · Strategy through delivery",
+  subtitle: "UX Orchestrator · AI UX · Hands-on delivery",
   title: "Marcin Nowak — UX Director · AI UX · Agentic Leadership",
   email: "pl.nowak.marcin@gmail.com",
   phone: "(+48) 792 792 290",
   phoneHref: "tel:+48792792290",
   linkedin: "https://www.linkedin.com/in/therealnowaczek/",
-  twitter: "https://x.com/therealnowaczek",
+  cvPdf: "/Marcin_Nowak_CV_2026.pdf",
+  cvFilename: "Marcin_Nowak_CV_2026.pdf",
   costradar: "https://costradar.ai",
   description:
     "UX Director / Leader · AI UX · Agentic workflows. Enterprise SaaS leadership, design ops, and measurable product outcomes.",

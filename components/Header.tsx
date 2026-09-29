@@ -45,25 +45,16 @@ function IconLinkedIn() {
   );
 }
 
-function IconX() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <path d="M18.9 2H22l-7.1 8.1L23 22h-6.5l-5.1-6.7L5.9 22H2.8l7.6-8.7L1 2h6.7l4.6 6.1L18.9 2Zm-1.1 18h1.8L6.3 3.9H4.4L17.8 20Z" />
-    </svg>
-  );
-}
-
 const links = [
   { href: SITE.phoneHref, label: `Call ${SITE.phone}`, icon: <IconPhone /> },
   { href: `mailto:${SITE.email}`, label: `Email ${SITE.email}`, icon: <IconMail /> },
   { href: SITE.linkedin, label: "LinkedIn", icon: <IconLinkedIn />, external: true },
-  { href: SITE.twitter, label: "X / Twitter", icon: <IconX />, external: true },
 ];
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 -mx-4 border-b border-border/80 bg-background/90 px-4 py-3 backdrop-blur-md sm:-mx-6 sm:px-6 lg:mx-0 lg:border-border lg:bg-background/85 lg:px-0 lg:py-4">
-      <div className="flex items-center justify-between gap-4">
+    <header className="border-b border-border bg-background pb-3 lg:sticky lg:top-0 lg:z-50 lg:bg-background lg:py-4">
+      <div className="flex items-center justify-between gap-3 sm:gap-4">
         <div className="flex min-w-0 flex-1 items-center gap-3">
           {/* Plain img: next/image skips basePath under static export + Turbopack. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -80,17 +71,21 @@ export function Header() {
             <h1 className="text-base font-semibold tracking-tight text-accent sm:text-lg lg:text-xl">
               {SITE.name}
             </h1>
-            <p className="mt-0.5 truncate text-[11px] text-muted sm:text-xs lg:text-sm">
+            <p className="mt-0.5 text-[11px] leading-snug text-muted sm:truncate sm:text-xs lg:text-sm">
               {SITE.subtitle}
             </p>
           </div>
         </div>
-        <nav aria-label="Contact" className="flex shrink-0 items-center gap-0 sm:gap-0.5">
+        {/* Contact icons live in MobileBottomBar on small screens */}
+        <nav
+          aria-label="Contact"
+          className="hidden shrink-0 items-center gap-0.5 sm:flex"
+        >
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="inline-flex h-8 w-8 items-center justify-center rounded-[8px] text-muted transition-colors duration-[160ms] ease-out hover:bg-surface hover:text-foreground sm:h-9 sm:w-9 lg:h-10 lg:w-10"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-[8px] text-muted transition-colors duration-[160ms] ease-out hover:bg-surface hover:text-foreground lg:h-10 lg:w-10"
               aria-label={link.label}
               {...(link.external
                 ? { target: "_blank", rel: "noopener noreferrer" }
@@ -99,6 +94,13 @@ export function Header() {
               {link.icon}
             </a>
           ))}
+          <a
+            href={withBasePath(SITE.cvPdf)}
+            download={SITE.cvFilename}
+            className="ml-1.5 inline-flex h-9 items-center rounded-[8px] bg-accent px-3 text-xs font-semibold tracking-wide text-white transition-opacity duration-[160ms] ease-out hover:opacity-90 lg:h-10 lg:px-3.5 lg:text-sm"
+          >
+            CV
+          </a>
         </nav>
       </div>
     </header>

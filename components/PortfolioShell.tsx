@@ -12,6 +12,7 @@ import { Experience } from "./Experience";
 import { ExpertiseTools } from "./ExpertiseTools";
 import { NarrativeSection } from "./NarrativeSection";
 import { Footer } from "./Footer";
+import { MobileBottomBar } from "./MobileBottomBar";
 import { ProjectModal } from "./ProjectModal";
 import { RoleFit } from "./RoleFit";
 import { SideNav, type NavItem } from "./SideNav";
@@ -96,37 +97,39 @@ export function PortfolioShell({ projects }: Props) {
       <a href="#main" className="skip-link">
         Skip to content
       </a>
-      <div className="mx-auto max-w-6xl px-4 pb-10 pt-4 sm:px-6 sm:pb-14 sm:pt-6 lg:px-8 lg:pl-48 xl:pl-52">
-        <Header />
-        <SideNav items={NAV} />
+      <div className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 sm:pb-14 lg:px-8 lg:pb-14 lg:pl-48 lg:pt-6 xl:pl-52">
+        <div className="sticky top-0 z-50 -mx-4 mb-8 bg-background px-4 pt-4 sm:-mx-6 sm:px-6 sm:pt-6 lg:static lg:mx-0 lg:mb-0 lg:bg-transparent lg:p-0">
+          <Header />
+          <SideNav items={NAV} />
+        </div>
         <main id="main" className="mt-10 space-y-16 sm:mt-14 sm:space-y-20">
           {/* 1. Who — 30-second positioning */}
-          <div id="about" className="scroll-mt-28 lg:scroll-mt-24">
+          <div id="about" className="scroll-mt-36 lg:scroll-mt-24">
             <Intro />
           </div>
 
-          <div id="fit" className="scroll-mt-28 lg:scroll-mt-24">
+          <div id="fit" className="scroll-mt-36 lg:scroll-mt-24">
             <RoleFit />
           </div>
 
-          <div id="portfolio" className="scroll-mt-28 lg:scroll-mt-24">
+          <div id="portfolio" className="scroll-mt-36 lg:scroll-mt-24">
             <SelectedWork projects={projects} onOpen={open} />
           </div>
 
-          <div id="impact" className="scroll-mt-28 lg:scroll-mt-24">
+          <div id="impact" className="scroll-mt-36 lg:scroll-mt-24">
             <Impact />
           </div>
 
-          <div id="experience" className="scroll-mt-28 lg:scroll-mt-24">
+          <div id="experience" className="scroll-mt-36 lg:scroll-mt-24">
             <Experience />
           </div>
 
-          <div id="expertise" className="scroll-mt-28 lg:scroll-mt-24">
+          <div id="expertise" className="scroll-mt-36 lg:scroll-mt-24">
             <ExpertiseTools />
           </div>
 
           {/* 5. How they lead & operate — for manager/director scope */}
-          <div id="leadership" className="scroll-mt-28 lg:scroll-mt-24">
+          <div id="leadership" className="scroll-mt-36 lg:scroll-mt-24">
             <NarrativeSection
               id="leadership-heading"
               title="Leadership & mentoring"
@@ -135,7 +138,7 @@ export function PortfolioShell({ projects }: Props) {
             />
           </div>
 
-          <div id="process" className="scroll-mt-28 lg:scroll-mt-24">
+          <div id="process" className="scroll-mt-36 lg:scroll-mt-24">
             <NarrativeSection
               id="process-heading"
               title="Process & methods"
@@ -145,11 +148,13 @@ export function PortfolioShell({ projects }: Props) {
           </div>
 
           {/* 6. CTA */}
-          <div id="connect" className="scroll-mt-28 lg:scroll-mt-24">
+          <div id="connect" className="scroll-mt-36 lg:scroll-mt-24">
             <Footer />
           </div>
         </main>
       </div>
+
+      <MobileBottomBar />
 
       {active ? (
         <ProjectModal

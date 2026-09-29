@@ -1,3 +1,4 @@
+import { withBasePath } from "@/lib/base-path";
 import { CLOSING_CTA, SITE, STRENGTHS } from "@/lib/cv";
 
 export function Footer() {
@@ -29,12 +30,11 @@ export function Footer() {
             LinkedIn
           </a>
           <a
-            href={SITE.twitter}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={withBasePath(SITE.cvPdf)}
+            download={SITE.cvFilename}
             className="transition-colors duration-[160ms] ease-out hover:text-white"
           >
-            X / Twitter
+            Download CV
           </a>
         </div>
       </div>
