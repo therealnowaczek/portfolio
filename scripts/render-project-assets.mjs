@@ -184,6 +184,27 @@ function patchFolioHtml(htmlPath) {
 }
 
 /**
+ * Minimal today-line z-index elevation without shifting bar/dep geometry.
+ * Used for fresh Stitch Gantt screens (bypassGanttGeometryHacks).
+ */
+function elevateGanttTodayLineOnly(htmlPath) {
+  let html = fs.readFileSync(htmlPath, "utf8");
+  if (html.includes('id="gantt-today-z"')) return;
+  const css = `<style id="gantt-today-z">
+  .gantt-today-overlay, [class*="today"], [data-today], .today-line {
+    z-index: 40 !important;
+    pointer-events: none;
+  }
+</style>`;
+  if (/<\/head>/i.test(html)) {
+    html = html.replace(/<\/head>/i, `${css}\n</head>`);
+  } else {
+    html = css + html;
+  }
+  fs.writeFileSync(htmlPath, html);
+}
+
+/**
  * Gantt portfolio polish: soften spreadsheet chrome + force single-line ellipsis.
  * Stitch edit_screens often lags or still emits rigid grid borders; this runs after
  * download so showcase PNGs read as 2025 planning UI, not Excel/Jira plugin.
@@ -1123,7 +1144,13 @@ async function main() {
         if (slug === "okrs") scrubCaseBrandHtml(htmlPath, "OKRs");
         if (slug === "gantt") {
           scrubCaseBrandHtml(htmlPath, "Gantt");
-          patchGanttHtml(htmlPath);
+          // Fresh Stitch rebuild: keep CDN geometry intact (no densify / dep rematch).
+          if (asset.bypassGanttGeometryHacks) {
+            ensureMaterialIconFonts(htmlPath);
+            elevateGanttTodayLineOnly(htmlPath);
+          } else {
+            patchGanttHtml(htmlPath);
+          }
         } else {
           // Shared: fix missing Material Symbols/Icons for all Stitch captures
           ensureMaterialIconFonts(htmlPath);
@@ -1156,7 +1183,8 @@ async function main() {
         }
 
         // Gantt: force soft-list left pane even when Stitch still emits WBS tables.
-        if (slug === "gantt") {
+        // Skip for fresh Stitch rebuilds — densify/dep rematch re-breaks native geometry.
+        if (slug === "gantt" && !asset.bypassGanttGeometryHacks) {
           await page.evaluate(() => {
             const textOf = (el) =>
               (el?.textContent || "").replace(/\s+/g, " ").trim().toLowerCase();
