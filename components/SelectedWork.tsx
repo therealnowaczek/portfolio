@@ -18,14 +18,14 @@ type Props = {
  * Editorial 12-col mosaic (filter=all).
  * Every desktop row sums to exactly 12; no CSS-grid holes.
  *
- * Lead pack (when present, in order): CostRadar 8 + DesignOS 4, OKRs 6 + Gantt 6.
+ * Lead pack (when present, in order): CostRadar 8 + DesignOS 4, OKRs 12.
  * Explorations tile via cycling row recipes; tails of 1–3 are fitted so nothing orphans.
  *
  * md (2-col): first card full-width; last half-row orphan stretches full.
  * Filtered views: even 6+6 pairs; odd last → full width.
  */
 
-const FEATURED_ORDER = ["costradar", "designos", "okrs", "gantt"] as const;
+const FEATURED_ORDER = ["costradar", "designos", "okrs"] as const;
 
 /** Exploration row recipes: each array sums to 12. */
 const EXPLORATION_ROWS: number[][] = [
@@ -110,7 +110,7 @@ function featuredSpanPattern(featuredSlugs: string[]): number[] {
     if (featuredSlugs[0] === "costradar") return [8, 4, 12];
     return [4, 4, 4];
   }
-  // Full lead pack: hero + companion, then enterprise pair.
+  // Legacy four-up lead pack (if a fourth featured slug is re-added).
   return [8, 4, 6, 6];
 }
 
@@ -173,7 +173,7 @@ export function SelectedWork({ projects, onOpen }: Props) {
         </div>
         <p className="text-sm leading-relaxed text-muted sm:text-[15px]">
           CostRadar.ai (live product I shipped solo), enterprise cases (Design
-          Ops, OKRs, Gantt), plus product design across AI, fintech, and
+          Ops, OKRs), plus product design across AI, fintech, and
           mobile. Open a card for the story, screens, and what I learned.
         </p>
       </div>

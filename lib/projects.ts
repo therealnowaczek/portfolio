@@ -150,9 +150,9 @@ function loadCaseBody(slug: string): string {
 }
 
 export function getProjects(): Project[] {
-  const metas = [...(projectsJson as ProjectMeta[])].sort(
-    (a, b) => a.order - b.order,
-  );
+  const metas = [...(projectsJson as ProjectMeta[])]
+    .filter((meta) => !meta.hidden)
+    .sort((a, b) => a.order - b.order);
 
   return metas.map((meta) => {
     const body = loadCaseBody(meta.slug);

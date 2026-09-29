@@ -292,7 +292,7 @@ export const ROLE_LENSES: RoleLens[] = [
     pitch:
       "When the role needs strong Product Design, that is still how I work: frame the problem, prototype with real constraints, and ship interfaces finance, PMs, and engineers can trust. BigPicture modules and CostRadar.ai are the proof.",
     proof: [
-      "Lead designer on enterprise financials, OKRs, and Gantt; see OKRs + Gantt cases",
+      "Lead designer on enterprise financials and OKRs; see OKRs and DesignOS cases",
       "CostRadar.ai: end-to-end product UX live at costradar.ai",
       "Dense enterprise and money-adjacent UI with clear empty and trust states",
     ],
@@ -317,9 +317,9 @@ export const ROLE_LENSES: RoleLens[] = [
     eyebrow: "Hands-on · Complex product · Systems thinking",
     headline: "Dense enterprise UX: clear when the cognitive load is high.",
     pitch:
-      "Principal-level work on BigPicture financials, OKRs, and Gantt: clear hierarchy, performance as a design constraint, and dashboards finance and PMs both trust. I still prototype and ship when the problem needs it.",
+      "Principal-level work on BigPicture financials and OKRs: clear hierarchy, performance as a design constraint, and dashboards finance and PMs both trust. I still prototype and ship when the problem needs it.",
     proof: [
-      "OKRs + Gantt cases: hierarchy and dense planning under load",
+      "OKRs case: hierarchy and dense planning under load",
       "Financials: clearer reporting (−58% unclear reports; see Impact)",
       "CostRadar: true-net ledger + Approve-gated AI shipped end-to-end",
     ],

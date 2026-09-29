@@ -6,6 +6,8 @@ export type ProjectMeta = {
   title: string;
   oneLiner: string;
   badge: string;
+  /** When true, omitted from gallery and modal navigation (content may remain on disk). */
+  hidden?: boolean;
   status: ProjectStatus;
   role: string;
   platform: string;
