@@ -2,8 +2,8 @@
 slug: folio
 title: "Folio"
 oneLiner: "Warm editorial Android network where designers get structured critique, not empty likes"
-badge: "Product design"
-role: "Lead Product Designer"
+badge: "Concept · Portfolio exploration"
+role: "Lead Product Designer (concept)"
 platform: "Android"
 timeline: "2–3 week design sprint"
 tags:

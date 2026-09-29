@@ -2,8 +2,8 @@
 slug: ledgerly-studio
 title: "Ledgerly Studio"
 oneLiner: "Hypothesis-first growth lab for A/B experiments — setup, variants, and ship/kill decisions in one place"
-badge: "Product design"
-role: "Lead Product Designer"
+badge: "Concept · Portfolio exploration"
+role: "Lead Product Designer (concept)"
 platform: "Web analytics"
 timeline: "2–3 week design sprint"
 tags:

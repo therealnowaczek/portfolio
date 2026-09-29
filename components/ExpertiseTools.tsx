@@ -50,8 +50,8 @@ export function ExpertiseTools() {
           Expertise
         </h2>
         <p className="max-w-2xl text-sm leading-relaxed text-muted sm:text-[15px]">
-          Grouped the way hiring conversations usually go — leadership, craft,
-          AI, then the ops that help it scale.
+          Short list for skim: leadership &amp; ops, craft, and AI delivery.
+          Tools below — not a pill wall.
         </p>
       </div>
 
@@ -70,7 +70,7 @@ export function ExpertiseTools() {
         <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.06em] text-muted">
           Tools
         </h3>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {TOOL_GROUPS.map((group) => (
             <GroupCard key={group.title} group={group} />
           ))}

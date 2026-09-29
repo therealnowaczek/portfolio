@@ -2,8 +2,8 @@
 slug: atlas-cms
 title: "Atlas CMS"
 oneLiner: "Productized design-system docs with tokens, component specs, and a live props playground"
-badge: "Product design"
-role: "Lead Product Designer"
+badge: "Concept · Portfolio exploration"
+role: "Lead Product Designer (concept)"
 platform: "Web docs"
 timeline: "2–3 week design sprint"
 tags:

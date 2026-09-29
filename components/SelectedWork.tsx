@@ -16,7 +16,7 @@ type Props = {
 
 /**
  * 12-col mosaic (all / filter=all). Every row must sum to 12.
- * 11 projects → row1: 7+5, then three rows of 4+4+4. No orphans.
+ * 11 projects → CostRadar featured large; concepts fill remaining mosaic.
  * md (2-col): featured full-width, everyone else half → 1 + 5 pairs.
  */
 const SPAN: Record<string, string> = {
@@ -60,8 +60,8 @@ export function SelectedWork({ projects, onOpen }: Props) {
           ) : null}
         </div>
         <p className="text-sm leading-relaxed text-muted sm:text-[15px]">
-          Selected product work across AI, fintech, enterprise SaaS, and mobile.
-          Open any piece for the full story, screens, and outcomes.
+          Selected work across AI, fintech, enterprise SaaS, and mobile. Open
+          any piece for the full story, screens, and outcomes.
         </p>
       </div>
 
@@ -91,7 +91,7 @@ export function SelectedWork({ projects, onOpen }: Props) {
         })}
       </div>
 
-      <div className="grid auto-rows-[160px] grid-cols-1 gap-4 md:grid-cols-2 md:auto-rows-[180px] lg:grid-cols-12 lg:auto-rows-[200px] lg:gap-5">
+      <div className="grid auto-rows-[240px] grid-cols-1 gap-4 md:grid-cols-2 md:auto-rows-[200px] lg:grid-cols-12 lg:auto-rows-[200px] lg:gap-5">
         {visible.map((project, index) => {
           const isLast = index === visible.length - 1;
           const oddFilterOrphan =

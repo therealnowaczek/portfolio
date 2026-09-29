@@ -9,8 +9,9 @@ export function Impact() {
           Business Impact
         </h2>
         <p className="max-w-2xl text-sm leading-relaxed text-muted sm:text-[15px]">
-          Numbers hiring managers can verify in case studies and references —
-          product adoption, delivery speed, and team capacity.
+          Enterprise product metrics with scope footnotes. Full Appfire /
+          SoftwarePlant case write-ups (baseline, timeframe, contribution) are
+          in progress — CostRadar is craft proof, not a verified ROI claim.
         </p>
       </div>
 
@@ -25,6 +26,9 @@ export function Impact() {
             </dt>
             <dd className="mt-1 text-sm leading-snug text-foreground-secondary">
               {metric.label}
+            </dd>
+            <dd className="mt-2 text-[11px] leading-snug text-muted">
+              {metric.footnote}
             </dd>
           </div>
         ))}

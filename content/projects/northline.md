@@ -2,8 +2,8 @@
 slug: northline
 title: "Northline"
 oneLiner: "AI ops console that surfaces margin leaks and model-driven savings for RevOps and finance"
-badge: "Product design"
-role: "Lead Product Designer"
+badge: "Concept · Portfolio exploration"
+role: "Lead Product Designer (concept)"
 platform: "Web desktop"
 timeline: "2–3 week design sprint"
 tags:

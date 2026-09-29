@@ -2,8 +2,8 @@
 slug: nest
 title: "Nest"
 oneLiner: "Cross-platform marketplace connecting neighbors with vetted local pros — trust, pricing, booking"
-badge: "Product design"
-role: "Lead Product Designer"
+badge: "Concept · Portfolio exploration"
+role: "Lead Product Designer (concept)"
 platform: "iOS + desktop web"
 timeline: "2–3 week design sprint"
 tags:

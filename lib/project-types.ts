@@ -1,9 +1,12 @@
+export type ProjectStatus = "shipped" | "concept";
+
 export type ProjectMeta = {
   id: string;
   slug: string;
   title: string;
   oneLiner: string;
   badge: string;
+  status: ProjectStatus;
   role: string;
   platform: string;
   timeline: string;
@@ -66,7 +69,9 @@ export function matchesFilter(project: Project, filter: FilterId): boolean {
     case "ai":
       return tags.some((t) => t.includes("ai"));
     case "fintech":
-      return tags.some((t) => t.includes("fintech"));
+      return tags.some(
+        (t) => t.includes("fintech") || t.includes("fintech-adjacent"),
+      );
     case "social":
       return (
         tags.some((t) => t.includes("social") || t.includes("community")) ||

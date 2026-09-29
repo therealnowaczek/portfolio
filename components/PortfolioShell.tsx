@@ -132,8 +132,8 @@ export function PortfolioShell({ projects }: Props) {
           <div id="leadership" className="scroll-mt-36 lg:scroll-mt-24">
             <NarrativeSection
               id="leadership-heading"
-              title="Leadership & mentoring"
-              lede="How I grow teams, coach seniors, and keep craft standards high while the org scales."
+              title="Leadership"
+              lede="How I grow teams and keep craft standards high while the org scales."
               blocks={MENTORING}
             />
           </div>
@@ -141,8 +141,8 @@ export function PortfolioShell({ projects }: Props) {
           <div id="process" className="scroll-mt-36 lg:scroll-mt-24">
             <NarrativeSection
               id="process-heading"
-              title="Process & methods"
-              lede="How design work moves from problem to shipped product — including where AI helps and where judgment stays human."
+              title="Process"
+              lede="How design moves from problem to shipped product — including where AI helps and where judgment stays human."
               blocks={PROCESSES}
             />
           </div>

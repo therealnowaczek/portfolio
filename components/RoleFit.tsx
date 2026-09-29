@@ -10,7 +10,7 @@ import {
 import { RichText } from "./RichText";
 
 export function RoleFit() {
-  const [activeId, setActiveId] = useState(ROLE_LENSES[0]?.id ?? "director");
+  const [activeId, setActiveId] = useState(ROLE_LENSES[0]?.id ?? "leader");
   const [entered, setEntered] = useState(false);
   const lens =
     ROLE_LENSES.find((r) => r.id === activeId) ?? ROLE_LENSES[0];
@@ -43,15 +43,15 @@ export function RoleFit() {
           Hire me for
         </h2>
         <p className="text-[15px] leading-relaxed text-foreground-secondary sm:text-base">
-          Looking for a UX Director, Head of Design, Lead Product Designer, or
-          someone to lead AI UX? Choose the role closest to the one you&apos;re
-          hiring for. Same background — framed for that seat.
+          Hiring for UX Leader / Head of Design, Product or Staff/Principal UX,
+          Design Ops, Design Systems, or AI UX / Design Engineering? Each lens
+          points at different proof — Appfire leadership, BigPicture craft,
+          systems governance, or CostRadar as a shipped builder case.
         </p>
         <p className="text-[15px] leading-relaxed text-muted sm:text-base">
-          For each path you&apos;ll see how I fit the scope, proof that maps to
-          the role, and a practical 90-day plan for how I&apos;d start. Handy if
-          you&apos;re matching a JD, briefing a hiring manager, or comparing
-          leadership versus specialist tracks.
+          Pick the seat closest to your JD. You&apos;ll see scoped proof and a
+          practical first-90-days plan — not the same metrics recycled under
+          every label.
         </p>
       </div>
 

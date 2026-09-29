@@ -2,8 +2,8 @@
 slug: signal-rooms
 title: "Signal Rooms"
 oneLiner: "Live audio rooms with clear stage roles, expressive dark UI, and moderation that stays calm"
-badge: "Product design"
-role: "Lead Product Designer"
+badge: "Concept · Portfolio exploration"
+role: "Lead Product Designer (concept)"
 platform: "iOS dark expressive"
 timeline: "2–3 week design sprint"
 tags:

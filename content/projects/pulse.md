@@ -2,8 +2,8 @@
 slug: pulse
 title: "Pulse"
 oneLiner: "Soft iOS companion for energy and recovery — sleep debt, focus blocks, shame-free check-ins"
-badge: "Product design"
-role: "Lead Product Designer"
+badge: "Concept · Portfolio exploration"
+role: "Lead Product Designer (concept)"
 platform: "iOS"
 timeline: "2–3 week design sprint"
 tags:

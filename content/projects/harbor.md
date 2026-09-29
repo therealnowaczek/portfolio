@@ -2,8 +2,8 @@
 slug: harbor
 title: "Harbor"
 oneLiner: "Calm iOS companion for revolving credit — see what you owe, plan repayments, stay in control"
-badge: "Product design"
-role: "Lead Product Designer"
+badge: "Concept · Portfolio exploration"
+role: "Lead Product Designer (concept)"
 platform: "iOS"
 timeline: "2–3 week design sprint"
 tags:

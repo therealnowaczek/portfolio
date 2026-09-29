@@ -2,8 +2,8 @@
 slug: quorum
 title: "Quorum"
 oneLiner: "Invite partners, assign plain-language roles, and activate them without a permissions spreadsheet"
-badge: "Product design"
-role: "Lead Product Designer"
+badge: "Concept · Portfolio exploration"
+role: "Lead Product Designer (concept)"
 platform: "Web enterprise"
 timeline: "2–3 week design sprint"
 tags:

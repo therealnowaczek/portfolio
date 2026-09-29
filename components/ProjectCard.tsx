@@ -30,14 +30,14 @@ export function ProjectCard({ project, onOpen, spanClass, featured = false }: Pr
       aria-label={`Open project: ${project.title}`}
       onClick={activate}
       onKeyDown={onKeyDown}
-      className={`group relative cursor-pointer overflow-hidden rounded-[10px] border border-transparent bg-white outline-none transition-all duration-[160ms] ease-out hover:-translate-y-0.5 hover:border-accent/40 focus-visible:border-accent ${spanClass}`}
+      className={`group relative min-h-[240px] cursor-pointer overflow-hidden rounded-[10px] border border-transparent bg-white outline-none transition-all duration-[160ms] ease-out hover:-translate-y-0.5 hover:border-accent/40 focus-visible:border-accent md:min-h-0 ${spanClass}`}
       style={
         {
           ["--project-accent" as string]: project.accent,
         }
       }
     >
-      <div className="relative h-full min-h-[200px] overflow-hidden rounded-[10px] bg-surface">
+      <div className="relative h-full min-h-[240px] overflow-hidden rounded-[10px] bg-surface md:min-h-0">
         {project.coverPath ? (
           <ProjectImage
             src={project.coverPath}
@@ -79,22 +79,24 @@ export function ProjectCard({ project, onOpen, spanClass, featured = false }: Pr
         />
 
         <div
-          className={`absolute inset-x-0 bottom-0 ${
-            featured ? "p-4 sm:p-5" : "p-3.5 sm:p-4"
+          className={`absolute inset-x-0 bottom-0 z-10 ${
+            featured
+              ? "px-4 pb-5 pt-10 sm:px-5 sm:pb-5 sm:pt-12"
+              : "px-3.5 pb-4 pt-8 sm:px-4 sm:pb-4 sm:pt-10"
           }`}
         >
           <h3
             className={`font-semibold tracking-tight text-white drop-shadow-sm ${
-              featured ? "text-xl sm:text-2xl" : "text-base sm:text-lg"
+              featured ? "text-lg sm:text-2xl" : "text-base sm:text-lg"
             }`}
           >
             {project.title}
           </h3>
           <p
-            className={`mt-1.5 text-white/90 ${
+            className={`mt-1 text-white/90 ${
               featured
-                ? "line-clamp-3 text-sm leading-snug sm:text-[15px]"
-                : "line-clamp-2 text-sm leading-snug sm:line-clamp-3"
+                ? "line-clamp-2 text-sm leading-snug sm:line-clamp-3 sm:text-[15px]"
+                : "line-clamp-2 text-sm leading-snug"
             }`}
           >
             {project.oneLiner}
@@ -102,7 +104,7 @@ export function ProjectCard({ project, onOpen, spanClass, featured = false }: Pr
         </div>
 
         <div
-          className="absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-100 bg-[var(--project-accent)] opacity-90 transition-opacity duration-[160ms] ease-out group-hover:opacity-100"
+          className="absolute bottom-0 left-0 z-10 h-0.5 w-full origin-left scale-x-100 bg-[var(--project-accent)] opacity-90 transition-opacity duration-[160ms] ease-out group-hover:opacity-100"
           aria-hidden
         />
       </div>

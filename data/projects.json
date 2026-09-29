@@ -3,8 +3,8 @@
     "id": "01",
     "slug": "costradar",
     "title": "CostRadar.ai",
-    "oneLiner": "Profitability OS for multi-channel e-commerce — true net P&L plus an Approve-gated AI Profit Agent",
-    "badge": "Shipped product · Founder case study",
+    "oneLiner": "Profitability OS for multi-channel e-commerce \u2014 true net P&L plus an Approve-gated AI Profit Agent",
+    "badge": "Shipped product \u00b7 Founder case study",
     "role": "Founder & AI Design Engineer (solo)",
     "platform": "Web SaaS (+ PWA glance)",
     "timeline": "Solo-shipped live product",
@@ -20,12 +20,12 @@
     "accent": "#00a080",
     "styleLabel": "Dense finance teal",
     "screens": [
-      "Home dashboard — True Net & widgets",
-      "Breakdown — cost distribution & top leaks",
-      "Reports — Margin Waterfall / Monthly P&L",
-      "AI Insights — finding + Approve",
-      "AI Profit Agent — in-app chat",
-      "Pulse — multi-store portfolio"
+      "Home dashboard \u2014 True Net & widgets",
+      "Breakdown \u2014 cost distribution & top leaks",
+      "Reports \u2014 Margin Waterfall / Monthly P&L",
+      "AI Insights \u2014 finding + Approve",
+      "AI Profit Agent \u2014 in-app chat",
+      "Pulse \u2014 multi-store portfolio"
     ],
     "portfolioSignals": [
       "Fintech-adjacent / P&L system design",
@@ -34,17 +34,18 @@
       "Multi-channel e-com domain complexity",
       "Design Ops density (widgets, reports, plan gates)",
       "Agent-in-workflow (Slack/Teams), not in-app-only AI"
-    ]
+    ],
+    "status": "shipped"
   },
   {
     "id": "02",
     "slug": "northline",
     "title": "Northline",
     "oneLiner": "AI ops profitability console for B2B SaaS",
-    "badge": "Product design",
-    "role": "Lead Product Designer",
+    "badge": "Concept \u00b7 Portfolio exploration",
+    "role": "Lead Product Designer (concept)",
     "platform": "Web desktop",
-    "timeline": "2–3 week design sprint",
+    "timeline": "2\u20133 week design sprint",
     "tags": [
       "AI",
       "B2B SaaS",
@@ -57,11 +58,11 @@
     "styleLabel": "Quiet enterprise",
     "screens": [
       "Profitability Overview",
-      "Finding Detail — SKU Margin Leak",
+      "Finding Detail \u2014 SKU Margin Leak",
       "Ads & ROAS Intelligence",
       "COGS & Landed Costs Ledger",
       "Autonomous Rules & Guardrails",
-      "Empty State — Connect Store"
+      "Empty State \u2014 Connect Store"
     ],
     "portfolioSignals": [
       "AI product UX",
@@ -69,17 +70,18 @@
       "Trust and lineage",
       "Accessibility in data UI",
       "E2E concept ownership"
-    ]
+    ],
+    "status": "concept"
   },
   {
     "id": "03",
     "slug": "harbor",
     "title": "Harbor",
     "oneLiner": "Fintech repayments and insights companion",
-    "badge": "Product design",
-    "role": "Lead Product Designer",
+    "badge": "Concept \u00b7 Portfolio exploration",
+    "role": "Lead Product Designer (concept)",
     "platform": "iOS",
-    "timeline": "2–3 week design sprint",
+    "timeline": "2\u20133 week design sprint",
     "tags": [
       "Fintech",
       "iOS",
@@ -104,17 +106,18 @@
       "Consequence-before-commit",
       "Accessible money UI",
       "Regulated-feel microcopy"
-    ]
+    ],
+    "status": "concept"
   },
   {
     "id": "04",
     "slug": "circuit",
     "title": "Circuit",
     "oneLiner": "Deploy and observability console for engineers",
-    "badge": "Product design",
-    "role": "Lead Product Designer",
+    "badge": "Concept \u00b7 Portfolio exploration",
+    "role": "Lead Product Designer (concept)",
     "platform": "Web dark",
-    "timeline": "2–3 week design sprint",
+    "timeline": "2\u20133 week design sprint",
     "tags": [
       "Developer tools",
       "Observability",
@@ -139,17 +142,18 @@
       "Systems thinking",
       "Dense dark UI",
       "Safe rollback patterns"
-    ]
+    ],
+    "status": "concept"
   },
   {
     "id": "05",
     "slug": "folio",
     "title": "Folio",
     "oneLiner": "Social critique network for designers",
-    "badge": "Product design",
-    "role": "Lead Product Designer",
+    "badge": "Concept \u00b7 Portfolio exploration",
+    "role": "Lead Product Designer (concept)",
     "platform": "Android",
-    "timeline": "2–3 week design sprint",
+    "timeline": "2\u20133 week design sprint",
     "tags": [
       "Android",
       "Community",
@@ -164,10 +168,10 @@
       "Feed",
       "Project Detail",
       "Frames",
-      "Upload Frame — Annotations",
+      "Upload Frame \u2014 Annotations",
       "Compose Critique",
       "Critiques & Activity",
-      "Profile — Maya Lin"
+      "Profile \u2014 Maya Lin"
     ],
     "portfolioSignals": [
       "Android Material craft",
@@ -175,17 +179,18 @@
       "Structured critique rituals",
       "Editorial visual systems",
       "Creator feedback loops"
-    ]
+    ],
+    "status": "concept"
   },
   {
     "id": "06",
     "slug": "quorum",
     "title": "Quorum",
     "oneLiner": "B2B roles, permissions, and partner activation",
-    "badge": "Product design",
-    "role": "Lead Product Designer",
+    "badge": "Concept \u00b7 Portfolio exploration",
+    "role": "Lead Product Designer (concept)",
     "platform": "Web enterprise",
-    "timeline": "2–3 week design sprint",
+    "timeline": "2\u20133 week design sprint",
     "tags": [
       "B2B",
       "Permissions",
@@ -197,13 +202,13 @@
     "accent": "#4F46E5",
     "styleLabel": "Enterprise clarity",
     "screens": [
-      "Partner Activation — Directory & Connect Wizard",
-      "Roles & Permissions — Matrix",
-      "Partner Activation — Checklist Drawer",
-      "Roles & Permissions — Review Diff & Approval",
-      "Organization Settings — SSO & Identity",
-      "API & Webhooks — Developer Gateway",
-      "Audit Trail — Activity Log"
+      "Partner Activation \u2014 Directory & Connect Wizard",
+      "Roles & Permissions \u2014 Matrix",
+      "Partner Activation \u2014 Checklist Drawer",
+      "Roles & Permissions \u2014 Review Diff & Approval",
+      "Organization Settings \u2014 SSO & Identity",
+      "API & Webhooks \u2014 Developer Gateway",
+      "Audit Trail \u2014 Activity Log"
     ],
     "portfolioSignals": [
       "B2B lifecycle",
@@ -211,17 +216,18 @@
       "Partner activation",
       "Enterprise audit trust",
       "Least-privilege UX"
-    ]
+    ],
+    "status": "concept"
   },
   {
     "id": "07",
     "slug": "pulse",
     "title": "Pulse",
     "oneLiner": "Energy and recovery wellness companion",
-    "badge": "Product design",
-    "role": "Lead Product Designer",
+    "badge": "Concept \u00b7 Portfolio exploration",
+    "role": "Lead Product Designer (concept)",
     "platform": "iOS",
-    "timeline": "2–3 week design sprint",
+    "timeline": "2\u20133 week design sprint",
     "tags": [
       "Wellness",
       "iOS",
@@ -247,17 +253,18 @@
       "Inclusive health-adjacent",
       "Dynamic Type and Reduce Motion",
       "Shame-free product copy"
-    ]
+    ],
+    "status": "concept"
   },
   {
     "id": "08",
     "slug": "atlas-cms",
     "title": "Atlas CMS",
     "oneLiner": "Design system docs and playground",
-    "badge": "Product design",
-    "role": "Lead Product Designer",
+    "badge": "Concept \u00b7 Portfolio exploration",
+    "role": "Lead Product Designer (concept)",
     "platform": "Web docs",
-    "timeline": "2–3 week design sprint",
+    "timeline": "2\u20133 week design sprint",
     "tags": [
       "Design system",
       "Docs",
@@ -279,20 +286,21 @@
     "portfolioSignals": [
       "Design systems",
       "Docs UX",
-      "Designer–engineer bridge",
+      "Designer\u2013engineer bridge",
       "Token literacy",
       "Playground adoption"
-    ]
+    ],
+    "status": "concept"
   },
   {
     "id": "09",
     "slug": "nest",
     "title": "Nest",
     "oneLiner": "Local services marketplace",
-    "badge": "Product design",
-    "role": "Lead Product Designer",
+    "badge": "Concept \u00b7 Portfolio exploration",
+    "role": "Lead Product Designer (concept)",
     "platform": "iOS + desktop web",
-    "timeline": "2–3 week design sprint",
+    "timeline": "2\u20133 week design sprint",
     "tags": [
       "Marketplace",
       "Cross-platform",
@@ -318,17 +326,18 @@
       "Fee transparency",
       "Shared IA native shells",
       "Two-sided product thinking"
-    ]
+    ],
+    "status": "concept"
   },
   {
     "id": "10",
     "slug": "signal-rooms",
     "title": "Signal Rooms",
     "oneLiner": "Live audio community rooms",
-    "badge": "Product design",
-    "role": "Lead Product Designer",
+    "badge": "Concept \u00b7 Portfolio exploration",
+    "role": "Lead Product Designer (concept)",
     "platform": "iOS dark expressive",
-    "timeline": "2–3 week design sprint",
+    "timeline": "2\u20133 week design sprint",
     "tags": [
       "Live audio",
       "Community",
@@ -340,12 +349,12 @@
     "accent": "#8B5CF6",
     "styleLabel": "Dark expressive",
     "screens": [
-      "Discover — Live Signal Rooms",
-      "Browse — Communities & Niches",
-      "In-Room — Audio Stage",
-      "In-Room — Live Chat & Reactions",
-      "Schedule Room — Plan Hangout",
-      "Profile — Host Studio & Replays"
+      "Discover \u2014 Live Signal Rooms",
+      "Browse \u2014 Communities & Niches",
+      "In-Room \u2014 Audio Stage",
+      "In-Room \u2014 Live Chat & Reactions",
+      "Schedule Room \u2014 Plan Hangout",
+      "Profile \u2014 Host Studio & Replays"
     ],
     "portfolioSignals": [
       "Expressive mobile brand",
@@ -353,17 +362,18 @@
       "Role clarity and safety",
       "Moderation affordances",
       "Motion with a11y fallbacks"
-    ]
+    ],
+    "status": "concept"
   },
   {
     "id": "11",
     "slug": "ledgerly-studio",
     "title": "Ledgerly Studio",
     "oneLiner": "Growth experimentation lab",
-    "badge": "Product design",
-    "role": "Lead Product Designer",
+    "badge": "Concept \u00b7 Portfolio exploration",
+    "role": "Lead Product Designer (concept)",
     "platform": "Web analytics",
-    "timeline": "2–3 week design sprint",
+    "timeline": "2\u20133 week design sprint",
     "tags": [
       "Growth",
       "Experimentation",
@@ -385,6 +395,7 @@
       "Hypothesis-first UX",
       "Designer-in-the-loop A/B",
       "Decision ritual design"
-    ]
+    ],
+    "status": "concept"
   }
 ]

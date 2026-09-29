@@ -114,9 +114,23 @@ export function ProjectModal({
               ref={closeRef}
               type="button"
               onClick={onClose}
-              className="shrink-0 rounded-[8px] px-3 py-1.5 text-sm font-medium text-muted transition-colors duration-[160ms] hover:bg-surface hover:text-foreground"
+              aria-label="Close"
+              className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-[8px] text-muted transition-colors duration-[160ms] hover:bg-surface hover:text-foreground"
             >
-              Close
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                aria-hidden
+              >
+                <path
+                  d="M3.5 3.5l9 9M12.5 3.5l-9 9"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+              </svg>
             </button>
           </div>
 
@@ -151,12 +165,22 @@ export function ProjectModal({
                   >
                     {project.title}
                   </h2>
-                  <p className="mt-1.5 text-sm font-medium text-accent">
-                    {project.badge}
-                  </p>
                   <p className="mt-2 max-w-2xl text-[15px] text-muted sm:text-base">
                     {project.oneLiner}
                   </p>
+                  {project.slug === "costradar" ? (
+                    <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
+                      Live product:{" "}
+                      <a
+                        href="https://costradar.ai"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-accent underline-offset-2 hover:underline"
+                      >
+                        costradar.ai
+                      </a>
+                    </p>
+                  ) : null}
                   <div className="mt-3 flex flex-wrap items-center gap-2 text-sm text-muted">
                     <span className="pill">{project.platform}</span>
                     <span className="pill">{project.role}</span>
@@ -362,34 +386,25 @@ export function ProjectModal({
             </section>
           </div>
 
-          <div className="relative z-20 flex shrink-0 flex-wrap items-center justify-between gap-3 border-t border-border bg-white px-4 py-3 sm:px-6">
-            <button
-              type="button"
-              onClick={onClose}
-              className="rounded-[8px] px-3 py-1.5 text-sm font-medium text-muted hover:bg-surface hover:text-foreground"
-            >
-              Close
-            </button>
-            <div className="flex gap-2">
-              {prev ? (
-                <button
-                  type="button"
-                  onClick={() => onNavigate(prev.slug)}
-                  className="rounded-[8px] border border-border px-3 py-1.5 text-sm font-medium text-foreground transition-colors duration-[160ms] hover:border-accent hover:text-accent"
-                >
-                  ← {prev.title}
-                </button>
-              ) : null}
-              {next ? (
-                <button
-                  type="button"
-                  onClick={() => onNavigate(next.slug)}
-                  className="rounded-[8px] border border-border px-3 py-1.5 text-sm font-medium text-foreground transition-colors duration-[160ms] hover:border-accent hover:text-accent"
-                >
-                  {next.title} →
-                </button>
-              ) : null}
-            </div>
+          <div className="relative z-20 flex shrink-0 flex-wrap items-center justify-end gap-2 border-t border-border bg-white px-4 py-3 sm:px-6">
+            {prev ? (
+              <button
+                type="button"
+                onClick={() => onNavigate(prev.slug)}
+                className="rounded-[8px] border border-border px-3 py-1.5 text-sm font-medium text-foreground transition-colors duration-[160ms] hover:border-accent hover:text-accent"
+              >
+                ← {prev.title}
+              </button>
+            ) : null}
+            {next ? (
+              <button
+                type="button"
+                onClick={() => onNavigate(next.slug)}
+                className="rounded-[8px] border border-border px-3 py-1.5 text-sm font-medium text-foreground transition-colors duration-[160ms] hover:border-accent hover:text-accent"
+              >
+                {next.title} →
+              </button>
+            ) : null}
           </div>
         </div>
       </div>
