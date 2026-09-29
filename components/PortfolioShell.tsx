@@ -3,15 +3,14 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import type { Project } from "@/lib/project-types";
-import { MENTORING } from "@/lib/cv";
 import { Header } from "./Header";
 import { Intro } from "./Intro";
 import { Impact } from "./Impact";
 import { SelectedWork } from "./SelectedWork";
 import { Experience } from "./Experience";
 import { ExpertiseTools } from "./ExpertiseTools";
-import { NarrativeSection } from "./NarrativeSection";
 import { Footer } from "./Footer";
+import { Leadership } from "./Leadership";
 import { MobileBottomBar } from "./MobileBottomBar";
 import { Process } from "./Process";
 import { ProjectModal } from "./ProjectModal";
@@ -138,12 +137,7 @@ export function PortfolioShell({ projects }: Props) {
 
           {/* 5. How they lead & operate: for manager/director scope */}
           <div id="leadership" className="scroll-mt-36">
-            <NarrativeSection
-              id="leadership-heading"
-              title="Leadership"
-              lede="How I coach designers and keep quality high while the team grows."
-              blocks={MENTORING}
-            />
+            <Leadership />
           </div>
 
           <div id="process" className="scroll-mt-36">

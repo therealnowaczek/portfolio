@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BigPicture Enterprise - Platform 2026</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Inter Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with configuration -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"primary-container": "#2563eb", "surface-container-high": "#e2e7ff", "tertiary-fixed": "#85f8c4", "on-primary-container": "#eeefff", "inverse-primary": "#b4c5ff", "tertiary-fixed-dim": "#68dba9", "inverse-surface": "#283044", "on-primary-fixed-variant": "#003ea8", "tertiary-container": "#007d57", tertiary: "#006243", "on-tertiary": "#ffffff", "surface-variant": "#dae2fd", error: "#ba1a1a", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#005137", "surface-container-lowest": "#ffffff", "on-background": "#131b2e", "secondary-fixed": "#d3e4fe", "on-primary": "#ffffff", surface: "#faf8ff", "surface-tint": "#0053db", secondary: "#505f76", "surface-dim": "#d2d9f4", primary: "#004ac6", outline: "#737686", "surface-container-highest": "#dae2fd", "on-error-container": "#93000a", background: "#faf8ff", "on-surface-variant": "#434655", "on-tertiary-fixed": "#002114", "on-secondary-container": "#54647a", "primary-fixed": "#dbe1ff", "inverse-on-surface": "#eef0ff", "primary-fixed-dim": "#b4c5ff", "surface-bright": "#faf8ff", "secondary-fixed-dim": "#b7c8e1", "on-tertiary-container": "#bdffdc", "on-surface": "#131b2e", "secondary-container": "#d0e1fb", "on-secondary-fixed-variant": "#38485d", "on-secondary": "#ffffff", "on-primary-fixed": "#00174b", "surface-container-low": "#f2f3ff", "outline-variant": "#c3c6d7", "surface-container": "#eaedff", "on-secondary-fixed": "#0b1c30", "error-container": "#ffdad6"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"space-xl": "2rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "space-md": "1rem", margin: "2rem", gutter: "1.5rem", "space-xs": "0.25rem", "gutter-mobile": "1rem", "margin-mobile": "1rem"}, fontFamily: {"headline-lg": ["Plus Jakarta Sans"], "tabular-bold": ["Inter"], "tabular-regular": ["Inter"], "body-sm": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "body-md": ["Inter"], "body-lg": ["Inter"], "label-md": ["Inter"], "title-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"]}, fontSize: {"headline-lg": ["32px", {lineHeight: "40px", fontWeight: "700"}], "tabular-bold": ["12px", {lineHeight: "16px", fontWeight: "600"}], "tabular-regular": ["12px", {lineHeight: "16px", fontWeight: "400"}], "body-sm": ["12px", {lineHeight: "16px", fontWeight: "400"}], "headline-sm": ["20px", {lineHeight: "28px", fontWeight: "600"}], "label-sm": ["11px", {lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}], "body-lg": ["16px", {lineHeight: "24px", fontWeight: "400"}], "label-md": ["13px", {lineHeight: "18px", fontWeight: "500"}], "title-md": ["16px", {lineHeight: "24px", fontWeight: "600"}], "display-lg": ["56px", {lineHeight: "64px", fontWeight: "700"}], "headline-lg-mobile": ["26px", {lineHeight: "32px", fontWeight: "700"}]}}}};</script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      font-size: 16px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    /* Precise row sync constraint */
+    .gantt-row {
+      height: 32px;
+      min-height: 32px;
+      max-height: 32px;
+    }
+    /* Hide scrollbars for linked scrolling */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Custom thin scrollbar */
+    .thin-scroll::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .thin-scroll::-webkit-scrollbar-track {
+      background: #f1f3ff;
+    }
+    .thin-scroll::-webkit-scrollbar-thumb {
+      background: #c3c6d7;
+      border-radius: 3px;
+    }
+    .thin-scroll::-webkit-scrollbar-thumb:hover {
+      background: #737686;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface h-full flex flex-col font-body-sm text-body-sm antialiased overflow-hidden select-none">
+<!-- ================= TOP APP BAR (from Shared Component JSON: TopNavBar) ================= -->
+<header class="bg-surface-container-lowest border-b border-outline-variant flex justify-between items-center w-full px-space-xl h-8 min-h-[32px] flex-shrink-0 z-30">
+<div class="flex items-center space-x-space-md">
+<!-- Brand & Product Title -->
+<div class="flex items-center space-x-space-sm cursor-pointer">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1; font-size: 18px;">grid_view</span>
+<span class="font-headline-md text-headline-md font-semibold text-primary">Gantt</span>
+</div>
+<span class="text-outline-variant font-label-md">/</span>
+<!-- Program Scope Breadcrumb -->
+<div class="flex items-center space-x-1 px-space-sm py-0.5 rounded hover:bg-surface-container transition-colors cursor-pointer">
+<span class="font-label-md text-label-md text-secondary">Programs</span>
+<span class="font-label-md text-label-md text-secondary">/</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Platform 2026</span>
+<span class="material-symbols-outlined text-secondary" style="font-size: 14px;">expand_more</span>
+</div>
+</div>
+<!-- Navigation Links: "Gantt", "Board", "Resources", "OKRs", "Risks", "Reports" -->
+<!-- Active State Logic: Gantt is active view according to page context -->
+<nav class="hidden md:flex items-center space-x-space-lg h-full">
+<a class="border-b-2 border-primary-container text-primary font-label-md pb-0.5 flex items-center h-full px-1" href="#">
+        Gantt
+      </a>
+<a class="text-secondary hover:text-on-surface font-label-md flex items-center h-full px-1 transition-colors" href="#">
+        Board
+      </a>
+<a class="text-secondary hover:text-on-surface font-label-md flex items-center h-full px-1 transition-colors" href="#">
+        Resources
+      </a>
+<a class="text-secondary hover:text-on-surface font-label-md flex items-center h-full px-1 transition-colors" href="#">
+        OKRs
+      </a>
+<a class="text-secondary hover:text-on-surface font-label-md flex items-center h-full px-1 transition-colors" href="#">
+        Risks
+      </a>
+<a class="text-secondary hover:text-on-surface font-label-md flex items-center h-full px-1 transition-colors" href="#">
+        Reports
+      </a>
+</nav>
+<!-- Trailing Actions & Profile Avatar -->
+<div class="flex items-center space-x-space-sm">
+<!-- Search Bar -->
+<div class="relative flex items-center z-50">
+<span class="material-symbols-outlined text-primary-container absolute left-2 pointer-events-none" style="font-size: 14px;">search</span>
+<input class="h-6 pl-7 pr-16 w-56 bg-surface-container-lowest border-2 border-primary-container rounded font-label-sm text-label-sm text-on-surface focus:outline-none shadow-sm" placeholder="Quick search..." type="text" value="gateway cutover"/>
+<div class="absolute right-1.5 flex items-center space-x-1">
+<span class="px-1.5 py-0.2 rounded-full bg-primary-container/10 text-primary-container font-label-sm text-[10px] font-bold border border-primary-container/30">3 hits</span>
+<button class="w-4 h-4 rounded-full flex items-center justify-center hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Clear search">
+<span class="material-symbols-outlined" style="font-size: 12px;">close</span>
+</button>
+</div>
+<!-- Search Jump Floating Palette / Dropdown Popover -->
+<div class="absolute top-8 right-0 w-[380px] bg-surface-container-lowest border border-outline-variant shadow-xl rounded-lg overflow-hidden flex flex-col z-50 text-left">
+<!-- Header Jump Navigation Bar -->
+<div class="bg-surface-container-low px-3 py-1.5 border-b border-outline-variant flex items-center justify-between text-label-sm font-label-sm">
+<div class="flex items-center space-x-1.5 text-on-surface font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span>Match 1 of 3: <span class="font-mono text-primary font-bold">BP-1901</span> API gateway cutover</span>
+</div>
+<div class="flex items-center space-x-1">
+<button class="px-1.5 py-0.5 rounded bg-surface-container hover:bg-surface-container-high border border-outline-variant text-[11px] font-medium text-secondary hover:text-on-surface flex items-center space-x-0.5">
+<span class="material-symbols-outlined" style="font-size: 12px;">expand_less</span>
+<span>Prev</span>
+</button>
+<button class="px-1.5 py-0.5 rounded bg-surface-container hover:bg-surface-container-high border border-outline-variant text-[11px] font-medium text-secondary hover:text-on-surface flex items-center space-x-0.5">
+<span>Next</span>
+<span class="material-symbols-outlined" style="font-size: 12px;">expand_more</span>
+</button>
+<button class="w-5 h-5 flex items-center justify-center rounded hover:bg-surface-container text-secondary hover:text-on-surface ml-1">
+<span class="material-symbols-outlined" style="font-size: 13px;">close</span>
+</button>
+</div>
+</div>
+<!-- Match List Items -->
+<div class="divide-y divide-outline-variant/30 text-body-sm font-body-sm max-h-60 overflow-y-auto thin-scroll">
+<!-- Match 1: Active Jump Target -->
+<div class="p-2.5 bg-primary-container/[0.08] border-l-4 border-primary-container flex items-start space-x-2.5 cursor-pointer hover:bg-primary-container/[0.12] transition-colors">
+<span class="material-symbols-outlined text-primary-container mt-0.5" style="font-size: 15px;">arrow_forward</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-1.5">
+<span class="font-mono font-bold text-primary text-[11px]">BP-1901</span>
+<span class="text-[11px] text-on-surface font-semibold truncate">API <mark class="bg-tertiary-fixed/60 text-on-surface rounded px-0.5 font-semibold">gateway</mark> <mark class="bg-tertiary-fixed/60 text-on-surface rounded px-0.5 font-semibold">cutover</mark></span>
+</div>
+<span class="text-[9px] font-bold text-primary bg-primary-fixed px-1.5 py-0.2 rounded font-mono">ACTIVE FOCUS</span>
+</div>
+<div class="flex items-center space-x-2 text-[10px] text-secondary mt-1">
+<span>1.0 Platform Core</span>
+<span>•</span>
+<span class="text-primary font-medium">In Progress</span>
+<span>•</span>
+<span>Feb 02 – Mar 09</span>
+</div>
+</div>
+</div>
+<!-- Match 2 -->
+<div class="p-2.5 hover:bg-surface-container/60 transition-colors flex items-start space-x-2.5 cursor-pointer">
+<span class="material-symbols-outlined text-secondary mt-0.5" style="font-size: 15px;">history</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-1.5">
+<span class="font-mono font-medium text-primary text-[11px]">BP-1842</span>
+<span class="text-[11px] text-on-surface truncate">Auth0 <mark class="bg-tertiary-fixed/50 text-on-surface rounded px-0.5">Gateway</mark> &amp; Token Broker</span>
+</div>
+<span class="text-[10px] text-secondary font-mono">#2</span>
+</div>
+<div class="flex items-center space-x-2 text-[10px] text-secondary mt-1">
+<span>1.0 Platform Core</span>
+<span>•</span>
+<span class="text-primary font-medium">In Progress</span>
+</div>
+</div>
+</div>
+<!-- Match 3 -->
+<div class="p-2.5 hover:bg-surface-container/60 transition-colors flex items-start space-x-2.5 cursor-pointer">
+<span class="material-symbols-outlined text-secondary mt-0.5" style="font-size: 15px;">history</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-1.5">
+<span class="font-mono font-medium text-primary text-[11px]">BP-1034</span>
+<span class="text-[11px] text-on-surface truncate">API <mark class="bg-tertiary-fixed/50 text-on-surface rounded px-0.5">Gateway</mark> v3 Routing Core</span>
+</div>
+<span class="text-[10px] text-secondary font-mono">#3</span>
+</div>
+<div class="flex items-center space-x-2 text-[10px] text-secondary mt-1">
+<span>1.0 Platform Core</span>
+<span>•</span>
+<span>Scheduled</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer shortcuts hint -->
+<div class="bg-surface-container-low px-3 py-1.5 border-t border-outline-variant flex items-center justify-between text-[10px] text-secondary font-mono">
+<span><kbd class="px-1 py-0.5 rounded bg-surface-container-lowest border border-outline-variant text-[9px]">↵</kbd> jump to bar</span>
+<span><kbd class="px-1 py-0.5 rounded bg-surface-container-lowest border border-outline-variant text-[9px]">↑/↓</kbd> browse matches</span>
+<span><kbd class="px-1 py-0.5 rounded bg-surface-container-lowest border border-outline-variant text-[9px]">Esc</kbd> dismiss</span>
+</div>
+</div>
+</div>
+<div class="h-4 w-px bg-outline-variant mx-1"></div>
+<!-- Trailing Icon Actions -->
+<button class="h-6 w-6 flex items-center justify-center rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Filter list">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button class="h-6 w-6 flex items-center justify-center rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Zoom in">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+<button class="h-6 w-6 flex items-center justify-center rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Share view">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="h-6 w-6 flex items-center justify-center rounded hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Settings">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-4 w-px bg-outline-variant mx-1"></div>
+<!-- Secondary Action -->
+<button class="h-6 px-space-md bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded border border-outline-variant flex items-center space-x-1 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 13px;">history_toggle_off</span>
+<span>Baseline</span>
+</button>
+<!-- Primary Action -->
+<button class="h-6 px-space-md bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md rounded flex items-center space-x-1 transition-colors shadow-sm">
+<span class="material-symbols-outlined" style="font-size: 13px;">file_download</span>
+<span>Export</span>
+</button>
+<!-- User Avatar -->
+<div class="ml-1 relative">
+<img class="w-6 h-6 rounded-full border border-outline-variant object-cover" data-alt="Close-up professional portrait of a senior enterprise engineering director in a well-lit, minimalist architectural studio with high-key neutral white and cool slate-gray lighting tones, projecting composure and sharp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtJAsC4xQFXXjfd1SR0AuVn0YnPDSxlgwfw8acUQ5DtlSc_w2IKxapfDylVU4ujNOH2UuQ6ZF2UU4zOxZSvD0kX6rOZUY6REphZvG940_CEjsgocVI1G_TtUa7gT6w7e9D8WiwUOi2OQ67hU0ZqgP6lIRAx4kF6Bkju2Xs9YXUQw62v_2smDioKbA75k6GKX_1CA_KLcpAKBDDsJ-eZMe_9W5GvVZ4JFv7D751cJocfzHVH59fg2HqAuv2U6cUJgMM8ZC36W5Jhls"/>
+<span class="absolute bottom-0 right-0 w-1.5 h-1.5 bg-tertiary-container rounded-full ring-1 ring-surface-container-lowest"></span>
+</div>
+</div>
+</header>
+<!-- ================= SECONDARY SCOPE & VIEW CONTROL TOOLBAR ================= -->
+<div class="bg-surface-container-low border-b border-outline-variant h-8 min-h-[32px] px-space-xl flex items-center justify-between flex-shrink-0 z-20">
+<div class="flex items-center space-x-space-md">
+<!-- Quick Filter Preset -->
+<div class="flex items-center space-x-1 bg-surface-container-lowest border border-outline-variant rounded px-2 py-0.5 text-label-sm font-label-sm cursor-pointer hover:border-primary-container">
+<span class="material-symbols-outlined text-secondary" style="font-size: 14px;">filter_alt</span>
+<span class="text-secondary">Quick filters:</span>
+<span class="font-tabular-bold text-on-surface">My issues (6)</span>
+<span class="text-outline-variant">·</span>
+<span class="font-tabular-bold text-error">Critical path</span>
+<span class="material-symbols-outlined text-secondary" style="font-size: 14px;">arrow_drop_down</span>
+</div>
+<!-- Baseline Status Pill -->
+<div class="flex items-center space-x-1 bg-surface-container-lowest border border-outline-variant rounded px-2 py-0.5 text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-secondary" style="font-size: 14px;">lock</span>
+<span class="text-secondary">Baseline:</span>
+<span class="font-tabular-bold text-on-surface">v2.4 Q1 locked</span>
+<span class="text-[10px] text-tertiary font-tabular-bold bg-tertiary-fixed/30 px-1 rounded">ON TRACK</span>
+</div>
+<!-- Scope Counter -->
+<div class="text-secondary font-label-sm text-label-sm flex items-center space-x-1">
+<span>Showing 16 tasks</span>
+<span>•</span>
+<span>3 swimlanes</span>
+</div>
+</div>
+<!-- Zoom & Layout Controls -->
+<div class="flex items-center space-x-space-sm">
+<div class="flex items-center bg-surface-container-lowest border border-outline-variant rounded text-label-sm font-label-sm overflow-hidden">
+<span class="px-2 py-0.5 text-secondary border-r border-outline-variant bg-surface-container-low">Zoom</span>
+<button class="px-1.5 py-0.5 hover:bg-surface-container text-secondary hover:text-on-surface">
+<span class="material-symbols-outlined" style="font-size: 14px;">remove</span>
+</button>
+<span class="px-2 py-0.5 font-tabular-bold text-on-surface">Weeks</span>
+<button class="px-1.5 py-0.5 hover:bg-surface-container text-secondary hover:text-on-surface">
+<span class="material-symbols-outlined" style="font-size: 14px;">add</span>
+</button>
+</div>
+<div class="flex items-center bg-surface-container-lowest border border-outline-variant rounded p-0.5">
+<button class="p-0.5 bg-secondary-container text-on-secondary-container rounded" title="Split Table &amp; Gantt">
+<span class="material-symbols-outlined" style="font-size: 15px;">view_week</span>
+</button>
+<button class="p-0.5 text-secondary hover:text-on-surface rounded" title="Timeline Only">
+<span class="material-symbols-outlined" style="font-size: 15px;">calendar_view_week</span>
+</button>
+<button class="p-0.5 text-secondary hover:text-on-surface rounded" title="Grid Only">
+<span class="material-symbols-outlined" style="font-size: 15px;">table_rows</span>
+</button>
+</div>
+<!-- Critical Path Toggle -->
+<button class="flex items-center space-x-1 px-2 py-0.5 bg-error-container text-on-error-container rounded text-label-sm font-label-sm border border-error/30 hover:bg-error/20 transition-colors">
+<span class="material-symbols-outlined text-error" style="font-size: 13px;">route</span>
+<span class="font-semibold text-error">Critical Path (4)</span>
+</button>
+</div>
+</div>
+<!-- ================= MAIN SPLIT WORKSPACE ================= -->
+<main class="flex-1 flex overflow-hidden bg-surface-container-lowest relative">
+<!-- ------------------------------------------------------------- -->
+<!-- LEFT PANE: WORK BREAKDOWN STRUCTURE (WBS) TABLE (~34% WIDTH) -->
+<!-- ------------------------------------------------------------- -->
+<section class="w-[490px] flex-shrink-0 flex flex-col border-r border-outline-variant bg-surface-container-lowest z-10 select-text overflow-hidden">
+<!-- Sticky Column Headers (48px height matching 2-tier right timeline) -->
+<div class="h-12 min-h-[48px] bg-surface-container-low border-b border-outline-variant flex items-center font-label-sm text-label-sm text-secondary font-semibold select-none flex-shrink-0">
+<div class="w-12 px-2 border-r border-outline-variant h-full flex items-center justify-center">WBS</div>
+<div class="w-20 px-2 border-r border-outline-variant h-full flex items-center">Key</div>
+<div class="flex-1 px-2 border-r border-outline-variant h-full flex items-center">Summary</div>
+<div class="w-16 px-1.5 border-r border-outline-variant h-full flex items-center justify-center">Owner</div>
+<div class="w-24 px-2 border-r border-outline-variant h-full flex items-center">Status</div>
+<div class="w-16 px-1.5 border-r border-outline-variant h-full flex items-center justify-end">Start</div>
+<div class="w-16 px-1.5 h-full flex items-center justify-end pr-2">End</div>
+</div>
+<!-- Scrollable Task Rows Container (Left) -->
+<div class="flex-1 overflow-y-scroll overflow-x-hidden thin-scroll bg-surface-container-lowest" id="wbs-scroll">
+<!-- ================= SWIMLANE 1: Platform Core ================= -->
+<div class="gantt-row bg-surface-container-low/80 border-b border-outline-variant flex items-center px-2 font-tabular-bold text-on-surface" style="opacity: 0.65;">
+<span class="material-symbols-outlined text-secondary mr-1 cursor-pointer" style="font-size: 14px;">expand_more</span>
+<span class="material-symbols-outlined text-primary-container mr-1.5" style="font-size: 15px;">folder_open</span>
+<span class="font-headline-sm text-[12px] font-bold">1.0 Platform Core</span>
+<span class="ml-2 font-label-sm text-[10px] text-secondary">(6 tasks)</span>
+<div class="ml-auto flex items-center space-x-2 mr-2">
+<span class="text-label-sm text-[10px] font-tabular-bold text-secondary">64%</span>
+<div class="w-12 h-1.5 bg-outline-variant rounded overflow-hidden">
+<div class="bg-primary-container h-full w-[64%]"></div>
+</div>
+</div>
+</div>
+<!-- Task 1.1 (Critical Path) -->
+<div class="gantt-row flex items-center border-b border-outline-variant/60 hover:bg-surface-container/60 transition-colors font-tabular-regular text-[11px] text-on-surface" style="opacity: 0.45;">
+<div class="w-12 px-2 border-r border-outline-variant/40 h-full flex items-center justify-center text-secondary font-mono">1.1</div>
+<div class="w-20 px-2 border-r border-outline-variant/40 h-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 13px;">bookmark</span>
+<span class="font-semibold text-primary">BP-1842</span>
+</div>
+<div class="flex-1 px-2 border-r border-outline-variant/40 h-full flex items-center truncate pr-1" title="Auth0 &amp; SSO Gateway migration">
+<span class="truncate">Auth0 &amp; SSO Gateway migration</span>
+</div>
+<div class="w-16 px-1.5 border-r border-outline-variant/40 h-full flex items-center justify-center">
+<div class="w-5 h-5 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-[9px] font-bold" title="Sarah Chen">SC</div>
+</div>
+<div class="w-24 px-1.5 border-r border-outline-variant/40 h-full flex items-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-primary border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mr-1"></span>In Progress
+            </span>
+</div>
+<div class="w-16 px-1 border-r border-outline-variant/40 h-full flex items-center justify-end text-secondary">Feb 02</div>
+<div class="w-16 px-1 h-full flex items-center justify-end text-secondary pr-2">Feb 16</div>
+</div>
+<!-- Task 1.2 (Critical Path) -->
+<div class="gantt-row flex items-center border-b border-outline-variant/60 hover:bg-surface-container/60 transition-colors font-tabular-regular text-[11px] text-on-surface" style="opacity: 0.45;">
+<div class="w-12 px-2 border-r border-outline-variant/40 h-full flex items-center justify-center text-secondary font-mono">1.2</div>
+<div class="w-20 px-2 border-r border-outline-variant/40 h-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 13px;">task_alt</span>
+<span class="font-semibold text-primary">BP-1845</span>
+</div>
+<div class="flex-1 px-2 border-r border-outline-variant/40 h-full flex items-center truncate pr-1" title="Kubernetes cluster 1.29 upgrade">
+<span class="truncate">Kubernetes cluster 1.29 upgrade</span>
+</div>
+<div class="w-16 px-1.5 border-r border-outline-variant/40 h-full flex items-center justify-center">
+<div class="w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-[9px] font-bold" title="Dave Miller">DM</div>
+</div>
+<div class="w-24 px-1.5 border-r border-outline-variant/40 h-full flex items-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-primary border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mr-1"></span>In Progress
+            </span>
+</div>
+<div class="w-16 px-1 border-r border-outline-variant/40 h-full flex items-center justify-end text-secondary">Feb 09</div>
+<div class="w-16 px-1 h-full flex items-center justify-end text-secondary pr-2">Feb 23</div>
+</div>
+<!-- Task 1.3 -->
+<div class="gantt-row flex items-center border-b border-outline-variant/60 bg-primary-container/[0.12] transition-colors font-tabular-regular text-[11px] text-on-surface border-l-4 border-primary ring-2 ring-primary/40 ring-inset shadow-xs relative z-10">
+<div class="w-12 px-2 border-r border-outline-variant/40 h-full flex items-center justify-center text-primary font-mono font-bold bg-primary-container/10">1.3</div>
+<div class="w-20 px-2 border-r border-outline-variant/40 h-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 13px;">task_alt</span>
+<span class="font-bold text-primary">BP-1901</span>
+</div>
+<div class="flex-1 px-2 border-r border-outline-variant/40 h-full flex items-center truncate pr-1" title="API gateway cutover">
+<span class="truncate font-medium">API <mark class="bg-tertiary-fixed text-on-surface rounded px-0.5 font-bold shadow-xs">gateway</mark> <mark class="bg-tertiary-fixed text-on-surface rounded px-0.5 font-bold shadow-xs">cutover</mark></span>
+<span class="ml-1.5 px-1 py-0.2 rounded bg-primary-container text-on-primary font-bold text-[9px]">HIT 1/3</span>
+</div>
+<div class="w-16 px-1.5 border-r border-outline-variant/40 h-full flex items-center justify-center">
+<div class="w-5 h-5 rounded-full bg-primary-fixed-dim text-on-primary-fixed flex items-center justify-center text-[9px] font-bold ring-1 ring-primary" title="Alex Rivera">AR</div>
+</div>
+<div class="w-24 px-1.5 border-r border-outline-variant/40 h-full flex items-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-primary border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mr-1"></span>In Progress
+    </span>
+</div>
+<div class="w-16 px-1 border-r border-outline-variant/40 h-full flex items-center justify-end text-primary font-semibold">Feb 02</div>
+<div class="w-16 px-1 h-full flex items-center justify-end text-primary font-semibold pr-2">Mar 09</div>
+</div>
+<!-- Task 1.4 -->
+<div class="gantt-row flex items-center border-b border-outline-variant/60 hover:bg-surface-container/60 transition-colors font-tabular-regular text-[11px] text-on-surface" style="opacity: 0.45;">
+<div class="w-12 px-2 border-r border-outline-variant/40 h-full flex items-center justify-center text-secondary font-mono">1.4</div>
+<div class="w-20 px-2 border-r border-outline-variant/40 h-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 13px;">bug_report</span>
+<span class="font-semibold text-primary">BP-1852</span>
+</div>
+<div class="flex-1 px-2 border-r border-outline-variant/40 h-full flex items-center truncate pr-1" title="IAM role consolidation &amp; policy cleanup">
+<span class="truncate">IAM role consolidation &amp; policy cleanup</span>
+</div>
+<div class="w-16 px-1.5 border-r border-outline-variant/40 h-full flex items-center justify-center">
+<div class="w-5 h-5 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center text-[9px] font-bold" title="Elena Wu">EW</div>
+</div>
+<div class="w-24 px-1.5 border-r border-outline-variant/40 h-full flex items-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-tertiary-fixed/40 text-tertiary border border-tertiary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary mr-1"></span>Done
+            </span>
+</div>
+<div class="w-16 px-1 border-r border-outline-variant/40 h-full flex items-center justify-end text-secondary">Jan 19</div>
+<div class="w-16 px-1 h-full flex items-center justify-end text-secondary pr-2">Feb 02</div>
+</div>
+<!-- Task 1.5 -->
+<div class="gantt-row flex items-center border-b border-outline-variant/60 hover:bg-surface-container/60 transition-colors font-tabular-regular text-[11px] text-on-surface" style="opacity: 0.45;">
+<div class="w-12 px-2 border-r border-outline-variant/40 h-full flex items-center justify-center text-secondary font-mono">1.5</div>
+<div class="w-20 px-2 border-r border-outline-variant/40 h-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 13px;">task_alt</span>
+<span class="font-semibold text-primary">BP-1858</span>
+</div>
+<div class="flex-1 px-2 border-r border-outline-variant/40 h-full flex items-center truncate pr-1" title="VPC Peering mesh reconfiguration">
+<span class="truncate">VPC Peering mesh reconfiguration</span>
+</div>
+<div class="w-16 px-1.5 border-r border-outline-variant/40 h-full flex items-center justify-center">
+<div class="w-5 h-5 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center text-[9px] font-bold" title="Tom Becker">TB</div>
+</div>
+<div class="w-24 px-1.5 border-r border-outline-variant/40 h-full flex items-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-secondary border border-outline-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mr-1"></span>To Do
+            </span>
+</div>
+<div class="w-16 px-1 border-r border-outline-variant/40 h-full flex items-center justify-end text-secondary">Feb 23</div>
+<div class="w-16 px-1 h-full flex items-center justify-end text-secondary pr-2">Mar 09</div>
+</div>
+<!-- Task 1.6 (Milestone) -->
+<div class="gantt-row flex items-center border-b border-outline-variant/60 hover:bg-surface-container/60 transition-colors font-tabular-bold text-[11px] text-on-surface bg-surface-container-low/30" style="opacity: 0.45;">
+<div class="w-12 px-2 border-r border-outline-variant/40 h-full flex items-center justify-center text-secondary font-mono">1.6</div>
+<div class="w-20 px-2 border-r border-outline-variant/40 h-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-primary-container" style="font-size: 13px; font-variation-settings: 'FILL' 1;">diamond</span>
+<span class="font-semibold text-primary">BP-1860</span>
+</div>
+<div class="flex-1 px-2 border-r border-outline-variant/40 h-full flex items-center truncate pr-1" title="M1: Core Infrastructure Sign-off">
+<span class="truncate font-semibold text-primary">◆ M1: Core Infrastructure Sign-off</span>
+</div>
+<div class="w-16 px-1.5 border-r border-outline-variant/40 h-full flex items-center justify-center">
+<div class="w-5 h-5 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-[9px] font-bold">SC</div>
+</div>
+<div class="w-24 px-1.5 border-r border-outline-variant/40 h-full flex items-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-primary border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mr-1"></span>Scheduled
+            </span>
+</div>
+<div class="w-16 px-1 border-r border-outline-variant/40 h-full flex items-center justify-end text-secondary">Mar 09</div>
+<div class="w-16 px-1 h-full flex items-center justify-end text-secondary pr-2">Mar 09</div>
+</div>
+<!-- ================= SWIMLANE 2: Mobile Experience ================= -->
+<div class="gantt-row bg-surface-container-low/80 border-b border-outline-variant flex items-center px-2 font-tabular-bold text-on-surface" style="opacity: 0.45;">
+<span class="material-symbols-outlined text-secondary mr-1 cursor-pointer" style="font-size: 14px;">expand_more</span>
+<span class="material-symbols-outlined text-primary-container mr-1.5" style="font-size: 15px;">smartphone</span>
+<span class="font-headline-sm text-[12px] font-bold">2.0 Mobile Experience</span>
+<span class="ml-2 font-label-sm text-[10px] text-secondary">(5 tasks)</span>
+<div class="ml-auto flex items-center space-x-2 mr-2">
+<span class="text-label-sm text-[10px] font-tabular-bold text-secondary">42%</span>
+<div class="w-12 h-1.5 bg-outline-variant rounded overflow-hidden">
+<div class="bg-primary-container h-full w-[42%]"></div>
+</div>
+</div>
+</div>
+<!-- Task 2.1 (Critical Path) -->
+<div class="gantt-row flex items-center border-b border-outline-variant/60 hover:bg-surface-container/60 transition-colors font-tabular-regular text-[11px] text-on-surface">
+<div class="w-12 px-2 border-r border-outline-variant/40 h-full flex items-center justify-center text-secondary font-mono">2.1</div>
+<div class="w-20 px-2 border-r border-outline-variant/40 h-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 13px;">bookmark</span>
+<span class="font-semibold text-primary">BP-1890</span>
+</div>
+<div class="flex-1 px-2 border-r border-outline-variant/40 h-full flex items-center truncate pr-1" title="iOS Biometric token renewal">
+<span class="truncate">iOS Biometric token renewal</span>
+</div>
+<div class="w-16 px-1.5 border-r border-outline-variant/40 h-full flex items-center justify-center">
+<div class="w-5 h-5 rounded-full bg-tertiary-container text-on-tertiary flex items-center justify-center text-[9px] font-bold" title="Lila Thorne">LT</div>
+</div>
+<div class="w-24 px-1.5 border-r border-outline-variant/40 h-full flex items-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-primary border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mr-1"></span>In Progress
+            </span>
+</div>
+<div class="w-16 px-1 border-r border-outline-variant/40 h-full flex items-center justify-end text-secondary">Feb 16</div>
+<div class="w-16 px-1 h-full flex items-center justify-end text-secondary pr-2">Mar 02</div>
+</div>
+<!-- Task 2.2 (Slip / At Risk) -->
+<div class="gantt-row flex items-center border-b border-outline-variant/60 bg-error-container/10 hover:bg-error-container/20 transition-colors font-tabular-regular text-[11px] text-on-surface">
+<div class="w-12 px-2 border-r border-outline-variant/40 h-full flex items-center justify-center text-secondary font-mono">2.2</div>
+<div class="w-20 px-2 border-r border-outline-variant/40 h-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 13px;">task_alt</span>
+<span class="font-semibold text-primary">BP-1904</span>
+</div>
+<div class="flex-1 px-2 border-r border-outline-variant/40 h-full flex items-center truncate pr-1" title="Offline synchronization engine">
+<span class="truncate">Offline synchronization engine</span>
+</div>
+<div class="w-16 px-1.5 border-r border-outline-variant/40 h-full flex items-center justify-center">
+<div class="w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-[9px] font-bold" title="Kevin Ramos">KR</div>
+</div>
+<div class="w-24 px-1.5 border-r border-outline-variant/40 h-full flex items-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-error-container text-error border border-error/20">
+<span class="w-1.5 h-1.5 rounded-full bg-error mr-1"></span>At Risk
+            </span>
+</div>
+<div class="w-16 px-1 border-r border-outline-variant/40 h-full flex items-center justify-end text-secondary">Feb 02</div>
+<div class="w-16 px-1 h-full flex items-center justify-end text-secondary pr-2">Mar 09</div>
+</div>
+<!-- Task 2.3 -->
+<div class="gantt-row flex items-center border-b border-outline-variant/60 hover:bg-surface-container/60 transition-colors font-tabular-regular text-[11px] text-on-surface">
+<div class="w-12 px-2 border-r border-outline-variant/40 h-full flex items-center justify-center text-secondary font-mono">2.3</div>
+<div class="w-20 px-2 border-r border-outline-variant/40 h-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 13px;">task_alt</span>
+<span class="font-semibold text-primary">BP-1912</span>
+</div>
+<div class="flex-1 px-2 border-r border-outline-variant/40 h-full flex items-center truncate pr-1" title="Android Material 3 theme rollout">
+<span class="truncate">Android Material 3 theme rollout</span>
+</div>
+<div class="w-16 px-1.5 border-r border-outline-variant/40 h-full flex items-center justify-center">
+<div class="w-5 h-5 rounded-full bg-primary-fixed-dim text-on-primary-fixed flex items-center justify-center text-[9px] font-bold">LT</div>
+</div>
+<div class="w-24 px-1.5 border-r border-outline-variant/40 h-full flex items-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-tertiary-fixed/40 text-tertiary border border-tertiary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary mr-1"></span>Done
+            </span>
+</div>
+<div class="w-16 px-1 border-r border-outline-variant/40 h-full flex items-center justify-end text-secondary">Jan 12</div>
+<div class="w-16 px-1 h-full flex items-center justify-end text-secondary pr-2">Jan 30</div>
+</div>
+<!-- Task 2.4 -->
+<div class="gantt-row flex items-center border-b border-outline-variant/60 hover:bg-surface-container/60 transition-colors font-tabular-regular text-[11px] text-on-surface">
+<div class="w-12 px-2 border-r border-outline-variant/40 h-full flex items-center justify-center text-secondary font-mono">2.4</div>
+<div class="w-20 px-2 border-r border-outline-variant/40 h-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 13px;">bug_report</span>
+<span class="font-semibold text-primary">BP-1918</span>
+</div>
+<div class="flex-1 px-2 border-r border-outline-variant/40 h-full flex items-center truncate pr-1" title="Push notification payload compression">
+<span class="truncate">Push notification payload compression</span>
+</div>
+<div class="w-16 px-1.5 border-r border-outline-variant/40 h-full flex items-center justify-center">
+<div class="w-5 h-5 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center text-[9px] font-bold">KR</div>
+</div>
+<div class="w-24 px-1.5 border-r border-outline-variant/40 h-full flex items-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-secondary border border-outline-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mr-1"></span>To Do
+            </span>
+</div>
+<div class="w-16 px-1 border-r border-outline-variant/40 h-full flex items-center justify-end text-secondary">Mar 02</div>
+<div class="w-16 px-1 h-full flex items-center justify-end text-secondary pr-2">Mar 16</div>
+</div>
+<!-- Task 2.5 -->
+<div class="gantt-row flex items-center border-b border-outline-variant/60 hover:bg-surface-container/60 transition-colors font-tabular-regular text-[11px] text-on-surface">
+<div class="w-12 px-2 border-r border-outline-variant/40 h-full flex items-center justify-center text-secondary font-mono">2.5</div>
+<div class="w-20 px-2 border-r border-outline-variant/40 h-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 13px;">task_alt</span>
+<span class="font-semibold text-primary">BP-1925</span>
+</div>
+<div class="flex-1 px-2 border-r border-outline-variant/40 h-full flex items-center truncate pr-1" title="Deep link routing security check">
+<span class="truncate">Deep link routing security check</span>
+</div>
+<div class="w-16 px-1.5 border-r border-outline-variant/40 h-full flex items-center justify-center">
+<div class="w-5 h-5 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-[9px] font-bold">LT</div>
+</div>
+<div class="w-24 px-1.5 border-r border-outline-variant/40 h-full flex items-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-secondary border border-outline-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mr-1"></span>To Do
+            </span>
+</div>
+<div class="w-16 px-1 border-r border-outline-variant/40 h-full flex items-center justify-end text-secondary">Mar 09</div>
+<div class="w-16 px-1 h-full flex items-center justify-end text-secondary pr-2">Mar 23</div>
+</div>
+<!-- ================= SWIMLANE 3: Data & Infrastructure ================= -->
+<div class="gantt-row bg-surface-container-low/80 border-b border-outline-variant flex items-center px-2 font-tabular-bold text-on-surface" style="opacity: 0.45;">
+<span class="material-symbols-outlined text-secondary mr-1 cursor-pointer" style="font-size: 14px;">expand_more</span>
+<span class="material-symbols-outlined text-primary-container mr-1.5" style="font-size: 15px;">database</span>
+<span class="font-headline-sm text-[12px] font-bold">3.0 Data &amp; Infrastructure</span>
+<span class="ml-2 font-label-sm text-[10px] text-secondary">(5 tasks)</span>
+<div class="ml-auto flex items-center space-x-2 mr-2">
+<span class="text-label-sm text-[10px] font-tabular-bold text-secondary">85%</span>
+<div class="w-12 h-1.5 bg-outline-variant rounded overflow-hidden">
+<div class="bg-primary-container h-full w-[85%]"></div>
+</div>
+</div>
+</div>
+<!-- Task 3.1 -->
+<div class="gantt-row flex items-center border-b border-outline-variant/60 hover:bg-surface-container/60 transition-colors font-tabular-regular text-[11px] text-on-surface">
+<div class="w-12 px-2 border-r border-outline-variant/40 h-full flex items-center justify-center text-secondary font-mono">3.1</div>
+<div class="w-20 px-2 border-r border-outline-variant/40 h-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 13px;">task_alt</span>
+<span class="font-semibold text-primary">BP-1940</span>
+</div>
+<div class="flex-1 px-2 border-r border-outline-variant/40 h-full flex items-center truncate pr-1" title="GraphQL query caching layer">
+<span class="truncate">GraphQL query caching layer</span>
+</div>
+<div class="w-16 px-1.5 border-r border-outline-variant/40 h-full flex items-center justify-center">
+<div class="w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-[9px] font-bold" title="Raj Patel">RP</div>
+</div>
+<div class="w-24 px-1.5 border-r border-outline-variant/40 h-full flex items-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-tertiary-fixed/40 text-tertiary border border-tertiary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary mr-1"></span>Done
+            </span>
+</div>
+<div class="w-16 px-1 border-r border-outline-variant/40 h-full flex items-center justify-end text-secondary">Jan 19</div>
+<div class="w-16 px-1 h-full flex items-center justify-end text-secondary pr-2">Feb 09</div>
+</div>
+<!-- Task 3.2 (Critical Path) -->
+<div class="gantt-row flex items-center border-b border-outline-variant/60 hover:bg-surface-container/60 transition-colors font-tabular-regular text-[11px] text-on-surface">
+<div class="w-12 px-2 border-r border-outline-variant/40 h-full flex items-center justify-center text-secondary font-mono">3.2</div>
+<div class="w-20 px-2 border-r border-outline-variant/40 h-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 13px;">bookmark</span>
+<span class="font-semibold text-primary">BP-1952</span>
+</div>
+<div class="flex-1 px-2 border-r border-outline-variant/40 h-full flex items-center truncate pr-1" title="Snowflake telemetry pipeline">
+<span class="truncate">Snowflake telemetry pipeline</span>
+</div>
+<div class="w-16 px-1.5 border-r border-outline-variant/40 h-full flex items-center justify-center">
+<div class="w-5 h-5 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-[9px] font-bold">RP</div>
+</div>
+<div class="w-24 px-1.5 border-r border-outline-variant/40 h-full flex items-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-primary border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mr-1"></span>In Progress
+            </span>
+</div>
+<div class="w-16 px-1 border-r border-outline-variant/40 h-full flex items-center justify-end text-secondary">Feb 09</div>
+<div class="w-16 px-1 h-full flex items-center justify-end text-secondary pr-2">Feb 27</div>
+</div>
+<!-- Task 3.3 -->
+<div class="gantt-row flex items-center border-b border-outline-variant/60 hover:bg-surface-container/60 transition-colors font-tabular-regular text-[11px] text-on-surface">
+<div class="w-12 px-2 border-r border-outline-variant/40 h-full flex items-center justify-center text-secondary font-mono">3.3</div>
+<div class="w-20 px-2 border-r border-outline-variant/40 h-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 13px;">task_alt</span>
+<span class="font-semibold text-primary">BP-1961</span>
+</div>
+<div class="flex-1 px-2 border-r border-outline-variant/40 h-full flex items-center truncate pr-1" title="Kafka event schema registry upgrade">
+<span class="truncate">Kafka event schema registry upgrade</span>
+</div>
+<div class="w-16 px-1.5 border-r border-outline-variant/40 h-full flex items-center justify-center">
+<div class="w-5 h-5 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center text-[9px] font-bold">DM</div>
+</div>
+<div class="w-24 px-1.5 border-r border-outline-variant/40 h-full flex items-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-tertiary-fixed/40 text-tertiary border border-tertiary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary mr-1"></span>Done
+            </span>
+</div>
+<div class="w-16 px-1 border-r border-outline-variant/40 h-full flex items-center justify-end text-secondary">Jan 26</div>
+<div class="w-16 px-1 h-full flex items-center justify-end text-secondary pr-2">Feb 13</div>
+</div>
+<!-- Task 3.4 (Milestone) -->
+<div class="gantt-row flex items-center border-b border-outline-variant/60 hover:bg-surface-container/60 transition-colors font-tabular-bold text-[11px] text-on-surface bg-surface-container-low/30">
+<div class="w-12 px-2 border-r border-outline-variant/40 h-full flex items-center justify-center text-secondary font-mono">3.4</div>
+<div class="w-20 px-2 border-r border-outline-variant/40 h-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-primary-container" style="font-size: 13px; font-variation-settings: 'FILL' 1;">diamond</span>
+<span class="font-semibold text-primary">BP-1970</span>
+</div>
+<div class="flex-1 px-2 border-r border-outline-variant/40 h-full flex items-center truncate pr-1" title="GDPR compliance audit milestone">
+<span class="truncate font-semibold text-primary">◆ GDPR compliance audit milestone</span>
+</div>
+<div class="w-16 px-1.5 border-r border-outline-variant/40 h-full flex items-center justify-center">
+<div class="w-5 h-5 rounded-full bg-tertiary-container text-on-tertiary flex items-center justify-center text-[9px] font-bold">EW</div>
+</div>
+<div class="w-24 px-1.5 border-r border-outline-variant/40 h-full flex items-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-tertiary-fixed/40 text-tertiary border border-tertiary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary mr-1"></span>Done
+            </span>
+</div>
+<div class="w-16 px-1 border-r border-outline-variant/40 h-full flex items-center justify-end text-secondary">Feb 20</div>
+<div class="w-16 px-1 h-full flex items-center justify-end text-secondary pr-2">Feb 20</div>
+</div>
+<!-- Task 3.5 -->
+<div class="gantt-row flex items-center border-b border-outline-variant/60 hover:bg-surface-container/60 transition-colors font-tabular-regular text-[11px] text-on-surface">
+<div class="w-12 px-2 border-r border-outline-variant/40 h-full flex items-center justify-center text-secondary font-mono">3.5</div>
+<div class="w-20 px-2 border-r border-outline-variant/40 h-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 13px;">task_alt</span>
+<span class="font-semibold text-primary">BP-1978</span>
+</div>
+<div class="flex-1 px-2 border-r border-outline-variant/40 h-full flex items-center truncate pr-1" title="Lakehouse cold tier archiving">
+<span class="truncate">Lakehouse cold tier archiving</span>
+</div>
+<div class="w-16 px-1.5 border-r border-outline-variant/40 h-full flex items-center justify-center">
+<div class="w-5 h-5 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center text-[9px] font-bold">RP</div>
+</div>
+<div class="w-24 px-1.5 border-r border-outline-variant/40 h-full flex items-center">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-secondary border border-outline-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mr-1"></span>To Do
+            </span>
+</div>
+<div class="w-16 px-1 border-r border-outline-variant/40 h-full flex items-center justify-end text-secondary">Feb 27</div>
+<div class="w-16 px-1 h-full flex items-center justify-end text-secondary pr-2">Mar 18</div>
+</div>
+</div>
+</section>
+<!-- ------------------------------------------------------------- -->
+<!-- RIGHT PANE: VIRTUALIZED TIMELINE GANTT CANVAS (~66% WIDTH) -->
+<!-- ------------------------------------------------------------- -->
+<section class="flex-1 flex flex-col bg-surface-container-lowest overflow-hidden relative">
+<!-- Horizontal Scrollable Container for the whole timeline canvas -->
+<div class="flex-1 overflow-x-auto overflow-y-scroll thin-scroll relative" id="timeline-scroll-container">
+<div class="w-[1440px] min-w-full flex flex-col relative">
+<!-- 2-TIER STICKY TIMELINE HEADER (Height: 48px) -->
+<div class="sticky top-0 z-20 bg-surface-container-low border-b border-outline-variant select-none">
+<!-- Tier 1: Months (24px) -->
+<div class="h-6 flex text-label-sm font-label-sm font-bold border-b border-outline-variant/60">
+<div class="w-[360px] px-3 flex items-center text-on-surface border-r border-outline-variant/60 bg-surface-container-low/90">January 2026</div>
+<div class="w-[480px] px-3 flex items-center text-primary border-r border-outline-variant/60 bg-surface-container/40">February 2026 (Active Cycle)</div>
+<div class="w-[480px] px-3 flex items-center text-on-surface border-r border-outline-variant/60 bg-surface-container-low/90">March 2026</div>
+<div class="w-[120px] px-3 flex items-center text-secondary bg-surface-container-low/90">April 2026</div>
+</div>
+<!-- Tier 2: Weeks & Start Dates (24px) -->
+<div class="h-6 flex text-[10px] font-tabular-regular text-secondary">
+<!-- Jan Weeks -->
+<div class="w-[120px] px-1.5 flex items-center justify-between border-r border-outline-variant/40"><span>W02</span><span class="text-outline">Jan 12</span></div>
+<div class="w-[120px] px-1.5 flex items-center justify-between border-r border-outline-variant/40"><span>W03</span><span class="text-outline">Jan 19</span></div>
+<div class="w-[120px] px-1.5 flex items-center justify-between border-r border-outline-variant/40"><span>W04</span><span class="text-outline">Jan 26</span></div>
+<!-- Feb Weeks (Current Focus) -->
+<div class="w-[120px] px-1.5 flex items-center justify-between border-r border-outline-variant/40 bg-surface-container/20"><span>W05</span><span class="text-outline">Feb 02</span></div>
+<div class="w-[120px] px-1.5 flex items-center justify-between border-r border-outline-variant/40 bg-surface-container/20"><span>W06</span><span class="text-outline">Feb 09</span></div>
+<div class="w-[120px] px-1.5 flex items-center justify-between border-r border-outline-variant/40 bg-primary-container/10 font-bold text-primary"><span>W07</span><span>Feb 16</span></div>
+<div class="w-[120px] px-1.5 flex items-center justify-between border-r border-outline-variant/40 bg-surface-container/20"><span>W08</span><span class="text-outline">Feb 23</span></div>
+<!-- Mar Weeks -->
+<div class="w-[120px] px-1.5 flex items-center justify-between border-r border-outline-variant/40"><span>W09</span><span class="text-outline">Mar 02</span></div>
+<div class="w-[120px] px-1.5 flex items-center justify-between border-r border-outline-variant/40"><span>W10</span><span class="text-outline">Mar 09</span></div>
+<div class="w-[120px] px-1.5 flex items-center justify-between border-r border-outline-variant/40"><span>W11</span><span class="text-outline">Mar 16</span></div>
+<div class="w-[120px] px-1.5 flex items-center justify-between border-r border-outline-variant/40"><span>W12</span><span class="text-outline">Mar 23</span></div>
+<!-- Apr Start -->
+<div class="w-[120px] px-1.5 flex items-center justify-between border-r border-outline-variant/40"><span>W13</span><span class="text-outline">Mar 30</span></div>
+</div>
+</div>
+<!-- TIMELINE GRID & GANTT BARS CANVAS -->
+<div class="relative w-full">
+<!-- Background Vertical Gridlines Layer (Absolute full height) -->
+<div class="absolute inset-0 flex pointer-events-none z-0">
+<div class="w-[120px] border-r border-outline-variant/30 h-full"></div>
+<div class="w-[120px] border-r border-outline-variant/30 h-full"></div>
+<div class="w-[120px] border-r border-outline-variant/30 h-full"></div>
+<div class="w-[120px] border-r border-outline-variant/30 h-full"></div>
+<div class="w-[120px] border-r border-outline-variant/30 h-full"></div>
+<!-- Current week column subtle highlight -->
+<div class="w-[120px] border-r border-outline-variant/30 h-full bg-primary-container/[0.02]"></div>
+<div class="w-[120px] border-r border-outline-variant/30 h-full"></div>
+<div class="w-[120px] border-r border-outline-variant/30 h-full"></div>
+<div class="w-[120px] border-r border-outline-variant/30 h-full"></div>
+<div class="w-[120px] border-r border-outline-variant/30 h-full"></div>
+<div class="w-[120px] border-r border-outline-variant/30 h-full"></div>
+<div class="w-[120px] border-r border-outline-variant/30 h-full"></div>
+</div>
+<!-- VERTICAL "TODAY" MARKER (Locked to ~Feb 17, week 7 offset ~635px) -->
+<div class="absolute top-0 bottom-0 left-[642px] w-[1.5px] bg-primary-container z-30 pointer-events-none flex flex-col items-center">
+<div class="px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-[9px] font-bold shadow-sm whitespace-nowrap -translate-y-1">
+                Today · Feb 17
+              </div>
+</div>
+<!-- SVG DEPENDENCY PATHS OVERLAY (Finish-to-Start Lines) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none z-20">
+<defs>
+<marker id="arrow-normal" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="6" refy="5" viewbox="0 0 10 10">
+<path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4f5f7b"></path>
+</marker>
+<marker id="arrow-critical" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="6" refy="5" viewbox="0 0 10 10">
+<path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#ba1a1a"></path>
+</marker>
+</defs>
+<!-- Dep 1 (Critical): BP-1842 (Auth0) -> BP-1890 (iOS Token) -->
+<!-- From row 2 (y: 32+16=48), end x: 600 -> To row 8 (y: 224+16=240), start x: 600 -->
+<path d="M 600 48 L 614 48 Q 618 48 618 54 L 618 234 Q 618 240 622 240 L 624 240" fill="none" marker-end="url(#arrow-critical)" stroke="#ba1a1a" stroke-dasharray="3 2" stroke-width="1.5"></path>
+<!-- Dep 2: BP-1845 (K8s) -> BP-1858 (VPC Mesh) -->
+<!-- From row 3 (y: 64+16=80), end x: 720 -> To row 6 (y: 160+16=176), start x: 720 -->
+<path d="M 720 80 L 730 80 Q 734 80 734 86 L 734 170 Q 734 176 738 176 L 740 176" fill="none" marker-end="url(#arrow-normal)" stroke="#4f5f7b" stroke-width="1.5"></path>
+<!-- Dep 3: BP-1849 (DB Failover) -> BP-1952 (Snowflake) -->
+<!-- From row 4 (y: 96+16=112), end x: 480 -> To row 14 (y: 416+16=432), start x: 504 -->
+<path d="M 480 112 L 492 112 Q 496 112 496 118 L 496 426 Q 496 432 500 432 L 504 432" fill="none" marker-end="url(#arrow-normal)" stroke="#4f5f7b" stroke-width="1.5"></path>
+<!-- Dep 4 (Critical): BP-1890 (iOS Token) -> BP-1860 (Core Signoff Milestone) -->
+<!-- From row 8 (y: 240), end x: 840 -> To row 7 (Milestone at 960, y: 208) -->
+<path d="M 840 240 L 948 240 Q 954 240 954 234 L 954 214 Q 954 208 957 208 L 960 208" fill="none" marker-end="url(#arrow-critical)" stroke="#ba1a1a" stroke-width="1.5"></path>
+</svg>
+<!-- ================= TIMELINE SYNCHRONIZED ROWS ================= -->
+<!-- Swimlane 1 Header Track -->
+<div class="gantt-row bg-surface-container-low/40 border-b border-outline-variant/60 flex items-center px-4" style="opacity: 0.45;">
+<!-- Aggregate summary bar -->
+<div class="h-2 rounded bg-outline-variant relative overflow-hidden" style="margin-left: 240px; width: 620px;">
+<div class="bg-primary-container h-full w-[64%]"></div>
+</div>
+</div>
+<!-- Row 1.1: BP-1842 Auth0 Migration (Feb 02 - Feb 16, Critical Path) -->
+<div class="gantt-row border-b border-outline-variant/40 relative flex items-center bg-primary-container/[0.08] transition-colors z-10">
+<!-- Focused Gantt Bar for BP-1901 -->
+<div class="absolute h-[22px] rounded-[4px] bg-primary-fixed border-2 border-primary flex items-center overflow-visible cursor-pointer shadow-md ring-2 ring-primary ring-offset-2 z-20 group" style="left: 360px; width: 440px;" title="BP-1901: API gateway cutover (Active Search Match 1/3)">
+<!-- Active Target Floating Beacon Marker -->
+<div class="absolute -top-6 left-0 flex items-center space-x-1 px-1.5 py-0.5 bg-primary text-on-primary rounded text-[9px] font-bold shadow-md pointer-events-none whitespace-nowrap animate-bounce">
+<span class="material-symbols-outlined" style="font-size: 11px;">arrow_downward</span>
+<span>Match 1 · BP-1901</span>
+</div>
+<!-- Progress Fill -->
+<div class="bg-primary-container h-full w-[65%] flex items-center px-2 rounded-l-[2px]">
+<span class="text-[10px] font-tabular-bold text-on-primary whitespace-nowrap">BP-1901 (65%)</span>
+</div>
+<div class="flex-1 px-1.5 flex items-center space-x-1">
+<span class="text-[10px] font-bold text-primary truncate">API <mark class="bg-tertiary-fixed text-on-surface px-0.5 rounded font-bold">gateway</mark> <mark class="bg-tertiary-fixed text-on-surface px-0.5 rounded font-bold">cutover</mark></span>
+</div>
+</div>
+</div>
+<!-- Row 1.2: BP-1845 K8s Upgrade (Feb 09 - Feb 23) -->
+<div class="gantt-row border-b border-outline-variant/40 relative flex items-center hover:bg-surface-container/30 transition-colors" style="opacity: 0.45;">
+<div class="absolute h-[18px] rounded-[3px] bg-primary-fixed border border-primary-container flex items-center overflow-hidden cursor-pointer group" style="left: 480px; width: 240px;" title="BP-1845: Kubernetes cluster 1.29 upgrade (55% Done)">
+<div class="bg-primary-container h-full w-[55%] flex items-center px-2">
+<span class="text-[10px] font-tabular-bold text-on-primary whitespace-nowrap">BP-1845 (55%)</span>
+</div>
+<div class="flex-1 px-1">
+<span class="text-[9px] font-semibold text-primary truncate">K8s 1.29</span>
+</div>
+</div>
+</div>
+<!-- Row 1.3: BP-1849 Zero-downtime DB failover (Jan 26 - Feb 06, Done) -->
+<div class="gantt-row border-b border-outline-variant/40 relative flex items-center hover:bg-surface-container/30 transition-colors" style="opacity: 0.45;">
+<div class="absolute h-[18px] rounded-[3px] bg-tertiary-fixed border border-tertiary flex items-center overflow-hidden cursor-pointer" style="left: 240px; width: 200px;" title="BP-1849: Zero-downtime database failover (100% Done)">
+<div class="bg-tertiary h-full w-full flex items-center px-2">
+<span class="text-[10px] font-tabular-bold text-on-tertiary whitespace-nowrap">BP-1849 (100% Done)</span>
+</div>
+</div>
+</div>
+<!-- Row 1.4: BP-1852 IAM Role Consolidation (Jan 19 - Feb 02, Done) -->
+<div class="gantt-row border-b border-outline-variant/40 relative flex items-center hover:bg-surface-container/30 transition-colors">
+<div class="absolute h-[18px] rounded-[3px] bg-tertiary-fixed border border-tertiary flex items-center overflow-hidden cursor-pointer" style="left: 120px; width: 240px;" title="BP-1852: IAM role consolidation (100% Done)">
+<div class="bg-tertiary h-full w-full flex items-center px-2">
+<span class="text-[10px] font-tabular-bold text-on-tertiary whitespace-nowrap">BP-1852 (100%)</span>
+</div>
+</div>
+</div>
+<!-- Row 1.5: BP-1858 VPC Peering (Feb 23 - Mar 09, To Do) -->
+<div class="gantt-row border-b border-outline-variant/40 relative flex items-center hover:bg-surface-container/30 transition-colors" style="opacity: 0.45;">
+<div class="absolute h-[18px] rounded-[3px] bg-surface-container border border-outline-variant flex items-center overflow-hidden cursor-pointer" style="left: 720px; width: 240px;" title="BP-1858: VPC Peering mesh (To Do)">
+<div class="w-full flex items-center px-2">
+<span class="text-[10px] font-tabular-regular text-secondary whitespace-nowrap">BP-1858 (Scheduled)</span>
+</div>
+</div>
+</div>
+<!-- Row 1.6: BP-1860 Core Sign-off (Milestone: Mar 09) -->
+<div class="gantt-row border-b border-outline-variant/40 relative flex items-center hover:bg-surface-container/30 transition-colors">
+<div class="absolute flex items-center space-x-1.5 cursor-pointer" style="left: 953px;" title="BP-1860: M1 Core Infrastructure Sign-off">
+<div class="w-3.5 h-3.5 rotate-45 bg-primary-container border border-primary flex items-center justify-center"></div>
+<span class="text-[10px] font-tabular-bold text-primary whitespace-nowrap">Sign-off M1</span>
+</div>
+</div>
+<!-- Swimlane 2 Header Track -->
+<div class="gantt-row bg-surface-container-low/40 border-b border-outline-variant/60 flex items-center px-4">
+<div class="h-2 rounded bg-outline-variant relative overflow-hidden" style="margin-left: 360px; width: 560px;">
+<div class="bg-primary-container h-full w-[42%]"></div>
+</div>
+</div>
+<!-- Row 2.1: BP-1890 iOS Biometric Token (Feb 16 - Mar 02, In Progress, Critical) -->
+<div class="gantt-row border-b border-outline-variant/40 relative flex items-center hover:bg-surface-container/30 transition-colors">
+<div class="absolute h-[18px] rounded-[3px] bg-primary-fixed border border-primary-container flex items-center overflow-hidden cursor-pointer shadow-xs" style="left: 600px; width: 240px;" title="BP-1890: iOS Biometric token renewal (35%)">
+<div class="bg-primary-container h-full w-[35%] flex items-center px-2">
+<span class="text-[10px] font-tabular-bold text-on-primary whitespace-nowrap">BP-1890 (35%)</span>
+</div>
+<div class="flex-1 px-1">
+<span class="text-[9px] font-semibold text-primary truncate">Biometrics</span>
+</div>
+</div>
+</div>
+<!-- Row 2.2: BP-1904 Offline Sync Engine (Feb 02 - Mar 09, At Risk / Slip) -->
+<div class="gantt-row border-b border-outline-variant/40 relative flex items-center hover:bg-surface-container/30 transition-colors">
+<div class="absolute h-[18px] rounded-[3px] bg-error-container border border-error flex items-center overflow-hidden cursor-pointer" style="left: 360px; width: 440px;" title="BP-1904: Offline synchronization engine (45% - SLIPPED)">
+<div class="bg-error h-full w-[45%] flex items-center px-2">
+<span class="text-[10px] font-tabular-bold text-on-error whitespace-nowrap">BP-1904 (45% - SLIP)</span>
+</div>
+<div class="flex-1 px-1">
+<span class="text-[9px] font-bold text-error truncate">Sync engine delayed +5d</span>
+</div>
+</div>
+</div>
+<!-- Row 2.3: BP-1912 Android Theme Rollout (Jan 12 - Jan 30, Done) -->
+<div class="gantt-row border-b border-outline-variant/40 relative flex items-center hover:bg-surface-container/30 transition-colors">
+<div class="absolute h-[18px] rounded-[3px] bg-tertiary-fixed border border-tertiary flex items-center overflow-hidden cursor-pointer" style="left: 0px; width: 300px;" title="BP-1912: Android Material 3 theme rollout (Done)">
+<div class="bg-tertiary h-full w-full flex items-center px-2">
+<span class="text-[10px] font-tabular-bold text-on-tertiary whitespace-nowrap">BP-1912 (100% Done)</span>
+</div>
+</div>
+</div>
+<!-- Row 2.4: BP-1918 Push Notification Compression (Mar 02 - Mar 16, To Do) -->
+<div class="gantt-row border-b border-outline-variant/40 relative flex items-center hover:bg-surface-container/30 transition-colors" style="opacity: 0.45;">
+<div class="absolute h-[18px] rounded-[3px] bg-surface-container border border-outline-variant flex items-center overflow-hidden cursor-pointer" style="left: 840px; width: 240px;" title="BP-1918: Push notification compression">
+<div class="w-full flex items-center px-2">
+<span class="text-[10px] font-tabular-regular text-secondary whitespace-nowrap">BP-1918 (Backlog)</span>
+</div>
+</div>
+</div>
+<!-- Row 2.5: BP-1925 Deep Link Routing (Mar 09 - Mar 23, To Do) -->
+<div class="gantt-row border-b border-outline-variant/40 relative flex items-center hover:bg-surface-container/30 transition-colors">
+<div class="absolute h-[18px] rounded-[3px] bg-surface-container border border-outline-variant flex items-center overflow-hidden cursor-pointer" style="left: 960px; width: 240px;" title="BP-1925: Deep link routing security">
+<div class="w-full flex items-center px-2">
+<span class="text-[10px] font-tabular-regular text-secondary whitespace-nowrap">BP-1925 (Planned)</span>
+</div>
+</div>
+</div>
+<!-- Swimlane 3 Header Track -->
+<div class="gantt-row bg-surface-container-low/40 border-b border-outline-variant/60 flex items-center px-4">
+<div class="h-2 rounded bg-outline-variant relative overflow-hidden" style="margin-left: 120px; width: 780px;">
+<div class="bg-primary-container h-full w-[85%]"></div>
+</div>
+</div>
+<!-- Row 3.1: BP-1940 GraphQL Query Caching (Jan 19 - Feb 09, Done) -->
+<div class="gantt-row border-b border-outline-variant/40 relative flex items-center hover:bg-surface-container/30 transition-colors">
+<div class="absolute h-[18px] rounded-[3px] bg-tertiary-fixed border border-tertiary flex items-center overflow-hidden cursor-pointer" style="left: 120px; width: 360px;" title="BP-1940: GraphQL query caching layer (Done)">
+<div class="bg-tertiary h-full w-full flex items-center px-2">
+<span class="text-[10px] font-tabular-bold text-on-tertiary whitespace-nowrap">BP-1940 (100% Complete)</span>
+</div>
+</div>
+</div>
+<!-- Row 3.2: BP-1952 Snowflake Telemetry Pipeline (Feb 09 - Feb 27, Critical) -->
+<div class="gantt-row border-b border-outline-variant/40 relative flex items-center hover:bg-surface-container/30 transition-colors">
+<div class="absolute h-[18px] rounded-[3px] bg-primary-fixed border border-primary-container flex items-center overflow-hidden cursor-pointer shadow-xs" style="left: 504px; width: 260px;" title="BP-1952: Snowflake telemetry pipeline (70%)">
+<div class="bg-primary-container h-full w-[70%] flex items-center px-2">
+<span class="text-[10px] font-tabular-bold text-on-primary whitespace-nowrap">BP-1952 (70%)</span>
+</div>
+<div class="flex-1 px-1">
+<span class="text-[9px] font-semibold text-primary truncate">Snowflake</span>
+</div>
+</div>
+</div>
+<!-- Row 3.3: BP-1961 Kafka Schema Registry (Jan 26 - Feb 13, Done) -->
+<div class="gantt-row border-b border-outline-variant/40 relative flex items-center hover:bg-surface-container/30 transition-colors">
+<div class="absolute h-[18px] rounded-[3px] bg-tertiary-fixed border border-tertiary flex items-center overflow-hidden cursor-pointer" style="left: 240px; width: 310px;" title="BP-1961: Kafka event schema registry (Done)">
+<div class="bg-tertiary h-full w-full flex items-center px-2">
+<span class="text-[10px] font-tabular-bold text-on-tertiary whitespace-nowrap">BP-1961 (100%)</span>
+</div>
+</div>
+</div>
+<!-- Row 3.4: BP-1970 GDPR Compliance Milestone (Feb 20) -->
+<div class="gantt-row border-b border-outline-variant/40 relative flex items-center hover:bg-surface-container/30 transition-colors">
+<div class="absolute flex items-center space-x-1.5 cursor-pointer" style="left: 694px;" title="BP-1970: GDPR compliance audit milestone">
+<div class="w-3.5 h-3.5 rotate-45 bg-tertiary border border-on-tertiary flex items-center justify-center"></div>
+<span class="text-[10px] font-tabular-bold text-tertiary whitespace-nowrap">GDPR Audit Passed</span>
+</div>
+</div>
+<!-- Row 3.5: BP-1978 Lakehouse Cold Tier Archiving (Feb 27 - Mar 18, To Do) -->
+<div class="gantt-row border-b border-outline-variant/40 relative flex items-center hover:bg-surface-container/30 transition-colors">
+<div class="absolute h-[18px] rounded-[3px] bg-surface-container border border-outline-variant flex items-center overflow-hidden cursor-pointer" style="left: 780px; width: 320px;" title="BP-1978: Lakehouse cold tier archiving">
+<div class="w-full flex items-center px-2">
+<span class="text-[10px] font-tabular-regular text-secondary whitespace-nowrap">BP-1978 (Scheduled)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- ================= BOTTOM STATUS & POWER-USER BAR ================= -->
+<footer class="h-7 min-h-[28px] bg-surface-container-low border-t border-outline-variant px-space-xl flex items-center justify-between font-tabular-regular text-label-sm text-secondary select-none flex-shrink-0 z-30">
+<!-- Left: Keyboard shortcuts hint -->
+<div class="flex items-center space-x-space-md">
+<span class="flex items-center space-x-1">
+<kbd class="px-1 py-0.5 rounded bg-surface-container-lowest border border-outline-variant text-[10px] font-mono text-on-surface">J</kbd>
+<kbd class="px-1 py-0.5 rounded bg-surface-container-lowest border border-outline-variant text-[10px] font-mono text-on-surface">K</kbd>
+<span class="text-[11px] text-secondary">navigate rows</span>
+</span>
+<span class="text-outline-variant">·</span>
+<span class="flex items-center space-x-1">
+<kbd class="px-1 py-0.5 rounded bg-surface-container-lowest border border-outline-variant text-[10px] font-mono text-on-surface">D</kbd>
+<span class="text-[11px] text-secondary">toggle links</span>
+</span>
+<span class="text-outline-variant">·</span>
+<span class="flex items-center space-x-1">
+<kbd class="px-1 py-0.5 rounded bg-surface-container-lowest border border-outline-variant text-[10px] font-mono text-on-surface">/</kbd>
+<span class="text-[11px] text-secondary">filter</span>
+</span>
+<span class="text-outline-variant">·</span>
+<span class="flex items-center space-x-1">
+<kbd class="px-1 py-0.5 rounded bg-surface-container-lowest border border-outline-variant text-[10px] font-mono text-on-surface">⌘±</kbd>
+<span class="text-[11px] text-secondary">zoom</span>
+</span>
+<span class="text-outline-variant">·</span>
+<span class="flex items-center space-x-1">
+<kbd class="px-1 py-0.5 rounded bg-surface-container-lowest border border-outline-variant text-[10px] font-mono text-on-surface">Space</kbd>
+<span class="text-[11px] text-secondary">task drawer</span>
+</span>
+</div>
+<!-- Right: Operational Health & Live Sync Meta -->
+<div class="flex items-center space-x-space-lg"><div class="flex items-center space-x-1.5 px-2 py-0.5 bg-primary-container/10 border border-primary/20 rounded text-primary font-medium">
+<span class="material-symbols-outlined text-primary" style="font-size: 13px;">find_in_page</span>
+<span class="text-[11px]">Search: <strong class="text-primary font-semibold">“gateway cutover”</strong> (1/3) · <strong class="font-mono font-bold">BP-1901</strong> focused</span>
+</div>
+<span class="text-outline-variant">·</span>
+<span class="flex items-center space-x-1">
+<span class="font-tabular-bold text-on-surface">16</span> tasks displayed
+</span>
+<span class="text-outline-variant">·</span>
+<span class="flex items-center space-x-1 text-error font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+<span>Critical Path (4)</span>
+</span>
+<span class="text-outline-variant">·</span>
+<span class="flex items-center space-x-1.5 text-tertiary font-medium">
+<span class="material-symbols-outlined text-tertiary" style="font-size: 13px;">cloud_done</span>
+<span>Sync: Up to date (14:32:08 UTC)</span>
+</span></div>
+</footer>
+<!-- Synchronized Scroll JavaScript Micro-interaction -->
+<script>
+    const leftPane = document.getElementById('wbs-scroll');
+    const rightPane = document.getElementById('timeline-scroll-container');
+
+    if (leftPane && rightPane) {
+      let isSyncingLeft = false;
+      let isSyncingRight = false;
+
+      leftPane.addEventListener('scroll', () => {
+        if (!isSyncingLeft) {
+          isSyncingRight = true;
+          rightPane.scrollTop = leftPane.scrollTop;
+        }
+        isSyncingLeft = false;
+      });
+
+      rightPane.addEventListener('scroll', () => {
+        if (!isSyncingRight) {
+          isSyncingLeft = true;
+          leftPane.scrollTop = rightPane.scrollTop;
+        }
+        isSyncingRight = false;
+      });
+    }
+  </script>
+</body></html>

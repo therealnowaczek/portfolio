@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gantt · Enterprise Platform 2026</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Inter Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with configuration -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"primary-container": "#2563eb", "surface-container-high": "#e2e7ff", "tertiary-fixed": "#85f8c4", "on-primary-container": "#eeefff", "inverse-primary": "#b4c5ff", "tertiary-fixed-dim": "#68dba9", "inverse-surface": "#283044", "on-primary-fixed-variant": "#003ea8", "tertiary-container": "#007d57", tertiary: "#006243", "on-tertiary": "#ffffff", "surface-variant": "#dae2fd", error: "#ba1a1a", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#005137", "surface-container-lowest": "#ffffff", "on-background": "#131b2e", "secondary-fixed": "#d5e3fc", "on-primary": "#ffffff", surface: "#faf8ff", "surface-tint": "#0053db", secondary: "#515f74", "surface-dim": "#d2d9f4", primary: "#004ac6", outline: "#737686", "surface-container-highest": "#dae2fd", "on-error-container": "#93000a", background: "#faf8ff", "on-surface-variant": "#434655", "on-tertiary-fixed": "#002114", "on-secondary-container": "#57657a", "primary-fixed": "#dbe1ff", "inverse-on-surface": "#eef0ff", "primary-fixed-dim": "#b4c5ff", "surface-bright": "#faf8ff", "secondary-fixed-dim": "#b9c7df", "on-tertiary-container": "#bdffdc", "on-surface": "#131b2e", "secondary-container": "#d5e3fc", "on-secondary-fixed-variant": "#3a485b", "on-secondary": "#ffffff", "on-primary-fixed": "#00174b", "surface-container-low": "#f2f3ff", "outline-variant": "#c3c6d7", "surface-container": "#eaedff", "on-secondary-fixed": "#0d1c2e", "error-container": "#ffdad6"}, fontFamily: {sans: ["Inter", "system-ui", "sans-serif"], mono: ["JetBrains Mono", "ui-monospace", "monospace"], "title-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"]}, fontSize: {"title-md": ["16px", {lineHeight: "24px", fontWeight: "600"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "700"}], "display-lg": ["56px", {lineHeight: "64px", fontWeight: "700"}], "body-lg": ["16px", {lineHeight: "24px", fontWeight: "400"}], "label-sm": ["11px", {lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}], "headline-lg-mobile": ["26px", {lineHeight: "32px", fontWeight: "700"}], "label-md": ["13px", {lineHeight: "18px", fontWeight: "500"}], "headline-sm": ["20px", {lineHeight: "28px", fontWeight: "600"}]}, spacing: {"gutter-mobile": "1rem", "space-xs": "0.25rem", "space-md": "1rem", "space-xl": "2rem", "space-sm": "0.5rem", gutter: "1.5rem", "space-lg": "1.5rem", "margin-mobile": "1rem", margin: "2rem"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      font-size: 16px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .gantt-row {
+      height: 34px;
+      min-height: 34px;
+      max-height: 34px;
+    }
+    .thin-scroll::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .thin-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .thin-scroll::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    .thin-scroll::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    .grid-lines-pattern {
+      background-size: 160px 100%;
+      background-image: linear-gradient(to right, rgba(226, 232, 240, 0.45) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 h-full flex flex-col font-sans text-xs antialiased overflow-hidden select-none">
+<!-- ================= TOP APP BAR ================= -->
+<header class="bg-white/95 backdrop-blur border-b border-slate-200/80 flex justify-between items-center w-full px-4 h-10 min-h-[40px] flex-shrink-0 z-30 shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
+<div class="flex items-center space-x-3 min-w-0">
+<!-- Brand strictly "Gantt" -->
+<div class="flex items-center space-x-2 cursor-pointer flex-shrink-0">
+<div class="w-6 h-6 rounded-md bg-blue-600 flex items-center justify-center text-white shadow-xs">
+<span class="material-symbols-outlined" style="font-size: 16px; font-variation-settings: 'FILL' 1;">reorder</span>
+</div>
+<span class="font-semibold text-sm text-slate-900 tracking-tight whitespace-nowrap overflow-hidden text-ellipsis truncate">Gantt</span>
+</div>
+<span class="text-slate-300 font-normal">/</span>
+<!-- Program Scope Breadcrumb -->
+<div class="flex items-center space-x-1.5 px-2 py-1 rounded-md hover:bg-slate-100 transition-colors cursor-pointer min-w-0">
+<span class="text-slate-500 font-medium whitespace-nowrap overflow-hidden text-ellipsis truncate">Programs</span>
+<span class="text-slate-300 text-[11px]">/</span>
+<span class="text-slate-900 font-semibold whitespace-nowrap overflow-hidden text-ellipsis truncate">Platform 2026</span>
+<span class="material-symbols-outlined text-slate-400" style="font-size: 15px;">expand_more</span>
+</div>
+</div>
+<!-- Navigation Views -->
+<nav class="hidden lg:flex items-center space-x-1 h-full min-w-0">
+<a class="border-b-2 border-blue-600 text-blue-600 font-semibold px-2.5 h-full flex items-center text-xs whitespace-nowrap overflow-hidden text-ellipsis truncate" href="#">Gantt</a>
+<a class="text-slate-500 hover:text-slate-900 font-medium px-2.5 h-full flex items-center text-xs transition-colors whitespace-nowrap overflow-hidden text-ellipsis truncate" href="#">Board</a>
+<a class="text-slate-500 hover:text-slate-900 font-medium px-2.5 h-full flex items-center text-xs transition-colors whitespace-nowrap overflow-hidden text-ellipsis truncate" href="#">Resources</a>
+<a class="text-slate-500 hover:text-slate-900 font-medium px-2.5 h-full flex items-center text-xs transition-colors whitespace-nowrap overflow-hidden text-ellipsis truncate" href="#">OKRs</a>
+<a class="text-slate-500 hover:text-slate-900 font-medium px-2.5 h-full flex items-center text-xs transition-colors whitespace-nowrap overflow-hidden text-ellipsis truncate" href="#">Risks</a>
+<a class="text-slate-500 hover:text-slate-900 font-medium px-2.5 h-full flex items-center text-xs transition-colors whitespace-nowrap overflow-hidden text-ellipsis truncate" href="#">Reports</a>
+</nav>
+<!-- Right Actions -->
+<div class="flex items-center space-x-2 min-w-0 flex-shrink-0">
+<!-- Sleek Search input -->
+<div class="relative flex items-center">
+<span class="material-symbols-outlined text-slate-400 absolute left-2 pointer-events-none" style="font-size: 15px;">search</span>
+<input class="h-7 pl-7 pr-8 w-36 focus:w-52 transition-all bg-slate-50 border border-slate-200 rounded-md text-[11px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white focus:ring-1 focus:ring-blue-500/20" placeholder="Quick search..." type="text"/>
+<kbd class="absolute right-1.5 px-1 py-0.5 rounded bg-white text-[9px] font-mono text-slate-400 border border-slate-200">⌘K</kbd>
+</div>
+<div class="h-4 w-px bg-slate-200 mx-0.5"></div>
+<button class="h-7 w-7 flex items-center justify-center rounded-md hover:bg-slate-100 text-slate-500 hover:text-slate-900 transition-colors" title="Filter list">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button class="h-7 w-7 flex items-center justify-center rounded-md hover:bg-slate-100 text-slate-500 hover:text-slate-900 transition-colors" title="Share view">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="h-7 w-7 flex items-center justify-center rounded-md hover:bg-slate-100 text-slate-500 hover:text-slate-900 transition-colors" title="Settings">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-4 w-px bg-slate-200 mx-0.5"></div>
+<button class="h-7 px-2.5 bg-slate-100 hover:bg-slate-200/80 text-slate-700 font-medium rounded-md border border-slate-200 flex items-center space-x-1.5 transition-colors">
+<span class="material-symbols-outlined text-slate-500" style="font-size: 14px;">history_toggle_off</span>
+<span class="whitespace-nowrap overflow-hidden text-ellipsis truncate">Baseline</span>
+</button>
+<button class="h-7 px-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md flex items-center space-x-1.5 transition-colors shadow-xs">
+<span class="material-symbols-outlined" style="font-size: 14px;">file_download</span>
+<span class="whitespace-nowrap overflow-hidden text-ellipsis truncate">Export</span>
+</button>
+<!-- User Avatar -->
+<div class="ml-1 relative flex-shrink-0">
+<img class="w-6 h-6 rounded-full ring-1 ring-slate-200 object-cover" data-alt="Senior Enterprise Portfolio Director profile portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtJAsC4xQFXXjfd1SR0AuVn0YnPDSxlgwfw8acUQ5DtlSc_w2IKxapfDylVU4ujNOH2UuQ6ZF2UU4zOxZSvD0kX6rOZUY6REphZvG940_CEjsgocVI1G_TtUa7gT6w7e9D8WiwUOi2OQ67hU0ZqgP6lIRAx4kF6Bkju2Xs9YXUQw62v_2smDioKbA75k6GKX_1CA_KLcpAKBDDsJ-eZMe_9W5GvVZ4JFv7D751cJocfzHVH59fg2HqAuv2U6cUJgMM8ZC36W5Jhls"/>
+<span class="absolute bottom-0 right-0 w-1.5 h-1.5 bg-emerald-500 rounded-full ring-1 ring-white"></span>
+</div>
+</div>
+</header>
+<!-- ================= SECONDARY SCOPE & MODERN CALM TOOLBAR ================= -->
+<div class="bg-white border-b border-slate-200/80 h-9 min-h-[36px] px-4 flex items-center justify-between flex-shrink-0 z-20">
+<div class="flex items-center space-x-3 min-w-0">
+<!-- Quick Filter Preset Dropdown Pill -->
+<div class="flex items-center space-x-1.5 bg-slate-50 hover:bg-slate-100/80 border border-slate-200/80 rounded-md px-2 py-1 text-[11px] cursor-pointer transition-colors min-w-0">
+<span class="material-symbols-outlined text-slate-400" style="font-size: 14px;">filter_alt</span>
+<span class="text-slate-500 whitespace-nowrap overflow-hidden text-ellipsis truncate">Quick filters:</span>
+<span class="font-semibold text-slate-800 whitespace-nowrap overflow-hidden text-ellipsis truncate">My issues (6)</span>
+<span class="text-slate-300">·</span>
+<span class="font-semibold text-rose-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">Critical path</span>
+<span class="material-symbols-outlined text-slate-400" style="font-size: 13px;">arrow_drop_down</span>
+</div>
+<!-- Baseline Status Pill -->
+<div class="hidden sm:flex items-center space-x-1.5 bg-slate-50 border border-slate-200/80 rounded-md px-2 py-1 text-[11px] min-w-0">
+<span class="material-symbols-outlined text-slate-400" style="font-size: 13px;">lock</span>
+<span class="text-slate-500 whitespace-nowrap overflow-hidden text-ellipsis truncate">Baseline:</span>
+<span class="font-medium text-slate-800 whitespace-nowrap overflow-hidden text-ellipsis truncate">v2.4 Q1 locked</span>
+<span class="text-[9px] font-semibold text-emerald-700 bg-emerald-50 ring-1 ring-emerald-200 px-1.5 py-0.2 rounded whitespace-nowrap overflow-hidden text-ellipsis truncate">ON TRACK</span>
+</div>
+<!-- Virtualized Telemetry Chip -->
+<div class="hidden md:flex items-center space-x-1.5 px-2 py-0.5 rounded-full bg-blue-50/80 text-blue-700 ring-1 ring-blue-200/70 text-[10px] font-mono min-w-0">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+<span class="whitespace-nowrap overflow-hidden text-ellipsis truncate font-medium">Rendering 1,842 bars · virtualized</span>
+</div>
+</div>
+<!-- Zoom & View Control Bar -->
+<div class="flex items-center space-x-2.5 min-w-0 flex-shrink-0">
+<!-- Minimal Pill Toggles for Zoom: Days, Weeks, Quarters, Months, Years with Quarters active -->
+<div class="flex items-center bg-slate-100 p-0.5 rounded-md border border-slate-200/70 text-[11px]">
+<button class="px-2 py-0.5 text-slate-600 hover:text-slate-900 rounded font-medium transition-colors whitespace-nowrap overflow-hidden text-ellipsis truncate">Days</button>
+<button class="px-2 py-0.5 text-slate-600 hover:text-slate-900 rounded font-medium transition-colors whitespace-nowrap overflow-hidden text-ellipsis truncate">Weeks</button>
+<button class="px-2 py-0.5 text-slate-600 hover:text-slate-900 rounded font-medium transition-colors whitespace-nowrap overflow-hidden text-ellipsis truncate">Months</button>
+<button class="px-2.5 py-0.5 bg-white text-blue-600 font-semibold rounded shadow-xs ring-1 ring-slate-200/50 transition-colors whitespace-nowrap overflow-hidden text-ellipsis truncate">Quarters</button>
+<button class="px-2 py-0.5 text-slate-600 hover:text-slate-900 rounded font-medium transition-colors whitespace-nowrap overflow-hidden text-ellipsis truncate">Years</button>
+</div>
+<!-- Layout Split Switcher -->
+<div class="hidden sm:flex items-center bg-slate-100 p-0.5 rounded-md border border-slate-200/70">
+<button class="p-1 bg-white text-blue-600 rounded shadow-xs" title="Split Outline &amp; Timeline">
+<span class="material-symbols-outlined" style="font-size: 14px;">view_week</span>
+</button>
+<button class="p-1 text-slate-500 hover:text-slate-800 rounded transition-colors" title="Timeline Only">
+<span class="material-symbols-outlined" style="font-size: 14px;">calendar_view_week</span>
+</button>
+<button class="p-1 text-slate-500 hover:text-slate-800 rounded transition-colors" title="WBS Outline Only">
+<span class="material-symbols-outlined" style="font-size: 14px;">table_rows</span>
+</button>
+</div>
+<!-- Critical Path Indicator Button -->
+<button class="flex items-center space-x-1.5 px-2.5 py-1 bg-rose-50 hover:bg-rose-100/70 text-rose-700 rounded-md text-[11px] font-semibold border border-rose-200/80 transition-colors">
+<span class="material-symbols-outlined text-rose-600" style="font-size: 13px;">route</span>
+<span class="whitespace-nowrap overflow-hidden text-ellipsis truncate">Critical Path (4)</span>
+</button>
+</div>
+</div>
+<!-- ================= MAIN WORKSPACE WITH MODERN CARD/PANEL FRAMING ================= -->
+<div class="flex-1 p-2 md:p-3 overflow-hidden flex flex-col bg-slate-100/70">
+<div class="flex-1 flex overflow-hidden bg-white rounded-lg border border-slate-200/90 shadow-sm relative">
+<!-- ----------------------------------------------------------------- -->
+<!-- LEFT PANE: WORK BREAKDOWN STRUCTURE (WBS) OUTLINE TREE (~32% WIDTH) -->
+<!-- "Odtabelowione": No heavy borders, subtle soft surface layering -->
+<!-- ----------------------------------------------------------------- -->
+<section class="w-[410px] lg:w-[430px] flex-shrink-0 flex flex-col border-r border-slate-200/80 bg-white z-10 select-text overflow-hidden">
+<!-- Sticky Column Headers (48px high to perfectly align with 2-tier timeline) -->
+<div class="h-12 min-h-[48px] bg-slate-50/90 border-b border-slate-200/80 flex items-center text-[11px] text-slate-500 font-semibold select-none flex-shrink-0 px-2">
+<div class="w-12 px-1 text-center whitespace-nowrap overflow-hidden text-ellipsis truncate">WBS</div>
+<div class="w-20 px-1 text-left whitespace-nowrap overflow-hidden text-ellipsis truncate">Key</div>
+<div class="flex-1 px-2 text-left min-w-0 whitespace-nowrap overflow-hidden text-ellipsis truncate">Item Name</div>
+<div class="w-12 px-1 text-center whitespace-nowrap overflow-hidden text-ellipsis truncate">Lead</div>
+<div class="w-24 px-1 text-left whitespace-nowrap overflow-hidden text-ellipsis truncate">Status</div>
+<div class="w-20 px-1 text-right whitespace-nowrap overflow-hidden text-ellipsis truncate">Dates</div>
+</div>
+<!-- Scrollable Task Rows Container (Left Outline Tree) -->
+<div class="flex-1 overflow-y-scroll overflow-x-hidden thin-scroll divide-y divide-slate-100/80" id="wbs-scroll">
+<!-- ================= SWIMLANE 1: Platform Core ================= -->
+<div class="gantt-row bg-slate-50/70 flex items-center px-2.5 font-medium text-slate-900 border-b border-slate-200/70 min-w-0">
+<span class="material-symbols-outlined text-slate-400 mr-1.5 cursor-pointer hover:text-slate-700" style="font-size: 14px;">expand_more</span>
+<span class="material-symbols-outlined text-blue-600 mr-1.5" style="font-size: 15px;">folder_open</span>
+<span class="font-semibold text-xs text-slate-800 whitespace-nowrap overflow-hidden text-ellipsis truncate min-w-0">1.0 Platform Core</span>
+<span class="ml-1.5 text-[10px] text-slate-400 whitespace-nowrap flex-shrink-0">(6 tasks)</span>
+<div class="ml-auto flex items-center space-x-1.5 pl-2 flex-shrink-0">
+<span class="text-[10px] font-mono text-slate-500 font-medium">64%</span>
+<div class="w-10 h-1.5 bg-slate-200 rounded-full overflow-hidden">
+<div class="bg-blue-600 h-full w-[64%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Task 1.1 (Critical Path) -->
+<div class="gantt-row flex items-center hover:bg-slate-50/90 transition-colors text-[11px] text-slate-700 min-w-0 px-2">
+<div class="w-10 text-center text-slate-400 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">1.1</div>
+<div class="w-20 flex items-center space-x-1 min-w-0">
+<span class="material-symbols-outlined text-blue-600" style="font-size: 13px;">bookmark</span>
+<span class="font-semibold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1842</span>
+</div>
+<div class="flex-1 px-1.5 min-w-0 whitespace-nowrap overflow-hidden text-ellipsis truncate" title="Auth0 &amp; SSO Gateway migration">
+<span class="truncate font-medium text-slate-800">Auth0 &amp; SSO Gateway migration</span>
+</div>
+<div class="w-10 flex items-center justify-center flex-shrink-0">
+<div class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[9px] font-semibold" title="Sarah Chen">SC</div>
+</div>
+<div class="w-24 px-1 min-w-0">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-blue-50 text-blue-700 ring-1 ring-blue-600/20 whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-full">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600 mr-1 flex-shrink-0"></span>In Progress
+            </span>
+</div>
+<div class="w-20 text-right text-slate-500 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">Feb 02-16</div>
+</div>
+<!-- Task 1.2 (Critical Path) -->
+<div class="gantt-row flex items-center hover:bg-slate-50/90 transition-colors text-[11px] text-slate-700 min-w-0 px-2">
+<div class="w-10 text-center text-slate-400 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">1.2</div>
+<div class="w-20 flex items-center space-x-1 min-w-0">
+<span class="material-symbols-outlined text-blue-600" style="font-size: 13px;">task_alt</span>
+<span class="font-semibold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1845</span>
+</div>
+<div class="flex-1 px-1.5 min-w-0 whitespace-nowrap overflow-hidden text-ellipsis truncate" title="Kubernetes cluster 1.29 upgrade">
+<span class="truncate font-medium text-slate-800">Kubernetes cluster 1.29 upgrade</span>
+</div>
+<div class="w-10 flex items-center justify-center flex-shrink-0">
+<div class="w-5 h-5 rounded-full bg-slate-600 text-white flex items-center justify-center text-[9px] font-semibold" title="Dave Miller">DM</div>
+</div>
+<div class="w-24 px-1 min-w-0">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-blue-50 text-blue-700 ring-1 ring-blue-600/20 whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-full">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600 mr-1 flex-shrink-0"></span>In Progress
+            </span>
+</div>
+<div class="w-20 text-right text-slate-500 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">Feb 09-23</div>
+</div>
+<!-- Task 1.3 -->
+<div class="gantt-row flex items-center hover:bg-slate-50/90 transition-colors text-[11px] text-slate-700 min-w-0 px-2">
+<div class="w-10 text-center text-slate-400 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">1.3</div>
+<div class="w-20 flex items-center space-x-1 min-w-0">
+<span class="material-symbols-outlined text-blue-600" style="font-size: 13px;">task_alt</span>
+<span class="font-semibold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1849</span>
+</div>
+<div class="flex-1 px-1.5 min-w-0 whitespace-nowrap overflow-hidden text-ellipsis truncate" title="Zero-downtime database failover">
+<span class="truncate font-medium text-slate-800">Zero-downtime database failover</span>
+</div>
+<div class="w-10 flex items-center justify-center flex-shrink-0">
+<div class="w-5 h-5 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center text-[9px] font-semibold" title="Alex Rivera">AR</div>
+</div>
+<div class="w-24 px-1 min-w-0">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-emerald-50 text-emerald-700 ring-1 ring-emerald-600/20 whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-full">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mr-1 flex-shrink-0"></span>Done
+            </span>
+</div>
+<div class="w-20 text-right text-slate-500 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">Jan 26-Feb 06</div>
+</div>
+<!-- Task 1.4 -->
+<div class="gantt-row flex items-center hover:bg-slate-50/90 transition-colors text-[11px] text-slate-700 min-w-0 px-2">
+<div class="w-10 text-center text-slate-400 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">1.4</div>
+<div class="w-20 flex items-center space-x-1 min-w-0">
+<span class="material-symbols-outlined text-blue-600" style="font-size: 13px;">bug_report</span>
+<span class="font-semibold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1852</span>
+</div>
+<div class="flex-1 px-1.5 min-w-0 whitespace-nowrap overflow-hidden text-ellipsis truncate" title="IAM role consolidation &amp; policy cleanup">
+<span class="truncate font-medium text-slate-800">IAM role consolidation &amp; policy</span>
+</div>
+<div class="w-10 flex items-center justify-center flex-shrink-0">
+<div class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center text-[9px] font-semibold" title="Elena Wu">EW</div>
+</div>
+<div class="w-24 px-1 min-w-0">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-emerald-50 text-emerald-700 ring-1 ring-emerald-600/20 whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-full">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mr-1 flex-shrink-0"></span>Done
+            </span>
+</div>
+<div class="w-20 text-right text-slate-500 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">Jan 19-Feb 02</div>
+</div>
+<!-- Task 1.5 -->
+<div class="gantt-row flex items-center hover:bg-slate-50/90 transition-colors text-[11px] text-slate-700 min-w-0 px-2">
+<div class="w-10 text-center text-slate-400 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">1.5</div>
+<div class="w-20 flex items-center space-x-1 min-w-0">
+<span class="material-symbols-outlined text-blue-600" style="font-size: 13px;">task_alt</span>
+<span class="font-semibold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1858</span>
+</div>
+<div class="flex-1 px-1.5 min-w-0 whitespace-nowrap overflow-hidden text-ellipsis truncate" title="VPC Peering mesh reconfiguration">
+<span class="truncate font-medium text-slate-800">VPC Peering mesh reconfiguration</span>
+</div>
+<div class="w-10 flex items-center justify-center flex-shrink-0">
+<div class="w-5 h-5 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center text-[9px] font-semibold" title="Tom Becker">TB</div>
+</div>
+<div class="w-24 px-1 min-w-0">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-slate-100 text-slate-600 ring-1 ring-slate-200 whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-full">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-400 mr-1 flex-shrink-0"></span>To Do
+            </span>
+</div>
+<div class="w-20 text-right text-slate-500 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">Feb 23-Mar 09</div>
+</div>
+<!-- Task 1.6 (Milestone) -->
+<div class="gantt-row flex items-center bg-blue-50/20 hover:bg-blue-50/40 transition-colors text-[11px] text-slate-800 font-medium min-w-0 px-2">
+<div class="w-10 text-center text-slate-400 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">1.6</div>
+<div class="w-20 flex items-center space-x-1 min-w-0">
+<span class="material-symbols-outlined text-blue-600" style="font-size: 13px; font-variation-settings: 'FILL' 1;">diamond</span>
+<span class="font-semibold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1860</span>
+</div>
+<div class="flex-1 px-1.5 min-w-0 whitespace-nowrap overflow-hidden text-ellipsis truncate" title="M1: Core Infrastructure Sign-off">
+<span class="truncate font-semibold text-blue-700">◆ M1: Core Infrastructure Sign-off</span>
+</div>
+<div class="w-10 flex items-center justify-center flex-shrink-0">
+<div class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[9px] font-semibold">SC</div>
+</div>
+<div class="w-24 px-1 min-w-0">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-blue-50 text-blue-700 ring-1 ring-blue-600/20 whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-full">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600 mr-1 flex-shrink-0"></span>Scheduled
+            </span>
+</div>
+<div class="w-20 text-right text-slate-500 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">Mar 09</div>
+</div>
+<!-- ================= SWIMLANE 2: Mobile Experience ================= -->
+<div class="gantt-row bg-slate-50/70 flex items-center px-2.5 font-medium text-slate-900 border-b border-slate-200/70 min-w-0">
+<span class="material-symbols-outlined text-slate-400 mr-1.5 cursor-pointer hover:text-slate-700" style="font-size: 14px;">expand_more</span>
+<span class="material-symbols-outlined text-blue-600 mr-1.5" style="font-size: 15px;">smartphone</span>
+<span class="font-semibold text-xs text-slate-800 whitespace-nowrap overflow-hidden text-ellipsis truncate min-w-0">2.0 Mobile Experience</span>
+<span class="ml-1.5 text-[10px] text-slate-400 whitespace-nowrap flex-shrink-0">(5 tasks)</span>
+<div class="ml-auto flex items-center space-x-1.5 pl-2 flex-shrink-0">
+<span class="text-[10px] font-mono text-slate-500 font-medium">42%</span>
+<div class="w-10 h-1.5 bg-slate-200 rounded-full overflow-hidden">
+<div class="bg-blue-600 h-full w-[42%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Task 2.1 (Critical Path) -->
+<div class="gantt-row flex items-center hover:bg-slate-50/90 transition-colors text-[11px] text-slate-700 min-w-0 px-2">
+<div class="w-10 text-center text-slate-400 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">2.1</div>
+<div class="w-20 flex items-center space-x-1 min-w-0">
+<span class="material-symbols-outlined text-blue-600" style="font-size: 13px;">bookmark</span>
+<span class="font-semibold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1890</span>
+</div>
+<div class="flex-1 px-1.5 min-w-0 whitespace-nowrap overflow-hidden text-ellipsis truncate" title="iOS Biometric token renewal">
+<span class="truncate font-medium text-slate-800">iOS Biometric token renewal</span>
+</div>
+<div class="w-10 flex items-center justify-center flex-shrink-0">
+<div class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[9px] font-semibold" title="Lila Thorne">LT</div>
+</div>
+<div class="w-24 px-1 min-w-0">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-blue-50 text-blue-700 ring-1 ring-blue-600/20 whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-full">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600 mr-1 flex-shrink-0"></span>In Progress
+            </span>
+</div>
+<div class="w-20 text-right text-slate-500 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">Feb 16-Mar 02</div>
+</div>
+<!-- Task 2.2 (Slip / Conflict / At Risk) -->
+<div class="gantt-row flex items-center bg-rose-50/40 hover:bg-rose-50/70 transition-colors text-[11px] text-slate-800 min-w-0 px-2">
+<div class="w-10 text-center text-slate-400 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">2.2</div>
+<div class="w-20 flex items-center space-x-1 min-w-0">
+<span class="material-symbols-outlined text-rose-600" style="font-size: 13px;">task_alt</span>
+<span class="font-semibold text-rose-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1904</span>
+</div>
+<div class="flex-1 px-1.5 min-w-0 whitespace-nowrap overflow-hidden text-ellipsis truncate" title="Offline synchronization engine (+14d SLIP Conflict)">
+<span class="truncate font-semibold text-rose-900">Offline synchronization engine</span>
+</div>
+<div class="w-10 flex items-center justify-center flex-shrink-0">
+<div class="w-5 h-5 rounded-full bg-slate-600 text-white flex items-center justify-center text-[9px] font-semibold" title="Kevin Ramos">KR</div>
+</div>
+<div class="w-24 px-1 min-w-0">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-rose-100 text-rose-700 ring-1 ring-rose-300 whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-full">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-600 mr-1 flex-shrink-0"></span>+14d SLIP
+            </span>
+</div>
+<div class="w-20 text-right text-rose-700 font-mono text-[10px] font-medium whitespace-nowrap overflow-hidden text-ellipsis truncate">Feb 02-Mar 09</div>
+</div>
+<!-- Task 2.3 -->
+<div class="gantt-row flex items-center hover:bg-slate-50/90 transition-colors text-[11px] text-slate-700 min-w-0 px-2">
+<div class="w-10 text-center text-slate-400 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">2.3</div>
+<div class="w-20 flex items-center space-x-1 min-w-0">
+<span class="material-symbols-outlined text-blue-600" style="font-size: 13px;">task_alt</span>
+<span class="font-semibold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1912</span>
+</div>
+<div class="flex-1 px-1.5 min-w-0 whitespace-nowrap overflow-hidden text-ellipsis truncate" title="Android Material 3 theme rollout">
+<span class="truncate font-medium text-slate-800">Android Material 3 theme rollout</span>
+</div>
+<div class="w-10 flex items-center justify-center flex-shrink-0">
+<div class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[9px] font-semibold">LT</div>
+</div>
+<div class="w-24 px-1 min-w-0">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-emerald-50 text-emerald-700 ring-1 ring-emerald-600/20 whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-full">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mr-1 flex-shrink-0"></span>Done
+            </span>
+</div>
+<div class="w-20 text-right text-slate-500 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">Jan 12-Jan 30</div>
+</div>
+<!-- Task 2.4 -->
+<div class="gantt-row flex items-center hover:bg-slate-50/90 transition-colors text-[11px] text-slate-700 min-w-0 px-2">
+<div class="w-10 text-center text-slate-400 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">2.4</div>
+<div class="w-20 flex items-center space-x-1 min-w-0">
+<span class="material-symbols-outlined text-blue-600" style="font-size: 13px;">bug_report</span>
+<span class="font-semibold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1918</span>
+</div>
+<div class="flex-1 px-1.5 min-w-0 whitespace-nowrap overflow-hidden text-ellipsis truncate" title="Push notification payload compression">
+<span class="truncate font-medium text-slate-800">Push notification payload compression</span>
+</div>
+<div class="w-10 flex items-center justify-center flex-shrink-0">
+<div class="w-5 h-5 rounded-full bg-slate-600 text-white flex items-center justify-center text-[9px] font-semibold">KR</div>
+</div>
+<div class="w-24 px-1 min-w-0">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-slate-100 text-slate-600 ring-1 ring-slate-200 whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-full">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-400 mr-1 flex-shrink-0"></span>To Do
+            </span>
+</div>
+<div class="w-20 text-right text-slate-500 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">Mar 02-Mar 16</div>
+</div>
+<!-- Task 2.5 -->
+<div class="gantt-row flex items-center hover:bg-slate-50/90 transition-colors text-[11px] text-slate-700 min-w-0 px-2">
+<div class="w-10 text-center text-slate-400 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">2.5</div>
+<div class="w-20 flex items-center space-x-1 min-w-0">
+<span class="material-symbols-outlined text-blue-600" style="font-size: 13px;">task_alt</span>
+<span class="font-semibold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1925</span>
+</div>
+<div class="flex-1 px-1.5 min-w-0 whitespace-nowrap overflow-hidden text-ellipsis truncate" title="Deep link routing security check">
+<span class="truncate font-medium text-slate-800">Deep link routing security check</span>
+</div>
+<div class="w-10 flex items-center justify-center flex-shrink-0">
+<div class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[9px] font-semibold">LT</div>
+</div>
+<div class="w-24 px-1 min-w-0">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-slate-100 text-slate-600 ring-1 ring-slate-200 whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-full">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-400 mr-1 flex-shrink-0"></span>To Do
+            </span>
+</div>
+<div class="w-20 text-right text-slate-500 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">Mar 09-Mar 23</div>
+</div>
+<!-- ================= SWIMLANE 3: Data & Infrastructure ================= -->
+<div class="gantt-row bg-slate-50/70 flex items-center px-2.5 font-medium text-slate-900 border-b border-slate-200/70 min-w-0">
+<span class="material-symbols-outlined text-slate-400 mr-1.5 cursor-pointer hover:text-slate-700" style="font-size: 14px;">expand_more</span>
+<span class="material-symbols-outlined text-blue-600 mr-1.5" style="font-size: 15px;">database</span>
+<span class="font-semibold text-xs text-slate-800 whitespace-nowrap overflow-hidden text-ellipsis truncate min-w-0">3.0 Data &amp; Infrastructure</span>
+<span class="ml-1.5 text-[10px] text-slate-400 whitespace-nowrap flex-shrink-0">(5 tasks)</span>
+<div class="ml-auto flex items-center space-x-1.5 pl-2 flex-shrink-0">
+<span class="text-[10px] font-mono text-slate-500 font-medium">85%</span>
+<div class="w-10 h-1.5 bg-slate-200 rounded-full overflow-hidden">
+<div class="bg-blue-600 h-full w-[85%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Task 3.1 -->
+<div class="gantt-row flex items-center hover:bg-slate-50/90 transition-colors text-[11px] text-slate-700 min-w-0 px-2">
+<div class="w-10 text-center text-slate-400 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">3.1</div>
+<div class="w-20 flex items-center space-x-1 min-w-0">
+<span class="material-symbols-outlined text-blue-600" style="font-size: 13px;">task_alt</span>
+<span class="font-semibold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1940</span>
+</div>
+<div class="flex-1 px-1.5 min-w-0 whitespace-nowrap overflow-hidden text-ellipsis truncate" title="GraphQL query caching layer">
+<span class="truncate font-medium text-slate-800">GraphQL query caching layer</span>
+</div>
+<div class="w-10 flex items-center justify-center flex-shrink-0">
+<div class="w-5 h-5 rounded-full bg-slate-700 text-white flex items-center justify-center text-[9px] font-semibold" title="Raj Patel">RP</div>
+</div>
+<div class="w-24 px-1 min-w-0">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-emerald-50 text-emerald-700 ring-1 ring-emerald-600/20 whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-full">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mr-1 flex-shrink-0"></span>Done
+            </span>
+</div>
+<div class="w-20 text-right text-slate-500 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">Jan 19-Feb 09</div>
+</div>
+<!-- Task 3.2 (Critical Path) -->
+<div class="gantt-row flex items-center hover:bg-slate-50/90 transition-colors text-[11px] text-slate-700 min-w-0 px-2">
+<div class="w-10 text-center text-slate-400 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">3.2</div>
+<div class="w-20 flex items-center space-x-1 min-w-0">
+<span class="material-symbols-outlined text-blue-600" style="font-size: 13px;">bookmark</span>
+<span class="font-semibold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1952</span>
+</div>
+<div class="flex-1 px-1.5 min-w-0 whitespace-nowrap overflow-hidden text-ellipsis truncate" title="Snowflake telemetry pipeline">
+<span class="truncate font-medium text-slate-800">Snowflake telemetry pipeline</span>
+</div>
+<div class="w-10 flex items-center justify-center flex-shrink-0">
+<div class="w-5 h-5 rounded-full bg-slate-700 text-white flex items-center justify-center text-[9px] font-semibold">RP</div>
+</div>
+<div class="w-24 px-1 min-w-0">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-blue-50 text-blue-700 ring-1 ring-blue-600/20 whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-full">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600 mr-1 flex-shrink-0"></span>In Progress
+            </span>
+</div>
+<div class="w-20 text-right text-slate-500 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">Feb 09-Feb 27</div>
+</div>
+<!-- Task 3.3 -->
+<div class="gantt-row flex items-center hover:bg-slate-50/90 transition-colors text-[11px] text-slate-700 min-w-0 px-2">
+<div class="w-10 text-center text-slate-400 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">3.3</div>
+<div class="w-20 flex items-center space-x-1 min-w-0">
+<span class="material-symbols-outlined text-blue-600" style="font-size: 13px;">task_alt</span>
+<span class="font-semibold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1961</span>
+</div>
+<div class="flex-1 px-1.5 min-w-0 whitespace-nowrap overflow-hidden text-ellipsis truncate" title="Kafka event schema registry upgrade">
+<span class="truncate font-medium text-slate-800">Kafka event schema registry upgrade</span>
+</div>
+<div class="w-10 flex items-center justify-center flex-shrink-0">
+<div class="w-5 h-5 rounded-full bg-slate-600 text-white flex items-center justify-center text-[9px] font-semibold">DM</div>
+</div>
+<div class="w-24 px-1 min-w-0">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-emerald-50 text-emerald-700 ring-1 ring-emerald-600/20 whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-full">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mr-1 flex-shrink-0"></span>Done
+            </span>
+</div>
+<div class="w-20 text-right text-slate-500 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">Jan 26-Feb 13</div>
+</div>
+<!-- Task 3.4 (Milestone) -->
+<div class="gantt-row flex items-center bg-emerald-50/20 hover:bg-emerald-50/40 transition-colors text-[11px] text-slate-800 font-medium min-w-0 px-2">
+<div class="w-10 text-center text-slate-400 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">3.4</div>
+<div class="w-20 flex items-center space-x-1 min-w-0">
+<span class="material-symbols-outlined text-emerald-600" style="font-size: 13px; font-variation-settings: 'FILL' 1;">diamond</span>
+<span class="font-semibold text-emerald-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1970</span>
+</div>
+<div class="flex-1 px-1.5 min-w-0 whitespace-nowrap overflow-hidden text-ellipsis truncate" title="GDPR compliance audit milestone">
+<span class="truncate font-semibold text-emerald-700">◆ GDPR compliance audit</span>
+</div>
+<div class="w-10 flex items-center justify-center flex-shrink-0">
+<div class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center text-[9px] font-semibold">EW</div>
+</div>
+<div class="w-24 px-1 min-w-0">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-emerald-50 text-emerald-700 ring-1 ring-emerald-600/20 whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-full">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mr-1 flex-shrink-0"></span>Done
+            </span>
+</div>
+<div class="w-20 text-right text-slate-500 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">Feb 20</div>
+</div>
+<!-- Task 3.5 -->
+<div class="gantt-row flex items-center hover:bg-slate-50/90 transition-colors text-[11px] text-slate-700 min-w-0 px-2">
+<div class="w-10 text-center text-slate-400 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">3.5</div>
+<div class="w-20 flex items-center space-x-1 min-w-0">
+<span class="material-symbols-outlined text-blue-600" style="font-size: 13px;">task_alt</span>
+<span class="font-semibold text-blue-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1978</span>
+</div>
+<div class="flex-1 px-1.5 min-w-0 whitespace-nowrap overflow-hidden text-ellipsis truncate" title="Lakehouse cold tier archiving">
+<span class="truncate font-medium text-slate-800">Lakehouse cold tier archiving</span>
+</div>
+<div class="w-10 flex items-center justify-center flex-shrink-0">
+<div class="w-5 h-5 rounded-full bg-slate-700 text-white flex items-center justify-center text-[9px] font-semibold">RP</div>
+</div>
+<div class="w-24 px-1 min-w-0">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-slate-100 text-slate-600 ring-1 ring-slate-200 whitespace-nowrap overflow-hidden text-ellipsis truncate max-w-full">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-400 mr-1 flex-shrink-0"></span>To Do
+            </span>
+</div>
+<div class="w-20 text-right text-slate-500 font-mono text-[10px] whitespace-nowrap overflow-hidden text-ellipsis truncate">Feb 27-Mar 18</div>
+</div>
+</div>
+</section>
+<!-- ----------------------------------------------------------------- -->
+<!-- RIGHT PANE: EXPANSIVE VIRTUALIZED TIMELINE GANTT CANVAS (68%+) -->
+<!-- ----------------------------------------------------------------- -->
+<section class="flex-1 flex flex-col bg-white overflow-hidden relative">
+<div class="flex-1 overflow-x-auto overflow-y-scroll thin-scroll relative" id="timeline-scroll-container">
+<!-- Canvas Width spanning 2026 Quarters -->
+<div class="w-[1920px] min-w-full flex flex-col relative">
+<!-- 2-TIER STICKY TIMELINE HEADER (Height: 48px) -->
+<div class="sticky top-0 z-20 bg-slate-50/95 backdrop-blur border-b border-slate-200/80 select-none shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+<!-- Tier 1: Quarters of 2026 (Active Quarters View with Month breakdown) -->
+<div class="h-6 flex text-[11px] font-semibold border-b border-slate-200/70">
+<div class="w-[480px] px-3 flex items-center justify-between text-slate-800 border-r border-slate-200/70 bg-slate-50/60">
+<span class="font-bold text-slate-900 whitespace-nowrap overflow-hidden text-ellipsis truncate">Q1 2026</span>
+<span class="text-[10px] text-blue-600 font-medium whitespace-nowrap overflow-hidden text-ellipsis truncate">Active Execution Cycle</span>
+</div>
+<div class="w-[480px] px-3 flex items-center justify-between text-slate-600 border-r border-slate-200/70">
+<span class="font-semibold whitespace-nowrap overflow-hidden text-ellipsis truncate">Q2 2026</span>
+<span class="text-[10px] text-slate-400 whitespace-nowrap overflow-hidden text-ellipsis truncate">Platform Scalability</span>
+</div>
+<div class="w-[480px] px-3 flex items-center justify-between text-slate-600 border-r border-slate-200/70">
+<span class="font-semibold whitespace-nowrap overflow-hidden text-ellipsis truncate">Q3 2026</span>
+<span class="text-[10px] text-slate-400 whitespace-nowrap overflow-hidden text-ellipsis truncate">Global Federation</span>
+</div>
+<div class="w-[480px] px-3 flex items-center justify-between text-slate-600">
+<span class="font-semibold whitespace-nowrap overflow-hidden text-ellipsis truncate">Q4 2026</span>
+<span class="text-[10px] text-slate-400 whitespace-nowrap overflow-hidden text-ellipsis truncate">NextGen AI Engine</span>
+</div>
+</div>
+<!-- Tier 2: Months & Key Sprints -->
+<div class="h-6 flex text-[10px] font-mono text-slate-500">
+<!-- Q1 Months -->
+<div class="w-[160px] px-2 flex items-center justify-between border-r border-slate-200/50">
+<span class="font-sans font-medium text-slate-700 whitespace-nowrap overflow-hidden text-ellipsis truncate">January</span>
+<span class="text-[9px] text-slate-400">Sprint 1-2</span>
+</div>
+<div class="w-[160px] px-2 flex items-center justify-between border-r border-slate-200/50 bg-blue-50/40">
+<span class="font-sans font-semibold text-blue-700 whitespace-nowrap overflow-hidden text-ellipsis truncate">February</span>
+<span class="text-[9px] text-blue-600 font-bold">Sprint 3-4</span>
+</div>
+<div class="w-[160px] px-2 flex items-center justify-between border-r border-slate-200/70">
+<span class="font-sans font-medium text-slate-700 whitespace-nowrap overflow-hidden text-ellipsis truncate">March</span>
+<span class="text-[9px] text-slate-400">Sprint 5-6</span>
+</div>
+<!-- Q2 Months -->
+<div class="w-[160px] px-2 flex items-center justify-between border-r border-slate-200/50"><span>April</span><span class="text-slate-400 text-[9px]">S7-8</span></div>
+<div class="w-[160px] px-2 flex items-center justify-between border-r border-slate-200/50"><span>May</span><span class="text-slate-400 text-[9px]">S9-10</span></div>
+<div class="w-[160px] px-2 flex items-center justify-between border-r border-slate-200/70"><span>June</span><span class="text-slate-400 text-[9px]">S11-12</span></div>
+<!-- Q3 Months -->
+<div class="w-[160px] px-2 flex items-center justify-between border-r border-slate-200/50"><span>July</span><span class="text-slate-400 text-[9px]">S13-14</span></div>
+<div class="w-[160px] px-2 flex items-center justify-between border-r border-slate-200/50"><span>August</span><span class="text-slate-400 text-[9px]">S15-16</span></div>
+<div class="w-[160px] px-2 flex items-center justify-between border-r border-slate-200/70"><span>September</span><span class="text-slate-400 text-[9px]">S17-18</span></div>
+<!-- Q4 Months -->
+<div class="w-[160px] px-2 flex items-center justify-between border-r border-slate-200/50"><span>October</span><span class="text-slate-400 text-[9px]">S19-20</span></div>
+<div class="w-[160px] px-2 flex items-center justify-between border-r border-slate-200/50"><span>November</span><span class="text-slate-400 text-[9px]">S21-22</span></div>
+<div class="w-[160px] px-2 flex items-center justify-between"><span>December</span><span class="text-slate-400 text-[9px]">S23-24</span></div>
+</div>
+</div>
+<!-- TIMELINE GRID & GANTT BARS CANVAS -->
+<div class="relative w-full">
+<!-- Subtle vertical hairline gridlines (160px month columns) -->
+<div class="absolute inset-0 flex pointer-events-none z-0">
+<div class="w-[160px] border-r border-slate-100 h-full"></div>
+<div class="w-[160px] border-r border-blue-100/70 bg-blue-50/[0.04] h-full"></div>
+<div class="w-[160px] border-r border-slate-200/60 h-full"></div>
+<div class="w-[160px] border-r border-slate-100 h-full"></div>
+<div class="w-[160px] border-r border-slate-100 h-full"></div>
+<div class="w-[160px] border-r border-slate-200/60 h-full"></div>
+<div class="w-[160px] border-r border-slate-100 h-full"></div>
+<div class="w-[160px] border-r border-slate-100 h-full"></div>
+<div class="w-[160px] border-r border-slate-200/60 h-full"></div>
+<div class="w-[160px] border-r border-slate-100 h-full"></div>
+<div class="w-[160px] border-r border-slate-100 h-full"></div>
+<div class="w-[160px] border-r border-slate-100 h-full"></div>
+</div>
+<!-- VERTICAL STICKY "TODAY" MARKER (At Feb 17, ~256px offset) -->
+<div class="absolute top-0 bottom-0 left-[256px] w-[1.5px] bg-blue-600 z-30 pointer-events-none flex flex-col items-center">
+<div class="px-2 py-0.5 rounded-full bg-blue-600 text-white font-sans text-[9px] font-bold shadow-md whitespace-nowrap -translate-y-1.5 flex items-center space-x-1 ring-2 ring-white">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+<span>Today · Feb 17</span>
+</div>
+</div>
+<!-- SVG DEPENDENCY PATHS OVERLAY (Finish-to-Start Smooth Bezier Curves) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none z-20">
+<defs>
+<marker id="arrow-normal" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="6" refy="5" viewbox="0 0 10 10">
+<path d="M 0 2 L 7 5 L 0 8 z" fill="#64748b"></path>
+</marker>
+<marker id="arrow-critical" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="6" refy="5" viewbox="0 0 10 10">
+<path d="M 0 2 L 7 5 L 0 8 z" fill="#e11d48"></path>
+</marker>
+</defs>
+<!-- Dep 1 (Critical): GN-1842 -> GN-1890 -->
+<!-- From row 2 center (y=51, x=252) -> To row 8 center (y=255, x=252) -->
+<path d="M 252 51 C 265 51, 245 255, 252 255" fill="none" marker-end="url(#arrow-critical)" stroke="#e11d48" stroke-dasharray="3 2" stroke-width="1.5"></path>
+<!-- Dep 2: GN-1845 -> GN-1858 -->
+<!-- From row 3 (y=85, x=292) -> To row 6 (y=187, x=292) -->
+<path d="M 292 85 C 304 85, 282 187, 292 187" fill="none" marker-end="url(#arrow-normal)" stroke="#94a3b8" stroke-width="1.25"></path>
+<!-- Dep 3: GN-1849 -> GN-1952 -->
+<!-- From row 4 (y=119, x=195) -> To row 14 (y=459, x=210) -->
+<path d="M 195 119 C 215 119, 195 459, 210 459" fill="none" marker-end="url(#arrow-normal)" stroke="#94a3b8" stroke-width="1.25"></path>
+<!-- Dep 4 (Critical): GN-1890 -> GN-1860 (Milestone) -->
+<!-- From row 8 (y=255, x=332) -> To row 7 (y=221, x=375) -->
+<path d="M 332 255 C 360 255, 350 221, 372 221" fill="none" marker-end="url(#arrow-critical)" stroke="#e11d48" stroke-dasharray="3 2" stroke-width="1.5"></path>
+<!-- Dep 5: GN-1904 Conflict Line to Downstream -->
+<!-- From row 9 (y=289, x=372) -> Downstream -->
+<path d="M 372 289 C 390 289, 390 357, 410 357" fill="none" marker-end="url(#arrow-critical)" stroke="#e11d48" stroke-width="1.5"></path>
+</svg>
+<!-- ================= TIMELINE SYNCHRONIZED ROWS ================= -->
+<!-- Swimlane 1 Summary Bar -->
+<div class="gantt-row bg-slate-50/40 border-b border-slate-100 flex items-center px-4">
+<div class="h-2 rounded-full bg-slate-200 relative overflow-hidden" style="margin-left: 100px; width: 280px;">
+<div class="bg-blue-600 h-full w-[64%] rounded-full"></div>
+</div>
+</div>
+<!-- Row 1.1: GN-1842 Auth0 Gateway (Feb 02 - Feb 16, Critical Path) -->
+<div class="gantt-row border-b border-slate-100/80 relative flex items-center hover:bg-slate-50/50 transition-colors">
+<div class="absolute h-[22px] rounded-md bg-blue-100/80 border border-blue-500/70 flex items-center overflow-hidden cursor-pointer shadow-xs group" style="left: 172px; width: 80px;" title="GN-1842: Auth0 &amp; SSO Gateway migration (80% Done)">
+<div class="bg-blue-600 h-full w-[80%] flex items-center px-1.5">
+<span class="text-[9px] font-mono font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis truncate">80%</span>
+</div>
+<div class="flex-1 px-1 min-w-0">
+<span class="text-[9px] font-medium text-blue-900 whitespace-nowrap overflow-hidden text-ellipsis truncate">Auth0</span>
+</div>
+</div>
+</div>
+<!-- Row 1.2: GN-1845 K8s Upgrade (Feb 09 - Feb 23) -->
+<div class="gantt-row border-b border-slate-100/80 relative flex items-center hover:bg-slate-50/50 transition-colors">
+<div class="absolute h-[22px] rounded-md bg-blue-100/80 border border-blue-500/70 flex items-center overflow-hidden cursor-pointer shadow-xs" style="left: 212px; width: 80px;" title="GN-1845: Kubernetes cluster 1.29 upgrade (55% Done)">
+<div class="bg-blue-600 h-full w-[55%] flex items-center px-1.5">
+<span class="text-[9px] font-mono font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis truncate">55%</span>
+</div>
+<div class="flex-1 px-1 min-w-0">
+<span class="text-[9px] font-medium text-blue-900 whitespace-nowrap overflow-hidden text-ellipsis truncate">K8s 1.29</span>
+</div>
+</div>
+</div>
+<!-- Row 1.3: GN-1849 Zero-downtime DB failover (Jan 26 - Feb 06, Done) -->
+<div class="gantt-row border-b border-slate-100/80 relative flex items-center hover:bg-slate-50/50 transition-colors">
+<div class="absolute h-[22px] rounded-md bg-emerald-600 border border-emerald-700 flex items-center overflow-hidden cursor-pointer shadow-xs" style="left: 132px; width: 63px;" title="GN-1849: Zero-downtime database failover (100% Done)">
+<div class="w-full flex items-center justify-between px-1.5">
+<span class="text-[9px] font-mono font-semibold text-white whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1849</span>
+<span class="material-symbols-outlined text-white" style="font-size: 11px;">check</span>
+</div>
+</div>
+</div>
+<!-- Row 1.4: GN-1852 IAM Role Consolidation (Jan 19 - Feb 02, Done) -->
+<div class="gantt-row border-b border-slate-100/80 relative flex items-center hover:bg-slate-50/50 transition-colors">
+<div class="absolute h-[22px] rounded-md bg-emerald-600 border border-emerald-700 flex items-center overflow-hidden cursor-pointer shadow-xs" style="left: 95px; width: 75px;" title="GN-1852: IAM role consolidation (100% Done)">
+<div class="w-full flex items-center justify-between px-1.5">
+<span class="text-[9px] font-mono font-semibold text-white whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1852</span>
+<span class="material-symbols-outlined text-white" style="font-size: 11px;">check</span>
+</div>
+</div>
+</div>
+<!-- Row 1.5: GN-1858 VPC Peering (Feb 23 - Mar 09, To Do) -->
+<div class="gantt-row border-b border-slate-100/80 relative flex items-center hover:bg-slate-50/50 transition-colors">
+<div class="absolute h-[22px] rounded-md bg-slate-100 border border-slate-300 flex items-center overflow-hidden cursor-pointer" style="left: 292px; width: 80px;" title="GN-1858: VPC Peering mesh (To Do)">
+<div class="w-full flex items-center px-2 min-w-0">
+<span class="text-[9px] font-mono text-slate-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1858 (Plan)</span>
+</div>
+</div>
+</div>
+<!-- Row 1.6: GN-1860 Core Sign-off (Milestone: Mar 09) -->
+<div class="gantt-row border-b border-slate-100/80 relative flex items-center hover:bg-slate-50/50 transition-colors">
+<div class="absolute flex items-center space-x-1.5 cursor-pointer z-10" style="left: 372px;" title="GN-1860: M1 Core Infrastructure Sign-off">
+<div class="w-4 h-4 rotate-45 bg-blue-600 border border-white shadow-sm flex items-center justify-center"></div>
+<span class="text-[10px] font-bold text-blue-700 whitespace-nowrap overflow-hidden text-ellipsis truncate">◆ M1 Core Sign-off</span>
+</div>
+</div>
+<!-- Swimlane 2 Summary Bar -->
+<div class="gantt-row bg-slate-50/40 border-b border-slate-100 flex items-center px-4">
+<div class="h-2 rounded-full bg-slate-200 relative overflow-hidden" style="margin-left: 60px; width: 380px;">
+<div class="bg-blue-600 h-full w-[42%] rounded-full"></div>
+</div>
+</div>
+<!-- Row 2.1: GN-1890 iOS Biometrics (Feb 16 - Mar 02, In Progress, Critical) -->
+<div class="gantt-row border-b border-slate-100/80 relative flex items-center hover:bg-slate-50/50 transition-colors">
+<div class="absolute h-[22px] rounded-md bg-blue-100/80 border border-blue-500/70 flex items-center overflow-hidden cursor-pointer shadow-xs" style="left: 252px; width: 80px;" title="GN-1890: iOS Biometric token renewal (35%)">
+<div class="bg-blue-600 h-full w-[35%] flex items-center px-1">
+<span class="text-[9px] font-mono font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis truncate">35%</span>
+</div>
+<div class="flex-1 px-1 min-w-0">
+<span class="text-[9px] font-medium text-blue-900 whitespace-nowrap overflow-hidden text-ellipsis truncate">Biometrics</span>
+</div>
+</div>
+</div>
+<!-- Row 2.2: GN-1904 Offline Sync Engine (Feb 02 - Mar 09, Crimson Alert Slip Conflict) -->
+<div class="gantt-row border-b border-slate-100/80 relative flex items-center bg-rose-50/30 hover:bg-rose-50/50 transition-colors">
+<div class="absolute h-[22px] rounded-md bg-rose-100 border-2 border-rose-500 flex items-center overflow-hidden cursor-pointer shadow-xs ring-2 ring-rose-400/20" style="left: 172px; width: 200px;" title="GN-1904: Offline synchronization engine (+14d SLIP Conflict)">
+<div class="bg-rose-600 h-full w-[45%] flex items-center px-1.5 flex-shrink-0">
+<span class="text-[9px] font-mono font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1904</span>
+</div>
+<div class="flex-1 px-1.5 flex items-center justify-between min-w-0">
+<span class="text-[9px] font-bold text-rose-800 whitespace-nowrap overflow-hidden text-ellipsis truncate">Sync engine delay</span>
+<span class="text-[8px] font-bold uppercase tracking-wider bg-rose-600 text-white px-1 py-0.2 rounded whitespace-nowrap overflow-hidden text-ellipsis truncate">+14d SLIP</span>
+</div>
+</div>
+</div>
+<!-- Row 2.3: GN-1912 Android Theme Rollout (Jan 12 - Jan 30, Done) -->
+<div class="gantt-row border-b border-slate-100/80 relative flex items-center hover:bg-slate-50/50 transition-colors">
+<div class="absolute h-[22px] rounded-md bg-emerald-600 border border-emerald-700 flex items-center overflow-hidden cursor-pointer shadow-xs" style="left: 60px; width: 95px;" title="GN-1912: Android Material 3 theme rollout (Done)">
+<div class="w-full flex items-center justify-between px-1.5">
+<span class="text-[9px] font-mono font-semibold text-white whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1912 M3</span>
+<span class="material-symbols-outlined text-white" style="font-size: 11px;">check</span>
+</div>
+</div>
+</div>
+<!-- Row 2.4: GN-1918 Push Notification Compression (Mar 02 - Mar 16, To Do) -->
+<div class="gantt-row border-b border-slate-100/80 relative flex items-center hover:bg-slate-50/50 transition-colors">
+<div class="absolute h-[22px] rounded-md bg-slate-100 border border-slate-300 flex items-center overflow-hidden cursor-pointer" style="left: 332px; width: 80px;" title="GN-1918: Push notification compression">
+<div class="w-full flex items-center px-2 min-w-0">
+<span class="text-[9px] font-mono text-slate-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1918 (Backlog)</span>
+</div>
+</div>
+</div>
+<!-- Row 2.5: GN-1925 Deep Link Routing (Mar 09 - Mar 23, To Do) -->
+<div class="gantt-row border-b border-slate-100/80 relative flex items-center hover:bg-slate-50/50 transition-colors">
+<div class="absolute h-[22px] rounded-md bg-slate-100 border border-slate-300 flex items-center overflow-hidden cursor-pointer" style="left: 372px; width: 80px;" title="GN-1925: Deep link routing security">
+<div class="w-full flex items-center px-2 min-w-0">
+<span class="text-[9px] font-mono text-slate-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1925 (Plan)</span>
+</div>
+</div>
+</div>
+<!-- Swimlane 3 Summary Bar -->
+<div class="gantt-row bg-slate-50/40 border-b border-slate-100 flex items-center px-4">
+<div class="h-2 rounded-full bg-slate-200 relative overflow-hidden" style="margin-left: 95px; width: 360px;">
+<div class="bg-blue-600 h-full w-[85%] rounded-full"></div>
+</div>
+</div>
+<!-- Row 3.1: GN-1940 GraphQL Query Caching (Jan 19 - Feb 09, Done) -->
+<div class="gantt-row border-b border-slate-100/80 relative flex items-center hover:bg-slate-50/50 transition-colors">
+<div class="absolute h-[22px] rounded-md bg-emerald-600 border border-emerald-700 flex items-center overflow-hidden cursor-pointer shadow-xs" style="left: 95px; width: 105px;" title="GN-1940: GraphQL query caching layer (Done)">
+<div class="w-full flex items-center justify-between px-1.5">
+<span class="text-[9px] font-mono font-semibold text-white whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1940 GraphQL</span>
+<span class="material-symbols-outlined text-white" style="font-size: 11px;">check</span>
+</div>
+</div>
+</div>
+<!-- Row 3.2: GN-1952 Snowflake Telemetry Pipeline (Feb 09 - Feb 27, Critical) -->
+<div class="gantt-row border-b border-slate-100/80 relative flex items-center hover:bg-slate-50/50 transition-colors">
+<div class="absolute h-[22px] rounded-md bg-blue-100/80 border border-blue-500/70 flex items-center overflow-hidden cursor-pointer shadow-xs" style="left: 212px; width: 100px;" title="GN-1952: Snowflake telemetry pipeline (70%)">
+<div class="bg-blue-600 h-full w-[70%] flex items-center px-1.5">
+<span class="text-[9px] font-mono font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis truncate">70%</span>
+</div>
+<div class="flex-1 px-1 min-w-0">
+<span class="text-[9px] font-medium text-blue-900 whitespace-nowrap overflow-hidden text-ellipsis truncate">Snowflake</span>
+</div>
+</div>
+</div>
+<!-- Row 3.3: GN-1961 Kafka Schema Registry (Jan 26 - Feb 13, Done) -->
+<div class="gantt-row border-b border-slate-100/80 relative flex items-center hover:bg-slate-50/50 transition-colors">
+<div class="absolute h-[22px] rounded-md bg-emerald-600 border border-emerald-700 flex items-center overflow-hidden cursor-pointer shadow-xs" style="left: 132px; width: 95px;" title="GN-1961: Kafka event schema registry (Done)">
+<div class="w-full flex items-center justify-between px-1.5">
+<span class="text-[9px] font-mono font-semibold text-white whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1961 Kafka</span>
+<span class="material-symbols-outlined text-white" style="font-size: 11px;">check</span>
+</div>
+</div>
+</div>
+<!-- Row 3.4: GN-1970 GDPR Compliance Milestone (Feb 20) -->
+<div class="gantt-row border-b border-slate-100/80 relative flex items-center hover:bg-slate-50/50 transition-colors">
+<div class="absolute flex items-center space-x-1.5 cursor-pointer z-10" style="left: 275px;" title="GN-1970: GDPR compliance audit milestone">
+<div class="w-4 h-4 rotate-45 bg-emerald-600 border border-white shadow-sm flex items-center justify-center"></div>
+<span class="text-[10px] font-bold text-emerald-700 whitespace-nowrap overflow-hidden text-ellipsis truncate">◆ GDPR Audit Passed</span>
+</div>
+</div>
+<!-- Row 3.5: GN-1978 Lakehouse Cold Tier Archiving (Feb 27 - Mar 18, To Do) -->
+<div class="gantt-row border-b border-slate-100/80 relative flex items-center hover:bg-slate-50/50 transition-colors">
+<div class="absolute h-[22px] rounded-md bg-slate-100 border border-slate-300 flex items-center overflow-hidden cursor-pointer" style="left: 315px; width: 105px;" title="GN-1978: Lakehouse cold tier archiving">
+<div class="w-full flex items-center px-2 min-w-0">
+<span class="text-[9px] font-mono text-slate-600 whitespace-nowrap overflow-hidden text-ellipsis truncate">GN-1978 (Plan)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- ================= BOTTOM STATUS & POWER-USER BAR ================= -->
+<footer class="h-8 min-h-[32px] bg-white border-t border-slate-200/90 px-4 flex items-center justify-between text-slate-500 font-mono text-[11px] select-none flex-shrink-0 z-30">
+<!-- Left: Keyboard shortcuts hint -->
+<div class="flex items-center space-x-3 min-w-0 overflow-hidden">
+<div class="flex items-center space-x-1 whitespace-nowrap overflow-hidden text-ellipsis truncate">
+<kbd class="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 text-[10px] text-slate-700">J</kbd>
+<kbd class="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 text-[10px] text-slate-700">K</kbd>
+<span class="text-slate-500 ml-1">navigate</span>
+</div>
+<span class="text-slate-300">·</span>
+<div class="flex items-center space-x-1 whitespace-nowrap overflow-hidden text-ellipsis truncate">
+<kbd class="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 text-[10px] text-slate-700">D</kbd>
+<span class="text-slate-500 ml-1">toggle links</span>
+</div>
+<span class="text-slate-300">·</span>
+<div class="flex items-center space-x-1 whitespace-nowrap overflow-hidden text-ellipsis truncate">
+<kbd class="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 text-[10px] text-slate-700">/</kbd>
+<span class="text-slate-500 ml-1">filter</span>
+</div>
+<span class="text-slate-300">·</span>
+<div class="flex items-center space-x-1 whitespace-nowrap overflow-hidden text-ellipsis truncate">
+<kbd class="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 text-[10px] text-slate-700">⌘±</kbd>
+<span class="text-slate-500 ml-1">zoom</span>
+</div>
+<span class="text-slate-300">·</span>
+<div class="flex items-center space-x-1 whitespace-nowrap overflow-hidden text-ellipsis truncate">
+<kbd class="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 text-[10px] text-slate-700">Space</kbd>
+<span class="text-slate-500 ml-1">drawer</span>
+</div>
+</div>
+<!-- Right: Operational Health & Live Sync Meta -->
+<div class="flex items-center space-x-3 flex-shrink-0">
+<span class="whitespace-nowrap overflow-hidden text-ellipsis truncate">
+<span class="font-bold text-slate-800">16</span> tasks displayed
+    </span>
+<span class="text-slate-300">·</span>
+<span class="flex items-center space-x-1.5 text-rose-600 font-semibold whitespace-nowrap overflow-hidden text-ellipsis truncate">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse"></span>
+<span>Critical Path (4)</span>
+</span>
+<span class="text-slate-300">·</span>
+<span class="flex items-center space-x-1.5 text-emerald-600 font-medium whitespace-nowrap overflow-hidden text-ellipsis truncate">
+<span class="material-symbols-outlined text-emerald-600" style="font-size: 14px;">cloud_done</span>
+<span>Live Sync: 14:32:08 UTC</span>
+</span>
+</div>
+</footer>
+<!-- Synchronized Scroll JavaScript -->
+<script>
+  const leftPane = document.getElementById('wbs-scroll');
+  const rightPane = document.getElementById('timeline-scroll-container');
+
+  if (leftPane && rightPane) {
+    let isSyncingLeft = false;
+    let isSyncingRight = false;
+
+    leftPane.addEventListener('scroll', () => {
+      if (!isSyncingLeft) {
+        isSyncingRight = true;
+        rightPane.scrollTop = leftPane.scrollTop;
+      }
+      isSyncingLeft = false;
+    });
+
+    rightPane.addEventListener('scroll', () => {
+      if (!isSyncingRight) {
+        isSyncingLeft = true;
+        leftPane.scrollTop = rightPane.scrollTop;
+      }
+      isSyncingRight = false;
+    });
+  }
+</script>
+</body></html>

@@ -470,10 +470,52 @@ export const PROCESS_SPLIT = [
   },
 ] as const;
 
+export const LEADERSHIP_INTRO =
+  "I coach craft and delivery together so quality holds as the team grows. Empathy and high bars both matter; standards have to travel without the same few seniors doing heroics every time.";
+
+export const LEADERSHIP_PILLARS = [
+  {
+    title: "Craft and delivery, coached together",
+    body: "1:1s on problem framing, reviews that raise interaction quality, and growth paths tied to what the product needs. At Appfire, co-leading 35+ designers, researchers, and writers meant mentorship as weekly practice, not a one-off workshop.",
+  },
+  {
+    title: "Hiring bars that survive the merge",
+    body: "As Head of Design at SoftwarePlant I grew a 16+ person team with clear hiring bars, design-system standards, and delivery rules. Those bars still held after the Appfire acquisition, when craft had to scale across products like BigPicture and 7pace.",
+  },
+  {
+    title: "Critique culture that travels",
+    body: "Shared intake, clearer decision rights, and critique that seniors can run without me in the room. Post-acquisition, the job was integrating craft, process, and culture so UX stayed aligned from sprint planning through executive reporting.",
+  },
+] as const;
+
+export const LEADERSHIP_PRACTICES = [
+  {
+    step: "1:1s",
+    detail: "Problem framing · trade-offs",
+    beat: "Weekly coaching on the hard calls: scope, craft, and how to unblock the squad.",
+  },
+  {
+    step: "Critique",
+    detail: "Interaction quality · system fit",
+    beat: "Reviews that raise the bar and leave designers owning the next pass.",
+  },
+  {
+    step: "Growth paths",
+    detail: "Tied to product needs",
+    beat: "Seniority and scope follow roadmap gaps, not generic competency grids.",
+  },
+  {
+    step: "Design ops",
+    detail: "Intake · estimation · research ops",
+    beat: "Figma standards, Dovetail rhythms, and estimation that product and engineering can plan around.",
+  },
+] as const;
+
+/** Folded into LEADERSHIP_PILLARS; kept for NarrativeBlock consumers. */
 export const MENTORING: NarrativeBlock[] = [
   {
-    title: "Grow designers who can own outcomes",
-    body: "I coach craft and delivery together: 1:1s on problem framing, reviews that raise interaction quality, and growth paths tied to what the product needs. Empathy and high bars both matter. At Appfire, co-leading 35+ people meant standards that travel without the same few seniors doing heroics every time.",
+    title: LEADERSHIP_PILLARS[0].title,
+    body: LEADERSHIP_PILLARS[0].body,
   },
 ];
 
