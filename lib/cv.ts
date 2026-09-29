@@ -34,7 +34,6 @@ export const SITE = {
   phone: "(+48) 792 792 290",
   phoneHref: "tel:+48792792290",
   linkedin: "https://www.linkedin.com/in/therealnowaczek/",
-  linkedinLabel: "linkedin.com/in/therealnowaczek",
   cvPdf: "/Marcin_Nowak_CV_2026.pdf",
   cvFilename: "Marcin_Nowak_CV_2026.pdf",
   costradar: "https://costradar.ai",
