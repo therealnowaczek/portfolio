@@ -1,5 +1,4 @@
-import { withBasePath } from "@/lib/base-path";
-import { CLOSING_CTA, SITE, STRENGTHS } from "@/lib/cv";
+import { CLOSING_CTA, STRENGTHS } from "@/lib/cv";
 
 export function Footer() {
   return (
@@ -8,35 +7,6 @@ export function Footer() {
         <p className="mx-auto max-w-2xl text-sm leading-relaxed text-white/90 sm:text-[15px]">
           {CLOSING_CTA}
         </p>
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-4 text-sm text-white/80">
-          <a
-            href={SITE.phoneHref}
-            className="transition-colors duration-[160ms] ease-out hover:text-white"
-          >
-            {SITE.phone}
-          </a>
-          <a
-            href={`mailto:${SITE.email}`}
-            className="transition-colors duration-[160ms] ease-out hover:text-white"
-          >
-            {SITE.email}
-          </a>
-          <a
-            href={SITE.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors duration-[160ms] ease-out hover:text-white"
-          >
-            LinkedIn
-          </a>
-          <a
-            href={withBasePath(SITE.cvPdf)}
-            download={SITE.cvFilename}
-            className="transition-colors duration-[160ms] ease-out hover:text-white"
-          >
-            Download CV
-          </a>
-        </div>
       </div>
 
       <div>

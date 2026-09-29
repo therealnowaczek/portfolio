@@ -38,6 +38,11 @@ export const SITE = {
   cvPdf: "/Marcin_Nowak_CV_2026.pdf",
   cvFilename: "Marcin_Nowak_CV_2026.pdf",
   costradar: "https://costradar.ai",
+  appfire: "https://appfire.com/",
+  bigpicture: "https://appfire.com/bigpicture",
+  sevenpace: "https://appfire.com/products/7pace-for-jira-atlassian",
+  tvpParlament: "https://tvpparlament.pl",
+  tvp3: "https://regiony.tvp.pl/",
   description:
     "UX Orchestrator · User Experience Leader · Product Maker. Enterprise SaaS leadership and a shipped founder product (CostRadar.ai).",
 };
@@ -47,13 +52,13 @@ export const INTRO_HEADLINE =
 
 /** ~100 words: who, for whom, one leadership proof, one shipped builder proof, CTA. */
 export const INTRO_PARAGRAPHS = [
-  "Senior UX Manager at Appfire — I led 35+ designers across BigPicture, 7pace, and AI initiatives, with design ops and measurable adoption on tools used by thousands of teams. Independently I shipped CostRadar.ai as a solo design engineer (live at costradar.ai): true-net P&L and Approve-gated AI. I look for design leadership roles where strategy, craft, and operating systems meet — open to a conversation.",
+  "Senior UX Manager at Appfire — I led 35+ designers across BigPicture, 7pace, and AI workstreams, with design ops and measurable adoption on tools used by thousands of teams. Independently I shipped CostRadar.ai as a solo design engineer (live at costradar.ai): true-net P&L and Approve-gated AI. I look for design leadership roles where strategy, craft, and operating systems meet — open to a conversation.",
 ];
 
 export const HIGHLIGHTS: Highlight[] = [
   {
     title: "Enterprise leadership",
-    body: "Senior UX Manager at Appfire: 35+ designers across BigPicture, 7pace, and AI. Design ops, Figma governance, and research ops so UX partners predictably with product and engineering.",
+    body: "Senior UX Manager at Appfire: 35+ designers across BigPicture, 7pace, and AI workstreams. Design ops, Figma governance, and research ops so UX partners predictably with product and engineering.",
   },
   {
     title: "Shipped founder product",
@@ -96,7 +101,7 @@ export const EXPERIENCE: ExperienceItem[] = [
   {
     years: "2025 – now",
     role: "Founder & AI Design Engineer",
-    company: "CostRadar.ai (Radrly)",
+    company: "CostRadar.ai",
     blurb:
       "Live multi-channel Profitability OS (costradar.ai). Solo design-engineer ship: true-net ledger, savings estimates + tracker, Approve-gated Profit Agent.",
   },
@@ -105,7 +110,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     role: "Senior UX Manager",
     company: "Appfire",
     blurb:
-      "Led 35+ UX across BigPicture, 7pace, and AI. Estimation, Figma governance, research ops, and org AI adoption. Case write-ups in progress.",
+      "Led 35+ UX across BigPicture, 7pace, and AI workstreams. Estimation, Figma governance, research ops, and AI workstream adoption across the org. Case write-ups in progress.",
   },
   {
     years: "2019 – 2023",
@@ -251,7 +256,7 @@ export const ROLE_LENSES: RoleLens[] = [
     eyebrow: "Senior Manager · Head of UX",
     headline: "Strategy connected to craft — close enough to still ship when it matters.",
     pitch:
-      "As Senior UX Manager at Appfire I led 35+ designers across BigPicture, 7pace, and AI. I coach seniors, unblock squads, and keep trade-offs real — mentorship as weekly operating practice, not a workshop series.",
+      "As Senior UX Manager at Appfire I led 35+ designers across BigPicture, 7pace, and AI workstreams. I coach seniors, unblock squads, and keep trade-offs real — mentorship as weekly operating practice, not a workshop series.",
     proof: [
       "Grew teams from IC craft to 16+, then 35+ post-acquisition",
       "Design-system governance for Atlassian Marketplace products",
@@ -383,7 +388,7 @@ export const ROLE_LENSES: RoleLens[] = [
     eyebrow: "Governance · Figma · Multi-product consistency",
     headline: "Systems that scale without relying on the same few seniors every time.",
     pitch:
-      "I built Figma governance and design-system standards for Marketplace products and a distributed UX org — so consistency, accessibility, and velocity scale across BigPicture, 7pace, and AI initiatives without rewriting the rules every sprint.",
+      "I built Figma governance and design-system standards for Marketplace products and a distributed UX org — so consistency, accessibility, and velocity scale across BigPicture, 7pace, and AI workstreams without rewriting the rules every sprint.",
     proof: [
       "Design-system governance through SoftwarePlant → Appfire integration",
       "Org-wide Figma standards and quality bars for a 35+ person team",
@@ -414,7 +419,7 @@ export const ROLE_LENSES: RoleLens[] = [
     proof: [
       "CostRadar.ai live: React / Supabase / LLM agents (founder craft proof)",
       "Approve-gated writes, quiet hours, grounded findings — trust before autonomy",
-      "Org AI adoption with human review and design-system integrity",
+      "AI workstream adoption with human review and design-system integrity",
     ],
     ninetyDays: [
       "Map where agents speed discovery versus where craft must stay human",
@@ -503,7 +508,7 @@ export const IMPACT_METRICS: ImpactMetric[] = [
     value: "35+",
     label: "Designers led across Appfire portfolio",
     footnote:
-      "Senior UX Manager scope · BigPicture, 7pace, AI initiatives · distributed global org",
+      "Senior UX Manager scope · BigPicture, 7pace, AI workstreams · distributed global org",
   },
 ];
 

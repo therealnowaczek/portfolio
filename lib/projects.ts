@@ -59,6 +59,7 @@ function mosaicFor(platform: string): { colSpan: number; rowSpan: number } {
 
 function stripMd(s: string): string {
   return s
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
     .replace(/\*\*(.+?)\*\*/g, "$1")
     .replace(/`([^`]+)`/g, "$1")
     .trim();

@@ -12,6 +12,7 @@ import type { Project } from "@/lib/project-types";
 import { ProjectPlaceholder } from "./ProjectPlaceholder";
 import { Lightbox } from "./Lightbox";
 import { ScreenFrame } from "./ScreenFrame";
+import { RichText } from "./RichText";
 
 type Props = {
   project: Project;
@@ -208,7 +209,7 @@ export function ProjectModal({
                 Snapshot
               </h3>
               <p className="max-w-3xl text-[15px] leading-relaxed text-foreground-secondary">
-                {caseStudy.snapshot}
+                <RichText>{caseStudy.snapshot}</RichText>
               </p>
             </section>
 
@@ -217,7 +218,7 @@ export function ProjectModal({
                 Problem
               </h3>
               <p className="max-w-3xl text-[15px] leading-relaxed text-foreground-secondary">
-                {caseStudy.problem}
+                <RichText>{caseStudy.problem}</RichText>
               </p>
             </section>
 

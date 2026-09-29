@@ -9,9 +9,10 @@ export function Impact() {
           Business Impact
         </h2>
         <p className="max-w-2xl text-sm leading-relaxed text-muted sm:text-[15px]">
-          Enterprise product metrics with scope footnotes. Full Appfire /
-          SoftwarePlant case write-ups (baseline, timeframe, contribution) are
-          in progress — CostRadar is craft proof, not a verified ROI claim.
+          Enterprise product metrics with scope footnotes. Full{" "}
+          <RichText>Appfire</RichText> / SoftwarePlant case write-ups
+          (baseline, timeframe, contribution) are in progress — CostRadar is
+          craft proof, not a verified ROI claim.
         </p>
       </div>
 
@@ -28,7 +29,7 @@ export function Impact() {
               {metric.label}
             </dd>
             <dd className="mt-2 text-[11px] leading-snug text-muted">
-              {metric.footnote}
+              <RichText>{metric.footnote}</RichText>
             </dd>
           </div>
         ))}

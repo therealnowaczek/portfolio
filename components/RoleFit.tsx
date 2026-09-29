@@ -45,8 +45,9 @@ export function RoleFit() {
         <p className="text-[15px] leading-relaxed text-foreground-secondary sm:text-base">
           Hiring for UX Leader / Head of Design, Product or Staff/Principal UX,
           Design Ops, Design Systems, or AI UX / Design Engineering? Each lens
-          points at different proof — Appfire leadership, BigPicture craft,
-          systems governance, or CostRadar as a shipped builder case.
+          points at different proof — <RichText>Appfire</RichText> leadership,{" "}
+          <RichText>BigPicture</RichText> craft, systems governance, or
+          CostRadar as a shipped builder case.
         </p>
         <p className="text-[15px] leading-relaxed text-muted sm:text-base">
           Pick the seat closest to your JD. You&apos;ll see scoped proof and a

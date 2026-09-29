@@ -33,7 +33,7 @@ portfolioSignals:
 ---
 
 ### Snapshot
-CostRadar is a live Profitability OS for multi-channel merchants: true net profit (not vanity ROAS) plus an AI Profit Agent that names cost leaks and acts only behind Approve. Channels live: Shopify, Amazon, WooCommerce, BigCommerce, Allegro, eBay. Design bet: one ledger and one morning action beat a chart graveyard of channel dashboards that disagree. Live at [costradar.ai](https://costradar.ai) (Radrly Sp. z o.o.). Early-stage / fundraising = craft and trust proof — not a verified growth ROI case.
+CostRadar is a live Profitability OS for multi-channel merchants: true net profit (not vanity ROAS) plus an AI Profit Agent that names cost leaks and acts only behind Approve. Channels live: Shopify, Amazon, WooCommerce, BigCommerce, Allegro, eBay. Design bet: one ledger and one morning action beat a chart graveyard of channel dashboards that disagree. Live at costradar.ai. Early-stage / fundraising = craft and trust proof — not a verified growth ROI case.
 
 ### Problem
 Merchants see revenue and ROAS in native dashboards or Triple Whale–class tools, but costs are fragmented (platform fees, apps, shipping, COGS, ads, opex, taxes/FX) — so they don’t know what they kept. JTBD: “Show me true net of what I kept, and name the leak worth fixing this morning.” Persona: solo/small e-com operator or agency AM across several stores; tired of Excel + channel UIs that don’t reconcile.
