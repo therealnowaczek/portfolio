@@ -47,7 +47,7 @@ export const INTRO_HEADLINE =
 
 /** ~100 words: who, last role proof, shipped builder proof, seeking next role. */
 export const INTRO_PARAGRAPHS = [
-  "Most recently I was Senior UX Manager at Appfire, where I co-led 35+ designers, researchers, and writers across products like BigPicture and 7pace, plus AI workstreams (design ops, research ops, and tools used by thousands of teams). Independently I shipped CostRadar.ai (live at costradar.ai): a profitability product with true-net P&L and AI that only acts after you Approve. I am looking for my next challenge in design leadership: roles where strategy, craft, and how the team runs all matter.",
+  "Most recently I was Senior UX Manager at Appfire, where I co-led 35+ designers, researchers, and writers across products like BigPicture and 7pace, plus AI workstreams (design ops, research ops, and tools used by thousands of teams). Independently I shipped CostRadar.ai: a profitability product with true-net P&L and AI that only acts after you Approve. I am looking for my next challenge in design leadership: roles where strategy, craft, and how the team runs all matter.",
   "Open to UX Leader or Head of Design, Product or Staff UX, Design Ops, Design Systems, or AI UX / Design Engineering. Pick the closest seat; each one shows different proof from Appfire, BigPicture, or CostRadar.ai, plus a concrete first 90 days.",
 ];
 

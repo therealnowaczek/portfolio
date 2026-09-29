@@ -457,8 +457,10 @@ function patchGanttHtml(htmlPath) {
     });
   }
   /**
-   * After densify/WBS width patches, Stitch absolute SVG deps often no longer
-   * meet bar ends. Snap each connector to the nearest bar finish → start.
+   * Rebuild FS dependency elbows from live getBoundingClientRect() geometry.
+   * Soft HTML previously shipped hand-authored Y assuming row-h=32 and skipped
+   * rematch; overlapping FS stubs also ended at predecessor X instead of the
+   * successor's left edge — connectors read as floating between rows.
    */
   function pathEndpoints(d) {
     if (!d) return null;
@@ -510,17 +512,25 @@ function patchGanttHtml(htmlPath) {
     if (!first || !last) return null;
     return { x1: first.x, y1: first.y, x2: last.x, y2: last.y };
   }
+  function barKey(el) {
+    var t = ((el && el.textContent) || "").replace(/\\s+/g, " ").trim();
+    var gn = t.match(/\\bGN-\\d+\\b/);
+    if (gn) return gn[0];
+    var mile = t.match(/\\bM([1-4])\\b/);
+    if (mile) return "M" + mile[1];
+    return "";
+  }
   function collectTimelineBars(canvas, svgRect) {
     var bars = [];
-    var rows = canvas.querySelectorAll(".gantt-row, .row-h, [class*='row-h']");
+    var root = canvas.querySelector(".gantt-bars-layer") || canvas;
+    var rows = root.querySelectorAll(".gantt-row, .row-h, [class*='row-h']");
     if (!rows.length) {
-      // Fallback: any relative row wrapper that hosts absolute bars
-      rows = canvas.querySelectorAll(".relative.flex.items-center, .relative.flex");
+      rows = root.querySelectorAll(".relative.flex.items-center, .relative.flex");
     }
     Array.prototype.forEach.call(rows, function (row) {
+      if (row.closest("#table-scroll-container, #wbs-scroll")) return;
       var rowRect = row.getBoundingClientRect();
       if (rowRect.height < 8 || rowRect.width < 40) return;
-      var cy = (rowRect.top + rowRect.bottom) / 2 - svgRect.top;
       var kids = row.querySelectorAll(":scope > div, :scope > span, :scope > a");
       Array.prototype.forEach.call(kids, function (el) {
         var c = clsOf(el);
@@ -528,19 +538,30 @@ function patchGanttHtml(htmlPath) {
         if (cs.position !== "absolute" && c.indexOf("absolute") === -1) return;
         var r = el.getBoundingClientRect();
         if (r.width < 10 || r.height < 6) return;
-        if (r.width <= 4 && r.height > 48) return; // today / grid rules
+        if (r.width <= 4 && r.height > 48) return;
         if (c.indexOf("gantt-today") !== -1) return;
-        // Skip progress fills that are left-0 inside a parent bar
         if (/\\bleft-0\\b/.test(c) && /\\btop-0\\b/.test(c) && el.parentElement && el.parentElement !== row) {
           return;
         }
         var dashed = c.indexOf("border-dashed") !== -1 || cs.borderStyle === "dashed";
+        // Prefer diamond left for milestone wrappers (first rotated child)
+        var attachLeft = r.left;
+        var attachRight = r.right;
+        var diamond = el.querySelector(".rotate-45, [class*='rotate-45']");
+        if (diamond) {
+          var dr = diamond.getBoundingClientRect();
+          if (dr.width > 4 && dr.height > 4) {
+            attachLeft = dr.left;
+            attachRight = dr.right;
+          }
+        }
         bars.push({
-          left: r.left - svgRect.left,
-          right: r.right - svgRect.left,
-          cy: cy,
+          left: attachLeft - svgRect.left,
+          right: attachRight - svgRect.left,
+          cy: (r.top + r.bottom) / 2 - svgRect.top,
           area: r.width * r.height,
           dashed: dashed,
+          key: barKey(el),
           el: el,
         });
       });
@@ -557,14 +578,15 @@ function patchGanttHtml(htmlPath) {
     var y1r = Math.round(y1);
     var x2r = Math.round(x2);
     var y2r = Math.round(y2);
-    if (Math.abs(y1r - y2r) <= 3) {
+    if (Math.abs(y1r - y2r) <= 2 && x2r >= x1r) {
       return "M " + x1r + " " + y1r + " L " + x2r + " " + y2r;
     }
-    var gap = 14;
-    var midX = x1r <= x2r ? x1r + gap : Math.max(x1r, x2r) + gap;
-    if (x1r > x2r) {
-      // finish-to-start when successor starts left of predecessor end
-      midX = x1r + gap;
+    var gap = 12;
+    var midX = x1r + gap;
+    if (x2r > midX + 8) {
+      // Successor starts to the right — elbow then run into its left edge
+      midX = Math.min(x1r + gap, Math.round((x1r + x2r) / 2));
+      if (midX <= x1r) midX = x1r + gap;
     }
     return (
       "M " + x1r + " " + y1r +
@@ -573,13 +595,37 @@ function patchGanttHtml(htmlPath) {
       " L " + x2r + " " + y2r
     );
   }
-  function realignDependencyConnectors() {
-    // Soft local HTML ships bar-aligned FS paths — don't rematch / rewrite them.
-    if (document.body && document.body.getAttribute("data-gantt-soft-source") === "1") {
-      document.documentElement.setAttribute("data-gantt-deps-aligned", "1");
-      return;
+  function findBarByKey(bars, key) {
+    if (!key) return null;
+    for (var i = 0; i < bars.length; i++) {
+      if (bars[i].key === key) return bars[i];
     }
+    return null;
+  }
+  function syncSvgUserSpace(svg, svgRect) {
+    var w = Math.max(1, Math.round(svgRect.width));
+    var h = Math.max(1, Math.round(svgRect.height));
+    svg.setAttribute("viewBox", "0 0 " + w + " " + h);
+    svg.setAttribute("width", String(w));
+    svg.setAttribute("height", String(h));
+    svg.style.width = w + "px";
+    svg.style.height = h + "px";
+    svg.style.minHeight = h + "px";
+  }
+  // Soft showcase FS pairs (issue key → successor). Order matches path slots.
+  var SOFT_FS_PAIRS = [
+    ["GN-1042", "GN-1045"],
+    ["GN-1045", "GN-1049"],
+    ["GN-1049", "M1"],
+    ["GN-1090", "GN-1094"],
+    ["GN-1094", "GN-1102"],
+    ["GN-1140", "GN-1152"],
+    ["GN-1210", "GN-1215"],
+    ["GN-1241", "M4"],
+  ];
+  function realignDependencyConnectors() {
     if (document.documentElement.getAttribute("data-gantt-deps-aligned") === "1") return;
+    var isSoft = document.body && document.body.getAttribute("data-gantt-soft-source") === "1";
     var svgs = Array.prototype.filter.call(document.querySelectorAll("svg"), function (svg) {
       return svg.querySelector("path[marker-end], path[stroke]");
     });
@@ -590,6 +636,8 @@ function patchGanttHtml(htmlPath) {
       if (!canvas) return;
       var svgRect = svg.getBoundingClientRect();
       if (svgRect.width < 80 || svgRect.height < 80) return;
+      syncSvgUserSpace(svg, svgRect);
+      svgRect = svg.getBoundingClientRect();
       var bars = collectTimelineBars(canvas, svgRect);
       if (bars.length < 2) return;
       var paths = Array.prototype.filter.call(svg.querySelectorAll("path"), function (p) {
@@ -601,54 +649,88 @@ function patchGanttHtml(htmlPath) {
         return hasStroke || hasMarker;
       });
       if (!paths.length) return;
-      paths.forEach(function (path) {
-        var d = path.getAttribute("d") || "";
-        var ends = pathEndpoints(d);
-        if (!ends) return;
-        var bestStart = null;
-        var bestStartScore = Infinity;
-        var bestEnd = null;
-        var bestEndScore = Infinity;
-        bars.forEach(function (b) {
-          // Weight Y heavily so densify X drift still picks the right row
-          var startScore = Math.abs(b.cy - ends.y1) * 4 + Math.abs(b.right - ends.x1);
-          if (startScore < bestStartScore) {
-            bestStartScore = startScore;
-            bestStart = b;
+
+      if (isSoft) {
+        // Rewrite each path from measured bar boxes for the known FS pair.
+        var pairIdx = 0;
+        paths.forEach(function (path) {
+          if (pairIdx >= SOFT_FS_PAIRS.length) {
+            path.setAttribute("opacity", "0");
+            return;
           }
-          var endScore = Math.abs(b.cy - ends.y2) * 4 + Math.abs(b.left - ends.x2);
-          if (endScore < bestEndScore) {
-            bestEndScore = endScore;
-            bestEnd = b;
+          var pair = SOFT_FS_PAIRS[pairIdx++];
+          var pred = findBarByKey(bars, pair[0]);
+          var succ = findBarByKey(bars, pair[1]);
+          if (!pred || !succ) {
+            path.setAttribute("opacity", "0");
+            return;
           }
+          path.setAttribute("d", buildFsPath(pred.right, pred.cy, succ.left, succ.cy));
+          path.removeAttribute("opacity");
+          alignedAny = true;
         });
-        if (!bestStart || !bestEnd || bestStart === bestEnd) {
-          path.setAttribute("opacity", "0");
-          return;
-        }
-        // Require the chosen rows to be near the authored Y (within ~2 rows)
-        if (Math.abs(bestStart.cy - ends.y1) > 48 && Math.abs(bestEnd.cy - ends.y2) > 48) {
-          path.setAttribute("opacity", "0");
-          return;
-        }
-        var x1 = bestStart.right;
-        var y1 = bestStart.cy;
-        var x2 = bestEnd.left;
-        var y2 = bestEnd.cy;
-        path.setAttribute("d", buildFsPath(x1, y1, x2, y2));
-        path.removeAttribute("opacity");
-        alignedAny = true;
-      });
+      } else {
+        paths.forEach(function (path) {
+          var d = path.getAttribute("d") || "";
+          var ends = pathEndpoints(d);
+          if (!ends) return;
+          var bestStart = null;
+          var bestStartScore = Infinity;
+          var bestEnd = null;
+          var bestEndScore = Infinity;
+          bars.forEach(function (b) {
+            var startScore = Math.abs(b.right - ends.x1) * 3 + Math.abs(b.cy - ends.y1);
+            if (startScore < bestStartScore) {
+              bestStartScore = startScore;
+              bestStart = b;
+            }
+            var endScore = Math.abs(b.left - ends.x2) * 2 + Math.abs(b.cy - ends.y2) * 3;
+            if (endScore < bestEndScore) {
+              bestEndScore = endScore;
+              bestEnd = b;
+            }
+          });
+          // Soft-style bug: authored end X ≈ pred.right; recover successor by Y only
+          if (bestStart && bestEnd && bestStart === bestEnd) {
+            bestEnd = null;
+            bestEndScore = Infinity;
+          }
+          if (bestStart && (!bestEnd || Math.abs(bestEnd.left - ends.x2) > 40)) {
+            bars.forEach(function (b) {
+              if (b === bestStart) return;
+              if (Math.abs(b.cy - ends.y2) > 20) return;
+              var score = Math.abs(b.cy - ends.y2) * 5 + Math.abs(b.left - Math.min(ends.x2, b.left));
+              if (score < bestEndScore) {
+                bestEndScore = score;
+                bestEnd = b;
+              }
+            });
+          }
+          if (!bestStart || !bestEnd || bestStart === bestEnd) {
+            path.setAttribute("opacity", "0");
+            return;
+          }
+          if (Math.abs(bestStart.cy - ends.y1) > 64 && Math.abs(bestEnd.cy - ends.y2) > 64) {
+            path.setAttribute("opacity", "0");
+            return;
+          }
+          path.setAttribute(
+            "d",
+            buildFsPath(bestStart.right, bestStart.cy, bestEnd.left, bestEnd.cy),
+          );
+          path.removeAttribute("opacity");
+          alignedAny = true;
+        });
+      }
       svg.style.setProperty("z-index", "15", "important");
     });
-    if (alignedAny) {
+    if (alignedAny || isSoft) {
       document.documentElement.setAttribute("data-gantt-deps-aligned", "1");
     }
   }
   function run() {
     hideSpreadsheetCols();
     elevateTodayMarkers();
-    // Re-measure after WBS/today layer moves so densified bars are final
     document.documentElement.removeAttribute("data-gantt-deps-aligned");
     realignDependencyConnectors();
   }
@@ -1178,14 +1260,64 @@ async function main() {
               }
             });
           });
-          // Soft-list / WBS tweaks can shift the timeline — snap deps to final bar boxes
-          await page.waitForTimeout(100);
-          await page.evaluate(() => {
+          // Soft-list / WBS tweaks can shift the timeline — rebuild FS elbows
+          // from live getBoundingClientRect() right before capture.
+          await page.waitForTimeout(150);
+          const depReport = await page.evaluate(() => {
             if (typeof window.__ganttRealignDeps === "function") {
               window.__ganttRealignDeps();
             }
+            const svg = Array.from(document.querySelectorAll("svg")).find((s) =>
+              s.querySelector("path[stroke]"),
+            );
+            if (!svg) return { ok: false, reason: "no-svg" };
+            const svgRect = svg.getBoundingClientRect();
+            const paths = Array.from(svg.querySelectorAll("path[stroke]")).map((p) =>
+              p.getAttribute("d"),
+            );
+            const bars = [];
+            const root =
+              svg.parentElement?.querySelector(".gantt-bars-layer") ||
+              svg.parentElement;
+            root?.querySelectorAll(".row-h").forEach((row) => {
+              if (row.closest("#table-scroll-container, #wbs-scroll")) return;
+              const el = Array.from(row.children).find((c) => {
+                const cs = getComputedStyle(c);
+                return (
+                  cs.position === "absolute" ||
+                  String(c.className || "").includes("absolute")
+                );
+              });
+              if (!el) return;
+              const r = el.getBoundingClientRect();
+              if (r.width < 10) return;
+              const key =
+                ((el.textContent || "").match(/\bGN-\d+\b/) ||
+                  (el.textContent || "").match(/\bM[1-4]\b/) ||
+                  [])[0] || "";
+              bars.push({
+                key,
+                left: +(r.left - svgRect.left).toFixed(1),
+                right: +(r.right - svgRect.left).toFixed(1),
+                cy: +((r.top + r.bottom) / 2 - svgRect.top).toFixed(1),
+              });
+            });
+            return {
+              ok: true,
+              soft: document.body.getAttribute("data-gantt-soft-source"),
+              aligned: document.documentElement.getAttribute(
+                "data-gantt-deps-aligned",
+              ),
+              paths,
+              sampleBars: bars.slice(0, 6),
+            };
           });
-          await page.waitForTimeout(150);
+          if (depReport?.ok) {
+            console.log(
+              `  deps ${label}: aligned=${depReport.aligned} paths=${depReport.paths?.length || 0}`,
+            );
+          }
+          await page.waitForTimeout(100);
         }
 
         const out = path.join(dir, `${asset.file}.png`);
