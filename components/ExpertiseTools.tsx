@@ -47,7 +47,7 @@ export function ExpertiseTools() {
     <section aria-labelledby="expertise-heading" className="space-y-10">
       <div>
         <h2 id="expertise-heading" className="section-title">
-          Expertise
+          Skills
         </h2>
         <p className="max-w-2xl text-sm leading-relaxed text-muted sm:text-[15px]">
           Three buckets: leading UX teams and design ops, designing complex

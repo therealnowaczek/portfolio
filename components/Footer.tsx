@@ -34,10 +34,10 @@ export function Footer() {
         </div>
       </div>
 
-      <p className="border-t border-border pt-8 text-center text-sm leading-relaxed text-muted">
-        I agree to the processing of personal data provided on this site for
-        recruitment pursuant to the Personal Data Protection Act of 10 May 2018
-        (Journal of Laws 2018, item 1000) and Regulation (EU) 2016/679 (GDPR).
+      <p className="border-t border-border pt-8 text-center text-xs leading-relaxed text-muted">
+        I consent to the processing of my personal data for recruitment under
+        the Polish Personal Data Protection Act of 10 May 2018 and GDPR (EU)
+        2016/679.
       </p>
     </footer>
   );

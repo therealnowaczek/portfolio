@@ -3,9 +3,9 @@ slug: okrs
 title: "OKRs"
 oneLiner: "Strategy-to-work hierarchy leaders use in weekly planning"
 badge: "Enterprise case · OKRs"
-role: "Lead Product Designer"
+role: "Lead Product Designer · BigPicture"
 platform: "Web desktop"
-timeline: "Enterprise PPM · shipped"
+timeline: "BigPicture · Appfire · shipped"
 tags:
   - "OKRs"
   - "Enterprise"

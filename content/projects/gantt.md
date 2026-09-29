@@ -3,9 +3,9 @@ slug: gantt
 title: "Gantt"
 oneLiner: "Dense program Gantt: retrieval speed as a design constraint"
 badge: "Enterprise case · Planning"
-role: "Lead Product Designer"
+role: "Lead Product Designer · BigPicture"
 platform: "Web desktop"
-timeline: "Enterprise PPM · shipped"
+timeline: "BigPicture · Appfire · shipped"
 tags:
   - "Gantt"
   - "Enterprise"

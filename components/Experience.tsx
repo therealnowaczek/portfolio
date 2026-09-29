@@ -9,10 +9,10 @@ export function Experience() {
           Experience
         </h2>
         <p className="mb-6 max-w-2xl text-sm leading-relaxed text-muted sm:text-[15px]">
-          From hands-on designer through Head of Design to Senior UX Manager at
-          Appfire, plus CostRadar.ai, a product I built myself. I am looking
-          for my next challenge. Roles and timeline here; product work and
-          numbers are in Portfolio and Impact.
+          Hands-on designer, then Head of Design, then Senior UX Manager at
+          Appfire. CostRadar.ai is the product I am building now, independently.
+          Job titles below match the CV. Case studies and the fuller numbers are
+          in Portfolio and Impact.
         </p>
         <ol className="space-y-6">
           {EXPERIENCE.map((item) => (
@@ -24,11 +24,11 @@ export function Experience() {
                 {item.years}
               </span>
               <div>
-                <p className="text-[15px] font-medium text-foreground sm:text-base">
-                  {item.role}{" "}
-                  <span className="font-normal text-muted">
-                    at <RichText>{item.company}</RichText>
-                  </span>
+                <h3 className="text-[15px] font-medium text-foreground sm:text-base">
+                  {item.role}
+                </h3>
+                <p className="text-sm text-muted sm:text-[15px]">
+                  <RichText>{item.company}</RichText>
                 </p>
                 <p className="mt-1 max-w-2xl text-sm leading-relaxed text-muted sm:text-[15px]">
                   <RichText>{item.blurb}</RichText>

@@ -1,5 +1,5 @@
 import { withBasePath } from "@/lib/base-path";
-import { SITE } from "@/lib/cv";
+import { LOCATION_LINE, SITE } from "@/lib/cv";
 
 function IconPhone() {
   return (
@@ -73,6 +73,9 @@ export function Header() {
             </h1>
             <p className="mt-0.5 text-[11px] leading-snug text-muted sm:truncate sm:text-xs lg:text-sm">
               {SITE.subtitle}
+            </p>
+            <p className="mt-0.5 text-[11px] leading-snug text-foreground-secondary sm:text-xs">
+              {LOCATION_LINE}
             </p>
           </div>
         </div>

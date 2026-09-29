@@ -79,9 +79,9 @@
     "title": "OKRs",
     "oneLiner": "Strategy-to-work hierarchy leaders use in weekly planning",
     "badge": "Enterprise case \u00b7 OKRs",
-    "role": "Lead Product Designer",
+    "role": "Lead Product Designer \u00b7 BigPicture",
     "platform": "Web desktop",
-    "timeline": "Enterprise PPM \u00b7 shipped",
+    "timeline": "BigPicture \u00b7 Appfire \u00b7 shipped",
     "tags": [
       "OKRs",
       "Enterprise",
@@ -114,9 +114,9 @@
     "title": "Gantt",
     "oneLiner": "Dense program Gantt: retrieval speed as a design constraint",
     "badge": "Enterprise case \u00b7 Planning",
-    "role": "Lead Product Designer",
+    "role": "Lead Product Designer \u00b7 BigPicture",
     "platform": "Web desktop",
-    "timeline": "Enterprise PPM \u00b7 shipped",
+    "timeline": "BigPicture \u00b7 Appfire \u00b7 shipped",
     "tags": [
       "Gantt",
       "Enterprise",

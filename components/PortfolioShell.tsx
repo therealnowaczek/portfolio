@@ -22,11 +22,11 @@ type Props = {
 };
 
 const NAV: NavItem[] = [
-  { id: "about", label: "Intro" },
+  { id: "about", label: "About" },
   { id: "portfolio", label: "Portfolio" },
   { id: "impact", label: "Impact" },
   { id: "experience", label: "Experience" },
-  { id: "expertise", label: "Expertise" },
+  { id: "expertise", label: "Skills" },
   { id: "leadership", label: "Leadership" },
   { id: "process", label: "Process" },
 ];

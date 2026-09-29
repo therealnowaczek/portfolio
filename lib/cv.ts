@@ -22,14 +22,19 @@ export type NarrativeBlock = {
   body: string;
 };
 
+export const PROFILE_URL = "https://therealnowaczek.github.io/portfolio/";
+
+export const LOCATION_LINE = "Poland · Open to remote (EU)";
+
 export const SITE = {
   name: "Marcin Nowak",
-  subtitle: "UX Orchestrator · User Experience Leader · Product Maker",
-  title: "Marcin Nowak · UX Orchestrator · UX Leader · Product Maker",
+  subtitle: "Senior UX Manager · Head of Design · Product Designer",
+  title: "Marcin Nowak · Senior UX Manager · Head of Design · Product Designer",
   email: "pl.nowak.marcin@gmail.com",
   phone: "(+48) 792 792 290",
   phoneHref: "tel:+48792792290",
   linkedin: "https://www.linkedin.com/in/therealnowaczek/",
+  linkedinLabel: "linkedin.com/in/therealnowaczek",
   cvPdf: "/Marcin_Nowak_CV_2026.pdf",
   cvFilename: "Marcin_Nowak_CV_2026.pdf",
   costradar: "https://costradar.ai",
@@ -39,16 +44,16 @@ export const SITE = {
   tvpParlament: "https://tvpparlament.pl",
   tvp3: "https://regiony.tvp.pl/",
   description:
-    "UX Orchestrator · User Experience Leader · Product Maker. Formerly Senior UX Manager at Appfire; founder of CostRadar.ai. Open to design leadership roles.",
+    "Senior UX Manager and Head of Design based in Poland, open to remote roles in the EU. Co-led a 35+ person UX org at Appfire (BigPicture, 7pace, design ops, research ops). Founder of CostRadar.ai. Product design, design systems, and AI UX.",
 };
 
 export const INTRO_HEADLINE =
   "I lead UX for complex enterprise products, and I still design and ship.";
 
-/** ~100 words: who, last role proof, shipped builder proof, seeking next role. */
+/** Proof first, then the titles a recruiter or ATS will match. */
 export const INTRO_PARAGRAPHS = [
-  "Most recently I was Senior UX Manager at Appfire, where I co-led 35+ designers, researchers, and writers across products like BigPicture and 7pace, plus AI workstreams (design ops, research ops, and tools used by thousands of teams). Independently I shipped CostRadar.ai: a profitability product with true-net P&L and AI that only acts after you Approve. I am looking for my next challenge in design leadership: roles where strategy, craft, and how the team runs all matter.",
-  "Open to UX Leader or Head of Design, Product or Staff UX, Design Ops, Design Systems, or AI UX / Design Engineering. Pick the closest seat; each one shows different proof from Appfire, BigPicture, or CostRadar.ai, plus a concrete first 90 days.",
+  "Most recently I was Senior UX Manager at Appfire, where I co-led 35+ designers, researchers, and writers across BigPicture, 7pace, and AI workstreams (design ops, research ops, and tools used by thousands of teams). Independently I shipped CostRadar.ai: a profitability product with true-net P&L and an AI Profit Agent that only acts after Approve.",
+  "Open to Head of Design, Senior UX Manager, Staff Product Designer, Design Ops, Design Systems, or AI UX / Design Engineering. Each path below uses different proof from Appfire, BigPicture, or CostRadar.ai, plus a concrete first 90 days.",
 ];
 
 export const STRENGTHS: Strength[] = [
@@ -81,18 +86,18 @@ export const STRENGTHS: Strength[] = [
 
 export const EXPERIENCE: ExperienceItem[] = [
   {
-    years: "2025 – now",
+    years: "2025 – Present",
     role: "Founder & AI Design Engineer",
     company: "CostRadar.ai",
     blurb:
-      "Live profitability product for multi-channel e-commerce (costradar.ai). I designed and built it solo: true-net ledger, savings tracker, and an AI Profit Agent that only changes things after you Approve.",
+      "Independent founder. Live profitability product for multi-channel e-commerce (costradar.ai). I designed and built it solo: true-net ledger, savings tracker, and an AI Profit Agent that only changes things after you Approve.",
   },
   {
     years: "2023 – 2026",
     role: "Senior UX Manager",
     company: "Appfire",
     blurb:
-      "Co-led 35+ designers, researchers, and writers across Appfire products including BigPicture, 7pace, and AI workstreams. Ran estimation, Figma standards, research ops, and AI rollout across the org.",
+      "Co-led 35+ designers, researchers, and writers across BigPicture, 7pace, and AI workstreams. Ran design ops, estimation, Figma standards, research ops, and AI rollout. BigPicture team outcomes: +47% OKR adoption, financial-module adoption 53% to 84% in 3 months, 58% fewer unclear financial reports.",
   },
   {
     years: "2019 – 2023",
@@ -106,27 +111,27 @@ export const EXPERIENCE: ExperienceItem[] = [
     role: "UX & UI Designer",
     company: "SoftwarePlant (acquired by Appfire)",
     blurb:
-      "Lead designer on BigPicture (Atlassian Marketplace best-seller). Owned discovery through delivery on financials, OKRs, and planning screens.",
+      "Lead Product Designer on BigPicture (Atlassian Marketplace best-seller). Owned discovery through delivery on financials, OKRs, and Gantt planning.",
   },
   {
     years: "2013 – 2016",
     role: "Product Manager, UX Designer",
     company: "TVP 3",
     blurb:
-      "Coordinated 16 teams on public-broadcaster web services (product strategy, UX, and delivery across many stakeholders).",
+      "Coordinated 16 teams on public-broadcaster web services: product strategy, UX, and stakeholder management across delivery.",
   },
   {
     years: "2011 – 2013",
-    role: "Co-runner, UX Designer",
+    role: "UX Designer",
     company: "TVP Parlament",
-    blurb: "Launched a new e-television channel from scratch.",
+    blurb: "Co-led the launch of a new e-television channel from scratch.",
   },
 ];
 export const EDUCATION: EducationItem[] = [
   {
     years: "2008 – 2011",
-    school: "Warszawska Wyższa Szkoła Humanistyczna im. B. Prusa",
-    detail: "Journalism and Social Communication, Warsaw, Poland",
+    school: "Warszawska Wyższa Szkoła Humanistyczna im. B. Prusa (now MODERNA)",
+    detail: "Bachelor's degree, Journalism and Social Communication, Warsaw, Poland",
   },
 ];
 
@@ -143,6 +148,8 @@ export const EXPERTISE_GROUPS: SkillGroup[] = [
     blurb: "Org scale, design ops, and how decisions stick.",
     items: [
       "UX leadership (Senior Manager / Head of Design)",
+      "People management",
+      "Stakeholder management",
       "Design Ops & estimation",
       "Design-system governance",
       "Research ops (Dovetail)",
@@ -154,8 +161,11 @@ export const EXPERTISE_GROUPS: SkillGroup[] = [
     title: "Product & craft",
     blurb: "Enterprise SaaS that stays clear under complexity.",
     items: [
+      "Product design",
       "Complex product UX",
+      "B2B SaaS",
       "Information architecture",
+      "UX research",
       "Data-dense / fintech-adjacent UI",
       "Design engineering",
       "End-to-end ownership",
@@ -205,6 +215,34 @@ export const EXPERTISE = EXPERTISE_GROUPS.flatMap((g) => g.items);
 export const TOOLS = TOOL_GROUPS.flatMap((g) => g.items);
 
 export const LANGUAGES = ["Polish (native)", "English (C1)"];
+
+/** Visible facts for crawlers, AI screeners, and Google. Not a keyword dump. */
+export const PERSON_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: SITE.name,
+  jobTitle: ["Senior UX Manager", "Head of Design", "Product Designer"],
+  description: SITE.description,
+  email: SITE.email,
+  telephone: "+48792792290",
+  url: PROFILE_URL,
+  sameAs: [SITE.linkedin, SITE.costradar, PROFILE_URL],
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "PL",
+  },
+  knowsLanguage: ["pl", "en"],
+  knowsAbout: [...EXPERTISE, ...TOOLS],
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Warszawska Wyższa Szkoła Humanistyczna im. B. Prusa",
+  },
+  worksFor: {
+    "@type": "Organization",
+    name: "CostRadar.ai",
+    url: SITE.costradar,
+  },
+};
 
 export type RoleLens = {
   id: string;
@@ -580,4 +618,4 @@ export const IMPACT_METRICS: ImpactMetric[] = [
 ];
 
 export const CLOSING_CTA =
-  "Thanks for reading. I am looking for my next role: UX leadership (Senior Manager or Head of Design), or specialist seats in AI UX and Design Engineering. Reach out anytime.";
+  "Thanks for reading. I am based in Poland and open to remote roles across the EU: UX leadership (Senior Manager or Head of Design), or specialist seats in AI UX and Design Engineering. Reach out anytime.";

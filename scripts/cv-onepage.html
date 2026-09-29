@@ -38,7 +38,7 @@
         background: #fff;
         width: 210mm;
         height: 297mm;
-        padding: 13mm 15mm 11mm;
+        padding: 11mm 14mm 8mm;
         font-size: 9.75pt;
         line-height: 1.45;
         font-weight: 400;
@@ -46,6 +46,8 @@
         flex-direction: column;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
+        font-variant-ligatures: none;
+        font-feature-settings: "liga" 0, "clig" 0;
       }
 
 .header {
@@ -172,7 +174,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding-top: 20px;
+        padding-top: 10px;
         min-height: 0;
       }
 
@@ -188,12 +190,12 @@
 .summary p {
         color: var(--ink);
         font-size: 9.75pt;
-        line-height: 1.5;
+        line-height: 1.4;
         font-weight: 400;
       }
 
 .summary p + p {
-        margin-top: 9px;
+        margin-top: 6px;
       }
 
 .block {
@@ -204,15 +206,12 @@
         font-size: 12.5pt;
         font-weight: 500;
         color: var(--magenta);
-        margin: 0 0 8px;
+        margin: 0 0 5px;
         letter-spacing: -0.015em;
       }
 
 .job {
-        display: grid;
-        grid-template-columns: 74px 1fr;
-        column-gap: 14px;
-        margin-bottom: 9px;
+        margin-bottom: 5px;
       }
 
 .job:last-child {
@@ -223,7 +222,6 @@
         font-size: 9pt;
         font-weight: 500;
         color: var(--ink-muted);
-        padding-top: 1px;
         white-space: nowrap;
       }
 
@@ -235,12 +233,35 @@
         letter-spacing: -0.01em;
       }
 
+.job-org {
+        font-size: 9.2pt;
+        font-weight: 500;
+        color: var(--ink-muted);
+        line-height: 1.3;
+      }
+
+.location {
+        margin-top: 2px;
+        font-size: 9pt;
+        font-weight: 500;
+        color: var(--ink-muted);
+      }
+
+.contact-line {
+        color: var(--ink);
+        text-decoration: none;
+        font-size: 8.5pt;
+        font-weight: 500;
+        line-height: 1.35;
+        letter-spacing: 0;
+      }
+
 .job-blurb {
         margin-top: 2px;
         font-size: 9.4pt;
         font-weight: 400;
         color: var(--ink);
-        line-height: 1.42;
+        line-height: 1.35;
       }
 
 .bottom {
@@ -273,7 +294,7 @@
         color: var(--ink);
         font-size: 8.25pt;
         font-weight: 500;
-        padding: 3.5px 8px;
+        padding: 2.5px 7px;
         border-radius: 4px;
         line-height: 1.3;
         letter-spacing: -0.005em;
@@ -281,8 +302,8 @@
 
 .gdpr {
         flex-shrink: 0;
-        margin-top: 12px;
-        padding-top: 9px;
+        margin-top: 8px;
+        padding-top: 6px;
         border-top: 1px solid var(--line);
         font-size: 6.5pt;
         line-height: 1.4;
@@ -302,54 +323,26 @@
         />
         <div>
           <h1>Marcin Nowak</h1>
-          <p class="role">UX Orchestrator · User Experience Leader · Product Maker</p>
+          <p class="role">Senior UX Manager · Head of Design · Product Designer</p>
+          <p class="location">Poland · Open to remote (EU)</p>
         </div>
       </div>
 
       <div class="contact">
-        <div class="contact-row">
-          <a class="phone" href="tel:+48792792290">(+48) 792 792 290</a>
-          <a
-            class="icon-link at"
-            href="mailto:pl.nowak.marcin@gmail.com"
-            aria-label="Email"
-            >@</a
-          >
-          <a
-            class="icon-link"
-            href="https://www.linkedin.com/in/therealnowaczek/"
-            aria-label="LinkedIn"
-            target="_blank"
-          >
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2ZM8 19H5v-9h3v9ZM6.5 8.25A1.75 1.75 0 1 1 6.5 4.75a1.75 1.75 0 0 1 0 3.5ZM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93-.79 0-1.39.58-1.62 1.14-.09.2-.08.48-.08.76V19h-3s.04-8.18 0-9h3v1.3a3.1 3.1 0 0 1 2.78-1.53c1.87 0 3.3 1.22 3.3 3.85V19Z"
-              />
-            </svg>
-          </a>
-          <a
-            class="icon-link"
-            href="https://x.com/therealnowaczek"
-            aria-label="X / Twitter"
-            target="_blank"
-          >
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M13.712 10.562 20.41 3h-1.587l-5.806 6.562L8.23 3H3.15l7.023 10.003L3.15 21h1.588l6.144-6.937L15.77 21h5.08l-7.138-10.438Zm-2.174 2.456-.712-.996L5.31 4.17h2.437l4.57 6.394.712.996 6.042 8.456h-2.437l-5.096-7.0Z"
-              />
-            </svg>
-          </a>
-        </div>
-        <a
-          class="portfolio-link"
-          href="https://therealnowaczek.github.io/portfolio/"
+        <a class="contact-line" href="tel:+48792792290">+48 792 792 290</a>
+        <a class="contact-line" href="mailto:pl.nowak.marcin@gmail.com"
+          >pl.nowak.marcin@gmail.com</a
         >
-          Portfolio
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 17L17 7" />
-            <path d="M8 7h9v9" />
-          </svg>
-        </a>
+        <a
+          class="contact-line"
+          href="https://www.linkedin.com/in/therealnowaczek/"
+          >linkedin.com/in/therealnowaczek</a
+        >
+        <a
+          class="contact-line"
+          href="https://therealnowaczek.github.io/portfolio/"
+          >therealnowaczek.github.io/portfolio</a
+        >
       </div>
     </header>
 
@@ -362,14 +355,15 @@
           ship.
         </p>
         <p>
-          Most recently I was Senior UX Manager at Appfire, where I co-led 35+
-          designers, researchers, and writers across products like BigPicture
-          and 7pace, plus AI workstreams (design ops, research ops, and tools
-          used by thousands of teams). Independently I shipped CostRadar.ai: a
-          profitability product with true-net P&amp;L
-          and AI that only acts after you Approve. I am looking for my next
-          challenge in design leadership: roles where strategy, craft, and how
-          the team runs all matter.
+          Senior UX Manager and Head of Design. Most recently I co-led 35+
+          designers, researchers, and writers at Appfire across BigPicture,
+          7pace, and AI workstreams (design ops, research ops). Independently I
+          shipped CostRadar.ai: true-net P&amp;L and an AI Profit Agent that only
+          acts after Approve.
+        </p>
+        <p>
+          Open to Head of Design, Senior UX Manager, Staff Product Designer,
+          Design Ops, Design Systems, and AI UX.
         </p>
       </section>
 
@@ -377,95 +371,89 @@
         <h2>Experience</h2>
 
         <div class="job">
-          <div class="years">2025 - now</div>
-          <div>
-            <div class="job-title">
-              Founder &amp; AI Design Engineer at CostRadar.ai
-            </div>
-            <p class="job-blurb">
-              Live profitability product for multi-channel e-commerce
-              (costradar.ai). Designed and built solo: true-net ledger, savings
-              tracker, and an AI Profit Agent that only changes things after you
-              Approve.
-            </p>
+          <div class="job-title">
+            Founder &amp; AI Design Engineer
+            <span class="years">· 2025 – Present</span>
           </div>
+          <div class="job-org">CostRadar.ai</div>
+          <p class="job-blurb">
+            Independent founder. Live profitability product for multi-channel
+            e-commerce (costradar.ai). Designed and built solo: true-net ledger,
+            savings tracker, and an AI Profit Agent that only changes things
+            after Approve.
+          </p>
         </div>
 
         <div class="job">
-          <div class="years">2023 - 2026</div>
-          <div>
-            <div class="job-title">Senior UX Manager at Appfire</div>
-            <p class="job-blurb">
-              Co-led 35+ designers, researchers, and writers across Appfire
-              products including BigPicture, 7pace, and AI workstreams. Ran
-              estimation, Figma standards, research ops, and AI rollout across
-              the org.
-            </p>
+          <div class="job-title">
+            Senior UX Manager <span class="years">· 2023 – 2026</span>
           </div>
+          <div class="job-org">Appfire</div>
+          <p class="job-blurb">
+            Co-led 35+ designers, researchers, and writers across BigPicture,
+            7pace, and AI workstreams. Design ops, Figma standards, research ops,
+            and AI rollout. BigPicture team outcomes: +47% OKR adoption,
+            financial-module adoption 53% to 84% in 3 months, 58% fewer unclear
+            reports.
+          </p>
         </div>
 
         <div class="job">
-          <div class="years">2019 - 2023</div>
-          <div>
-            <div class="job-title">
-              Head of Design at SoftwarePlant (acquired by Appfire)
-            </div>
-            <p class="job-blurb">
-              Grew a team of 16+ designers, researchers, and writers. Owned
-              design-system standards for Marketplace products and led craft
-              integration after the Appfire acquisition.
-            </p>
+          <div class="job-title">
+            Head of Design <span class="years">· 2019 – 2023</span>
           </div>
+          <div class="job-org">SoftwarePlant (acquired by Appfire)</div>
+          <p class="job-blurb">
+            Grew a team of 16+ designers, researchers, and writers. Owned
+            design-system standards for Atlassian Marketplace products and led
+            craft integration after the Appfire acquisition.
+          </p>
         </div>
 
         <div class="job">
-          <div class="years">2016 - 2019</div>
-          <div>
-            <div class="job-title">
-              UX &amp; UI Designer at SoftwarePlant (acquired by Appfire)
-            </div>
-            <p class="job-blurb">
-              Lead designer on BigPicture (Atlassian Marketplace best-seller).
-              Owned discovery through delivery on financials, OKRs, and planning
-              screens.
-            </p>
+          <div class="job-title">
+            UX &amp; UI Designer <span class="years">· 2016 – 2019</span>
           </div>
+          <div class="job-org">SoftwarePlant (acquired by Appfire)</div>
+          <p class="job-blurb">
+            Lead Product Designer on BigPicture (Atlassian Marketplace
+            best-seller). Owned discovery, prototyping, and delivery on
+            financials, OKRs, and Gantt planning.
+          </p>
         </div>
 
         <div class="job">
-          <div class="years">2013 - 2016</div>
-          <div>
-            <div class="job-title">Product Manager, UX Designer at TVP 3</div>
-            <p class="job-blurb">
-              Coordinated 16 teams on public-broadcaster web services, product
-              strategy, UX, and delivery across many stakeholders.
-            </p>
+          <div class="job-title">
+            Product Manager, UX Designer <span class="years">· 2013 – 2016</span>
           </div>
+          <div class="job-org">TVP 3</div>
+          <p class="job-blurb">
+            Coordinated 16 teams on public-broadcaster web services: product
+            strategy, UX, and stakeholder management across delivery.
+          </p>
         </div>
 
         <div class="job">
-          <div class="years">2011 - 2013</div>
-          <div>
-            <div class="job-title">Co-runner, UX Designer at TVP Parlament</div>
-            <p class="job-blurb">
-              Launched a new e-television channel from scratch.
-            </p>
+          <div class="job-title">
+            UX Designer <span class="years">· 2011 – 2013</span>
           </div>
+          <div class="job-org">TVP Parlament</div>
+          <p class="job-blurb">
+            Co-led the launch of a new e-television channel from scratch.
+          </p>
         </div>
       </section>
 
       <section class="block">
         <h2>Education</h2>
         <div class="job">
-          <div class="years">2008 - 2011</div>
-          <div>
-            <div class="job-title">
-              Warszawska Wyższa Szkoła Humanistyczna im. B. Prusa (now MODERNA)
-            </div>
-            <p class="job-blurb">
-              Journalism and Social Communication, Warsaw, Poland
-            </p>
+          <div class="job-title">
+            Warszawska Wyższa Szkoła Humanistyczna im. B. Prusa (now MODERNA)
+            <span class="years">· 2008 – 2011</span>
           </div>
+          <p class="job-blurb">
+            Bachelor's degree, Journalism and Social Communication, Warsaw, Poland
+          </p>
         </div>
       </section>
 
@@ -478,55 +466,46 @@
           </ul>
         </div>
         <div>
-          <h2>Expertise</h2>
+          <h2>Skills</h2>
           <div class="pills">
-            <span class="pill">AI-Driven Design</span>
-            <span class="pill">Design Engineering</span>
+            <span class="pill">UX Leadership</span>
+            <span class="pill">People Management</span>
+            <span class="pill">Product Design</span>
+            <span class="pill">UX Research</span>
+            <span class="pill">Design Ops</span>
             <span class="pill">Design Systems</span>
-            <span class="pill">Product Strategy</span>
-            <span class="pill">Interaction Design</span>
-            <span class="pill">Agentic Workflows</span>
-            <span class="pill">LLM Prompting</span>
-            <span class="pill">Conversational UI</span>
-            <span class="pill">Human-Centered Leadership</span>
-            <span class="pill">UX Ops</span>
+            <span class="pill">Information Architecture</span>
+            <span class="pill">Stakeholder Management</span>
+            <span class="pill">B2B SaaS</span>
+            <span class="pill">AI UX</span>
+            <span class="pill">Design Engineering</span>
           </div>
         </div>
         <div>
           <h2>Tools</h2>
           <div class="pills">
             <span class="pill">Figma</span>
-            <span class="pill">Amplitude</span>
-            <span class="pill">Google Data Studio</span>
-            <span class="pill">Cursor</span>
-            <span class="pill">GitHub Copilot</span>
-            <span class="pill">Claude</span>
-            <span class="pill">GPT</span>
-            <span class="pill">Notion</span>
-            <span class="pill">Jira</span>
-            <span class="pill">Slack</span>
-            <span class="pill">React</span>
-            <span class="pill">Maze</span>
-            <span class="pill">Dovetail</span>
-            <span class="pill">Adobe CC</span>
-            <span class="pill">Supabase</span>
-            <span class="pill">Hotjar</span>
             <span class="pill">FigJam</span>
-            <span class="pill">Loom</span>
             <span class="pill">Miro</span>
+            <span class="pill">Jira</span>
+            <span class="pill">Notion</span>
+            <span class="pill">Dovetail</span>
+            <span class="pill">Amplitude</span>
+            <span class="pill">Maze</span>
+            <span class="pill">React</span>
+            <span class="pill">Next.js</span>
+            <span class="pill">TypeScript</span>
+            <span class="pill">Cursor</span>
+            <span class="pill">Claude</span>
+            <span class="pill">Supabase</span>
           </div>
         </div>
       </section>
     </div>
 
     <p class="gdpr">
-      I agree to the processing of personal data provided in this document for
-      realising the recruitment process pursuant to the Personal Data Protection
-      Act of 10 May 2018 (Journal of Laws 2018, item 1000) and in agreement with
-      Regulation (EU) 2016/679 of the European Parliament and of the Council of
-      27 April 2016 on the protection of natural persons with regard to the
-      processing of personal data and on the free movement of such data, and
-      repealing Directive 95/46/EC (General Data Protection Regulation).
+      I consent to the processing of my personal data for recruitment under the
+      Polish Personal Data Protection Act of 10 May 2018 and GDPR (EU) 2016/679.
     </p>
   </body>
 </html>
