@@ -5,11 +5,6 @@ export type ExperienceItem = {
   blurb: string;
 };
 
-export type Highlight = {
-  title: string;
-  body: string;
-};
-
 export type Strength = {
   label: string;
   href: string;
@@ -55,20 +50,6 @@ export const INTRO_PARAGRAPHS = [
   "Senior UX Manager at Appfire — I co-led 35+ designers, researchers, and writers across the product portfolio, including BigPicture, 7pace, and AI workstreams, with design ops and measurable adoption on tools used by thousands of teams. Independently I shipped CostRadar.ai as a solo design engineer (live at costradar.ai): true-net P&L and Approve-gated AI. I look for design leadership roles where strategy, craft, and operating systems meet — open to a conversation.",
 ];
 
-export const HIGHLIGHTS: Highlight[] = [
-  {
-    title: "Enterprise leadership",
-    body: "Senior UX Manager at Appfire: co-led 35+ designers, researchers, and writers across the portfolio, including BigPicture, 7pace, and AI workstreams. Design ops, Figma governance, and research ops so UX partners predictably with product and engineering.",
-  },
-  {
-    title: "Shipped founder product",
-    body: "CostRadar.ai — live Profitability OS I designed and engineered solo (React, Supabase, LLM agents). Craft and trust UX proof at early stage; not a growth-case claim.",
-  },
-  {
-    title: "Product outcomes",
-    body: "BigPicture modules (OKRs, financials, Gantt) with adoption and clarity gains — full case write-ups in progress. See Experience for role context; Portfolio for CostRadar and labeled concepts.",
-  },
-];
 export const STRENGTHS: Strength[] = [
   {
     label: "Adaptability",
