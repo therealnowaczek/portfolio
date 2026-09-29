@@ -22,7 +22,7 @@ type Props = {
 };
 
 const NAV: NavItem[] = [
-  { id: "about", label: "About" },
+  { id: "about", label: "Intro" },
   { id: "fit", label: "Hire me for" },
   { id: "portfolio", label: "Portfolio" },
   { id: "impact", label: "Impact" },
@@ -133,7 +133,7 @@ export function PortfolioShell({ projects }: Props) {
             <NarrativeSection
               id="leadership-heading"
               title="Leadership"
-              lede="How I grow teams and keep craft standards high while the org scales."
+              lede="How I coach designers and keep quality high while the team grows."
               blocks={MENTORING}
             />
           </div>
@@ -142,7 +142,7 @@ export function PortfolioShell({ projects }: Props) {
             <NarrativeSection
               id="process-heading"
               title="Process"
-              lede="How design moves from problem to shipped product — including where AI helps and where judgment stays human."
+              lede="How work moves from problem to shipped product — where AI speeds things up, and where a human still decides."
               blocks={PROCESSES}
             />
           </div>

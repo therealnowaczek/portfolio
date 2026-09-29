@@ -39,15 +39,15 @@ export const SITE = {
   tvpParlament: "https://tvpparlament.pl",
   tvp3: "https://regiony.tvp.pl/",
   description:
-    "UX Orchestrator · User Experience Leader · Product Maker. Enterprise SaaS leadership and a shipped founder product (CostRadar.ai).",
+    "UX Orchestrator · User Experience Leader · Product Maker. Formerly Senior UX Manager at Appfire; founder of CostRadar.ai. Open to design leadership roles.",
 };
 
 export const INTRO_HEADLINE =
   "I lead UX for complex enterprise products — and I still design and ship.";
 
-/** ~100 words: who, for whom, one leadership proof, one shipped builder proof, CTA. */
+/** ~100 words: who, last role proof, shipped builder proof, seeking next role. */
 export const INTRO_PARAGRAPHS = [
-  "Senior UX Manager at Appfire — I co-led 35+ designers, researchers, and writers across the product portfolio, including BigPicture, 7pace, and AI workstreams, with design ops and measurable adoption on tools used by thousands of teams. Independently I shipped CostRadar.ai as a solo design engineer (live at costradar.ai): true-net P&L and Approve-gated AI. I look for design leadership roles where strategy, craft, and operating systems meet — open to a conversation.",
+  "Most recently I was Senior UX Manager at Appfire, where I co-led 35+ designers, researchers, and writers across products like BigPicture and 7pace, plus AI workstreams — design ops, research ops, and tools used by thousands of teams. Independently I shipped CostRadar.ai (live at costradar.ai): a profitability product with true-net P&L and AI that only acts after you Approve. I am looking for my next challenge in design leadership — roles where strategy, craft, and how the team runs all matter.",
 ];
 
 export const STRENGTHS: Strength[] = [
@@ -84,35 +84,35 @@ export const EXPERIENCE: ExperienceItem[] = [
     role: "Founder & AI Design Engineer",
     company: "CostRadar.ai",
     blurb:
-      "Live multi-channel Profitability OS (costradar.ai). Solo design-engineer ship: true-net ledger, savings estimates + tracker, Approve-gated Profit Agent.",
+      "Live profitability product for multi-channel e-commerce (costradar.ai). I designed and built it solo: true-net ledger, savings tracker, and an AI Profit Agent that only changes things after you Approve.",
   },
   {
     years: "2023 – 2026",
     role: "Senior UX Manager",
     company: "Appfire",
     blurb:
-      "Co-led 35+ designers, researchers, and writers across the Appfire portfolio, including BigPicture, 7pace, and AI workstreams. Estimation, Figma governance, research ops, and AI workstream adoption across the org. Case write-ups in progress.",
+      "Co-led 35+ designers, researchers, and writers across Appfire products including BigPicture, 7pace, and AI workstreams. Ran estimation, Figma standards, research ops, and AI rollout across the org.",
   },
   {
     years: "2019 – 2023",
     role: "Head of Design",
     company: "SoftwarePlant (acquired by Appfire)",
     blurb:
-      "Grew 16+ designers, researchers, and writers. Design-system governance for Marketplace products; led craft integration into Appfire post-acquisition.",
+      "Grew a team of 16+ designers, researchers, and writers. Owned design-system standards for Marketplace products and led craft integration after the Appfire acquisition.",
   },
   {
     years: "2016 – 2019",
     role: "UX & UI Designer",
     company: "SoftwarePlant (acquired by Appfire)",
     blurb:
-      "Principal craft on BigPicture (Marketplace best-seller). Discovery through delivery on financials, OKRs, and planning surfaces.",
+      "Lead designer on BigPicture (Atlassian Marketplace best-seller). Owned discovery through delivery on financials, OKRs, and planning screens.",
   },
   {
     years: "2013 – 2016",
     role: "Product Manager, UX Designer",
     company: "TVP 3",
     blurb:
-      "Coordinated 16 teams on public-broadcaster web services — product strategy, UX, and multi-stakeholder delivery.",
+      "Coordinated 16 teams on public-broadcaster web services — product strategy, UX, and delivery across many stakeholders.",
   },
   {
     years: "2011 – 2013",
@@ -235,13 +235,13 @@ export const ROLE_LENSES: RoleLens[] = [
     label: "UX Leader",
     group: "career",
     eyebrow: "Senior Manager · Head of UX",
-    headline: "Strategy connected to craft — close enough to still ship when it matters.",
+    headline: "Strategy close enough to craft that I can still ship when it matters.",
     pitch:
-      "As Senior UX Manager at Appfire I co-led 35+ designers, researchers, and writers across the product portfolio, including BigPicture, 7pace, and AI workstreams. I coach seniors, unblock squads, and keep trade-offs real — mentorship as weekly operating practice, not a workshop series.",
+      "Most recently, as Senior UX Manager at Appfire, I co-led 35+ designers, researchers, and writers across products including BigPicture, 7pace, and AI workstreams. I coach seniors, unblock squads, and keep trade-offs honest — mentorship as weekly practice, not a one-off workshop.",
     proof: [
-      "Grew teams from IC craft to 16+, then co-led 35+ designers, researchers, and writers post-acquisition",
-      "Design-system governance for Atlassian Marketplace products",
-      "Research ops (Dovetail), Figma standards, cross-timezone delivery",
+      "Grew teams from individual contributor to 16+, then co-led 35+ people after the Appfire acquisition",
+      "Design-system standards for Atlassian Marketplace products",
+      "Research ops (Dovetail), Figma standards, delivery across time zones",
     ],
     ninetyDays: [
       "Clarify ownership and critique across squads",
@@ -263,11 +263,11 @@ export const ROLE_LENSES: RoleLens[] = [
     eyebrow: "Function owner · Hiring · Standards",
     headline: "Build a design function product and engineering can plan around.",
     pitch:
-      "As Head of Design at SoftwarePlant I grew a 16+ person team through acquisition into Appfire — hiring bars, design-system governance, and delivery standards that held after the merge.",
+      "As Head of Design at SoftwarePlant I grew a 16+ person team through the acquisition into Appfire — hiring bars, design-system standards, and delivery rules that still held after the merge.",
     proof: [
       "Grew and led 16+ designers, researchers, and writers",
-      "Design-system governance for Marketplace products",
-      "Post-acquisition craft, process, and culture integration",
+      "Design-system standards for Marketplace products",
+      "After acquisition: integrated craft, process, and culture into Appfire",
     ],
     ninetyDays: [
       "Review team health, hiring gaps, and quality bars",
@@ -289,11 +289,11 @@ export const ROLE_LENSES: RoleLens[] = [
     eyebrow: "End-to-end · Discovery to ship",
     headline: "Own the problem — research, flows, UI, and a handoff that holds up in production.",
     pitch:
-      "When the bet needs strong Product Design, I still work that way: frame the problem, prototype with real constraints, and ship interfaces that finance, PMs, and engineers can trust. BigPicture modules and CostRadar.ai are the proof.",
+      "When the role needs strong Product Design, that is still how I work: frame the problem, prototype with real constraints, and ship interfaces finance, PMs, and engineers can trust. BigPicture modules and CostRadar.ai are the proof.",
     proof: [
-      "Principal craft on BigPicture financials, OKRs, and Gantt",
+      "Lead designer on BigPicture financials, OKRs, and Gantt",
       "CostRadar.ai: end-to-end product UX live at costradar.ai",
-      "Dense enterprise and fintech-adjacent UI with clear empty and trust states",
+      "Dense enterprise and money-adjacent UI with clear empty and trust states",
     ],
     ninetyDays: [
       "Map the critical journey and the decision moments that matter most",
@@ -314,11 +314,11 @@ export const ROLE_LENSES: RoleLens[] = [
     label: "Staff / Principal UX",
     group: "career",
     eyebrow: "Hands-on · Complex product · Systems thinking",
-    headline: "Dense enterprise UX — clarity when the cognitive load is high.",
+    headline: "Dense enterprise UX — clear when the cognitive load is high.",
     pitch:
-      "Principal-level craft on BigPicture financials, OKRs, and Gantt: clear hierarchy, performance as a design constraint, and dashboards that finance and PMs both trust. I still prototype and ship when the problem needs it.",
+      "Principal-level work on BigPicture financials, OKRs, and Gantt: clear hierarchy, performance as a design constraint, and dashboards finance and PMs both trust. I still prototype and ship when the problem needs it.",
     proof: [
-      "Financials: clearer reporting (−58% unclear reports · Impact footnotes)",
+      "Financials: clearer reporting (−58% unclear reports — see Impact)",
       "Gantt: faster information retrieval and NPS lift on planning workflows",
       "CostRadar: true-net ledger + Approve-gated AI shipped end-to-end",
     ],
@@ -341,11 +341,11 @@ export const ROLE_LENSES: RoleLens[] = [
     label: "Design Ops",
     group: "specialist",
     eyebrow: "Systems · Predictability · Scale",
-    headline: "UX as a delivery system engineering can schedule against.",
+    headline: "Make UX something engineering can schedule against.",
     pitch:
-      "Intake, estimation from velocity, research ops, and Figma governance turned UX from local heroics into shared infrastructure — clearer status, fewer late redesigns.",
+      "Intake, estimation from velocity, research ops, and Figma standards turned UX from local heroics into shared infrastructure — clearer status, fewer late redesigns.",
     proof: [
-      "Org-wide estimation, Figma governance, research ops at Appfire",
+      "Org-wide estimation, Figma standards, and research ops at Appfire",
       "Design-system contribution model through SoftwarePlant → Appfire",
       "Predictable rhythm for stakeholders across a global team",
     ],
@@ -367,12 +367,12 @@ export const ROLE_LENSES: RoleLens[] = [
     label: "Design Systems",
     group: "specialist",
     eyebrow: "Governance · Figma · Multi-product consistency",
-    headline: "Systems that scale without relying on the same few seniors every time.",
+    headline: "Systems that scale without the same few seniors every time.",
     pitch:
-      "I built Figma governance and design-system standards for Marketplace products and a distributed UX org — so consistency, accessibility, and velocity scale across the portfolio, including BigPicture, 7pace, and AI workstreams, without rewriting the rules every sprint.",
+      "I built Figma standards and design-system rules for Marketplace products and a distributed UX org — so consistency, accessibility, and speed hold across BigPicture, 7pace, and AI workstreams without rewriting the rules every sprint.",
     proof: [
-      "Design-system governance through SoftwarePlant → Appfire integration",
-      "Org-wide Figma standards and quality bars for a 35+ team of designers, researchers, and writers I co-led",
+      "Design-system standards through SoftwarePlant → Appfire integration",
+      "Org-wide Figma standards for a 35+ team I co-led",
       "Atlas CMS concept: tokens, specs, and a live props playground",
     ],
     ninetyDays: [
@@ -396,10 +396,10 @@ export const ROLE_LENSES: RoleLens[] = [
     eyebrow: "Shipped product · Trust · Agents",
     headline: "AI in working software — with craft and Approve gates intact.",
     pitch:
-      "I rolled out agentic workflows and design-to-code across a UX org, then proved the stack by shipping CostRadar.ai solo: true-net ledger, savings estimates + tracker, Approve-gated Profit Agent.",
+      "I rolled out agentic workflows and design-to-code across a UX org, then proved the stack by shipping CostRadar.ai solo: true-net ledger, savings tracker, and an AI Profit Agent that only acts after Approve.",
     proof: [
-      "CostRadar.ai live: React / Supabase / LLM agents (founder craft proof)",
-      "Approve-gated writes, quiet hours, grounded findings — trust before autonomy",
+      "CostRadar.ai live: React / Supabase / LLM agents — I designed and built it",
+      "Approve before writes, quiet hours, grounded findings — trust before autonomy",
       "AI workstream adoption with human review and design-system integrity",
     ],
     ninetyDays: [
@@ -427,30 +427,30 @@ export const AGENTIC_PIPELINE = [
 
 export const PROCESSES: NarrativeBlock[] = [
   {
-    title: "Discovery to ship without losing the craft bar",
-    body: "Design as a delivery system: frame the problem, prototype against real constraints, pair early with engineering on states and performance. Where AI helps (Cursor, Claude), we compress exploration; quality bars, accessibility, and design-system integrity stay non-negotiable. The test: what decision does this artifact unlock next week?",
+    title: "From problem to shipped UI",
+    body: "I frame the problem, prototype against real constraints, and pair early with engineering on states and performance. AI tools (Cursor, Claude) speed up exploration. Quality bars, accessibility, and the design system stay non-negotiable. The test I use: what decision does this artifact unlock next week?",
   },
 ];
 
 export const MENTORING: NarrativeBlock[] = [
   {
     title: "Grow designers who can own outcomes",
-    body: "I coach for craft and delivery together — 1:1s on problem framing, reviews that raise interaction quality, and growth paths tied to portfolio needs. Empathy and high bars work as a pair. Co-leading 35+ designers, researchers, and writers across Appfire meant standards that travel without constant heroics from the same few seniors.",
+    body: "I coach craft and delivery together — 1:1s on problem framing, reviews that raise interaction quality, and growth paths tied to what the product needs. Empathy and high bars both matter. At Appfire, co-leading 35+ people meant standards that travel without the same few seniors doing heroics every time.",
   },
 ];
 
 export const BUSINESS_IMPACT: NarrativeBlock[] = [
   {
     title: "UX operations at org scale",
-    body: "As Senior UX Manager I co-led a 35+ global UX org of designers, researchers, and writers: unified intake, clearer decision rights, research ops, estimation, and design-system governance as shared infrastructure — so UX stayed aligned from sprint planning through executive reporting.",
+    body: "As Senior UX Manager at Appfire I co-led a 35+ global UX org of designers, researchers, and writers. We set shared intake, clearer decision rights, research ops, estimation, and design-system rules — so UX stayed aligned from sprint planning through executive reporting.",
   },
   {
     title: "Product outcomes (enterprise)",
-    body: "BigPicture module work (OKRs, financials, Gantt) tied design decisions to adoption and clarity. Metrics below include scope footnotes; full case write-ups (baseline, timeframe, my contribution vs team) are in progress — see content/cases/.",
+    body: "On BigPicture (OKRs, financials, Gantt) design choices were tied to adoption and clarity. The numbers on this page include short scope notes. Fuller case write-ups (baseline, timeframe, my part vs the team) are still in progress.",
   },
   {
     title: "Founder craft (CostRadar)",
-    body: "CostRadar.ai is live: solo design-engineer ship with true-net P&L, savings estimates + tracker, and Approve-gated Profit Agent. Early-stage / fundraising = craft and trust proof, not a verified growth ROI case. No invented customer logos or merchant savings %.",
+    body: "CostRadar.ai is live. I designed and engineered it solo: true-net P&L, savings estimates and tracker, and an AI Profit Agent that only acts after Approve. That proves craft and trust UX at early stage — not a verified growth ROI story. No invented customer logos or merchant savings percentages.",
   },
 ];
 
@@ -465,33 +465,33 @@ export const IMPACT_METRICS: ImpactMetric[] = [
     value: "+47%",
     label: "OKR adoption among leadership teams",
     footnote:
-      "BigPicture OKR module · Appfire/SoftwarePlant era · team outcome; personal contribution detail in case draft",
+      "BigPicture OKR module · Appfire / SoftwarePlant · team outcome. Fuller write-up of my individual contribution still in progress.",
   },
   {
     value: "53→84%",
     label: "Financial module adoption in 3 months",
     footnote:
-      "BigPicture Financials · ~3-month window after redesign · product analytics; case write-up in progress",
+      "BigPicture Financials · about 3 months after redesign · product analytics. Case write-up in progress.",
   },
   {
     value: "−58%",
     label: "Unclear financial-data reports",
     footnote:
-      "Support / clarity signal post Financials redesign · baseline vs after · contribution shared with PM/eng",
+      "Support / clarity signal after the Financials redesign · before vs after · shared outcome with PM and engineering.",
   },
   {
     value: "42% faster",
     label: "Gantt information retrieval · NPS +36%",
     footnote:
-      "BigPicture Gantt usability work · timed tasks + NPS · team delivery under design leadership",
+      "BigPicture Gantt usability · timed tasks + NPS · delivered with the team under design leadership.",
   },
   {
     value: "35+",
     label: "Designers, researchers & writers co-led across Appfire",
     footnote:
-      "Senior UX Manager scope · co-led 35+ designers, researchers, and writers across the portfolio, including BigPicture, 7pace, AI workstreams · distributed global org",
+      "Senior UX Manager scope · co-led 35+ people across the portfolio, including BigPicture, 7pace, and AI workstreams · distributed global org.",
   },
 ];
 
 export const CLOSING_CTA =
-  "Thanks for reviewing the portfolio. I’d like to talk about UX leadership roles where strategy, craft, and design ops meet — Senior Manager / Head of Design scope, or specialist AI UX and Design Engineering seats. Reach out anytime.";
+  "Thanks for reading. I am looking for my next role — UX leadership (Senior Manager or Head of Design), or specialist seats in AI UX and Design Engineering. Reach out anytime.";

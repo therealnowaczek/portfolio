@@ -43,16 +43,15 @@ export function RoleFit() {
           Hire me for
         </h2>
         <p className="text-[15px] leading-relaxed text-foreground-secondary sm:text-base">
-          Hiring for UX Leader / Head of Design, Product or Staff/Principal UX,
-          Design Ops, Design Systems, or AI UX / Design Engineering? Each lens
-          points at different proof — <RichText>Appfire</RichText> leadership,{" "}
-          <RichText>BigPicture</RichText> craft, systems governance, or
-          CostRadar as a shipped builder case.
+          Open to UX Leader or Head of Design, Product or Staff UX, Design Ops,
+          Design Systems, or AI UX / Design Engineering. Pick the closest seat —
+          each one shows different proof from{" "}
+          <RichText>Appfire</RichText>, <RichText>BigPicture</RichText>, or
+          CostRadar.ai, plus a concrete first 90 days.
         </p>
         <p className="text-[15px] leading-relaxed text-muted sm:text-base">
-          Pick the seat closest to your JD. You&apos;ll see scoped proof and a
-          practical first-90-days plan — not the same metrics recycled under
-          every label.
+          Same person, different emphasis. You will not get the same three
+          bullets pasted under every job title.
         </p>
       </div>
 

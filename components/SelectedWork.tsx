@@ -60,8 +60,9 @@ export function SelectedWork({ projects, onOpen }: Props) {
           ) : null}
         </div>
         <p className="text-sm leading-relaxed text-muted sm:text-[15px]">
-          Selected work across AI, fintech, enterprise SaaS, and mobile. Open
-          any piece for the full story, screens, and outcomes.
+          One live product I shipped solo (CostRadar.ai), plus concept
+          explorations in AI, fintech, enterprise SaaS, and mobile. Open a card
+          for the story, screens, and what I learned.
         </p>
       </div>
 

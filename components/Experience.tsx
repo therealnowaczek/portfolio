@@ -9,9 +9,10 @@ export function Experience() {
           Experience
         </h2>
         <p className="mb-6 max-w-2xl text-sm leading-relaxed text-muted sm:text-[15px]">
-          Hands-on craft → Head of Design → Senior UX Manager, plus CostRadar
-          as an independent ship. Enterprise case write-ups in progress — this
-          section should not be the only place real work lives forever.
+          From hands-on designer through Head of Design to Senior UX Manager at
+          Appfire — plus CostRadar.ai, a product I built myself. I am looking
+          for my next challenge. Roles and timeline here; product work and
+          numbers are in Portfolio and Impact.
         </p>
         <ol className="space-y-6">
           {EXPERIENCE.map((item) => (
