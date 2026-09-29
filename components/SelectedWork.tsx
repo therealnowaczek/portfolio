@@ -172,10 +172,11 @@ export function SelectedWork({ projects, onOpen }: Props) {
           ) : null}
         </div>
         <p className="text-sm leading-relaxed text-muted sm:text-[15px]">
-          CostRadar.ai (live product I designed and built), enterprise cases from
-          Appfire (Design Ops, BigPicture OKRs and Gantt), plus product design
-          across AI, fintech, and mobile. Open a card for the story, screens, and
-          what I learned.
+          CostRadar.ai is the live product I designed and built. Design Ops, OKRs,
+          and Gantt are enterprise cases from Appfire and BigPicture. The other
+          work is freelance product design I have run since 2021: UX for mobile
+          apps, desktop products, and web. Open a card for the story, screens,
+          and what I learned.
         </p>
       </div>
 

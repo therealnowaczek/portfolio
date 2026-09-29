@@ -99,6 +99,13 @@ export const EXPERIENCE: ExperienceItem[] = [
       "Co-led 35+ designers, researchers, and writers across BigPicture, 7pace, and AI workstreams. Ran design ops, estimation, Figma standards, research ops, and AI rollout. BigPicture team outcomes: +47% OKR adoption, financial-module adoption 53% to 84% in 3 months, 58% fewer unclear financial reports.",
   },
   {
+    years: "2021 – Present",
+    role: "Freelancer",
+    company: "Independent",
+    blurb:
+      "UX projects alongside staff roles: mobile apps, desktop products, and web. Product design from framing and UI through delivery. This practice is the wider portfolio.",
+  },
+  {
     years: "2019 – 2023",
     role: "Head of Design",
     company: "SoftwarePlant (acquired by Appfire)",
