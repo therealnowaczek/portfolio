@@ -52,13 +52,13 @@ export const INTRO_HEADLINE =
 
 /** ~100 words: who, for whom, one leadership proof, one shipped builder proof, CTA. */
 export const INTRO_PARAGRAPHS = [
-  "Senior UX Manager at Appfire — I led 35+ designers across BigPicture, 7pace, and AI workstreams, with design ops and measurable adoption on tools used by thousands of teams. Independently I shipped CostRadar.ai as a solo design engineer (live at costradar.ai): true-net P&L and Approve-gated AI. I look for design leadership roles where strategy, craft, and operating systems meet — open to a conversation.",
+  "Senior UX Manager at Appfire — I co-led 35+ designers, researchers, and writers across the product portfolio, including BigPicture, 7pace, and AI workstreams, with design ops and measurable adoption on tools used by thousands of teams. Independently I shipped CostRadar.ai as a solo design engineer (live at costradar.ai): true-net P&L and Approve-gated AI. I look for design leadership roles where strategy, craft, and operating systems meet — open to a conversation.",
 ];
 
 export const HIGHLIGHTS: Highlight[] = [
   {
     title: "Enterprise leadership",
-    body: "Senior UX Manager at Appfire: 35+ designers across BigPicture, 7pace, and AI workstreams. Design ops, Figma governance, and research ops so UX partners predictably with product and engineering.",
+    body: "Senior UX Manager at Appfire: co-led 35+ designers, researchers, and writers across the portfolio, including BigPicture, 7pace, and AI workstreams. Design ops, Figma governance, and research ops so UX partners predictably with product and engineering.",
   },
   {
     title: "Shipped founder product",
@@ -110,7 +110,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     role: "Senior UX Manager",
     company: "Appfire",
     blurb:
-      "Led 35+ UX across BigPicture, 7pace, and AI workstreams. Estimation, Figma governance, research ops, and AI workstream adoption across the org. Case write-ups in progress.",
+      "Co-led 35+ designers, researchers, and writers across the Appfire portfolio, including BigPicture, 7pace, and AI workstreams. Estimation, Figma governance, research ops, and AI workstream adoption across the org. Case write-ups in progress.",
   },
   {
     years: "2019 – 2023",
@@ -256,9 +256,9 @@ export const ROLE_LENSES: RoleLens[] = [
     eyebrow: "Senior Manager · Head of UX",
     headline: "Strategy connected to craft — close enough to still ship when it matters.",
     pitch:
-      "As Senior UX Manager at Appfire I led 35+ designers across BigPicture, 7pace, and AI workstreams. I coach seniors, unblock squads, and keep trade-offs real — mentorship as weekly operating practice, not a workshop series.",
+      "As Senior UX Manager at Appfire I co-led 35+ designers, researchers, and writers across the product portfolio, including BigPicture, 7pace, and AI workstreams. I coach seniors, unblock squads, and keep trade-offs real — mentorship as weekly operating practice, not a workshop series.",
     proof: [
-      "Grew teams from IC craft to 16+, then 35+ post-acquisition",
+      "Grew teams from IC craft to 16+, then co-led 35+ designers, researchers, and writers post-acquisition",
       "Design-system governance for Atlassian Marketplace products",
       "Research ops (Dovetail), Figma standards, cross-timezone delivery",
     ],
@@ -388,10 +388,10 @@ export const ROLE_LENSES: RoleLens[] = [
     eyebrow: "Governance · Figma · Multi-product consistency",
     headline: "Systems that scale without relying on the same few seniors every time.",
     pitch:
-      "I built Figma governance and design-system standards for Marketplace products and a distributed UX org — so consistency, accessibility, and velocity scale across BigPicture, 7pace, and AI workstreams without rewriting the rules every sprint.",
+      "I built Figma governance and design-system standards for Marketplace products and a distributed UX org — so consistency, accessibility, and velocity scale across the portfolio, including BigPicture, 7pace, and AI workstreams, without rewriting the rules every sprint.",
     proof: [
       "Design-system governance through SoftwarePlant → Appfire integration",
-      "Org-wide Figma standards and quality bars for a 35+ person team",
+      "Org-wide Figma standards and quality bars for a 35+ team of designers, researchers, and writers I co-led",
       "Atlas CMS concept: tokens, specs, and a live props playground",
     ],
     ninetyDays: [
@@ -454,14 +454,14 @@ export const PROCESSES: NarrativeBlock[] = [
 export const MENTORING: NarrativeBlock[] = [
   {
     title: "Grow designers who can own outcomes",
-    body: "I coach for craft and delivery together — 1:1s on problem framing, reviews that raise interaction quality, and growth paths tied to portfolio needs. Empathy and high bars work as a pair. Leading 35+ across Appfire meant standards that travel without constant heroics from the same few seniors.",
+    body: "I coach for craft and delivery together — 1:1s on problem framing, reviews that raise interaction quality, and growth paths tied to portfolio needs. Empathy and high bars work as a pair. Co-leading 35+ designers, researchers, and writers across Appfire meant standards that travel without constant heroics from the same few seniors.",
   },
 ];
 
 export const BUSINESS_IMPACT: NarrativeBlock[] = [
   {
     title: "UX operations at org scale",
-    body: "As Senior UX Manager I rebuilt how a 35-person global UX org operated: unified intake, clearer decision rights, research ops, estimation, and design-system governance as shared infrastructure — so UX stayed aligned from sprint planning through executive reporting.",
+    body: "As Senior UX Manager I co-led a 35+ global UX org of designers, researchers, and writers: unified intake, clearer decision rights, research ops, estimation, and design-system governance as shared infrastructure — so UX stayed aligned from sprint planning through executive reporting.",
   },
   {
     title: "Product outcomes (enterprise)",
@@ -506,9 +506,9 @@ export const IMPACT_METRICS: ImpactMetric[] = [
   },
   {
     value: "35+",
-    label: "Designers led across Appfire portfolio",
+    label: "Designers, researchers & writers co-led across Appfire",
     footnote:
-      "Senior UX Manager scope · BigPicture, 7pace, AI workstreams · distributed global org",
+      "Senior UX Manager scope · co-led 35+ designers, researchers, and writers across the portfolio, including BigPicture, 7pace, AI workstreams · distributed global org",
   },
 ];
 
