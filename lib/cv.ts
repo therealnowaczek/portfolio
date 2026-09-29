@@ -566,6 +566,12 @@ export const IMPACT_METRICS: ImpactMetric[] = [
       "Enterprise Gantt usability · timed tasks + NPS · delivered with the team under design leadership.",
   },
   {
+    value: "16+",
+    label: "Designers, researchers & writers on the team I grew",
+    footnote:
+      "Head of Design at SoftwarePlant · team built before the Appfire acquisition.",
+  },
+  {
     value: "35+",
     label: "Designers, researchers & writers co-led across Appfire",
     footnote:
