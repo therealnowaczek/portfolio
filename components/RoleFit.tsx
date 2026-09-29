@@ -1,28 +1,60 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
 import {
-  AGENTIC_PIPELINE,
+  useCallback,
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+  type KeyboardEvent,
+} from "react";
+import {
   ROLE_LENS_GROUPS,
   ROLE_LENSES,
   type RoleLens,
 } from "@/lib/cv";
 import { RichText } from "./RichText";
 
+const KEYWORD_CAP = 5;
+
 export function RoleFit() {
   const [activeId, setActiveId] = useState(ROLE_LENSES[0]?.id ?? "leader");
   const [entered, setEntered] = useState(false);
+  const [fadeLeft, setFadeLeft] = useState(false);
+  const [fadeRight, setFadeRight] = useState(false);
+  const tablistRef = useRef<HTMLDivElement>(null);
+  const panelId = useId();
   const lens =
     ROLE_LENSES.find((r) => r.id === activeId) ?? ROLE_LENSES[0];
 
   const grouped = useMemo(
     () =>
       ROLE_LENS_GROUPS.map((g) => ({
-        ...g,
+...g,
         roles: ROLE_LENSES.filter((r) => r.group === g.id),
       })),
     [],
   );
+
+  const roleIndex = useMemo(() => {
+    const map = new Map<string, number>();
+    ROLE_LENSES.forEach((r, i) => map.set(r.id, i + 1));
+    return map;
+  }, []);
+
+  const selectRole = useCallback((id: string) => {
+    setEntered(false);
+    setActiveId(id);
+  }, []);
+
+  const updateFades = useCallback(() => {
+    const el = tablistRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    setFadeLeft(el.scrollLeft > 4);
+    setFadeRight(max > 4 && el.scrollLeft < max - 4);
+  }, []);
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -34,107 +66,215 @@ export function RoleFit() {
     return () => window.clearTimeout(t);
   }, [activeId]);
 
+  useEffect(() => {
+    const el = tablistRef.current;
+    if (!el) return;
+    updateFades();
+    const ro = new ResizeObserver(updateFades);
+    ro.observe(el);
+    window.addEventListener("resize", updateFades);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", updateFades);
+    };
+  }, [updateFades]);
+
+  useEffect(() => {
+    const el = tablistRef.current;
+    if (!el || window.matchMedia("(min-width: 1024px)").matches) return;
+    const btn = el.querySelector<HTMLElement>(`[data-role-tab="${activeId}"]`);
+    if (!btn) return;
+    const elRect = el.getBoundingClientRect();
+    const btnRect = btn.getBoundingClientRect();
+    const btnLeft = btnRect.left - elRect.left + el.scrollLeft;
+    const btnRight = btnLeft + btn.offsetWidth;
+    const viewLeft = el.scrollLeft;
+    const viewRight = viewLeft + el.clientWidth;
+    const pad = 40;
+    if (btnLeft < viewLeft + pad) {
+      el.scrollTo({ left: Math.max(btnLeft - pad, 0), behavior: "smooth" });
+    } else if (btnRight > viewRight - pad) {
+      el.scrollTo({
+        left: btnRight - el.clientWidth + pad,
+        behavior: "smooth",
+      });
+    }
+  }, [activeId]);
+
+  const onTabKeyDown = (e: KeyboardEvent<HTMLButtonElement>) => {
+    const roles = ROLE_LENSES;
+    const i = roles.findIndex((r) => r.id === activeId);
+    if (i < 0) return;
+
+    let next = -1;
+    if (e.key === "ArrowDown" || e.key === "ArrowRight") {
+      next = (i + 1) % roles.length;
+    } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
+      next = (i - 1 + roles.length) % roles.length;
+    } else if (e.key === "Home") {
+      next = 0;
+    } else if (e.key === "End") {
+      next = roles.length - 1;
+    } else {
+      return;
+    }
+
+    e.preventDefault();
+    const nextId = roles[next]?.id;
+    if (!nextId) return;
+    selectRole(nextId);
+    requestAnimationFrame(() => {
+      tablistRef.current
+        ?.querySelector<HTMLElement>(`[data-role-tab="${nextId}"]`)
+        ?.focus();
+    });
+  };
+
   if (!lens) return null;
 
   return (
-    <section aria-labelledby="fit-heading" className="space-y-8">
-      <div className="max-w-2xl space-y-3">
-        <h2 id="fit-heading" className="section-title">
-          Hire me for
-        </h2>
-        <p className="text-[15px] leading-relaxed text-foreground-secondary sm:text-base">
-          Open to UX Leader or Head of Design, Product or Staff UX, Design Ops,
-          Design Systems, or AI UX / Design Engineering. Pick the closest seat —
-          each one shows different proof from{" "}
-          <RichText>Appfire</RichText>, <RichText>BigPicture</RichText>, or
-          CostRadar.ai, plus a concrete first 90 days.
-        </p>
-      </div>
-
-      <div className="grid gap-4">
-        {grouped.map((group) => (
-          <div
-            key={group.id}
-            className="rounded-[10px] border border-border bg-surface/40 p-4 sm:p-5"
-          >
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.06em] text-muted">
-              {group.title}
-            </p>
+    <div className="space-y-8">
+      <div className="grid gap-8 lg:grid-cols-[11rem_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[12.5rem_minmax(0,1fr)]">
+        {/* Role chapters: numbered editorial list; not nav pills */}
+        <nav aria-label="Role chapters" className="lg:sticky lg:top-36 lg:self-start">
+          <div className="relative -mx-1 px-1 lg:mx-0 lg:px-0">
             <div
+              aria-hidden
+              className={`pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background from-35% via-background/85 to-transparent transition-opacity duration-200 lg:hidden ${
+                fadeLeft ? "opacity-100" : "opacity-0"
+              }`}
+            />
+            <div
+              aria-hidden
+              className={`pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-background from-35% via-background/85 to-transparent transition-opacity duration-200 lg:hidden ${
+                fadeRight ? "opacity-100" : "opacity-0"
+              }`}
+            />
+            <div
+              ref={tablistRef}
               role="tablist"
-              aria-label={group.title}
-              className="flex flex-wrap gap-2"
+              onScroll={updateFades}
+              className="flex items-start gap-5 overflow-x-auto scroll-px-3 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:block lg:space-y-6 lg:overflow-visible lg:pb-0"
             >
-              {group.roles.map((role) => {
-                const on = role.id === activeId;
-                return (
-                  <button
-                    key={role.id}
-                    type="button"
-                    role="tab"
-                    aria-selected={on}
-                    onClick={() => {
-                      setEntered(false);
-                      setActiveId(role.id);
-                    }}
-                    className={`rounded-[8px] px-3.5 py-2 text-sm font-medium transition-[background,color,transform,box-shadow] duration-200 ease-out ${
-                      on
-                        ? "bg-accent text-white shadow-[0_8px_24px_-12px_rgba(238,4,108,0.7)]"
-                        : "bg-background text-foreground-secondary shadow-[inset_0_0_0_1px_var(--border)] hover:text-foreground"
-                    }`}
+              {grouped.map((group, gi) => (
+                <div
+                  key={group.id}
+                  role="presentation"
+                  className={`flex shrink-0 flex-col lg:block ${
+                    gi > 0
+                      ? "border-l border-border pl-5 lg:border-l-0 lg:pl-0" : ""
+                  }`}
+                >
+                  <p
+                    role="presentation"
+                    className="mb-1.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-muted lg:mb-2 lg:text-[11px] lg:tracking-[0.06em]"
                   >
-                    {role.label}
-                  </button>
-                );
-              })}
+                    {group.title}
+                  </p>
+                  <div
+                    role="presentation"
+                    className="flex items-end gap-4 lg:flex-col lg:items-stretch lg:gap-0 lg:space-y-0.5"
+                  >
+                    {group.roles.map((role) => {
+                      const on = role.id === activeId;
+                      const n = roleIndex.get(role.id) ?? 0;
+                      return (
+                        <button
+                          key={role.id}
+                          type="button"
+                          role="tab"
+                          id={`role-tab-${role.id}`}
+                          data-role-tab={role.id}
+                          aria-selected={on}
+                          aria-controls={panelId}
+                          tabIndex={on ? 0 : -1}
+                          onClick={() => selectRole(role.id)}
+                          onKeyDown={onTabKeyDown}
+                          className={`group/role relative flex shrink-0 items-baseline gap-1.5 pb-1.5 text-left transition-[color] duration-200 ease-out lg:w-full lg:border-l-2 lg:gap-2 lg:px-3 lg:py-1.5 lg:pb-1.5 ${
+                            on
+                              ? "text-accent lg:border-accent" : "text-muted hover:text-foreground lg:border-transparent"
+                          }`}
+                        >
+                          <span
+                            className={`font-semibold tabular-nums tracking-tight transition-colors duration-200 ease-out ${
+                              on
+                                ? "text-[11px] text-accent" : "text-[11px] text-muted/70 group-hover/role:text-muted"
+                            }`}
+                            aria-hidden
+                          >
+                            {String(n).padStart(2, "0")}
+                          </span>
+                          <span
+                            className={`text-[13px] tracking-tight transition-[color,font-weight] duration-200 ease-out ${
+                              on ? "font-medium" : "font-normal"
+                            }`}
+                          >
+                            {role.label}
+                          </span>
+                          {on ? (
+                            <span
+                              className="absolute inset-x-0 bottom-0 h-px bg-accent lg:hidden"
+                              aria-hidden
+                            />
+                          ) : null}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
+        </nav>
+
+        <LensPanel
+          key={lens.id}
+          panelId={panelId}
+          lens={lens}
+          entered={entered}
+          tabId={`role-tab-${lens.id}`}
+        />
       </div>
 
-      <LensPanel key={lens.id} lens={lens} entered={entered} />
-
-      <div className="overflow-hidden rounded-[10px] border border-border bg-surface/60 px-4 py-5 sm:px-6">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.06em] text-muted">
-          Agentic UX loop I bring into organizations
-        </p>
-        <ol className="grid gap-3 sm:grid-cols-3 lg:grid-cols-6">
-          {AGENTIC_PIPELINE.map((node, i) => (
-            <li
-              key={node.step}
-              className="relative rounded-[8px] bg-background px-3 py-3 shadow-[inset_0_0_0_1px_var(--border)]"
-            >
-              <span className="text-[11px] font-semibold tabular-nums text-accent">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <p className="mt-1 text-sm font-semibold text-foreground-secondary">
-                {node.step}
-              </p>
-              <p className="mt-0.5 text-xs leading-snug text-muted">
-                {node.detail}
-              </p>
-              {i < AGENTIC_PIPELINE.length - 1 ? (
-                <span
-                  className="pointer-events-none absolute -right-2 top-1/2 hidden h-px w-4 -translate-y-1/2 bg-accent/40 lg:block"
-                  aria-hidden
-                />
-              ) : null}
-            </li>
-          ))}
-        </ol>
-      </div>
-    </section>
+      <p className="border-t border-border pt-6 text-sm text-muted">
+        How I move from problem to ship:{" "}
+        <a
+          href="#process"
+          className="font-medium text-accent transition-colors duration-200 ease-out hover:text-foreground"
+        >
+          Process
+          <span aria-hidden className="ml-1 text-[13px]">
+            →
+          </span>
+        </a>
+      </p>
+    </div>
   );
 }
 
-function LensPanel({ lens, entered }: { lens: RoleLens; entered: boolean }) {
+function LensPanel({
+  lens,
+  entered,
+  panelId,
+  tabId,
+}: {
+  lens: RoleLens;
+  entered: boolean;
+  panelId: string;
+  tabId: string;
+}) {
+  const keywords = lens.keywords.slice(0, KEYWORD_CAP);
+
   return (
     <div
-      className={`grid gap-8 rounded-[12px] border border-border bg-background p-5 transition-[opacity,transform] duration-300 ease-out sm:p-7 lg:grid-cols-[1.2fr_0.8fr] ${
+      id={panelId}
+      role="tabpanel"
+      aria-labelledby={tabId}
+      className={`min-w-0 transition-[opacity,transform] duration-300 ease-out ${
         entered ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
       }`}
     >
-      <div className="space-y-5">
+      <div className="space-y-8">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.06em] text-accent">
             {lens.eyebrow}
@@ -151,61 +291,72 @@ function LensPanel({ lens, entered }: { lens: RoleLens; entered: boolean }) {
           <h4 className="text-xs font-semibold uppercase tracking-[0.06em] text-muted">
             Relevant proof
           </h4>
-          <ul className="mt-2 space-y-2">
+          <ul className="mt-3 space-y-2.5">
             {lens.proof.map((item) => (
               <li
                 key={item}
-                className="flex gap-2 text-sm leading-relaxed text-foreground-secondary"
+                className="border-l border-accent/40 pl-3 text-sm leading-relaxed text-foreground-secondary"
               >
-                <span
-                  className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
-                  aria-hidden
-                />
-                <span>
-                  <RichText>{item}</RichText>
-                </span>
+                <RichText>{item}</RichText>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="flex flex-wrap gap-2" aria-label="Keywords">
-          {lens.keywords.map((kw) => (
-            <span
-              key={kw}
-              className="rounded-[8px] border border-accent/25 bg-accent/[0.06] px-2.5 py-1 text-xs font-medium text-accent"
-            >
-              {kw}
+        {keywords.length > 0 ? (
+          <p
+            className="text-[11px] font-semibold uppercase tracking-[0.06em] text-muted"
+            aria-label="Keywords"
+          >
+            {keywords.map((kw, i) => (
+              <span key={kw}>
+                {i > 0 ? (
+                  <span className="mx-2.5 inline-block h-2.5 w-px translate-y-px bg-border align-middle" aria-hidden />
+                ) : null}
+                {kw}
+              </span>
+            ))}
+          </p>
+        ) : null}
+
+        <div className="border-t border-border pt-6">
+          <h4 className="text-xs font-semibold uppercase tracking-[0.06em] text-muted">
+            First 90 days
+          </h4>
+          <ol className="mt-4 grid gap-4 sm:grid-cols-3 sm:gap-6">
+            {lens.ninetyDays.map((item, i) => (
+              <li key={item} className="relative min-w-0">
+                {i < lens.ninetyDays.length - 1 ? (
+                  <span
+                    className="pointer-events-none absolute top-3 left-[2.25rem] hidden h-px right-[-1.5rem] bg-border sm:block"
+                    aria-hidden
+                  />
+                ) : null}
+                <span className="text-[11px] font-semibold tabular-nums text-accent">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="mt-1.5 text-sm leading-relaxed text-foreground-secondary">
+                  {item}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="pt-1">
+          <a
+            href={`mailto:pl.nowak.marcin@gmail.com?subject=${encodeURIComponent(
+              `Role conversation: ${lens.label}`,
+            )}`}
+            className="inline-flex items-center gap-1.5 border-b border-accent/40 pb-0.5 text-sm font-medium text-accent transition-[border-color,color] duration-200 ease-out hover:border-accent hover:text-foreground"
+          >
+            Let’s talk about this role
+            <span aria-hidden className="text-[13px]">
+              →
             </span>
-          ))}
+          </a>
         </div>
       </div>
-
-      <aside className="flex flex-col rounded-[10px] bg-[#2d3748] p-5 text-white sm:p-6">
-        <h4 className="text-xs font-semibold uppercase tracking-[0.06em] text-white/55">
-          First 90 days
-        </h4>
-        <ol className="mt-4 flex-1 space-y-4">
-          {lens.ninetyDays.map((item, i) => (
-            <li key={item} className="flex gap-3">
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-semibold">
-                {i + 1}
-              </span>
-              <p className="pt-0.5 text-sm leading-relaxed text-white/90">
-                {item}
-              </p>
-            </li>
-          ))}
-        </ol>
-        <a
-          href={`mailto:pl.nowak.marcin@gmail.com?subject=${encodeURIComponent(
-            `Role conversation — ${lens.label}`,
-          )}`}
-          className="mt-6 inline-flex items-center justify-center rounded-[8px] bg-accent px-4 py-2.5 text-sm font-medium text-white transition-transform duration-200 ease-out hover:scale-[1.02]"
-        >
-          Let’s talk about this role
-        </a>
-      </aside>
     </div>
   );
 }

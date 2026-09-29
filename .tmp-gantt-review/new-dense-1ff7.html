@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gantt Enterprise Program Portfolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-container": "#eeefff",
+            "error": "#ba1a1a",
+            "primary-fixed-dim": "#b4c5ff",
+            "secondary-fixed-dim": "#b7c7e8",
+            "on-secondary": "#ffffff",
+            "surface-dim": "#cadaff",
+            "error-container": "#ffdad6",
+            "surface-variant": "#d7e2ff",
+            "primary-container": "#2563eb",
+            "on-surface": "#041b3c",
+            "tertiary": "#006240",
+            "on-primary": "#ffffff",
+            "surface-container-highest": "#d7e2ff",
+            "surface-container": "#e8edff",
+            "tertiary-fixed-dim": "#71dba6",
+            "on-surface-variant": "#434655",
+            "surface": "#f9f9ff",
+            "outline": "#737686",
+            "surface-container-low": "#f1f3ff",
+            "on-tertiary-container": "#bcffd9",
+            "on-secondary-container": "#51617e",
+            "tertiary-fixed": "#8df7c1",
+            "surface-container-high": "#e0e8ff",
+            "secondary-container": "#cdddff",
+            "inverse-on-surface": "#edf0ff",
+            "background": "#f9f9ff",
+            "on-primary-fixed-variant": "#003ea8",
+            "primary": "#004ac6",
+            "on-primary-fixed": "#00174b",
+            "surface-bright": "#f9f9ff",
+            "secondary": "#4f5f7b",
+            "inverse-primary": "#b4c5ff",
+            "outline-variant": "#c3c6d7",
+            "inverse-surface": "#1d3052",
+            "tertiary-container": "#007d53",
+            "secondary-fixed": "#d6e3ff",
+            "on-background": "#041b3c",
+            "on-secondary-fixed": "#091c35",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#005235",
+            "on-tertiary": "#ffffff",
+            "surface-tint": "#0053db",
+            "primary-fixed": "#dbe1ff",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed-variant": "#374763",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#002113"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-lg": "0.75rem",
+            "margin": "1rem",
+            "space-xs": "0.125rem",
+            "space-sm": "0.25rem",
+            "space-md": "0.5rem",
+            "space-xl": "1rem",
+            "gutter": "0.5rem"
+          },
+          "fontFamily": {
+            "body-md": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-sm": ["Inter"],
+            "headline-md": ["Inter"],
+            "tabular-regular": ["Inter"],
+            "tabular-bold": ["Inter"],
+            "label-sm": ["Inter"]
+          },
+          "fontSize": {
+            "body-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+            "headline-lg": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+            "body-lg": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "headline-sm": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+            "headline-md": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+            "tabular-regular": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+            "tabular-bold": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      font-size: 16px;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f3ff;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #c3c6d7;
+      border-radius: 3px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #737686;
+    }
+    .row-h {
+      height: 32px;
+      min-height: 32px;
+      max-height: 32px;
+    }
+  </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-sm text-body-sm antialiased overflow-hidden flex flex-col h-screen select-none">
+<!-- TOP APP BAR -->
+<header class="bg-surface-container-lowest border-b border-outline-variant flex justify-between items-center w-full px-space-lg h-9 min-h-[36px] z-30 flex-shrink-0">
+<!-- Left cluster: Brand & Navigation -->
+<div class="flex items-center space-x-space-lg">
+<div class="flex items-center space-x-1.5">
+<span class="w-5 h-5 rounded bg-primary-container text-on-primary flex items-center justify-center font-bold text-xs">G</span>
+<span class="font-headline-md text-headline-md font-bold text-primary-container tracking-tight">Gantt</span>
+</div>
+<div class="h-4 w-[1px] bg-outline-variant"></div>
+<!-- Breadcrumb -->
+<div class="flex items-center space-x-1 font-label-md text-label-md text-secondary">
+<span>Programs</span>
+<span class="text-outline">/</span>
+<span class="font-tabular-bold text-on-surface font-semibold">Platform 2026</span>
+<span class="ml-1.5 px-1.5 py-0.2 bg-surface-container text-secondary text-[10px] rounded font-mono">PORTFOLIO</span>
+</div>
+<!-- Navigation Tabs (from Shared Components JSON) -->
+<nav class="hidden md:flex items-center space-x-space-md ml-space-lg border-l border-outline-variant pl-space-md">
+<!-- Active Gantt tab with exact spec from JSON -->
+<a class="border-b-2 border-primary-container text-primary-container font-label-md pb-1 flex items-center gap-1 font-semibold" href="#">
+<span class="material-symbols-outlined text-[15px]">reorder</span>
+<span>Gantt</span>
+</a>
+<a class="text-secondary hover:text-on-surface font-label-md pb-1 flex items-center gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined text-[15px]">view_kanban</span>
+<span>Board</span>
+</a>
+<a class="text-secondary hover:text-on-surface font-label-md pb-1 flex items-center gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined text-[15px]">group</span>
+<span>Resources</span>
+</a>
+<a class="text-secondary hover:text-on-surface font-label-md pb-1 flex items-center gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined text-[15px]">track_changes</span>
+<span>OKRs</span>
+</a>
+<a class="text-secondary hover:text-on-surface font-label-md pb-1 flex items-center gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined text-[15px]">warning</span>
+<span>Risks</span>
+</a>
+<a class="text-secondary hover:text-on-surface font-label-md pb-1 flex items-center gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined text-[15px]">analytics</span>
+<span>Reports</span>
+</a>
+</nav>
+</div>
+<!-- Right cluster: Actions, Baseline status, User -->
+<div class="flex items-center space-x-2">
+<!-- Search on left inside controls -->
+<div class="relative w-52">
+<span class="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[14px]">search</span>
+</span>
+<input class="w-full h-7 pl-7 pr-7 text-[11px] bg-surface-container-low border border-outline-variant rounded focus:border-primary-container focus:ring-0 text-on-surface placeholder:text-secondary" placeholder="Quick search... ⌘K" type="text"/>
+<span class="absolute inset-y-0 right-0 pr-1.5 flex items-center pointer-events-none">
+<kbd class="text-[9px] px-1 bg-surface-container rounded text-secondary border border-outline-variant font-mono">⌘K</kbd>
+</span>
+</div>
+<!-- Baseline Status indicator badge -->
+<div class="flex items-center space-x-1 px-2 py-0.5 bg-surface-container-low border border-outline-variant rounded text-secondary text-[11px]">
+<span class="material-symbols-outlined text-[13px] text-tertiary">lock</span>
+<span class="font-medium text-on-surface-variant">Baseline: FY26 Annual Plan · LOCKED</span>
+</div>
+<!-- Icon toolbar actions from shared spec -->
+<div class="flex items-center border-l border-outline-variant pl-1.5 space-x-0.5">
+<button class="w-7 h-7 flex items-center justify-center rounded text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" title="Filter list">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button class="w-7 h-7 flex items-center justify-center rounded text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" title="Zoom">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+<button class="w-7 h-7 flex items-center justify-center rounded text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" title="Share portfolio">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="w-7 h-7 flex items-center justify-center rounded text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" title="Settings">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<!-- Primary Export button -->
+<button class="h-7 px-2.5 bg-primary-container hover:bg-primary text-on-primary text-label-md font-label-md rounded flex items-center space-x-1 transition-colors">
+<span class="material-symbols-outlined text-[14px]">file_download</span>
+<span>Export</span>
+</button>
+<!-- User avatar with image fallback & required detailed prompt -->
+<div class="pl-1">
+<img alt="User avatar for lead program director" class="w-6 h-6 rounded-full border border-outline-variant object-cover" data-alt="Close up professional portrait of a senior engineering enterprise director in minimal studio lighting with subtle cool blue reflections, soft neutral dark background, focused expression, sharp digital capture fitting a technical software executive avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL9NCuwtGRgj-WfpF92Co7qnB5v-qt7cVIXpA0Xk2Dic7e9rjtro1jm2PMwFAA5WvA3taiCsqDJ4Sk7jxwrDvni-UkT160S5M-9ozhy93b6MEmbm3d5hFSrYHnudN0l9GcUW-HL6ilRvBJQe34M8PzGlN1e5m0VSzy64PpEYGWsSwinCDfgjqnX_z0OyEGj0d5d_UnYnE_yT1lf-bVAJTL0TNitAs4SmRh5ba4TBKRUTMo1E2bG4rPTgukJFChRVKyhdXBJ9CKjhs"/>
+</div>
+</div>
+</header>
+<!-- SUB-TOOLBAR: DENSE STATUS & QUARTERS ZOOM CONTROLS -->
+<div class="h-9 min-h-[36px] bg-surface-container-low border-b border-outline-variant px-space-lg flex items-center justify-between text-label-md flex-shrink-0 z-20">
+<!-- Left filter pills & active view metrics -->
+<div class="flex items-center space-x-2">
+<!-- Quick Filter Pills -->
+<div class="flex items-center space-x-1 bg-surface-container-lowest p-0.5 rounded border border-outline-variant">
+<button class="px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container-high text-on-surface">All Issues</button>
+<button class="px-2 py-0.5 rounded text-[11px] text-error font-semibold hover:bg-surface-container flex items-center space-x-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+<span>Critical path (4)</span>
+</button>
+<button class="px-2 py-0.5 rounded text-[11px] text-secondary hover:text-on-surface hover:bg-surface-container">My Ownership</button>
+<button class="px-2 py-0.5 rounded text-[11px] text-secondary hover:text-on-surface hover:bg-surface-container">Unscheduled</button>
+</div>
+<div class="h-3.5 w-[1px] bg-outline-variant"></div>
+<!-- Telemetry status badge -->
+<div class="flex items-center space-x-1.5 text-[11px] text-secondary">
+<span class="material-symbols-outlined text-[13px] text-tertiary">bolt</span>
+<span class="font-mono">Rendering 1,842 bars · virtualized (4.2ms)</span>
+</div>
+<div class="h-3.5 w-[1px] bg-outline-variant"></div>
+<!-- Critical Path Pill -->
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-red-100 text-red-800 border border-red-200">
+        Critical Path (4)
+      </span>
+</div>
+<!-- Right Controls: Zoom segment, Quarters active, View Mode -->
+<div class="flex items-center space-x-3">
+<!-- Active Zoom indicator -->
+<div class="text-[11px] text-on-surface-variant font-medium flex items-center space-x-1">
+<span class="material-symbols-outlined text-[14px] text-primary-container">calendar_view_week</span>
+<span>Zoom: <strong>Quarters</strong> · 186 tasks</span>
+</div>
+<!-- Distinct Quarters Segmented Controller -->
+<div class="flex items-center bg-surface-container-lowest border border-outline-variant rounded p-0.5">
+<button class="px-2 py-0.5 text-[11px] text-secondary hover:text-on-surface rounded transition-colors">Days</button>
+<button class="px-2 py-0.5 text-[11px] text-secondary hover:text-on-surface rounded transition-colors">Weeks</button>
+<!-- Quarters [ACTIVE] strictly highlighted with primary-container blue pill & white text -->
+<button class="px-2.5 py-0.5 text-[11px] font-semibold bg-primary-container text-on-primary rounded shadow-xs">Quarters</button>
+<button class="px-2 py-0.5 text-[11px] text-secondary hover:text-on-surface rounded transition-colors">Months</button>
+<button class="px-2 py-0.5 text-[11px] text-secondary hover:text-on-surface rounded transition-colors">Years</button>
+</div>
+<!-- Zoom Stepper & Keyboard hint -->
+<div class="flex items-center space-x-1 bg-surface-container-lowest border border-outline-variant rounded px-1.5 py-0.5 text-[11px] text-secondary">
+<button class="hover:text-on-surface px-1 font-mono font-bold" title="Zoom out">—</button>
+<span class="text-[10px] font-semibold px-0.5 text-on-surface">Quarters</span>
+<button class="hover:text-on-surface px-1 font-mono font-bold" title="Zoom in">+</button>
+<span class="text-[10px] text-outline ml-1 font-mono">[⌘+ ⌘− Fit]</span>
+</div>
+<!-- Additional controls -->
+<div class="flex items-center space-x-1">
+<button class="h-6 px-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface rounded text-[11px] border border-outline-variant flex items-center space-x-1">
+<span class="material-symbols-outlined text-[13px]">tune</span>
+<span>Columns</span>
+</button>
+<button class="h-6 px-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface rounded text-[11px] border border-outline-variant flex items-center space-x-1">
+<span class="material-symbols-outlined text-[13px]">fullscreen</span>
+</button>
+</div>
+</div>
+</div>
+<!-- MAIN SPLIT WORKSPACE: TABLE (WBS) + TIMELINE CANVAS -->
+<div class="flex-1 flex overflow-hidden relative">
+<!-- LEFT PANE: WBS TABLE (Width ~490px) -->
+<div class="w-[500px] flex-shrink-0 bg-surface-container-lowest border-r border-outline-variant flex flex-col z-10">
+<!-- Table Header (Ruler synced: 32px height) -->
+<div class="h-8 min-h-[32px] max-h-[32px] bg-surface-container-low border-b border-outline-variant flex items-center text-[11px] font-semibold text-secondary uppercase tracking-wider divide-x divide-outline-variant flex-shrink-0 select-none">
+<div class="w-12 px-2 text-center">WBS</div>
+<div class="w-18 px-2">Key</div>
+<div class="flex-1 px-2">Summary</div>
+<div class="w-14 px-1.5 text-center">Owner</div>
+<div class="w-20 px-2 text-center">Status</div>
+<div class="w-16 px-1 text-center">Start</div>
+<div class="w-16 px-1 text-center">End</div>
+</div>
+<!-- Table Body Rows (Scroll synced with timeline) -->
+<div class="flex-1 overflow-y-auto overflow-x-hidden custom-scrollbar divide-y divide-outline-variant/40 bg-surface-container-lowest" id="table-scroll-container">
+<!-- ================= SWIMLANE 1: 1.0 Platform Core Fleet ================= -->
+<div class="row-h bg-surface-container flex items-center px-2 text-xs font-semibold text-on-surface"><div class="w-18 px-2">Key</div><div class="flex-1 px-2">Summary</div><div class="w-14 px-1.5 text-center">Owner</div><div class="w-20 px-2 text-center">Status</div></div>
+<!-- Row 1: GN-1042 -->
+<div class="row-h flex items-center text-[12px] divide-outline-variant/30 hover:bg-surface-container-low transition-colors"><div class="w-18 px-2 font-mono text-[11px] text-primary-container font-medium">GN-1042</div><div class="flex-1 px-2 truncate font-medium text-on-surface pl-4">Kernel Mesh Architecture v4</div><div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center text-[9px] font-bold">AK</span></div><div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-100 text-emerald-800">Done</span></div></div>
+<!-- Row 2: GN-1045 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-secondary">1.2</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-medium">GN-1045</div>
+<div class="flex-1 px-2 truncate text-on-surface pl-4">gRPC Microservice Control Plane</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-[9px] font-bold">ML</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-blue-100 text-blue-800">In Progress</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Jan 18</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Mar 15</div>
+</div>
+<!-- Row 3: GN-1049 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-secondary">1.3</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-medium">GN-1049</div>
+<div class="flex-1 px-2 truncate text-on-surface pl-4">Zero-Trust Peer Authentication</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-[9px] font-bold">TC</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-blue-100 text-blue-800">In Progress</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Feb 02</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Apr 10</div>
+</div>
+<!-- Row 4: GN-1055 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-secondary">1.4</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-medium">GN-1055</div>
+<div class="flex-1 px-2 truncate text-on-surface pl-4">Memory Profiler &amp; Garbage Telemetry</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center text-[9px] font-bold">DR</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-slate-100 text-slate-700">To Do</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Mar 01</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">May 12</div>
+</div>
+<!-- Row 5: GN-1058 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-secondary">1.5</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-medium">GN-1058</div>
+<div class="flex-1 px-2 truncate text-on-surface pl-4">Multi-Region Hot Failover Switch</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center text-[9px] font-bold">EW</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-slate-100 text-slate-700">To Do</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Apr 15</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Jun 25</div>
+</div>
+<!-- Row 6: GN-1060 Milestone M1 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 bg-surface-container-lowest hover:bg-surface-container-low transition-colors font-medium">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-primary-container font-bold">M1</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-bold">GN-1060</div>
+<div class="flex-1 px-2 truncate text-primary font-bold pl-4 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[13px] text-primary">diamond</span>
+<span>M1: Core Architecture Sign-off</span>
+</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-primary-container text-white flex items-center justify-center text-[9px] font-bold">LD</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-primary-fixed text-primary">Milestone</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Jun 30</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Jun 30</div>
+</div>
+<!-- ================= SWIMLANE 2: 2.0 Mobile Experience ================= -->
+<div class="row-h bg-surface-container flex items-center px-2 text-xs font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[14px] mr-1 text-secondary cursor-pointer">expand_more</span>
+<span class="text-primary-container font-mono mr-1">2.0</span>
+<span>Mobile Experience</span>
+<span class="ml-2 text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-semibold">1 critical slip</span>
+</div>
+<!-- Row 7: GN-1090 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-secondary">2.1</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-medium">GN-1090</div>
+<div class="flex-1 px-2 truncate text-on-surface pl-4">SwiftUI Native Canvas Engine</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center text-[9px] font-bold">SO</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-100 text-emerald-800">Done</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Jan 02</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Feb 14</div>
+</div>
+<!-- Row 8: GN-1094 (CRITICAL / SLIP) -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 bg-red-50/50 hover:bg-red-50 transition-colors">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-red-600 font-bold">2.2</div>
+<div class="w-18 px-2 font-mono text-[11px] text-red-600 font-bold">GN-1094</div>
+<div class="flex-1 px-2 truncate text-red-900 font-semibold pl-4 flex items-center space-x-1">
+<span class="material-symbols-outlined text-[13px] text-red-600">error</span>
+<span>Offline Sync &amp; CRDT Conflict Res</span>
+<span class="text-[9px] bg-red-200 text-red-800 px-1 rounded ml-1 font-mono">+14d SLIP</span>
+</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-red-200 text-red-900 flex items-center justify-center text-[9px] font-bold">JS</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-800">At Risk</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-red-700 font-semibold">Jan 22</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-red-700 font-semibold">Apr 04</div>
+</div>
+<!-- Row 9: GN-1102 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-secondary">2.3</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-medium">GN-1102</div>
+<div class="flex-1 px-2 truncate text-on-surface pl-4">Biometric Keychain &amp; Secure Enclave</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center text-[9px] font-bold">KP</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-blue-100 text-blue-800">In Progress</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Feb 15</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">May 01</div>
+</div>
+<!-- Row 10: GN-1108 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-secondary">2.4</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-medium">GN-1108</div>
+<div class="flex-1 px-2 truncate text-on-surface pl-4">Widget Extension &amp; Dynamic Islands</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center text-[9px] font-bold">NV</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-slate-100 text-slate-700">To Do</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">May 05</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Jun 30</div>
+</div>
+<!-- Row 11: GN-1115 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-secondary">2.5</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-medium">GN-1115</div>
+<div class="flex-1 px-2 truncate text-on-surface pl-4">Push Notifications V3 Dispatcher</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center text-[9px] font-bold">SO</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-slate-100 text-slate-700">To Do</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Jul 01</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Aug 20</div>
+</div>
+<!-- Row 12: GN-1120 Milestone M2 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors font-medium">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-primary-container font-bold">M2</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-bold">GN-1120</div>
+<div class="flex-1 px-2 truncate text-primary font-bold pl-4 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[13px] text-primary">diamond</span>
+<span>M2: Mobile GA Release Candidate</span>
+</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-primary-container text-white flex items-center justify-center text-[9px] font-bold">LD</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-primary-fixed text-primary">Milestone</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Aug 31</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Aug 31</div>
+</div>
+<!-- ================= SWIMLANE 3: 3.0 Data & Cloud Infrastructure ================= -->
+<div class="row-h bg-surface-container flex items-center px-2 text-xs font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[14px] mr-1 text-secondary cursor-pointer">expand_more</span>
+<span class="text-primary-container font-mono mr-1">3.0</span>
+<span>Data &amp; Cloud Infrastructure</span>
+<span class="ml-2 text-[10px] bg-surface-container-high text-secondary px-1.5 py-0.2 rounded font-normal">6 tasks · 1 milestone</span>
+</div>
+<!-- Row 13: GN-1140 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-secondary">3.1</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-medium">GN-1140</div>
+<div class="flex-1 px-2 truncate text-on-surface pl-4">ClickHouse Real-time Analytics Shard</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-[9px] font-bold">RB</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-100 text-emerald-800">Done</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Jan 10</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Feb 28</div>
+</div>
+<!-- Row 14: GN-1152 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-secondary">3.2</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-medium">GN-1152</div>
+<div class="flex-1 px-2 truncate text-on-surface pl-4">CDC Kafka Streams Pipeline v2</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-orange-100 text-orange-800 flex items-center justify-center text-[9px] font-bold">VN</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-blue-100 text-blue-800">In Progress</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Feb 20</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">May 15</div>
+</div>
+<!-- Row 15: GN-1161 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-secondary">3.3</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-medium">GN-1161</div>
+<div class="flex-1 px-2 truncate text-on-surface pl-4">Vector Search Embeddings DB</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-cyan-100 text-cyan-800 flex items-center justify-center text-[9px] font-bold">GH</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-slate-100 text-slate-700">To Do</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Apr 01</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Jul 10</div>
+</div>
+<!-- Row 16: GN-1178 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-secondary">3.4</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-medium">GN-1178</div>
+<div class="flex-1 px-2 truncate text-on-surface pl-4">Cold Archive Tiering to S3 Glacier</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center text-[9px] font-bold">RB</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-slate-100 text-slate-700">To Do</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Jun 10</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Aug 30</div>
+</div>
+<!-- Row 17: GN-1185 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-secondary">3.5</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-medium">GN-1185</div>
+<div class="flex-1 px-2 truncate text-on-surface pl-4">Global Replication Mesh &amp; Audit</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-violet-100 text-violet-800 flex items-center justify-center text-[9px] font-bold">VN</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-slate-100 text-slate-700">To Do</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Aug 01</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Oct 15</div>
+</div>
+<!-- Row 18: GN-1190 Milestone M3 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors font-medium">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-primary-container font-bold">M3</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-bold">GN-1190</div>
+<div class="flex-1 px-2 truncate text-primary font-bold pl-4 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[13px] text-primary">diamond</span>
+<span>M3: Data Fabric Production Cutover</span>
+</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-primary-container text-white flex items-center justify-center text-[9px] font-bold">LD</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-primary-fixed text-primary">Milestone</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Oct 31</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Oct 31</div>
+</div>
+<!-- ================= SWIMLANE 4: 4.0 Security & Governance ================= -->
+<div class="row-h bg-surface-container flex items-center px-2 text-xs font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[14px] mr-1 text-secondary cursor-pointer">expand_more</span>
+<span class="text-primary-container font-mono mr-1">4.0</span>
+<span>Security &amp; Governance</span>
+<span class="ml-2 text-[10px] bg-surface-container-high text-secondary px-1.5 py-0.2 rounded font-normal">6 tasks · 1 milestone</span>
+</div>
+<!-- Row 19: GN-1210 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-secondary">4.1</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-medium">GN-1210</div>
+<div class="flex-1 px-2 truncate text-on-surface pl-4">SOC2 Type II Automated Evidence Collector</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-rose-100 text-rose-800 flex items-center justify-center text-[9px] font-bold">CH</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-100 text-emerald-800">Done</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Jan 15</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Feb 25</div>
+</div>
+<!-- Row 20: GN-1215 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-secondary">4.2</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-medium">GN-1215</div>
+<div class="flex-1 px-2 truncate text-on-surface pl-4">FedRAMP Boundary Encryption Audit</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center text-[9px] font-bold">CH</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-blue-100 text-blue-800">In Progress</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Mar 01</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Jun 15</div>
+</div>
+<!-- Row 21: GN-1222 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-secondary">4.3</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-medium">GN-1222</div>
+<div class="flex-1 px-2 truncate text-on-surface pl-4">Hardware Security Module (HSM) Proxy</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center text-[9px] font-bold">PL</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-slate-100 text-slate-700">To Do</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">May 15</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Aug 10</div>
+</div>
+<!-- Row 22: GN-1235 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-secondary">4.4</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-medium">GN-1235</div>
+<div class="flex-1 px-2 truncate text-on-surface pl-4">Fine-Grained RBAC &amp; Attribute Policies</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center text-[9px] font-bold">PL</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-slate-100 text-slate-700">To Do</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Jul 15</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Oct 05</div>
+</div>
+<!-- Row 23: GN-1241 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-secondary">4.5</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-medium">GN-1241</div>
+<div class="flex-1 px-2 truncate text-on-surface pl-4">Annual Red Team Threat Simulation</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-red-100 text-red-800 flex items-center justify-center text-[9px] font-bold">CH</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-slate-100 text-slate-700">To Do</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Oct 01</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Nov 28</div>
+</div>
+<!-- Row 24: GN-1250 Milestone M4 -->
+<div class="row-h flex items-center text-[12px] divide-x divide-outline-variant/30 hover:bg-surface-container-low transition-colors font-medium">
+<div class="w-12 px-2 text-center font-mono text-[11px] text-primary-container font-bold">M4</div>
+<div class="w-18 px-2 font-mono text-[11px] text-primary-container font-bold">GN-1250</div>
+<div class="flex-1 px-2 truncate text-primary font-bold pl-4 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[13px] text-primary">diamond</span>
+<span>M4: ISO/FedRAMP Final Certification</span>
+</div>
+<div class="w-14 px-1.5 flex justify-center"><span class="w-5 h-5 rounded-full bg-primary-container text-white flex items-center justify-center text-[9px] font-bold">LD</span></div>
+<div class="w-20 px-1 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-primary-fixed text-primary">Milestone</span></div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Dec 15</div>
+<div class="w-16 px-1 text-center font-mono text-[10px] text-secondary">Dec 15</div>
+</div>
+</div>
+</div>
+<!-- RIGHT PANE: DENSE QUARTERS GANTT TIMELINE CANVAS -->
+<div class="flex-1 flex flex-col overflow-x-auto overflow-y-auto custom-scrollbar bg-[#FAFAFC] relative" id="timeline-container">
+<!-- TIMELINE INNER CANVAS (Width locked to 1200px for high-density 4 Quarters view) -->
+<div class="min-w-[1240px] flex flex-col relative select-none">
+<!-- TIMELINE HEADER RULER (Two Tier: Quarters Tier 1, Months/Weeks Tier 2) -->
+<div class="sticky top-0 z-30 bg-surface-container-low border-b border-outline-variant flex flex-col flex-shrink-0 shadow-xs">
+<!-- Tier 1: Quarters (Q1, Q2, Q3, Q4 2026) -->
+<div class="h-4.5 flex text-[11px] font-bold text-on-surface border-b border-outline-variant/60">
+<!-- Q1 (Active badge) -->
+<div class="w-[310px] px-3 flex items-center justify-between border-r border-outline-variant bg-surface-container-highest/40">
+<span class="flex items-center space-x-1.5">
+<span class="text-primary-container">Q1 2026</span>
+<span class="text-[9px] px-1 bg-primary-container text-on-primary rounded font-mono">CURRENT</span>
+</span>
+<span class="text-[10px] font-normal text-secondary">Jan – Mar</span>
+</div>
+<!-- Q2 -->
+<div class="w-[310px] px-3 flex items-center justify-between border-r border-outline-variant">
+<span>Q2 2026</span>
+<span class="text-[10px] font-normal text-secondary">Apr – Jun</span>
+</div>
+<!-- Q3 -->
+<div class="w-[310px] px-3 flex items-center justify-between border-r border-outline-variant">
+<span>Q3 2026</span>
+<span class="text-[10px] font-normal text-secondary">Jul – Sep</span>
+</div>
+<!-- Q4 -->
+<div class="w-[310px] px-3 flex items-center justify-between">
+<span>Q4 2026</span>
+<span class="text-[10px] font-normal text-secondary">Oct – Dec</span>
+</div>
+</div>
+<!-- Tier 2: Months (12 Months, ~103.3px per month) -->
+<div class="h-4 flex text-[10px] text-secondary font-mono divide-x divide-outline-variant/40">
+<!-- Q1 Months -->
+<div class="w-[103px] px-2 flex items-center justify-between bg-surface-container-high/30"><span>Jan</span><span class="text-[8px] text-outline">W1-4</span></div>
+<div class="w-[103px] px-2 flex items-center justify-between bg-blue-50/60 font-semibold text-primary"><span>Feb</span><span class="text-[8px] text-primary">W5-8</span></div>
+<div class="w-[104px] px-2 flex items-center justify-between"><span>Mar</span><span class="text-[8px] text-outline">W9-13</span></div>
+<!-- Q2 Months -->
+<div class="w-[103px] px-2 flex items-center justify-between"><span>Apr</span><span class="text-[8px] text-outline">W14-17</span></div>
+<div class="w-[103px] px-2 flex items-center justify-between"><span>May</span><span class="text-[8px] text-outline">W18-21</span></div>
+<div class="w-[104px] px-2 flex items-center justify-between"><span>Jun</span><span class="text-[8px] text-outline">W22-26</span></div>
+<!-- Q3 Months -->
+<div class="w-[103px] px-2 flex items-center justify-between"><span>Jul</span><span class="text-[8px] text-outline">W27-30</span></div>
+<div class="w-[103px] px-2 flex items-center justify-between"><span>Aug</span><span class="text-[8px] text-outline">W31-35</span></div>
+<div class="w-[104px] px-2 flex items-center justify-between"><span>Sep</span><span class="text-[8px] text-outline">W36-39</span></div>
+<!-- Q4 Months -->
+<div class="w-[103px] px-2 flex items-center justify-between"><span>Oct</span><span class="text-[8px] text-outline">W40-43</span></div>
+<div class="w-[103px] px-2 flex items-center justify-between"><span>Nov</span><span class="text-[8px] text-outline">W44-48</span></div>
+<div class="w-[104px] px-2 flex items-center justify-between"><span>Dec</span><span class="text-[8px] text-outline">W49-52</span></div>
+</div>
+</div>
+<!-- TIMELINE GRID BACKGROUND & BARS CONTAINER -->
+<div class="relative divide-y divide-outline-variant/30 flex-1">
+<!-- VERTICAL MONTH GRID LINES (Underlay) -->
+<div class="absolute inset-0 flex pointer-events-none divide-x divide-outline-variant/25">
+<div class="w-[103px] h-full"></div>
+<div class="w-[103px] h-full bg-blue-50/15"></div>
+<div class="w-[104px] h-full"></div>
+<div class="w-[103px] h-full border-l-2 border-outline-variant/50"></div>
+<div class="w-[103px] h-full"></div>
+<div class="w-[104px] h-full"></div>
+<div class="w-[103px] h-full border-l-2 border-outline-variant/50"></div>
+<div class="w-[103px] h-full"></div>
+<div class="w-[104px] h-full"></div>
+<div class="w-[103px] h-full border-l-2 border-outline-variant/50"></div>
+<div class="w-[103px] h-full"></div>
+<div class="w-[104px] h-full"></div>
+</div>
+<!-- STICKY "TODAY · FEB 17" VERTICAL GUIDE LINE -->
+<!-- Feb 17 sits ~middle of Feb (Month 2, approx 160px from left) -->
+<div class="absolute top-0 bottom-0 left-[162px] w-[1.5px] bg-primary-container z-20 pointer-events-none">
+<!-- Floating top pill anchor badge -->
+<div class="absolute -top-[1px] -left-11 bg-primary-container text-on-primary text-[9px] font-bold px-1.5 py-0.5 rounded shadow-sm flex items-center space-x-1 whitespace-nowrap">
+<span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+<span>Today · Feb 17</span>
+</div>
+<!-- Vertical laser dashed extension -->
+<div class="w-full h-full border-l border-dashed border-primary-container"></div>
+</div>
+<!-- SVG DEPENDENCY CONNECTOR OVERLAY -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none z-15" style="min-height: 896px;">
+<defs>
+<marker id="arrow-blue" markerheight="4" markerwidth="4" orient="auto-reverse" refx="5" refy="3" viewbox="0 0 6 6">
+<path d="M 0 0 L 6 3 L 0 6 z" fill="#2563EB"></path>
+</marker>
+<marker id="arrow-red" markerheight="4" markerwidth="4" orient="auto-reverse" refx="5" refy="3" viewbox="0 0 6 6">
+<path d="M 0 0 L 6 3 L 0 6 z" fill="#DC2626"></path>
+</marker>
+<marker id="arrow-gray" markerheight="4" markerwidth="4" orient="auto-reverse" refx="5" refy="3" viewbox="0 0 6 6">
+<path d="M 0 0 L 6 3 L 0 6 z" fill="#737686"></path>
+</marker>
+</defs>
+<!-- Link 1: GN-1042 -> GN-1045 (Core Mesh to Control Plane) -->
+<path d="M 160 48 L 180 48 L 180 80 L 195 80" fill="none" marker-end="url(#arrow-blue)" stroke="#2563EB" stroke-width="1.5"></path>
+<!-- Link 2: GN-1045 -> GN-1049 (Control Plane to Auth) -->
+<path d="M 270 80 L 290 80 L 290 112 L 305 112" fill="none" marker-end="url(#arrow-blue)" stroke="#2563EB" stroke-width="1.5"></path>
+<!-- Link 3: GN-1049 -> GN-1060 Milestone M1 -->
+<path d="M 400 112 L 580 112 L 580 208 L 610 208" fill="none" marker-end="url(#arrow-gray)" stroke="#737686" stroke-dasharray="3 3" stroke-width="1.2"></path>
+<!-- Link 4: CRITICAL PATH (RED): GN-1090 -> GN-1094 (+14d Slip conflict path) -->
+<path d="M 150 272 L 175 272 L 175 304 L 188 304" fill="none" marker-end="url(#arrow-red)" stroke="#DC2626" stroke-width="1.8"></path>
+<!-- Link 5: CRITICAL PATH (RED): GN-1094 -> GN-1102 -->
+<path d="M 380 304 L 405 304 L 405 336 L 420 336" fill="none" marker-end="url(#arrow-red)" stroke="#DC2626" stroke-width="1.8"></path>
+<!-- Link 6: GN-1140 -> GN-1152 (ClickHouse to Kafka CDC) -->
+<path d="M 195 464 L 230 464 L 230 496 L 245 496" fill="none" marker-end="url(#arrow-blue)" stroke="#2563EB" stroke-width="1.5"></path>
+<!-- Link 7: GN-1210 -> GN-1215 (SOC2 to FedRAMP) -->
+<path d="M 180 656 L 250 656 L 250 688 L 270 688" fill="none" marker-end="url(#arrow-blue)" stroke="#2563EB" stroke-width="1.5"></path>
+<!-- Link 8: GN-1215 -> GN-1250 (FedRAMP Audit to M4 Final Cert) -->
+<path d="M 580 688 L 1140 688 L 1140 816 L 1165 816" fill="none" marker-end="url(#arrow-gray)" stroke="#737686" stroke-dasharray="2 2" stroke-width="1.2"></path>
+</svg>
+<!-- ================= GANTT BARS: SWIMLANE 1 ================= -->
+<!-- Swimlane 1 Header Row (empty track) -->
+<div class="row-h bg-surface-container/60"></div>
+<!-- Row 1: GN-1042 (Jan 5 - Feb 20) -> ~160px width -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[16px] w-[145px] h-4 bg-emerald-100 border border-emerald-600 rounded flex items-center px-1 text-[10px] text-emerald-900 font-medium group hover:ring-2 ring-primary/40 transition-all cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 bg-emerald-600 w-full rounded opacity-20"></div>
+<span class="truncate z-10 flex items-center gap-1 font-mono text-[9px]">
+<span class="material-symbols-outlined text-[11px] text-emerald-700">check_circle</span>
+<span>GN-1042 · 100%</span>
+</span>
+</div>
+</div>
+<!-- Row 2: GN-1045 (Jan 18 - Mar 15) -> Left 60px, Width 210px -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[58px] w-[212px] h-4 bg-blue-100 border border-primary-container rounded flex items-center px-1.5 text-[10px] text-on-surface font-medium group hover:ring-2 ring-primary/40 transition-all cursor-pointer">
+<!-- In progress progress bar fill 65% -->
+<div class="absolute left-0 top-0 bottom-0 bg-primary-container rounded-l" style="width: 68%;"></div>
+<span class="truncate z-10 font-mono text-[9px] text-white font-semibold drop-shadow-xs">GN-1045 · 68%</span>
+</div>
+</div>
+<!-- Row 3: GN-1049 (Feb 02 - Apr 10) -> Left 110px, Width 240px -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[112px] w-[238px] h-4 bg-blue-50 border border-primary-container rounded flex items-center px-1.5 text-[10px] text-on-surface font-medium group hover:ring-2 ring-primary/40 transition-all cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 bg-primary-container rounded-l" style="width: 32%;"></div>
+<span class="truncate z-10 font-mono text-[9px] text-on-surface font-semibold pl-1">GN-1049 · 32% Zero-Trust</span>
+</div>
+</div>
+<!-- Row 4: GN-1055 (Mar 01 - May 12) -> Left 210px, Width 240px -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[208px] w-[245px] h-4 bg-surface-container-high border border-outline rounded flex items-center px-1.5 text-[10px] text-secondary font-medium group hover:border-on-surface transition-all cursor-pointer">
+<span class="truncate z-10 font-mono text-[9px]">GN-1055 · Memory Profiler</span>
+</div>
+</div>
+<!-- Row 5: GN-1058 (Apr 15 - Jun 25) -> Left 360px, Width 230px -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[360px] w-[235px] h-4 bg-surface-container-high border border-outline rounded flex items-center px-1.5 text-[10px] text-secondary font-medium group hover:border-on-surface transition-all cursor-pointer">
+<span class="truncate z-10 font-mono text-[9px]">GN-1058 · Failover Switch</span>
+</div>
+</div>
+<!-- Row 6: GN-1060 Milestone M1 (Jun 30) -> Left 615px -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[612px] flex items-center space-x-1.5 group cursor-pointer">
+<div class="w-3.5 h-3.5 bg-primary-container border border-primary rotate-45 transform flex items-center justify-center shadow-xs group-hover:scale-125 transition-transform"></div>
+<span class="text-[10px] font-bold text-primary font-mono whitespace-nowrap">M1: Architecture Sign-off (Jun 30)</span>
+</div>
+</div>
+<!-- ================= GANTT BARS: SWIMLANE 2 ================= -->
+<!-- Swimlane 2 Header Row -->
+<div class="row-h bg-surface-container/60"></div>
+<!-- Row 7: GN-1090 (Jan 02 - Feb 14) -> Done 100% -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[8px] w-[142px] h-4 bg-emerald-100 border border-emerald-600 rounded flex items-center px-1 text-[10px] text-emerald-900 font-medium group hover:ring-2 ring-emerald-500/40 transition-all cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 bg-emerald-600 w-full rounded opacity-25"></div>
+<span class="truncate z-10 flex items-center gap-1 font-mono text-[9px]">
+<span class="material-symbols-outlined text-[11px] text-emerald-700">check_circle</span>
+<span>GN-1090 · 100% Native</span>
+</span>
+</div>
+</div>
+<!-- Row 8: GN-1094 (Jan 22 - Apr 04) -> CRITICAL SLIP +14d -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[75px] w-[275px] h-4 bg-red-100 border-2 border-red-600 rounded flex items-center px-1.5 text-[10px] text-red-950 font-bold group shadow-sm ring-1 ring-red-400 cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 bg-red-600 rounded-l" style="width: 44%;"></div>
+<span class="truncate z-10 font-mono text-[9px] text-white font-extrabold flex items-center space-x-1 drop-shadow-xs">
+<span class="material-symbols-outlined text-[11px]">warning</span>
+<span>GN-1094 · 44% (+14d SLIP Conflict)</span>
+</span>
+<!-- Slip indicator hatched tail -->
+<div class="absolute -right-3 top-0 bottom-0 w-3 bg-red-400/40 rounded-r border-y border-r border-red-600 border-dashed"></div>
+</div>
+</div>
+<!-- Row 9: GN-1102 (Feb 15 - May 01) -> In progress 40% -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[155px] w-[250px] h-4 bg-blue-50 border border-primary-container rounded flex items-center px-1.5 text-[10px] text-on-surface font-medium group hover:ring-2 ring-primary/40 transition-all cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 bg-primary-container rounded-l" style="width: 25%;"></div>
+<span class="truncate z-10 font-mono text-[9px] text-on-surface font-semibold pl-1">GN-1102 · 25% Biometric Keychain</span>
+</div>
+</div>
+<!-- Row 10: GN-1108 (May 05 - Jun 30) -> Scheduled -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[425px] w-[185px] h-4 bg-surface-container-high border border-outline rounded flex items-center px-1.5 text-[10px] text-secondary font-medium group hover:border-on-surface transition-all cursor-pointer">
+<span class="truncate z-10 font-mono text-[9px]">GN-1108 · Dynamic Islands</span>
+</div>
+</div>
+<!-- Row 11: GN-1115 (Jul 01 - Aug 20) -> Scheduled -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[620px] w-[170px] h-4 bg-surface-container-high border border-outline rounded flex items-center px-1.5 text-[10px] text-secondary font-medium group hover:border-on-surface transition-all cursor-pointer">
+<span class="truncate z-10 font-mono text-[9px]">GN-1115 · Push Notifications V3</span>
+</div>
+</div>
+<!-- Row 12: GN-1120 Milestone M2 (Aug 31) -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[822px] flex items-center space-x-1.5 group cursor-pointer">
+<div class="w-3.5 h-3.5 bg-primary-container border border-primary rotate-45 transform flex items-center justify-center shadow-xs group-hover:scale-125 transition-transform"></div>
+<span class="text-[10px] font-bold text-primary font-mono whitespace-nowrap">M2: Mobile GA RC (Aug 31)</span>
+</div>
+</div>
+<!-- ================= GANTT BARS: SWIMLANE 3 ================= -->
+<!-- Swimlane 3 Header Row -->
+<div class="row-h bg-surface-container/60"></div>
+<!-- Row 13: GN-1140 (Jan 10 - Feb 28) -> Done -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[34px] w-[160px] h-4 bg-emerald-100 border border-emerald-600 rounded flex items-center px-1 text-[10px] text-emerald-900 font-medium group hover:ring-2 ring-emerald-500/40 transition-all cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 bg-emerald-600 w-full rounded opacity-25"></div>
+<span class="truncate z-10 flex items-center gap-1 font-mono text-[9px]">
+<span class="material-symbols-outlined text-[11px] text-emerald-700">check_circle</span>
+<span>GN-1140 · 100% ClickHouse</span>
+</span>
+</div>
+</div>
+<!-- Row 14: GN-1152 (Feb 20 - May 15) -> In Progress 55% -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[170px] w-[265px] h-4 bg-blue-50 border border-primary-container rounded flex items-center px-1.5 text-[10px] text-on-surface font-medium group hover:ring-2 ring-primary/40 transition-all cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 bg-primary-container rounded-l" style="width: 55%;"></div>
+<span class="truncate z-10 font-mono text-[9px] text-white font-semibold pl-1 drop-shadow-xs">GN-1152 · 55% Kafka Streams</span>
+</div>
+</div>
+<!-- Row 15: GN-1161 (Apr 01 - Jul 10) -> Scheduled -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[310px] w-[290px] h-4 bg-surface-container-high border border-outline rounded flex items-center px-1.5 text-[10px] text-secondary font-medium group hover:border-on-surface transition-all cursor-pointer">
+<span class="truncate z-10 font-mono text-[9px]">GN-1161 · Vector DB Embeddings</span>
+</div>
+</div>
+<!-- Row 16: GN-1178 (Jun 10 - Aug 30) -> Scheduled -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[540px] w-[260px] h-4 bg-surface-container-high border border-outline rounded flex items-center px-1.5 text-[10px] text-secondary font-medium group hover:border-on-surface transition-all cursor-pointer">
+<span class="truncate z-10 font-mono text-[9px]">GN-1178 · S3 Glacier Tiering</span>
+</div>
+</div>
+<!-- Row 17: GN-1185 (Aug 01 - Oct 15) -> Scheduled -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[720px] w-[250px] h-4 bg-surface-container-high border border-outline rounded flex items-center px-1.5 text-[10px] text-secondary font-medium group hover:border-on-surface transition-all cursor-pointer">
+<span class="truncate z-10 font-mono text-[9px]">GN-1185 · Global Replication</span>
+</div>
+</div>
+<!-- Row 18: GN-1190 Milestone M3 (Oct 31) -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[1025px] flex items-center space-x-1.5 group cursor-pointer">
+<div class="w-3.5 h-3.5 bg-primary-container border border-primary rotate-45 transform flex items-center justify-center shadow-xs group-hover:scale-125 transition-transform"></div>
+<span class="text-[10px] font-bold text-primary font-mono whitespace-nowrap">M3: Data Fabric Cutover (Oct 31)</span>
+</div>
+</div>
+<!-- ================= GANTT BARS: SWIMLANE 4 ================= -->
+<!-- Swimlane 4 Header Row -->
+<div class="row-h bg-surface-container/60"></div>
+<!-- Row 19: GN-1210 (Jan 15 - Feb 25) -> Done -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[50px] w-[130px] h-4 bg-emerald-100 border border-emerald-600 rounded flex items-center px-1 text-[10px] text-emerald-900 font-medium group hover:ring-2 ring-emerald-500/40 transition-all cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 bg-emerald-600 w-full rounded opacity-25"></div>
+<span class="truncate z-10 flex items-center gap-1 font-mono text-[9px]">
+<span class="material-symbols-outlined text-[11px] text-emerald-700">check_circle</span>
+<span>GN-1210 · 100% SOC2</span>
+</span>
+</div>
+</div>
+<!-- Row 20: GN-1215 (Mar 01 - Jun 15) -> In Progress 38% -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[208px] w-[310px] h-4 bg-blue-50 border border-primary-container rounded flex items-center px-1.5 text-[10px] text-on-surface font-medium group hover:ring-2 ring-primary/40 transition-all cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 bg-primary-container rounded-l" style="width: 38%;"></div>
+<span class="truncate z-10 font-mono text-[9px] text-on-surface font-semibold pl-1">GN-1215 · 38% FedRAMP Boundary</span>
+</div>
+</div>
+<!-- Row 21: GN-1222 (May 15 - Aug 10) -> Scheduled -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[460px] w-[270px] h-4 bg-surface-container-high border border-outline rounded flex items-center px-1.5 text-[10px] text-secondary font-medium group hover:border-on-surface transition-all cursor-pointer">
+<span class="truncate z-10 font-mono text-[9px]">GN-1222 · HSM Proxy Cluster</span>
+</div>
+</div>
+<!-- Row 22: GN-1235 (Jul 15 - Oct 05) -> Scheduled -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[670px] w-[265px] h-4 bg-surface-container-high border border-outline rounded flex items-center px-1.5 text-[10px] text-secondary font-medium group hover:border-on-surface transition-all cursor-pointer">
+<span class="truncate z-10 font-mono text-[9px]">GN-1235 · Fine-Grained RBAC</span>
+</div>
+</div>
+<!-- Row 23: GN-1241 (Oct 01 - Nov 28) -> Scheduled -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[930px] w-[185px] h-4 bg-surface-container-high border border-outline rounded flex items-center px-1.5 text-[10px] text-secondary font-medium group hover:border-on-surface transition-all cursor-pointer">
+<span class="truncate z-10 font-mono text-[9px]">GN-1241 · Red Team Sim</span>
+</div>
+</div>
+<!-- Row 24: GN-1250 Milestone M4 (Dec 15) -->
+<div class="row-h relative flex items-center">
+<div class="absolute left-[1170px] flex items-center space-x-1.5 group cursor-pointer">
+<div class="w-3.5 h-3.5 bg-primary-container border border-primary rotate-45 transform flex items-center justify-center shadow-xs group-hover:scale-125 transition-transform"></div>
+<span class="text-[10px] font-bold text-primary font-mono whitespace-nowrap">M4: Final FedRAMP (Dec 15)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- BOTTOM UTILITY BAR / FOOTER -->
+<footer class="h-7 min-h-[28px] bg-surface-container-low border-t border-outline-variant px-space-lg flex items-center justify-between text-[11px] text-secondary flex-shrink-0 z-30 select-none">
+<!-- Telemetry status on left -->
+<div class="flex items-center space-x-3">
+<div class="flex items-center space-x-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span class="font-medium text-on-surface">Showing 24 of 186 tasks (1,842 total)</span>
+</div>
+<span class="text-outline">·</span>
+<span class="text-error font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+<span>Critical Path (4)</span>
+</span>
+<span class="text-outline">·</span>
+<span class="font-mono text-[10px]">Sync: Up to date (14:35 UTC)</span>
+</div>
+<!-- Hotkey shortcuts guide on right -->
+<div class="flex items-center space-x-3 text-[10px] font-mono">
+<span class="text-secondary">
+<kbd class="px-1 py-0.2 bg-surface-container rounded border border-outline-variant text-on-surface">J</kbd>
+<kbd class="px-1 py-0.2 bg-surface-container rounded border border-outline-variant text-on-surface">K</kbd> navigate rows
+      </span>
+<span class="text-outline">·</span>
+<span class="text-secondary">
+<kbd class="px-1 py-0.2 bg-surface-container rounded border border-outline-variant text-on-surface">D</kbd> toggle dependencies
+      </span>
+<span class="text-outline">·</span>
+<span class="text-secondary">
+<kbd class="px-1 py-0.2 bg-surface-container rounded border border-outline-variant text-on-surface">⌘±</kbd> quarters zoom
+      </span>
+<span class="text-outline">·</span>
+<span class="text-secondary">
+<kbd class="px-1.5 py-0.2 bg-surface-container rounded border border-outline-variant text-on-surface">Space</kbd> task drawer
+      </span>
+</div>
+</footer>
+<!-- SYNC SCROLL SCRIPT: Pairs WBS Table and Gantt Timeline vertical scrolling seamlessly -->
+<script>
+    const tableScroll = document.getElementById('table-scroll-container');
+    const timelineScroll = document.getElementById('timeline-container');
+
+    let isSyncingTable = false;
+    let isSyncingTimeline = false;
+
+    tableScroll.addEventListener('scroll', () => {
+      if (!isSyncingTable) {
+        isSyncingTimeline = true;
+        timelineScroll.scrollTop = tableScroll.scrollTop;
+      }
+      isSyncingTable = false;
+    });
+
+    timelineScroll.addEventListener('scroll', () => {
+      if (!isSyncingTimeline) {
+        isSyncingTable = true;
+        tableScroll.scrollTop = timelineScroll.scrollTop;
+      }
+      isSyncingTimeline = false;
+    });
+  </script>
+</body></html>

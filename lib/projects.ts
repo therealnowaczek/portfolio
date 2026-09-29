@@ -76,7 +76,7 @@ function parseBullets(block: string): string[] {
 function parseNumbered(block: string): ProcessStep[] {
   const steps: ProcessStep[] = [];
   for (const line of block.split("\n")) {
-    const m = line.trim().match(/^(\d+)\.\s+\*\*(.+?)\*\*\s*[-–—]\s*(.+)$/);
+    const m = line.trim().match(/^(\d+)\.\s+\*\*(.+?)\*\*\s*[-–—:]\s*(.+)$/);
     if (m) {
       steps.push({ n: Number(m[1]), label: m[2], text: stripMd(m[3]) });
       continue;
@@ -86,7 +86,7 @@ function parseNumbered(block: string): ProcessStep[] {
       steps.push({
         n: Number(m2[1]),
         label: m2[2],
-        text: stripMd(m2[3].replace(/^[-–—]\s*/, "")),
+        text: stripMd(m2[3].replace(/^[-–—:]\s*/, "")),
       });
     }
   }
@@ -98,7 +98,7 @@ function parseSolution(block: string): { items: SolutionItem[]; notes: string } 
   const notes: string[] = [];
   for (const line of block.split("\n")) {
     const trimmed = line.trim();
-    const m = trimmed.match(/^(\d+)\.\s+\*\*(.+?)\*\*\s*[-–—]\s*(.+)$/);
+    const m = trimmed.match(/^(\d+)\.\s+\*\*(.+?)\*\*\s*[-–—:]\s*(.+)$/);
     if (m) {
       items.push({ title: m[2], text: stripMd(m[3]) });
       continue;

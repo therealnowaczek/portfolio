@@ -38,7 +38,7 @@ export function ProjectModal({
   } | null>(null);
 
   const caseStudy = project.caseStudy;
-  // Pure phone apps (Harbor, Folio, …). Nest is mixed — frames come from image ratio.
+  // Pure phone apps (Harbor, Folio, …). Nest is mixed; frames come from image ratio.
   const isPhoneProject =
     /ios|android/i.test(project.platform) &&
     !/web\s*desktop|desktop\s*web/i.test(project.platform);

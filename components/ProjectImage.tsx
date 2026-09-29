@@ -7,7 +7,7 @@ type Props = {
   onLoad?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
 };
 
-/** Design screenshots must stay sharp — skip next/image lossy resize. */
+/** Design screenshots must stay sharp; skip next/image lossy resize. */
 export function ProjectImage({
   src,
   alt,

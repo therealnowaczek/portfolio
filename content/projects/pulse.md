@@ -13,8 +13,8 @@ tags:
   - "Habit"
   - "Health-adjacent"
 order: 10
-accent: "#A78BFA"
-styleLabel: "Soft humanist"
+accent: "#00685D"
+styleLabel: "Soft teal recovery"
 screens:
   - "Today Recovery"
   - "Daily Check-in"
@@ -32,10 +32,10 @@ portfolioSignals:
 ---
 
 ### Snapshot
-Pulse is a personal exploration of a soft humanist iOS companion for energy and recovery: sleep debt, check-ins, weekly patterns, and evening wind-down — without punishing streaks. Warmth and honesty beat quantified-self severity for anything people might actually keep using.
+Pulse is a personal exploration of a soft humanist iOS companion for energy and recovery: sleep debt, check-ins, weekly patterns, and evening wind-down, without punishing streaks. Warmth and honesty beat quantified-self severity for anything people might actually keep using.
 
 ### Problem
-People track steps and sleep in different apps, then feel judged by red rings. Persona: a knowledge worker who wants to notice burnout earlier and get one recovery move they might actually do — not a clinic UI or a scolding coach.
+People track steps and sleep in different apps, then feel judged by red rings. Persona: a knowledge worker who wants to notice burnout earlier and get one recovery move they might actually do, not a clinic UI or a scolding coach.
 
 ### Goals & constraints
 **Goals**
@@ -43,10 +43,10 @@ People track steps and sleep in different apps, then feel judged by red rings. P
 - Few-tap check-in with a gentle summary
 - Weekly and sleep views that inform without alarm
 - Evening wind-down that respects calendar reality
-- Inclusive motion and Dynamic Type; shame-free copy
+- Inclusive motion and Dynamic Type: shame-free copy
 
 **Constraints**
-- iOS soft humanist; wellness companion — not clinical advice
+- iOS soft humanist: wellness companion, not clinical advice
 - Timeboxed sprint; HealthKit-shaped assumptions only
 - Reduce Motion alternatives for breathing/wind-down cues
 - Privacy-forward empty states for devices and permissions
@@ -60,21 +60,21 @@ People track steps and sleep in different apps, then feel judged by red rings. P
 6. **Keep medical boundaries quiet but clear** - Not-medical-advice present without dominating the UI.
 
 ### Key decisions
-- **One suggestion per day** — choice overload kills recovery.
-- **No punishing streaks** — missed days should not erase the relationship with the app.
-- **Sleep and weekly as context, not scoreboards** — patterns over grades.
-- **Wind-down as a designed evening ritual** — recovery isn’t only a morning screen.
+- **One suggestion per day**: choice overload kills recovery.
+- **No punishing streaks**: missed days should not erase the relationship with the app.
+- **Sleep and weekly as context, not scoreboards**: patterns over grades.
+- **Wind-down as a designed evening ritual**: recovery isn’t only a morning screen.
 
 ### Solution
-1. **Today Recovery** — Qualitative energy snapshot and soft next step. Proves calm daily entry.
-2. **Daily Check-in** — Few-tap mood/energy/load with optional note. Proves low friction.
-3. **Check-in Summary** — Confirmation and gentle pattern hint. Proves insight without clinic UI.
-4. **Weekly Trends** — Soft pattern view across days. Proves longer-arc noticing.
-5. **Sleep Breakdown** — Sleep debt and quality without alarm red. Proves health-adjacent clarity.
-6. **Evening Wind-down** — Calendar-aware wind-down prompts. Proves recovery timing craft.
-7. **Profile & Devices** — Permissions and device links when ready. Proves privacy-forward setup.
+1. **Today Recovery**: Qualitative energy snapshot and soft next step. Proves calm daily entry.
+2. **Daily Check-in**: Few-tap mood/energy/load with optional note. Proves low friction.
+3. **Check-in Summary**: Confirmation and gentle pattern hint. Proves insight without clinic UI.
+4. **Weekly Trends**: Soft pattern view across days. Proves longer-arc noticing.
+5. **Sleep Breakdown**: Sleep debt and quality without alarm red. Proves health-adjacent clarity.
+6. **Evening Wind-down**: Calendar-aware wind-down prompts. Proves recovery timing craft.
+7. **Profile & Devices**: Permissions and device links when ready. Proves privacy-forward setup.
 
-Empty: “Grant Health permissions when you’re ready.” Error: “Couldn’t sync sleep — enter manually.” Success: “Check-in saved.”
+Empty: “Grant Health permissions when you’re ready.” Error: “Couldn’t sync sleep. Enter manually.” Success: “Check-in saved.”
 
 ### Design system notes
 Tokens: mist surfaces, lavender accent, xl radius. Components: SnapshotCard, CheckInSheet, SoftChart, SuggestionPill, WindDownList. Pattern: notice → tiny input → one action.

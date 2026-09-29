@@ -81,6 +81,140 @@ function patchFolioHtml(htmlPath) {
 }
 
 /**
+ * Gantt portfolio polish: soften spreadsheet chrome + force single-line ellipsis.
+ * Stitch edit_screens often lags or still emits rigid grid borders; this runs after
+ * download so showcase PNGs read as 2025 planning UI, not Excel/Jira plugin.
+ */
+function patchGanttHtml(htmlPath) {
+  let html = fs.readFileSync(htmlPath, "utf8");
+  const before = html;
+
+  const modernCss = `<style id="gantt-portfolio-modern">
+  body { background: #f4f6fb !important; }
+  header, header + div { border-color: rgba(148,163,184,0.35) !important; }
+  main {
+    margin: 6px 8px 8px;
+    border-radius: 10px;
+    border: 1px solid rgba(148,163,184,0.4);
+    box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 8px 24px rgba(15,23,42,0.06);
+    overflow: hidden;
+    background: #fff;
+  }
+  main > section:first-child {
+    width: min(380px, 34vw) !important;
+    max-width: 400px !important;
+    background: #f8fafc !important;
+    border-right: 1px solid rgba(148,163,184,0.4) !important;
+  }
+  main > section:first-child [class*="border-r"],
+  main > section:first-child .gantt-row > div,
+  main > section:first-child > div:first-child > div {
+    border-right-width: 0 !important;
+    border-right-color: transparent !important;
+  }
+  main > section:first-child .gantt-row,
+  main > section:first-child [class*="border-b"] {
+    border-bottom-color: rgba(148,163,184,0.28) !important;
+  }
+  main > section:first-child .gantt-row:hover {
+    background: rgba(37,99,235,0.04) !important;
+  }
+  main > section:first-child > div:first-child {
+    background: #f1f5f9 !important;
+    border-bottom: 1px solid rgba(148,163,184,0.4) !important;
+    color: #64748b !important;
+    font-weight: 500 !important;
+  }
+  #timeline-scroll-container, [id*="timeline"],
+  main > section:nth-child(2), main > section.flex-1 {
+    background: linear-gradient(180deg, #f8faff 0%, #ffffff 56px) !important;
+  }
+  main > section:nth-child(2) [class*="border-r"],
+  main > section.flex-1 [class*="border-r"],
+  [class*="border-r"][class*="slate"],
+  [class*="border-r"][class*="outline-variant"] {
+    border-right-color: rgba(148,163,184,0.22) !important;
+  }
+  .gantt-row [class*="rounded"],
+  [class*="rounded-md"][class*="absolute"],
+  [class*="rounded"][class*="absolute"][class*="h-["] {
+    border-radius: 4px !important;
+  }
+  .truncate, [class*="truncate"], .gantt-row span, .gantt-row a,
+  main > section:first-child .gantt-row > div,
+  main > section:first-child > div:first-child > div,
+  [class*="rounded"][class*="px-"], [class*="inline-flex"],
+  [class*="rounded-full"], [class*="whitespace-nowrap"] {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 100%;
+  }
+  .gantt-row > div { min-width: 0; }
+  .gantt-row .flex-1, .gantt-row [class*="flex-1"],
+  main > section:first-child [class*="flex-1"] { min-width: 0 !important; }
+  span.inline-flex { max-width: 100%; display: inline-flex !important; align-items: center; }
+  header + div [class*="rounded"] {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+</style>`;
+
+  if (html.includes('id="gantt-portfolio-modern"')) {
+    html = html.replace(
+      /<style id="gantt-portfolio-modern">[\s\S]*?<\/style>/,
+      modernCss,
+    );
+  } else {
+    html = html.replace(/<\/head>/i, `${modernCss}\n</head>`);
+  }
+
+  html = html.replace(
+    /class="(inline-flex items-center[^"]*)"/g,
+    (full, cls) => {
+      const extras = [];
+      if (!cls.includes("whitespace-nowrap")) extras.push("whitespace-nowrap");
+      if (!cls.includes("overflow-hidden") && !cls.includes("truncate"))
+        extras.push("overflow-hidden", "text-ellipsis", "max-w-full");
+      if (!extras.length) return full;
+      return `class="${cls} ${extras.join(" ")}"`;
+    },
+  );
+  html = html.replace(
+    /class="(flex-1 px-2[^"]*truncate[^"]*)"/g,
+    (full, cls) => {
+      if (cls.includes("min-w-0")) return full;
+      return `class="${cls} min-w-0"`;
+    },
+  );
+  html = html.replace(
+    /border-r border-outline-variant\/40/g,
+    "border-r border-transparent",
+  );
+  html = html.replace(
+    /border-r border-outline-variant(?!\/)/g,
+    "border-r border-outline-variant/20",
+  );
+  html = html.replace(
+    /border-r border-slate-200\/\d+/g,
+    "border-r border-transparent",
+  );
+  html = html.replace(
+    /border-r border-slate-200(?![\/\w])/g,
+    "border-r border-transparent",
+  );
+  html = html.replace(/w-\[490px\]/g, "w-[380px]");
+  html = html.replace(/w-\[460px\]/g, "w-[380px]");
+  html = html.replace(/w-\[430px\]/g, "w-[380px]");
+  html = html.replace(/w-\[410px\]/g, "w-[360px]");
+  html = html.replace(/w-\[420px\]/g, "w-[360px]");
+  html = html.replace(/lg:w-\[430px\]/g, "lg:w-[380px]");
+
+  if (html !== before) fs.writeFileSync(htmlPath, html);
+}
+
+/**
  * Anonymize product chrome for gallery cases (Stitch CDN can lag edit_screens).
  * OKRs / Gantt only — never rewrite Impact/CV copy.
  */
@@ -149,7 +283,10 @@ async function main() {
         if (bytes < 500) throw new Error(`HTML too small (${bytes})`);
         if (slug === "folio") patchFolioHtml(htmlPath);
         if (slug === "okrs") scrubCaseBrandHtml(htmlPath, "OKRs");
-        if (slug === "gantt") scrubCaseBrandHtml(htmlPath, "Gantt");
+        if (slug === "gantt") {
+          scrubCaseBrandHtml(htmlPath, "Gantt");
+          patchGanttHtml(htmlPath);
+        }
 
         const vp = viewportFor(asset);
         const context = await browser.newContext({

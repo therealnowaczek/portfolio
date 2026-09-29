@@ -52,7 +52,7 @@ export function ExpertiseTools() {
         <p className="max-w-2xl text-sm leading-relaxed text-muted sm:text-[15px]">
           Three buckets: leading UX teams and design ops, designing complex
           enterprise products, and shipping AI features with clear human
-          control. Below that — the tools I actually use to design and build,
+          control. Below that, the tools I actually use to design and build,
           not every app I have ever opened.
         </p>
       </div>

@@ -10,7 +10,7 @@ export function Experience() {
         </h2>
         <p className="mb-6 max-w-2xl text-sm leading-relaxed text-muted sm:text-[15px]">
           From hands-on designer through Head of Design to Senior UX Manager at
-          Appfire — plus CostRadar.ai, a product I built myself. I am looking
+          Appfire, plus CostRadar.ai, a product I built myself. I am looking
           for my next challenge. Roles and timeline here; product work and
           numbers are in Portfolio and Impact.
         </p>

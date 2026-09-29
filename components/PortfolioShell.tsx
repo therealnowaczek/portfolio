@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import type { Project } from "@/lib/project-types";
-import { MENTORING, PROCESSES } from "@/lib/cv";
+import { MENTORING } from "@/lib/cv";
 import { Header } from "./Header";
 import { Intro } from "./Intro";
 import { Impact } from "./Impact";
@@ -13,6 +13,7 @@ import { ExpertiseTools } from "./ExpertiseTools";
 import { NarrativeSection } from "./NarrativeSection";
 import { Footer } from "./Footer";
 import { MobileBottomBar } from "./MobileBottomBar";
+import { Process } from "./Process";
 import { ProjectModal } from "./ProjectModal";
 import { RoleFit } from "./RoleFit";
 import { SideNav, type NavItem } from "./SideNav";
@@ -23,14 +24,12 @@ type Props = {
 
 const NAV: NavItem[] = [
   { id: "about", label: "Intro" },
-  { id: "fit", label: "Hire me for" },
   { id: "portfolio", label: "Portfolio" },
   { id: "impact", label: "Impact" },
   { id: "experience", label: "Experience" },
   { id: "expertise", label: "Expertise" },
   { id: "leadership", label: "Leadership" },
   { id: "process", label: "Process" },
-  { id: "connect", label: "Connect" },
 ];
 
 /** Legacy share URLs → anonymized gallery slugs */
@@ -109,39 +108,36 @@ export function PortfolioShell({ projects }: Props) {
       <a href="#main" className="skip-link">
         Skip to content
       </a>
-      <div className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 sm:pb-14 lg:px-8 lg:pb-14 lg:pl-48 lg:pt-6 xl:pl-52">
+      <div className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 sm:pb-14 lg:px-8 lg:pb-14 lg:pt-6">
         <div className="sticky top-0 z-50 -mx-4 mb-8 bg-background px-4 pt-4 sm:-mx-6 sm:px-6 sm:pt-6 lg:mx-0 lg:mb-10 lg:px-0 lg:pt-0">
           <Header />
           <SideNav items={NAV} />
         </div>
         <main id="main" className="mt-10 space-y-16 sm:mt-14 sm:space-y-20">
-          {/* 1. Who — 30-second positioning */}
-          <div id="about" className="scroll-mt-36 lg:scroll-mt-24">
+          {/* 1. Who: intro copy + role chapters (scroll-spy stays Intro) */}
+          <div id="about" className="scroll-mt-36 space-y-10 sm:space-y-12">
             <Intro />
-          </div>
-
-          <div id="fit" className="scroll-mt-36 lg:scroll-mt-24">
             <RoleFit />
           </div>
 
-          <div id="portfolio" className="scroll-mt-36 lg:scroll-mt-24">
+          <div id="portfolio" className="scroll-mt-36">
             <SelectedWork projects={projects} onOpen={open} />
           </div>
 
-          <div id="impact" className="scroll-mt-36 lg:scroll-mt-24">
+          <div id="impact" className="scroll-mt-36">
             <Impact />
           </div>
 
-          <div id="experience" className="scroll-mt-36 lg:scroll-mt-24">
+          <div id="experience" className="scroll-mt-36">
             <Experience />
           </div>
 
-          <div id="expertise" className="scroll-mt-36 lg:scroll-mt-24">
+          <div id="expertise" className="scroll-mt-36">
             <ExpertiseTools />
           </div>
 
-          {/* 5. How they lead & operate — for manager/director scope */}
-          <div id="leadership" className="scroll-mt-36 lg:scroll-mt-24">
+          {/* 5. How they lead & operate: for manager/director scope */}
+          <div id="leadership" className="scroll-mt-36">
             <NarrativeSection
               id="leadership-heading"
               title="Leadership"
@@ -150,17 +146,12 @@ export function PortfolioShell({ projects }: Props) {
             />
           </div>
 
-          <div id="process" className="scroll-mt-36 lg:scroll-mt-24">
-            <NarrativeSection
-              id="process-heading"
-              title="Process"
-              lede="How work moves from problem to shipped product — where AI speeds things up, and where a human still decides."
-              blocks={PROCESSES}
-            />
+          <div id="process" className="scroll-mt-36">
+            <Process />
           </div>
 
           {/* 6. CTA */}
-          <div id="connect" className="scroll-mt-36 lg:scroll-mt-24">
+          <div id="connect" className="scroll-mt-36">
             <Footer />
           </div>
         </main>

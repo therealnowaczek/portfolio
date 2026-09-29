@@ -1,4 +1,4 @@
-# Marcin Nowak — Portfolio
+# Marcin Nowak · Portfolio
 
 Personal portfolio site: CV-matched chrome + selected product case studies in an editorial mosaic gallery.
 

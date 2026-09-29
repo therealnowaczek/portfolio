@@ -1,6 +1,6 @@
 # Portfolio case-study pack - Marcin Nowak
 
-Personal product explorations for the gallery. CostRadar.ai is the shipped founder case; Appfire / SoftwarePlant employment work is covered on the CV and Impact sections. These ten explorations are speculative product design — not client engagements.
+Personal product explorations for the gallery. CostRadar.ai is the shipped founder case; Appfire / SoftwarePlant employment work is covered on the CV and Impact sections. These ten explorations are speculative product design, not client engagements.
 
 Each case uses a **Personal exploration** badge. Outcomes use design targets and prototype success targets.
 
@@ -29,7 +29,7 @@ RevOps managers can see revenue and burn, but not which AI workloads, infra tier
 - Design empty and permission-denied states as first-class
 
 **Constraints**
-- Desktop-first; no mobile redesign this sprint
+- Desktop-first: no mobile redesign this sprint
 - Trust: AI suggestions show confidence + lineage
 - a11y: WCAG 2.2 AA for tables, focus, color-only status
 - Time: 2–3 week design sprint
@@ -41,20 +41,20 @@ RevOps managers can see revenue and burn, but not which AI workloads, infra tier
 3. **Options explored** - (A) Mega-dashboard with 12 widgets (rejected: overload). (B) "Week in review" story UI (rejected: too slow for daily ops). (C) Dense table + drawer + AI cite panel (chosen: power-user scan + local actions).
 4. **Visual & design system decisions** - Neutral gray canvas, 13/14px UI sans, teal for interactive + positive delta only. Status via icon + text, never color alone. Density tokens: `comfortable` / `compact` toggle for finance vs ops personas.
 5. **Prototype & critique** - High-fidelity prototype: Overview, Leak detail, AI explain. Figma: table keyboard nav, drawer focus trap, confidence chip readability.
-6. **Validation notes** - Heuristic pass on Nielsen "visibility of system status"; risk: users misread estimated savings as guaranteed cash. Copy guardrails added.
+6. **Validation notes** - Heuristic pass on Nielsen "visibility of system status": risk: users misread estimated savings as guaranteed cash. Copy guardrails added.
 
 ### Key decisions
-- I chose a **leak-first list** because margin problems are exceptions, not averages; I rejected a KPI-hero wall.
-- I chose **source-cited AI** ("Based on invoice lines 14-22") because unverified chat destroys finance trust; I rejected freeform chat as primary.
-- I chose **teal sparingly** so attention lands on deltas and CTAs; I rejected multi-accent theming.
-- I chose **compact density as default** for RevOps; comfortable stays one toggle away.
+- I chose a **leak-first list** because margin problems are exceptions, not averages: I rejected a KPI-hero wall.
+- I chose **source-cited AI** ("Based on invoice lines 14-22") because unverified chat destroys finance trust: I rejected freeform chat as primary.
+- I chose **teal sparingly** so attention lands on deltas and CTAs: I rejected multi-accent theming.
+- I chose **compact density as default** for RevOps: comfortable stays one toggle away.
 
 ### Solution
 1. **Overview - Margin pulse** - Contribution margin %, AI spend MoM, top 3 leaks with CTA `Inspect leak`. Proves glanceable health.
 2. **Leak detail drawer** - Cohort, model tier, estimated weekly impact, `Pause tier` / `Open playbook`. Proves action locality + reversible ops.
 3. **AI explain panel** - Structured bullets with confidence chips and "View lineage". Proves accountable AI UX, not magic.
 
-Empty: "No leaks above threshold." Error: "Live feed delayed; last sync 14:02." Success: "Tier paused · undo 30s".
+Empty: "No leaks above threshold." Error: "Live feed delayed: last sync 14:02." Success: "Tier paused · undo 30s".
 
 ### Design system notes
 Tokens: `color.accent.teal`, `color.delta.pos/neg`, `space.dense`, `type.tabular`. Components: DataTable compact, LeakRow, ConfidenceChip, CitePanel, SoftConfirm. Pattern: anomaly → local action → undo.
@@ -90,13 +90,13 @@ Borrowers understand the minimum due, but not the interest trajectory or the emo
 ### Goals & constraints
 **Goals**
 - Make impact of payment amount visible before confirm
-- Reduce anxiety copy; increase plain-language outcomes
+- Reduce anxiety copy: increase plain-language outcomes
 - Support Dynamic Type and VoiceOver for money figures
 - Prototype insights that educate, not upsell
 - Clear separation between "due" and "recommended"
 
 **Constraints**
-- iOS HIG; native tab + sheet patterns
+- iOS HIG: native tab + sheet patterns
 - Regulated-feel trust: no dark patterns, no confetti on debt
 - Timeboxed design sprint
 - Assumed bank-grade data; no live API in prototype
@@ -107,21 +107,21 @@ Borrowers understand the minimum due, but not the interest trajectory or the emo
 2. **Flows & IA** - Home balance → Plan repayment → Confirm → Insights. Settings for due reminders only.
 3. **Options explored** - (A) Chatbot coach as home (rejected: trust risk). (B) Spreadsheet-like planner (rejected: cold, un-iOS). (C) Card stack + interactive slider with live interest delta (chosen: tactile, HIG-aligned).
 4. **Visual & DS** - Soft neutrals, system SF Pro, blue trust accent, large tabular numerals. Motion: 200ms sheets, no bounce on money.
-5. **Prototype & critique** - High-fidelity prototype: Home, Plan slider, Confirm; Figma VoiceOver labels and Reduce Motion paths.
-6. **Validation notes** - Heuristic on error prevention; risk that "recommended" reads as bank advice. Relabeled to "Suggested for lower interest (not advice)".
+5. **Prototype & critique** - High-fidelity prototype: Home, Plan slider, Confirm: Figma VoiceOver labels and Reduce Motion paths.
+6. **Validation notes** - Heuristic on error prevention: risk that "recommended" reads as bank advice. Relabeled to "Suggested for lower interest (not advice)".
 
 ### Key decisions
-- I chose a **live interest delta on the slider** because abstract APR fails; I rejected static tip cards.
-- I chose **suggested vs due** as two distinct CTAs because conflating them creates regret; I rejected a single smart default button.
-- I chose **no gamification** because debt UX that celebrates feels manipulative; I rejected streaks and badges.
-- I chose **plain-language footnotes** over legalese walls for this exploration; production would still need compliance review.
+- I chose a **live interest delta on the slider** because abstract APR fails: I rejected static tip cards.
+- I chose **suggested vs due** as two distinct CTAs because conflating them creates regret: I rejected a single smart default button.
+- I chose **no gamification** because debt UX that celebrates feels manipulative: I rejected streaks and badges.
+- I chose **plain-language footnotes** over legalese walls for this exploration: production would still need compliance review.
 
 ### Solution
 1. **Home - Balance & next due** - Amount due, days left, `Plan repayment`. Proves calm hierarchy.
 2. **Plan - Amount slider** - Live "Interest saved if paid today" + rent-safe warning. Proves consequence-before-commit.
 3. **Confirm - Receipt sheet** - Breakdown, schedule, `Confirm payment`. Success: quiet checkmark, not fireworks.
 
-Empty: "Link a card to see repayments." Error: "Bank timeout - try again; nothing was charged." Success: "Payment scheduled for Fri 09:00".
+Empty: "Link a card to see repayments." Error: "Bank timeout. Try again: nothing was charged." Success: "Payment scheduled for Fri 09:00".
 
 ### Design system notes
 Tokens: `color.trust.blue`, `type.money.lg`, `space.sheet`. Components: MoneyHero, PaySlider, DeltaPill, TrustFootnote, ConfirmSheet. Pattern: preview consequence → confirm → quiet success.
@@ -164,22 +164,22 @@ After a deploy, engineers bounce between CI, logs, and status pages to answer "i
 
 **Constraints**
 - Dark web only this sprint
-- Assume existing CI; Circuit is the control plane UI
+- Assume existing CI: Circuit is the control plane UI
 - a11y: focus rings that work on near-black surfaces
 - Timeboxed; no real infra
 - Style: Vercel/Raycast dense, not playful
 
 ### Process
-1. **Frame & research** - Competitive glance: Vercel dashboard, Datadog deploy overlays, Linear command menu. Assumption: users are experts; teachability < speed.
+1. **Frame & research** - Competitive glance: Vercel dashboard, Datadog deploy overlays, Linear command menu. Assumption: users are experts: teachability < speed.
 2. **Flows & IA** - Projects → Deploy timeline → Incident drawer → Rollback. Global `⌘K`.
 3. **Options explored** - (A) Separate Deploy and Observe apps (rejected: context switch). (B) Full IDE-in-browser (rejected: scope). (C) Unified timeline with deploy pins + signal bands (chosen).
 4. **Visual & DS** - Zinc-950 canvas, 12px mono for IDs, semantic green/amber/red with patterns (not color-only). Accent electric mint for focus.
-5. **Prototype & critique** - High-fidelity prototype: Timeline, Incident, Rollback; Figma keyboard map and contrast audit.
+5. **Prototype & critique** - High-fidelity prototype: Timeline, Incident, Rollback: Figma keyboard map and contrast audit.
 6. **Validation notes** - Risk: density scares less senior engineers. Added progressive disclosure for "Simple status" mode.
 
 ### Key decisions
-- I chose a **unified timeline** because deploys are events in a signal stream; I rejected tab-split Deploy/Observe.
-- I chose **rollback with blast-radius copy** ("Affects 3 services · ~2 min") because blind rollback is scary; I rejected a naked confirm.
+- I chose a **unified timeline** because deploys are events in a signal stream: I rejected tab-split Deploy/Observe.
+- I chose **rollback with blast-radius copy** ("Affects 3 services · ~2 min") because blind rollback is scary: I rejected a naked confirm.
 - I chose **⌘K parity** for every primary action so power users never hunt menus.
 - I chose **pattern + color** for status to survive deuteranopia.
 
@@ -188,7 +188,7 @@ After a deploy, engineers bounce between CI, logs, and status pages to answer "i
 2. **Incident drawer** - Top errors, suspected commit, `Open bisect`. Proves diagnosis without leaving Circuit.
 3. **Rollback confirm** - Blast radius, previous healthy SHA, `Rollback now`. Proves safe velocity.
 
-Empty: "No deploys in range - widen window." Error: "Live metrics lagging." Success: "Rollback initiated · tracking health".
+Empty: "No deploys in range. Widen window." Error: "Live metrics lagging." Success: "Rollback initiated · tracking health".
 
 ### Design system notes
 Tokens: `color.canvas.void`, `color.signal.*`, `type.mono.xs`. Components: TimelineTrack, DeployPin, SignalBand, CmdK, BlastRadiusCard. Pattern: correlate → diagnose → reversible action.
@@ -230,7 +230,7 @@ Designers want feedback that improves the work, not engagement farming. Persona:
 - Make "request critique" a first-class CTA
 
 **Constraints**
-- Android Material 3; dynamic color optional
+- Android Material 3: dynamic color optional
 - Moderation assumed lightweight for this exploration
 - Timeboxed sprint
 - Editorial warmth without looking non-native
@@ -241,21 +241,21 @@ Designers want feedback that improves the work, not engagement farming. Persona:
 2. **Flows & IA** - Feed → Piece → Critique composer → Thank / iterate. Profile shows critique given/received ratio.
 3. **Options explored** - (A) Anonymous roast mode (rejected: toxic). (B) Live video rooms only (rejected: scheduling friction). (C) Async structured critique cards (chosen).
 4. **Visual & DS** - Warm paper backgrounds, serif for titles, sans for UI, terracotta accent. Soft elevation, generous image crops.
-5. **Prototype & critique** - High-fidelity prototype: Feed, Piece detail, Critique composer; Figma contrast on warm paper.
+5. **Prototype & critique** - High-fidelity prototype: Feed, Piece detail, Critique composer: Figma contrast on warm paper.
 6. **Validation notes** - Risk: structure feels homework-like. Softened prompts to optional chips, not mandatory forms.
 
 ### Key decisions
-- I chose **structured critique chips** ("Hierarchy", "Edge cases", "Copy") because free text alone drifts to taste; I rejected pure star ratings.
-- I chose **warm editorial visual** to signal craft culture; I rejected cold blue social chrome.
-- I chose **critique ratio on profile** to reward giving; I rejected follower vanity as the hero metric.
-- I chose **async first** because designers critique across time zones; I rejected live-only.
+- I chose **structured critique chips** ("Hierarchy", "Edge cases", "Copy") because free text alone drifts to taste: I rejected pure star ratings.
+- I chose **warm editorial visual** to signal craft culture: I rejected cold blue social chrome.
+- I chose **critique ratio on profile** to reward giving: I rejected follower vanity as the hero metric.
+- I chose **async first** because designers critique across time zones: I rejected live-only.
 
 ### Solution
 1. **Feed - Warm editorial** - Large crops, `Request critique` badges. Proves browsing joy + intent.
 2. **Piece detail** - Context blurb, goals, existing critiques threaded by chip. Proves useful reading order.
 3. **Critique composer** - Chip + comment + optional sketch overlay. Proves structured contribution.
 
-Empty: "Your feed is quiet - follow three craft accounts." Error: "Upload failed - draft saved." Success: "Critique sent · Amir will be notified".
+Empty: "Your feed is quiet. Follow three craft accounts." Error: "Upload failed. Draft saved." Success: "Critique sent · Amir will be notified".
 
 ### Design system notes
 Tokens: `color.paper.warm`, `color.accent.terracotta`, `type.display.serif`. Components: PieceCard, CritiqueChip, ComposerSheet, RatioBadge. Pattern: show goals → critique on axes → thank.
@@ -297,7 +297,7 @@ Partner managers lose days to "who can see what" email threads after a new resel
 - Empty states that teach the model
 
 **Constraints**
-- Enterprise web; complex org trees assumed
+- Enterprise web: complex org trees assumed
 - Security: confirm destructive permission changes
 - a11y for tables and dialogs
 - Timeboxed; no real IdP
@@ -308,13 +308,13 @@ Partner managers lose days to "who can see what" email threads after a new resel
 2. **Flows & IA** - Partners list → Invite → Role pick → Activation checklist → Audit.
 3. **Options explored** - (A) Raw permission matrix first (rejected: expert-only). (B) Wizard with no escape hatch (rejected: inflexible). (C) Role cards + progressive permission detail + checklist (chosen).
 4. **Visual & DS** - Cool gray enterprise, indigo accent, 14px UI. Role cards with risk chips (Low/Med/High).
-5. **Prototype & critique** - High-fidelity prototype: Partners, Role picker, Activation; Figma focus order on multi-step invite.
+5. **Prototype & critique** - High-fidelity prototype: Partners, Role picker, Activation: Figma focus order on multi-step invite.
 6. **Validation notes** - Risk: "Admin" label overused. Renamed to scoped names: `Billing viewer`, `Catalog editor`, `Partner admin`.
 
 ### Key decisions
-- I chose **business-language role cards** because matrices intimidate; I rejected matrix-as-home.
-- I chose **activation checklist** linked to permissions because access without first-value fails lifecycle; I rejected invite-only success.
-- I chose **risk chips + confirm** on elevation; I rejected silent permission adds.
+- I chose **business-language role cards** because matrices intimidate: I rejected matrix-as-home.
+- I chose **activation checklist** linked to permissions because access without first-value fails lifecycle: I rejected invite-only success.
+- I chose **risk chips + confirm** on elevation: I rejected silent permission adds.
 - I chose **audit as a first-class tab** for enterprise trust, not a buried CSV export.
 
 ### Solution
@@ -322,7 +322,7 @@ Partner managers lose days to "who can see what" email threads after a new resel
 2. **Role picker** - Cards with plain summary + `View permissions`. Proves least-privilege comprehension.
 3. **Activation checklist** - Tasks like "Upload first catalog" with deep links. Proves path to value.
 
-Empty: "No partners yet - invite your first reseller." Error: "Invite email bounced." Success: "Partner invited · checklist ready".
+Empty: "No partners yet. Invite your first reseller." Error: "Invite email bounced." Success: "Partner invited · checklist ready".
 
 ### Design system notes
 Tokens: `color.accent.indigo`, `color.risk.*`. Components: PartnerRow, RoleCard, RiskChip, ChecklistItem, AuditEvent. Pattern: invite → scoped role → activate → audit.
@@ -359,13 +359,13 @@ People track steps and sleep in different apps, then feel judged by red rings. P
 **Goals**
 - One daily "energy snapshot" without spreadsheet overload
 - Recovery suggestions that respect calendar reality
-- Soft visuals; zero shame copy
+- Soft visuals: zero shame copy
 - HealthKit-shaped assumptions (exploration only)
 - Inclusive motion and Dynamic Type
 
 **Constraints**
-- iOS soft humanist; not clinical EHR
-- Wellness companion — not clinical or medical advice
+- iOS soft humanist: not clinical EHR
+- Wellness companion, not clinical or medical advice
 - Timeboxed sprint
 - Privacy-forward empty states
 - a11y: Reduce Motion alternatives for breathing cues
@@ -375,12 +375,12 @@ People track steps and sleep in different apps, then feel judged by red rings. P
 2. **Flows & IA** - Today snapshot → Check-in → Recovery suggestion → Weekly pattern.
 3. **Options explored** - (A) Hard gamification rings (rejected: shame). (B) Therapist chatbot (rejected: scope/trust). (C) Snapshot + one suggestion + optional journal (chosen).
 4. **Visual & DS** - Mist gradients, rounded 24pt cards, humanist sans, lavender accent. Illustration sparingly.
-5. **Prototype & critique** - High-fidelity prototype: Today, Check-in, Weekly; Figma Dynamic Type overflow and Reduce Motion.
+5. **Prototype & critique** - High-fidelity prototype: Today, Check-in, Weekly: Figma Dynamic Type overflow and Reduce Motion.
 6. **Validation notes** - Risk: users expect clinical accuracy. Added "Not medical advice" persistently but quietly.
 
 ### Key decisions
-- I chose **one suggestion per day** because choice overload kills recovery; I rejected tip carousels.
-- I chose **no punishing streaks** because missed days should not clear progress theater; I rejected Duolingo-style pressure.
+- I chose **one suggestion per day** because choice overload kills recovery: I rejected tip carousels.
+- I chose **no punishing streaks** because missed days should not clear progress theater: I rejected Duolingo-style pressure.
 - I chose **soft gradients with solid text containers** so contrast survives the aesthetic.
 - I chose **calendar-aware suggestions** ("15 min walk between meetings") over generic advice.
 
@@ -389,7 +389,7 @@ People track steps and sleep in different apps, then feel judged by red rings. P
 2. **Check-in sheet** - 3 taps mood/energy/load + optional note. Proves low friction.
 3. **Weekly pattern** - Soft chart of energy vs meetings load + `Try recovery`. Proves insight without clinic UI.
 
-Empty: "Grant Health permissions when you're ready." Error: "Couldn't sync sleep - enter manually." Success: "Check-in saved".
+Empty: "Grant Health permissions when you're ready." Error: "Couldn't sync sleep. Enter manually." Success: "Check-in saved".
 
 ### Design system notes
 Tokens: `color.mist.*`, `color.accent.lavender`, `radius.xl`. Components: SnapshotCard, CheckInSheet, SoftChart, SuggestionPill, QuietDisclaimer. Pattern: notice → tiny input → one action.
@@ -417,7 +417,7 @@ Tokens: `color.mist.*`, `color.accent.lavender`, `radius.xl`. Components: Snapsh
 **Tags:** Design system, Docs, Playground, Tokens, Web
 
 ### Snapshot
-Atlas CMS is a documentation and playground site for a product design system: tokens, components, usage do/don't, and a live props playground. The bet: docs that feel like a product (search, versioning, playground) get adopted; static Notion dumps do not.
+Atlas CMS is a documentation and playground site for a product design system: tokens, components, usage do/don't, and a live props playground. The bet: docs that feel like a product (search, versioning, playground) get adopted: static Notion dumps do not.
 
 ### Problem
 Designers and engineers disagree because the "source of truth" is a stale Figma page and a Storybook nobody bookmarks. JTBD: "Find the Button spec, tweak props, copy the React snippet, and trust it matches production."
@@ -431,7 +431,7 @@ Designers and engineers disagree because the "source of truth" is a stale Figma 
 - Contribution path sketched (RFC lite)
 
 **Constraints**
-- Docs web; assume MDX-like content model
+- Docs web: assume MDX-like content model
 - Must work keyboard-only
 - Timeboxed; fake component library
 - Style: clean docs (think Linear docs × Storybook)
@@ -442,11 +442,11 @@ Designers and engineers disagree because the "source of truth" is a stale Figma 
 2. **Flows & IA** - Home → Component page → Playground → Tokens. Global search.
 3. **Options explored** - (A) Storybook skin only (rejected: weak guidance). (B) Marketing site for DS (rejected: hollow). (C) Docs + playground + tokens explorer (chosen).
 4. **Visual & DS** - White/gray docs chrome, monospace for props, accent for interactive playground only.
-5. **Prototype & critique** - High-fidelity prototype: Component page, Playground, Tokens; Figma heading outline and skip-link.
+5. **Prototype & critique** - High-fidelity prototype: Component page, Playground, Tokens: Figma heading outline and skip-link.
 6. **Validation notes** - Risk: playground code drifts from real package. Labeled "Exploration playground · wire to package in production".
 
 ### Key decisions
-- I chose **playground beside guidance** because isolated Storybook tabs lose narrative; I rejected docs-without-play.
+- I chose **playground beside guidance** because isolated Storybook tabs lose narrative: I rejected docs-without-play.
 - I chose **a11y callouts as first-class sections** not footnotes.
 - I chose **version switcher** early because breaking tokens without ceremony burns trust.
 - I chose **copy snippet CTA** as the conversion moment for eng adoption.
@@ -456,7 +456,7 @@ Designers and engineers disagree because the "source of truth" is a stale Figma 
 2. **Playground** - Live props, theme toggle, `Copy React`. Proves try-before-adopt.
 3. **Tokens explorer** - Color/space/type with CSS var names. Proves cross-discipline shared language.
 
-Empty: "No matches - try token names." Error: "Playground runtime failed." Success: "Snippet copied".
+Empty: "No matches. Try token names." Error: "Playground runtime failed." Success: "Snippet copied".
 
 ### Design system notes
 Meta-DS for the docs site itself: DocShell, PropTable, PlaygroundFrame, DoDont, TokenSwatch, VersionSelect. Pattern: teach → try → copy → contribute.
@@ -508,14 +508,14 @@ Hiring a local pro is fragmented across chats and Facebook groups with unclear p
 1. **Frame & research** - Glance at TaskRabbit, Bark, local Facebook UX failures. Assumption: fee surprises kill conversion.
 2. **Flows & IA** - Search → Pro profile → Get quote / Book → Chat. Pro side sketched only.
 3. **Options explored** - (A) Chat-first, price later (rejected: distrust). (B) Instant book only (rejected: too rigid for repairs). (C) Profile with clear rate + request-to-book (chosen).
-4. **Visual & DS** - Shared tokens; iOS uses HIG bars, web uses sidebar filters. Accent coral for CTAs.
-5. **Prototype & critique** - High-fidelity prototype: iOS Search, Profile, Booking; web Search results; Figma parity checklist.
+4. **Visual & DS** - Shared tokens: iOS uses HIG bars, web uses sidebar filters. Accent coral for CTAs.
+5. **Prototype & critique** - High-fidelity prototype: iOS Search, Profile, Booking: web Search results; Figma parity checklist.
 6. **Validation notes** - Risk: "Verified" implies background check depth. Relabeled "ID checked · details" with expandable meaning.
 
 ### Key decisions
-- I chose **price before chat** because opacity is the local-market failure mode; I rejected chat-gated quotes as default.
+- I chose **price before chat** because opacity is the local-market failure mode: I rejected chat-gated quotes as default.
 - I chose **shared IA, native chrome** so cross-platform doesn't mean identical pixels.
-- I chose **request-to-book hybrid** for categories that need scoping; instant book for fixed-price SKUs.
+- I chose **request-to-book hybrid** for categories that need scoping: instant book for fixed-price SKUs.
 - I chose **honest verification labels** over vague shield icons.
 
 ### Solution
@@ -523,7 +523,7 @@ Hiring a local pro is fragmented across chats and Facebook groups with unclear p
 2. **Pro profile** - Portfolio, reviews, fee breakdown, `Request to book`. Proves transparency.
 3. **Booking confirm (web)** - Slot, address, total, `Confirm request`. Proves desktop form comfort.
 
-Empty: "No pros in range - widen radius." Error: "Payment method failed - request not sent." Success: "Request sent · usually replies in 2h".
+Empty: "No pros in range. Widen radius." Error: "Payment method failed. Request not sent." Success: "Request sent · usually replies in 2h".
 
 ### Design system notes
 Shared: PriceBreakdown, TrustBadge, ProCard, SlotPicker. Platform shells differ. Pattern: search → trust → transparent total → request.
@@ -565,7 +565,7 @@ People miss serendipitous conversation but hate Zoom formality and Twitter Space
 - Exit and mute always one tap
 
 **Constraints**
-- iOS dark expressive; original brand (no Signal messenger cues)
+- iOS dark expressive: original brand (no Signal messenger cues)
 - Safety: block/report reachable
 - Timeboxed; simulated live state
 - a11y: VoiceOver for role changes; captions placeholder
@@ -576,13 +576,13 @@ People miss serendipitous conversation but hate Zoom formality and Twitter Space
 2. **Flows & IA** - Lobby → Live room → Raise hand → On stage → Leave. Create room flow secondary.
 3. **Options explored** - (A) Flat everyone-can-talk (rejected: chaos). (B) Ticketed webinar (rejected: cold). (C) Stage + hand queue + expressive presence (chosen).
 4. **Visual & DS** - Deep charcoal, neon violet accent, bold display type for room titles, soft glow on active speaker (with solid fallback).
-5. **Prototype & critique** - High-fidelity prototype: Lobby, Live room, Hand queue; Figma Reduce Motion (glow → border).
-6. **Validation notes** - Prototype covers Lobby → Live room → Hand queue; Reduce Motion swaps glow for a solid border.
+5. **Prototype & critique** - High-fidelity prototype: Lobby, Live room, Hand queue: Figma Reduce Motion (glow → border).
+6. **Validation notes** - Prototype covers Lobby → Live room → Hand queue: Reduce Motion swaps glow for a solid border.
 
 ### Key decisions
-- I chose **explicit stage roles** because audio without structure fails; I rejected open-mic default.
-- I chose **expressive dark brand** to show visual range beyond enterprise; I still capped glow for a11y.
-- I chose **always-visible Leave/Mute** as safety rails; I rejected gesture-only exit.
+- I chose **explicit stage roles** because audio without structure fails: I rejected open-mic default.
+- I chose **expressive dark brand** to show visual range beyond enterprise: I still capped glow for a11y.
+- I chose **always-visible Leave/Mute** as safety rails: I rejected gesture-only exit.
 - I chose **hand queue visibility for hosts** to make moderation fair.
 
 ### Solution
@@ -590,7 +590,7 @@ People miss serendipitous conversation but hate Zoom formality and Twitter Space
 2. **Live room** - Stage avatars, listener count, `Raise hand`. Proves role clarity mid-session.
 3. **Hand queue (host)** - Ordered requests, `Invite` / `Dismiss`. Proves fair moderation.
 
-Empty: "No live rooms - start one." Error: "Mic permission denied." Success: "You're on stage · mute anytime".
+Empty: "No live rooms. Start one." Error: "Mic permission denied." Success: "You're on stage · mute anytime".
 
 ### Design system notes
 Tokens: `color.void`, `color.accent.violet`, `effect.speakGlow`. Components: RoomCard, StageGrid, HandQueue, SafetySheet. Pattern: enter → role-aware participate → exit cleanly.
@@ -632,7 +632,7 @@ Growth teams lose signal when experiment setup, design variants, and analytics l
 - Explain statistical humility in UI copy
 
 **Constraints**
-- Web analytics console; desktop
+- Web analytics console: desktop
 - No fake "99% confidence" theater without labels
 - Timeboxed; simulated experiment data
 - a11y for charts (tables as fallback)
@@ -643,13 +643,13 @@ Growth teams lose signal when experiment setup, design variants, and analytics l
 2. **Flows & IA** - Experiments list → Create (hypothesis) → Variants → Results → Decision.
 3. **Options explored** - (A) Pure BI dashboards (rejected: no experiment object). (B) Code-only flags UI (rejected: excludes design). (C) Lab notebook + variants + results decision (chosen).
 4. **Visual & DS** - Light analytics chrome, emerald for wins, restrained red for losses, tabular nums. Chart + table twins.
-5. **Prototype & critique** - High-fidelity prototype: List, Create, Results; Figma table fallback and decision modal copy.
+5. **Prototype & critique** - High-fidelity prototype: List, Create, Results: Figma table fallback and decision modal copy.
 6. **Validation notes** - Risk: overclaiming causality. Added "Prototype results · not causal proof" on exploration screens.
 
 ### Key decisions
-- I chose **hypothesis as required field** because tool-led tests without questions waste traffic; I rejected metric-first blank experiments.
-- I chose **guardrail metrics beside primary** so wins that tank retention are visible; I rejected single-KPI hero.
-- I chose **inconclusive as a first-class state** to fight false certainty; I rejected binary win/lose only.
+- I chose **hypothesis as required field** because tool-led tests without questions waste traffic: I rejected metric-first blank experiments.
+- I chose **guardrail metrics beside primary** so wins that tank retention are visible: I rejected single-KPI hero.
+- I chose **inconclusive as a first-class state** to fight false certainty: I rejected binary win/lose only.
 - I chose **variant preview frames** so design stays in the experiment object.
 
 ### Solution
@@ -657,7 +657,7 @@ Growth teams lose signal when experiment setup, design variants, and analytics l
 2. **Create - Hypothesis** - Statement, audience, primary + guardrails, `Continue to variants`. Proves discipline up front.
 3. **Results - Decision** - Chart/table, "Ship / Kill / Extend", notes. Proves shared decision ritual.
 
-Empty: "No experiments yet - write your first hypothesis." Error: "Stats engine delayed." Success: "Marked shipped · flagged for rollout".
+Empty: "No experiments yet. Write your first hypothesis." Error: "Stats engine delayed." Success: "Marked shipped · flagged for rollout".
 
 ### Design system notes
 Tokens: `color.win.emerald`, `color.lose.rose`, `type.tabular`. Components: ExperimentRow, HypothesisForm, VariantFrame, MetricPair, DecisionModal. Pattern: ask → variant → read guardrails → decide.
@@ -682,7 +682,7 @@ Tokens: `color.win.emerald`, `color.lose.rose`, `type.tabular`. Components: Expe
 - `/` - Gallery grid of 10 exploration cards
 - `/work/:slug` - Case study page (parses H2/H3 structure above)
 - `/work` - Filtered index (same grid, query params)
-- `/about` - Positioning (Senior UX Manager + Design Engineer; real products called out separately)
+- `/about` - Positioning (Senior UX Manager + Design Engineer: real products called out separately)
 - `/lab` optional - process notes
 
 ### Filters
@@ -726,4 +726,4 @@ portfolioSignals:
  - Trust and a11y
 ```
 
-Use the same fields for all ten; `projects.json` is the machine-readable source of truth for the gallery.
+Use the same fields for all ten: `projects.json` is the machine-readable source of truth for the gallery.

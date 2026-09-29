@@ -16,7 +16,7 @@ type Props = {
 
 /**
  * Editorial 12-col mosaic (filter=all).
- * Every desktop row sums to exactly 12 — no CSS-grid holes.
+ * Every desktop row sums to exactly 12; no CSS-grid holes.
  *
  * Lead pack (when present, in order): CostRadar 8 + DesignOS 4, OKRs 6 + Gantt 6.
  * Explorations tile via cycling row recipes; tails of 1–3 are fitted so nothing orphans.
@@ -27,7 +27,7 @@ type Props = {
 
 const FEATURED_ORDER = ["costradar", "designos", "okrs", "gantt"] as const;
 
-/** Exploration row recipes — each array sums to 12. */
+/** Exploration row recipes: each array sums to 12. */
 const EXPLORATION_ROWS: number[][] = [
   [4, 4, 4],
   [8, 4],
@@ -52,7 +52,7 @@ const TRIPLE_ROWS: number[][] = [
   [3, 5, 4],
 ];
 
-/** Tailwind JIT needs complete class strings — no dynamic `lg:col-span-${n}`. */
+/** Tailwind JIT needs complete class strings; no dynamic `lg:col-span-${n}`. */
 const LG_COL: Record<number, string> = {
   3: "lg:col-span-3",
   4: "lg:col-span-4",

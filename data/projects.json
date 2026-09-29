@@ -3,8 +3,8 @@
     "id": "01",
     "slug": "costradar",
     "title": "CostRadar.ai",
-    "oneLiner": "Profitability OS for multi-channel e-commerce \u2014 true net P&L plus an Approve-gated AI Profit Agent",
-    "badge": "Shipped product \u00b7 Founder case study",
+    "oneLiner": "Profitability OS for multi-channel e-commerce: true net P&L plus an Approve-gated AI Profit Agent",
+    "badge": "Shipped product · Founder case study",
     "role": "Founder & AI Design Engineer (solo)",
     "platform": "Web SaaS (+ PWA glance)",
     "timeline": "Solo-shipped live product",
@@ -17,15 +17,15 @@
       "Approve-gated agents"
     ],
     "order": 1,
-    "accent": "#00a080",
+    "accent": "#449C80",
     "styleLabel": "Dense finance teal",
     "screens": [
-      "Home dashboard \u2014 True Net & widgets",
-      "Breakdown \u2014 cost distribution & top leaks",
-      "Reports \u2014 Margin Waterfall / Monthly P&L",
-      "AI Insights \u2014 finding + Approve",
-      "AI Profit Agent \u2014 in-app chat",
-      "Pulse \u2014 multi-store portfolio"
+      "Home dashboard: True Net & widgets",
+      "Breakdown: cost distribution & top leaks",
+      "Reports: Margin Waterfall / Monthly P&L",
+      "AI Insights: finding + Approve",
+      "AI Profit Agent: in-app chat",
+      "Pulse: multi-store portfolio"
     ],
     "portfolioSignals": [
       "Fintech-adjacent / P&L system design",
@@ -41,11 +41,11 @@
     "id": "12",
     "slug": "designos",
     "title": "DesignOS",
-    "oneLiner": "Org-scale UX operating system \u2014 intake, estimation, standards, research ops, and human-gated AI",
-    "badge": "Enterprise case \u00b7 Design Ops",
-    "role": "Senior UX Manager \u00b7 Appfire",
+    "oneLiner": "Org-scale UX operating system: intake, estimation, standards, research ops, and human-gated AI",
+    "badge": "Enterprise case · Design Ops",
+    "role": "Senior UX Manager · Appfire",
     "platform": "Web desktop",
-    "timeline": "Appfire \u00b7 org UX OS",
+    "timeline": "Appfire · org UX OS",
     "tags": [
       "Design Ops",
       "AI UX",
@@ -57,7 +57,7 @@
     "accent": "#4F46E5",
     "styleLabel": "Quiet enterprise indigo",
     "screens": [
-      "Org pulse \u2014 Overview",
+      "Org pulse: Overview",
       "Intake queue & triage",
       "Estimation board",
       "Figma / standards hub",
@@ -66,10 +66,10 @@
     ],
     "portfolioSignals": [
       "Design Ops leadership at org scale",
-      "Intake \u2192 estimate \u2192 craft predictability",
+      "Intake → estimate → craft predictability",
       "Figma / design-system governance",
       "Research ops as shared infrastructure",
-      "Human-gated agentic delivery (Sense\u2192Learn)"
+      "Human-gated agentic delivery (Sense→Learn)"
     ],
     "status": "shipped"
   },
@@ -78,10 +78,10 @@
     "slug": "okrs",
     "title": "OKRs",
     "oneLiner": "Strategy-to-work hierarchy leaders use in weekly planning",
-    "badge": "Enterprise case \u00b7 OKRs",
+    "badge": "Enterprise case · OKRs",
     "role": "Lead Product Designer",
     "platform": "Web desktop",
-    "timeline": "Enterprise PPM \u00b7 shipped",
+    "timeline": "Enterprise PPM · shipped",
     "tags": [
       "OKRs",
       "Enterprise",
@@ -94,14 +94,14 @@
     "styleLabel": "Quiet enterprise blue",
     "screens": [
       "Leadership weekly ritual",
-      "Goals \u2192 KR \u2192 Work hierarchy",
+      "Goals → KR → Work hierarchy",
       "Key Result detail",
       "At-risk / stale health",
       "Empty first-run hierarchy"
     ],
     "portfolioSignals": [
       "Staff/Principal hierarchy IA under cognitive load",
-      "Strategy \u2194 execution without Jira noise",
+      "Strategy ↔ execution without Jira noise",
       "Weekly leadership ritual design",
       "Ownership, staleness, and trust states",
       "Enterprise PPM density"
@@ -112,11 +112,11 @@
     "id": "14",
     "slug": "gantt",
     "title": "Gantt",
-    "oneLiner": "Dense program Gantt \u2014 retrieval speed as a design constraint",
-    "badge": "Enterprise case \u00b7 Planning",
+    "oneLiner": "Dense program Gantt: retrieval speed as a design constraint",
+    "badge": "Enterprise case · Planning",
     "role": "Lead Product Designer",
     "platform": "Web desktop",
-    "timeline": "Enterprise PPM \u00b7 shipped",
+    "timeline": "Enterprise PPM · shipped",
     "tags": [
       "Gantt",
       "Enterprise",
@@ -152,7 +152,7 @@
     "badge": "Personal exploration",
     "role": "Lead Product Designer",
     "platform": "Web desktop",
-    "timeline": "2\u20133 week design sprint",
+    "timeline": "2–3 week design sprint",
     "tags": [
       "AI",
       "B2B SaaS",
@@ -161,15 +161,15 @@
       "Quiet enterprise"
     ],
     "order": 5,
-    "accent": "#0D9488",
+    "accent": "#00685F",
     "styleLabel": "Quiet enterprise",
     "screens": [
       "Profitability Overview",
-      "Finding Detail \u2014 SKU Margin Leak",
+      "Finding Detail: SKU Margin Leak",
       "Ads & ROAS Intelligence",
       "COGS & Landed Costs Ledger",
       "Autonomous Rules & Guardrails",
-      "Empty State \u2014 Connect Store"
+      "Empty State: Connect Store"
     ],
     "portfolioSignals": [
       "AI product UX",
@@ -188,7 +188,7 @@
     "badge": "Personal exploration",
     "role": "Lead Product Designer",
     "platform": "iOS",
-    "timeline": "2\u20133 week design sprint",
+    "timeline": "2–3 week design sprint",
     "tags": [
       "Fintech",
       "iOS",
@@ -224,7 +224,7 @@
     "badge": "Personal exploration",
     "role": "Lead Product Designer",
     "platform": "Web dark",
-    "timeline": "2\u20133 week design sprint",
+    "timeline": "2–3 week design sprint",
     "tags": [
       "Developer tools",
       "Observability",
@@ -233,8 +233,8 @@
       "Web"
     ],
     "order": 7,
-    "accent": "#34D399",
-    "styleLabel": "Vercel/Raycast dense",
+    "accent": "#A078FF",
+    "styleLabel": "Violet deploy dense",
     "screens": [
       "Deployments List",
       "Deploy Detail & Logs",
@@ -260,7 +260,7 @@
     "badge": "Personal exploration",
     "role": "Lead Product Designer",
     "platform": "Android",
-    "timeline": "2\u20133 week design sprint",
+    "timeline": "2–3 week design sprint",
     "tags": [
       "Android",
       "Community",
@@ -269,16 +269,16 @@
       "Social"
     ],
     "order": 8,
-    "accent": "#C2410C",
+    "accent": "#B52603",
     "styleLabel": "Warm editorial",
     "screens": [
       "Feed",
       "Project Detail",
       "Frames",
-      "Upload Frame \u2014 Annotations",
+      "Upload Frame: Annotations",
       "Compose Critique",
       "Critiques & Activity",
-      "Profile \u2014 Maya Lin"
+      "Profile: Maya Lin"
     ],
     "portfolioSignals": [
       "Android Material craft",
@@ -297,7 +297,7 @@
     "badge": "Personal exploration",
     "role": "Lead Product Designer",
     "platform": "Web enterprise",
-    "timeline": "2\u20133 week design sprint",
+    "timeline": "2–3 week design sprint",
     "tags": [
       "B2B",
       "Permissions",
@@ -309,13 +309,13 @@
     "accent": "#4F46E5",
     "styleLabel": "Enterprise clarity",
     "screens": [
-      "Partner Activation \u2014 Directory & Connect Wizard",
-      "Roles & Permissions \u2014 Matrix",
-      "Partner Activation \u2014 Checklist Drawer",
-      "Roles & Permissions \u2014 Review Diff & Approval",
-      "Organization Settings \u2014 SSO & Identity",
-      "API & Webhooks \u2014 Developer Gateway",
-      "Audit Trail \u2014 Activity Log"
+      "Partner Activation: Directory & Connect Wizard",
+      "Roles & Permissions: Matrix",
+      "Partner Activation: Checklist Drawer",
+      "Roles & Permissions: Review Diff & Approval",
+      "Organization Settings: SSO & Identity",
+      "API & Webhooks: Developer Gateway",
+      "Audit Trail: Activity Log"
     ],
     "portfolioSignals": [
       "B2B lifecycle",
@@ -334,7 +334,7 @@
     "badge": "Personal exploration",
     "role": "Lead Product Designer",
     "platform": "iOS",
-    "timeline": "2\u20133 week design sprint",
+    "timeline": "2–3 week design sprint",
     "tags": [
       "Wellness",
       "iOS",
@@ -343,8 +343,8 @@
       "Health-adjacent"
     ],
     "order": 10,
-    "accent": "#A78BFA",
-    "styleLabel": "Soft humanist",
+    "accent": "#00685D",
+    "styleLabel": "Soft teal recovery",
     "screens": [
       "Today Recovery",
       "Daily Check-in",
@@ -371,7 +371,7 @@
     "badge": "Personal exploration",
     "role": "Lead Product Designer",
     "platform": "Web docs",
-    "timeline": "2\u20133 week design sprint",
+    "timeline": "2–3 week design sprint",
     "tags": [
       "Design system",
       "Docs",
@@ -380,8 +380,8 @@
       "Web"
     ],
     "order": 11,
-    "accent": "#0F172A",
-    "styleLabel": "Docs product",
+    "accent": "#4F46E5",
+    "styleLabel": "Indigo docs system",
     "screens": [
       "Getting Started / Introduction",
       "Foundations / Spacing",
@@ -393,7 +393,7 @@
     "portfolioSignals": [
       "Design systems",
       "Docs UX",
-      "Designer\u2013engineer bridge",
+      "Designer–engineer bridge",
       "Token literacy",
       "Playground adoption"
     ],
@@ -407,7 +407,7 @@
     "badge": "Personal exploration",
     "role": "Lead Product Designer",
     "platform": "iOS + desktop web",
-    "timeline": "2\u20133 week design sprint",
+    "timeline": "2–3 week design sprint",
     "tags": [
       "Marketplace",
       "Cross-platform",
@@ -416,7 +416,7 @@
       "Booking"
     ],
     "order": 12,
-    "accent": "#F43F5E",
+    "accent": "#006B2C",
     "styleLabel": "Friendly utilitarian",
     "screens": [
       "Mobile iOS Home",
@@ -444,7 +444,7 @@
     "badge": "Personal exploration",
     "role": "Lead Product Designer",
     "platform": "iOS dark expressive",
-    "timeline": "2\u20133 week design sprint",
+    "timeline": "2–3 week design sprint",
     "tags": [
       "Live audio",
       "Community",
@@ -453,15 +453,15 @@
       "Social"
     ],
     "order": 13,
-    "accent": "#8B5CF6",
-    "styleLabel": "Dark expressive",
+    "accent": "#B8F53A",
+    "styleLabel": "Neon lime dark",
     "screens": [
-      "Discover \u2014 Live Signal Rooms",
-      "Browse \u2014 Communities & Niches",
-      "In-Room \u2014 Audio Stage",
-      "In-Room \u2014 Live Chat & Reactions",
-      "Schedule Room \u2014 Plan Hangout",
-      "Profile \u2014 Host Studio & Replays"
+      "Discover: Live Signal Rooms",
+      "Browse: Communities & Niches",
+      "In-Room: Audio Stage",
+      "In-Room: Live Chat & Reactions",
+      "Schedule Room: Plan Hangout",
+      "Profile: Host Studio & Replays"
     ],
     "portfolioSignals": [
       "Expressive mobile brand",
@@ -480,7 +480,7 @@
     "badge": "Personal exploration",
     "role": "Lead Product Designer",
     "platform": "Web analytics",
-    "timeline": "2\u20133 week design sprint",
+    "timeline": "2–3 week design sprint",
     "tags": [
       "Growth",
       "Experimentation",
@@ -489,8 +489,8 @@
       "Metrics"
     ],
     "order": 14,
-    "accent": "#059669",
-    "styleLabel": "Growth analytics",
+    "accent": "#2563EB",
+    "styleLabel": "Growth lab blue",
     "screens": [
       "Experiments Board",
       "Experiment Detail",

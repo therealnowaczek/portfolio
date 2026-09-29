@@ -13,8 +13,8 @@ tags:
   - "Dense UX"
   - "Web"
 order: 7
-accent: "#34D399"
-styleLabel: "Vercel/Raycast dense"
+accent: "#A078FF"
+styleLabel: "Violet deploy dense"
 screens:
   - "Deployments List"
   - "Deploy Detail & Logs"
@@ -31,7 +31,7 @@ portfolioSignals:
 ---
 
 ### Snapshot
-Circuit is a personal exploration of a dark deploy + observability console for engineers: ship, watch signals, bisect a bad release, and roll back with blast-radius clarity. Vercel-speed ship energy meets Raycast-grade keyboard density — without becoming another noisy APM.
+Circuit is a personal exploration of a dark deploy + observability console for engineers: ship, watch signals, bisect a bad release, and roll back with blast-radius clarity. Vercel-speed ship energy meets Raycast-grade keyboard density, without becoming another noisy APM.
 
 ### Problem
 After a deploy, engineers bounce between CI, logs, and status pages to answer “is prod healthy?” The job is one keyboard-first surface: redeploy, correlate signals to a release, and reverse a bad ship before Slack catches fire.
@@ -45,7 +45,7 @@ After a deploy, engineers bounce between CI, logs, and status pages to answer �
 - Secrets and env management without leaving the console mental model
 
 **Constraints**
-- Dark web only this sprint; assume existing CI
+- Dark web only this sprint: assume existing CI
 - Focus rings that work on near-black surfaces
 - Timeboxed; no real infra behind the prototype
 
@@ -58,20 +58,20 @@ After a deploy, engineers bounce between CI, logs, and status pages to answer �
 6. **Keyboard map audit** - Every primary mouse path has a command-palette twin.
 
 ### Key decisions
-- **Unified timeline** — deploys are events in a signal stream, not a separate app.
-- **Rollback with blast-radius copy** — blind confirm is scary; naked “Rollback” is not enough.
-- **⌘K parity** — power users should not hunt menus during an incident.
-- **Secrets as a first-class screen** — env mistakes are deploy incidents waiting to happen.
+- **Unified timeline**: deploys are events in a signal stream, not a separate app.
+- **Rollback with blast-radius copy**: blind confirm is scary: naked “Rollback” is not enough.
+- **⌘K parity**: power users should not hunt menus during an incident.
+- **Secrets as a first-class screen**: env mistakes are deploy incidents waiting to happen.
 
 ### Solution
-1. **Deployments List** — Pins, health, entry into detail. Proves scan-first ops density.
-2. **Deploy Detail & Logs** — Commit context, stream, inspect actions. Proves diagnosis without leaving Circuit.
-3. **Incident State & Failing Checks** — Failing signals, suspected commit, safe next steps. Proves calm incident UX.
-4. **Metrics & Performance** — Latency/error bands correlated to deploy pins. Proves observe-next-to-ship.
-5. **Logs & Traces Explorer** — Queryable depth for bisecting a bad release. Proves power-user diagnosis.
-6. **Environment Variables & Secrets** — Controlled secrets UX with reveal/audit cues. Proves safe config craft.
+1. **Deployments List**: Pins, health, entry into detail. Proves scan-first ops density.
+2. **Deploy Detail & Logs**: Commit context, stream, inspect actions. Proves diagnosis without leaving Circuit.
+3. **Incident State & Failing Checks**: Failing signals, suspected commit, safe next steps. Proves calm incident UX.
+4. **Metrics & Performance**: Latency/error bands correlated to deploy pins. Proves observe-next-to-ship.
+5. **Logs & Traces Explorer**: Queryable depth for bisecting a bad release. Proves power-user diagnosis.
+6. **Environment Variables & Secrets**: Controlled secrets UX with reveal/audit cues. Proves safe config craft.
 
-Empty: “No deploys in range — widen window.” Lag: “Live metrics lagging.” Success: “Rollback initiated · tracking health.”
+Empty: “No deploys in range. Widen window.” Lag: “Live metrics lagging.” Success: “Rollback initiated · tracking health.”
 
 ### Design system notes
 Tokens: void canvas, signal colors, mono xs. Components: TimelineTrack, DeployPin, SignalBand, CmdK, BlastRadiusCard, SecretsRow. Pattern: correlate → diagnose → reversible action.
