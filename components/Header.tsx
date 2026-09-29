@@ -97,7 +97,7 @@ export function Header() {
           <a
             href={withBasePath(SITE.cvPdf)}
             download={SITE.cvFilename}
-            className="ml-1.5 inline-flex h-9 items-center rounded-[8px] bg-accent px-3 text-xs font-semibold tracking-wide text-white transition-opacity duration-[160ms] ease-out hover:opacity-90 lg:h-10 lg:px-3.5 lg:text-sm"
+            className="ml-1.5 inline-flex h-9 items-center rounded-[8px] bg-accent px-3 text-xs font-semibold tracking-wide !text-white transition-opacity duration-[160ms] ease-out hover:opacity-90 lg:h-10 lg:px-3.5 lg:text-sm"
           >
             CV
           </a>
