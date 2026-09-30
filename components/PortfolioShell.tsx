@@ -112,40 +112,39 @@ export function PortfolioShell({ projects }: Props) {
           <Header />
           <SideNav items={NAV} />
         </div>
-        <main id="main" className="mt-10 min-w-0 space-y-16 sm:mt-14 sm:space-y-20">
+        <main id="main" className="mt-10 min-w-0 sm:mt-14">
           {/* 1. Who: intro copy + role chapters (scroll-spy stays Intro) */}
           <div id="about" className="min-w-0 max-w-full scroll-mt-36 space-y-10 sm:space-y-12">
             <Intro />
             <RoleFit />
           </div>
 
-          <div id="portfolio" className="scroll-mt-36">
+          <div id="portfolio" className="section-rule scroll-mt-36">
             <SelectedWork projects={projects} onOpen={open} />
           </div>
 
-          <div id="impact" className="scroll-mt-36">
+          <div id="impact" className="section-rule scroll-mt-36">
             <Impact />
           </div>
 
-          <div id="experience" className="scroll-mt-36">
+          <div id="experience" className="section-rule scroll-mt-36">
             <Experience />
           </div>
 
-          <div id="expertise" className="scroll-mt-36">
+          <div id="expertise" className="section-rule scroll-mt-36">
             <ExpertiseTools />
           </div>
 
           {/* 5. How they lead & operate: for manager/director scope */}
-          <div id="leadership" className="scroll-mt-36">
+          <div id="leadership" className="section-rule scroll-mt-36">
             <Leadership />
           </div>
 
-          <div id="process" className="scroll-mt-36">
+          <div id="process" className="section-rule scroll-mt-36">
             <Process />
           </div>
 
-          {/* 6. CTA */}
-          <div id="connect" className="scroll-mt-36">
+          <div id="connect" className="mt-16 scroll-mt-36 sm:mt-20">
             <Footer />
           </div>
         </main>

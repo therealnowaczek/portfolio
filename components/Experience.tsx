@@ -8,12 +8,6 @@ export function Experience() {
         <h2 id="experience-heading" className="section-title">
           Experience
         </h2>
-        <p className="mb-6 max-w-2xl text-sm leading-relaxed text-muted sm:text-[15px]">
-          Hands-on designer, then Head of Design, then Senior UX Manager at
-          Appfire. Since 2021 I also freelance on UX for mobile, desktop, and
-          web, which is the wider portfolio. CostRadar.ai is the product I am
-          building now. Job titles below match the CV.
-        </p>
         <ol className="space-y-6">
           {EXPERIENCE.map((item) => (
             <li

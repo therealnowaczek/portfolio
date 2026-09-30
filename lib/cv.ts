@@ -24,8 +24,6 @@ export type NarrativeBlock = {
 
 export const PROFILE_URL = "https://therealnowaczek.github.io/portfolio/";
 
-export const LOCATION_LINE = "Poland · Open to remote (EU)";
-
 export const SITE = {
   name: "Marcin Nowak",
   subtitle: "Senior UX Manager · Head of Design · Product Designer",
@@ -85,49 +83,49 @@ export const STRENGTHS: Strength[] = [
 
 export const EXPERIENCE: ExperienceItem[] = [
   {
-    years: "2025 – Present",
+    years: "2025 - Present",
     role: "Founder & AI Design Engineer",
     company: "CostRadar.ai",
     blurb:
       "Independent founder. Live profitability product for multi-channel e-commerce (costradar.ai). I designed and built it solo: true-net ledger, savings tracker, and an AI Profit Agent that only changes things after you Approve.",
   },
   {
-    years: "2023 – 2026",
+    years: "2023 - 2026",
     role: "Senior UX Manager",
     company: "Appfire",
     blurb:
       "Co-led 35+ designers, researchers, and writers across BigPicture, 7pace, and AI workstreams. Ran design ops, estimation, Figma standards, research ops, and AI rollout. BigPicture team outcomes: +47% OKR adoption, financial-module adoption 53% to 84% in 3 months, 58% fewer unclear financial reports.",
   },
   {
-    years: "2021 – Present",
+    years: "2021 - Present",
     role: "Freelancer",
     company: "Independent",
     blurb:
       "UX projects alongside staff roles: mobile apps, desktop products, and web. Product design from framing and UI through delivery. This practice is the wider portfolio.",
   },
   {
-    years: "2019 – 2023",
+    years: "2019 - 2023",
     role: "Head of Design",
     company: "SoftwarePlant (acquired by Appfire)",
     blurb:
       "Grew a team of 16+ designers, researchers, and writers. Owned design-system standards for Marketplace products and led craft integration after the Appfire acquisition.",
   },
   {
-    years: "2016 – 2019",
+    years: "2016 - 2019",
     role: "UX & UI Designer",
     company: "SoftwarePlant (acquired by Appfire)",
     blurb:
       "Lead Product Designer on BigPicture (Atlassian Marketplace best-seller). Owned discovery through delivery on financials, OKRs, and Gantt planning.",
   },
   {
-    years: "2013 – 2016",
+    years: "2013 - 2016",
     role: "Product Manager, UX Designer",
     company: "TVP 3",
     blurb:
       "Coordinated 16 teams on public-broadcaster web services: product strategy, UX, and stakeholder management across delivery.",
   },
   {
-    years: "2011 – 2013",
+    years: "2011 - 2013",
     role: "UX Designer",
     company: "TVP Parlament",
     blurb: "Co-led the launch of a new e-television channel from scratch.",
@@ -135,7 +133,7 @@ export const EXPERIENCE: ExperienceItem[] = [
 ];
 export const EDUCATION: EducationItem[] = [
   {
-    years: "2008 – 2011",
+    years: "2008 - 2011",
     school: "Warszawska Wyższa Szkoła Humanistyczna im. B. Prusa (now MODERNA)",
     detail: "Bachelor's degree, Journalism and Social Communication, Warsaw, Poland",
   },
@@ -153,12 +151,11 @@ export const EXPERTISE_GROUPS: SkillGroup[] = [
     title: "Leadership & ops",
     blurb: "Org scale, design ops, and how decisions stick.",
     items: [
-      "UX leadership (Senior Manager / Head of Design)",
       "People management",
       "Stakeholder management",
       "Design Ops & estimation",
       "Design-system governance",
-      "Research ops (Dovetail)",
+      "Research ops",
       "Hiring bars & mentorship",
       "Post-acquisition integration",
     ],
@@ -290,7 +287,7 @@ export const ROLE_LENSES: RoleLens[] = [
     ],
     ninetyDays: [
       "Clarify ownership and critique across squads",
-      "Raise the bar on 2–3 critical journeys with measurable outcomes",
+      "Raise the bar on 2-3 critical journeys with measurable outcomes",
       "Connect growth paths to roadmap needs",
     ],
     keywords: [
@@ -423,7 +420,7 @@ export const ROLE_LENSES: RoleLens[] = [
     ninetyDays: [
       "Inventory components, debt, and adoption gaps across products",
       "Publish a clear contribution model (who owns, who reviews, what ships)",
-      "Land 1–2 high-leverage patterns that eng and design both commit to",
+      "Land 1-2 high-leverage patterns that eng and design both commit to",
     ],
     keywords: [
       "Design Systems",
@@ -565,61 +562,48 @@ export const MENTORING: NarrativeBlock[] = [
 
 export const BUSINESS_IMPACT: NarrativeBlock[] = [
   {
-    title: "UX operations at org scale",
-    body: "As Senior UX Manager at Appfire I co-led a 35+ global UX org of designers, researchers, and writers. We set shared intake, clearer decision rights, research ops, estimation, and design-system rules, so UX stayed aligned from sprint planning through executive reporting.",
+    title: "Enterprise modules people actually used",
+    body: "On BigPicture, design was judged by whether finance and PMs trusted what they saw, and whether leadership teams stuck with the workflows. OKRs, Financials, and Gantt were treated as product problems: adoption, support clarity, and speed of finding answers, not visual polish. The metrics above are the outcomes of that bar.",
   },
   {
-    title: "Product outcomes (enterprise)",
-    body: "On BigPicture (OKRs, financials, Gantt) design choices were tied to adoption and clarity. Impact numbers on this page include short scope notes for each result.",
+    title: "Scale without diluting craft",
+    body: "Those results needed a team that could keep the same bar as the portfolio grew. As Head of Design at SoftwarePlant I built a 16+ person craft org. After the Appfire acquisition I co-led 35+ designers, researchers, and writers across BigPicture, 7pace, and AI workstreams, with shared intake, estimation, research ops, and design-system rules so quality did not become the bottleneck.",
   },
   {
-    title: "Founder craft (CostRadar)",
-    body: "CostRadar.ai is live. I designed and engineered it solo: true-net P&L, savings estimates and tracker, and an AI Profit Agent that only acts after Approve. Early-stage craft and trust UX.",
+    title: "The same bar, shipped alone",
+    body: "CostRadar.ai is the founder-side of that story. I designed and engineered a live profitability product end-to-end: true-net P&L, savings tracking, and an AI Profit Agent that only acts after Approve. Same outcome mindset as BigPicture: clarity and trust under complexity, without a UX org behind me.",
   },
 ];
 
 export type ImpactMetric = {
   value: string;
   label: string;
-  footnote: string;
 };
 
 export const IMPACT_METRICS: ImpactMetric[] = [
   {
     value: "+47%",
-    label: "OKR adoption among leadership teams",
-    footnote:
-      "BigPicture OKR module · Appfire / SoftwarePlant · team outcome",
+    label: "More leadership teams using OKRs",
   },
   {
     value: "53→84%",
     label: "Financial module adoption in 3 months",
-    footnote:
-      "BigPicture Financials · about 3 months after redesign · product analytics",
   },
   {
-    value: "−58%",
-    label: "Unclear financial-data reports",
-    footnote:
-      "Support / clarity signal after the Financials redesign · before vs after · shared outcome with PM and engineering.",
+    value: "-58%",
+    label: "Fewer unclear financial reports",
   },
   {
     value: "42% faster",
-    label: "Gantt information retrieval · NPS +36%",
-    footnote:
-      "Enterprise Gantt usability · timed tasks + NPS · delivered with the team under design leadership.",
+    label: "Finding information on the Gantt",
   },
   {
     value: "16+",
-    label: "Designers, researchers & writers on the team I grew",
-    footnote:
-      "Head of Design at SoftwarePlant · team built before the Appfire acquisition.",
+    label: "Design team grown as Head of Design",
   },
   {
     value: "35+",
-    label: "Designers, researchers & writers co-led across Appfire",
-    footnote:
-      "Senior UX Manager scope · co-led 35+ people across the portfolio, including BigPicture, 7pace, and AI workstreams · distributed global org.",
+    label: "UX people co-led at Appfire",
   },
 ];
 

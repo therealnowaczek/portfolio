@@ -9,10 +9,10 @@ export function Impact() {
           Business Impact
         </h2>
         <p className="max-w-2xl text-sm leading-relaxed text-muted sm:text-[15px]">
-          Results from <RichText>BigPicture</RichText> and{" "}
-          <RichText>Appfire</RichText> work; each number includes a short
-          scope note. CostRadar.ai is the live product I designed and shipped
-          end-to-end.
+          Design work that moved adoption and clarity on{" "}
+          <RichText>BigPicture</RichText> at <RichText>Appfire</RichText>,
+          then the same outcome bar applied end-to-end on{" "}
+          <RichText>CostRadar.ai</RichText>.
         </p>
       </div>
 
@@ -25,17 +25,14 @@ export function Impact() {
             <dt className="text-2xl font-semibold tracking-tight text-accent tabular-nums">
               {metric.value}
             </dt>
-            <dd className="mt-1 text-sm leading-snug text-foreground-secondary">
+            <dd className="mt-1.5 text-sm leading-snug text-foreground-secondary">
               {metric.label}
-            </dd>
-            <dd className="mt-2 text-[11px] leading-snug text-muted">
-              <RichText>{metric.footnote}</RichText>
             </dd>
           </div>
         ))}
       </dl>
 
-      <div className="space-y-6 border-t border-border pt-8">
+      <div className="space-y-6">
         {BUSINESS_IMPACT.map((block) => (
           <article key={block.title} className="max-w-3xl">
             <h3 className="text-sm font-semibold text-foreground-secondary">

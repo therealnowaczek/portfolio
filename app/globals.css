@@ -83,6 +83,20 @@ a {
   top: 1rem;
 }
 
+/* Rule only between items in the page menu. Not inside a section. */
+.section-rule {
+  margin-top: 4rem;
+  border-top: 1px solid var(--border);
+  padding-top: 4rem;
+}
+
+@media (min-width: 640px) {
+  .section-rule {
+    margin-top: 5rem;
+    padding-top: 5rem;
+  }
+}
+
 .section-title {
   color: var(--accent);
   font-size: 0.8125rem;
@@ -92,7 +106,7 @@ a {
   margin: 0 0 1.25rem;
 }
 
-/* Nested labels (Education, At a glance) — quieter than top-level section titles */
+/* Nested labels (Education, At a glance) - quieter than top-level section titles */
 .subsection-title {
   color: var(--muted);
   font-size: 0.75rem;

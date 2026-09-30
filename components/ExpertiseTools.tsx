@@ -5,14 +5,18 @@ import {
   type SkillGroup,
 } from "@/lib/cv";
 
-function GroupCard({ group }: { group: SkillGroup }) {
+function GroupCard({
+  group,
+  className = "",
+}: {
+  group: SkillGroup;
+  className?: string;
+}) {
   return (
     <article
-      className={`flex h-full flex-col rounded-[10px] border p-4 sm:p-5 ${
-        group.accent
-          ? "border-accent/25 bg-accent/[0.04]"
-          : "border-border bg-surface/50"
-      }`}
+      className={`flex flex-col rounded-[12px] border bg-white p-4 shadow-[0_1px_2px_rgba(9,30,66,0.05),0_8px_20px_-12px_rgba(9,30,66,0.16)] sm:p-5 ${
+        group.accent ? "border-accent/25" : "border-border"
+      } ${className}`}
     >
       <div className="mb-3">
         <h3
@@ -24,7 +28,7 @@ function GroupCard({ group }: { group: SkillGroup }) {
         </h3>
         <p className="mt-1 text-xs leading-snug text-muted">{group.blurb}</p>
       </div>
-      <ul className="mt-auto flex flex-wrap gap-2">
+      <ul className="flex flex-wrap gap-2">
         {group.items.map((item) => (
           <li
             key={item}
@@ -61,9 +65,15 @@ export function ExpertiseTools() {
         <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.06em] text-muted">
           Capabilities
         </h3>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {EXPERTISE_GROUPS.map((group) => (
-            <GroupCard key={group.title} group={group} />
+        <div className="grid items-start gap-4 sm:grid-cols-2 lg:grid-cols-12">
+          {EXPERTISE_GROUPS.map((group, i) => (
+            <GroupCard
+              key={group.title}
+              group={group}
+              className={
+                ["lg:col-span-5", "lg:col-span-4", "sm:col-span-2 lg:col-span-3"][i] ?? ""
+              }
+            />
           ))}
         </div>
       </div>
@@ -72,14 +82,14 @@ export function ExpertiseTools() {
         <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.06em] text-muted">
           Tools
         </h3>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid items-start gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {TOOL_GROUPS.map((group) => (
             <GroupCard key={group.title} group={group} />
           ))}
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
         <h3 className="text-xs font-semibold uppercase tracking-[0.06em] text-muted">
           Languages
         </h3>

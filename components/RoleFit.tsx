@@ -239,19 +239,6 @@ export function RoleFit() {
           tabId={`role-tab-${lens.id}`}
         />
       </div>
-
-      <p className="border-t border-border pt-6 text-sm text-muted">
-        How I move from problem to ship:{" "}
-        <a
-          href="#process"
-          className="font-medium text-accent transition-colors duration-200 ease-out hover:text-foreground"
-        >
-          Process
-          <span aria-hidden className="ml-1 text-[13px]">
-            →
-          </span>
-        </a>
-      </p>
     </div>
   );
 }
@@ -274,7 +261,7 @@ function LensPanel({
       id={panelId}
       role="tabpanel"
       aria-labelledby={tabId}
-      className={`min-w-0 transition-[opacity,transform] duration-300 ease-out ${
+      className={`min-w-0 rounded-[12px] border border-border bg-white px-5 py-6 shadow-[0_1px_2px_rgba(9,30,66,0.05),0_10px_28px_-12px_rgba(9,30,66,0.18)] transition-[opacity,transform] duration-300 ease-out sm:px-7 sm:py-7 lg:px-8 lg:py-8 ${
         entered ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
       }`}
     >
@@ -323,7 +310,7 @@ function LensPanel({
           </p>
         ) : null}
 
-        <div className="border-t border-border pt-6">
+        <div>
           <h4 className="text-xs font-semibold uppercase tracking-[0.06em] text-muted">
             First 90 days
           </h4>

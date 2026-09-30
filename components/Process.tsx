@@ -39,17 +39,13 @@ export function Process() {
         <h2 id="process-heading" className="section-title">
           Process
         </h2>
-        <p className="text-sm leading-relaxed text-muted sm:text-[15px]">
-          How work moves from problem to shipped product, where AI speeds
-          things up and where a human still decides.
-        </p>
       </div>
 
       <p className="max-w-3xl text-[15px] leading-relaxed text-foreground-secondary sm:text-base">
         <RichText>{PROCESS_INTRO}</RichText>
       </p>
 
-      <div className="grid gap-8 border-y border-border py-8 sm:grid-cols-2 sm:gap-10">
+      <div className="grid gap-8 sm:grid-cols-2 sm:gap-10">
         {PROCESS_SPLIT.map((block) => (
           <article key={block.title} className="min-w-0">
             <h3 className="text-xs font-semibold uppercase tracking-[0.06em] text-accent">
@@ -76,7 +72,7 @@ export function Process() {
           {AGENTIC_PIPELINE.map((node, i) => (
             <li
               key={node.step}
-              className={`relative border-t border-border pt-5 pb-8 pr-4 transition-[opacity,transform] duration-500 ease-out sm:pr-6 ${
+              className={`relative pt-5 pb-8 pr-4 transition-[opacity,transform] duration-500 ease-out sm:pr-6 ${
                 visible
                   ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
               }`}

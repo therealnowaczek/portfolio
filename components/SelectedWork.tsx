@@ -19,7 +19,7 @@ type Props = {
  * Every desktop row sums to exactly 12; no CSS-grid holes.
  *
  * Lead pack (when present, in order): CostRadar 8 + DesignOS 4, OKRs 12.
- * Explorations tile via cycling row recipes; tails of 1–3 are fitted so nothing orphans.
+ * Explorations tile via cycling row recipes; tails of 1-3 are fitted so nothing orphans.
  *
  * md (2-col): first card full-width; last half-row orphan stretches full.
  * Filtered views: even 6+6 pairs; odd last → full width.
