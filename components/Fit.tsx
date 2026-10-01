@@ -1,6 +1,4 @@
 import { FIT_INTRO, FIT_ROLES } from "@/lib/cv";
-import { CaseLinkButton } from "./CaseLinkButton";
-
 type Props = {
   onOpen: (slug: string) => void;
 };
@@ -17,11 +15,11 @@ export function Fit({ onOpen }: Props) {
         </p>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-3 md:grid-rows-[auto_auto_1fr_auto]">
         {FIT_ROLES.map((role) => (
           <article
             key={role.id}
-            className={`flex min-w-0 flex-col rounded-[12px] border bg-white p-5 shadow-[0_1px_2px_rgba(9,30,66,0.05),0_10px_28px_-12px_rgba(9,30,66,0.18)] ${
+            className={`flex min-w-0 flex-col md:row-span-4 md:grid md:grid-rows-subgrid rounded-[12px] border bg-white p-5 shadow-[0_1px_2px_rgba(9,30,66,0.05),0_10px_28px_-12px_rgba(9,30,66,0.18)] ${
               role.preferred ? "border-accent/40" : "border-border"
             }`}
           >
@@ -38,18 +36,33 @@ export function Fit({ onOpen }: Props) {
             <p className="mt-2 text-sm leading-relaxed text-foreground-secondary">
               {role.pitch}
             </p>
-            <ul className="mt-4 space-y-2.5 border-t border-border pt-4">
-              {role.proof.map((p) => (
-                <li key={p.text} className="text-sm leading-relaxed text-muted">
-                  {p.slug ? (
-                    <CaseLinkButton slug={p.slug} onOpen={onOpen}>
-                      {p.text}
-                    </CaseLinkButton>
-                  ) : (
-                    p.text
-                  )}
-                </li>
-              ))}
+            <ul className="mt-5 divide-y divide-border border-y border-border">
+              {role.proof.map((p) => {
+                const row = "flex w-full items-start gap-3 py-3 text-left text-[13px] leading-snug";
+                return (
+                  <li key={p.text}>
+                    {p.slug ? (
+                      <button
+                        type="button"
+                        onClick={() => onOpen(p.slug!)}
+                        className={`${row} group text-foreground-secondary transition-colors duration-200 hover:text-accent`}
+                      >
+                        <span className="flex-1">{p.text}</span>
+                        <span
+                          aria-hidden
+                          className="text-accent transition-transform duration-200 group-hover:translate-x-0.5"
+                        >
+                          →
+                        </span>
+                      </button>
+                    ) : (
+                      <p className={`${row} text-foreground-secondary`}>
+                        <span className="flex-1">{p.text}</span>
+                      </p>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </article>
         ))}
