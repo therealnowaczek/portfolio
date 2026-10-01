@@ -78,20 +78,20 @@ export function Process({ onOpen }: Props) {
               transitionDelay: visible ? `${i * 55}ms` : "0ms",
             }}
           >
-            <div className="flex items-baseline gap-2.5">
+            <div className="grid grid-cols-[1.5rem_1fr] items-baseline gap-x-2.5">
               <span className="text-[11px] font-semibold tabular-nums text-accent">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <span className="text-base font-semibold tracking-tight text-foreground-secondary sm:text-lg">
                 {node.step}
               </span>
+              <p className="col-start-2 mt-1.5 text-[11px] font-medium uppercase tracking-[0.04em] text-muted">
+                {node.detail}
+              </p>
+              <p className="col-start-2 mt-2.5 max-w-sm text-sm leading-relaxed text-muted sm:text-[15px]">
+                {node.beat}
+              </p>
             </div>
-            <p className="mt-1.5 pl-[1.85rem] text-[11px] font-medium uppercase tracking-[0.04em] text-muted">
-              {node.detail}
-            </p>
-            <p className="mt-2.5 max-w-sm pl-[1.85rem] text-sm leading-relaxed text-muted sm:text-[15px]">
-              {node.beat}
-            </p>
           </li>
         ))}
       </ol>
