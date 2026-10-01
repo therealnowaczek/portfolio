@@ -46,7 +46,7 @@ Borrowers understand the minimum due, not the interest trajectory or the emotion
 
 **Constraints**
 - iOS HIG sheets and tabs: regulated-feel trust (no dark patterns)
-- Timeboxed sprint; assumed bank-grade data, no live API
+- Timeboxed sprint; bank-grade data assumed available
 - Accessibility: high-contrast money states; Reduce Motion paths
 
 ### Process
@@ -77,7 +77,6 @@ Empty: “Link a card to see repayments.” Error: “Bank timeout. Try again: n
 Tokens: trust blue, money type scale, sheet spacing. Components: MoneyHero, PaySlider, DeltaPill, TrustFootnote, ConfirmSheet. Pattern: preview consequence → confirm → quiet success.
 
 ### Outcomes & learnings
-- Exploration of regulated-feel mobile fintech with HIG craft and trust microcopy.
+- Focus: regulated-feel mobile fintech with HIG craft and trust microcopy.
 - Learning: consequence-before-commit reduces “did I just…?” moments more than longer help text.
 - Next if productized: multi-card allocation, biometric confirm, compliance review on suggestion language.
-- Hiring signal: calm money UI under real anxiety constraints.

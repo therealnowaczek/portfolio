@@ -145,6 +145,28 @@ function spanClassFor(
   return `${md} ${lg} ${row}`;
 }
 
+const GRID_CLASS =
+  "grid auto-rows-[240px] grid-cols-1 gap-4 md:grid-cols-2 md:auto-rows-[200px] lg:grid-cols-12 lg:auto-rows-[200px] lg:gap-5";
+
+/** Number of leading featured cases that get the lead pattern. */
+function leadCount(slugs: string[]): number {
+  let n = 0;
+  for (const slug of FEATURED_ORDER) {
+    if (slugs[n] === slug) n += 1;
+    else break;
+  }
+  return n;
+}
+
+/** md (2-col): optional featured first card is full-width; a lone last half-row stretches. */
+function mdFullFor(index: number, length: number, hasFeaturedFirst: boolean) {
+  const half = hasFeaturedFirst ? Math.max(length - 1, 0) : length;
+  const isLast = index === length - 1;
+  const orphan =
+    isLast && half % 2 === 1 && !(hasFeaturedFirst && length === 1);
+  return (hasFeaturedFirst && index === 0) || orphan;
+}
+
 export function SelectedWork({ projects, onOpen }: Props) {
   const [filter, setFilter] = useState<FilterId>("all");
 
@@ -157,6 +179,12 @@ export function SelectedWork({ projects, onOpen }: Props) {
     () => mosaicColSpans(visible.map((p) => p.slug)),
     [visible],
   );
+
+  // Unfiltered view: lead cases first, the rest in a clearly labeled second block.
+  const split = filter === "all" ? leadCount(visible.map((p) => p.slug)) : 0;
+  const lead = visible.slice(0, split);
+  const rest = visible.slice(split);
+  const restSpans = useMemo(() => tileColumns(rest.length), [rest.length]);
 
   return (
     <section aria-labelledby="work-heading" className="space-y-8">
@@ -172,11 +200,13 @@ export function SelectedWork({ projects, onOpen }: Props) {
           ) : null}
         </div>
         <p className="text-sm leading-relaxed text-muted sm:text-[15px]">
-          CostRadar.ai is the live product I designed and built. Design Ops, OKRs,
-          and Gantt are enterprise cases from Appfire and BigPicture. The other
-          work is freelance product design I have run since 2021: UX for mobile
-          apps, desktop products, and web. Open a card for the story, screens,
-          and what I learned.
+          CostRadar.ai is my own early-stage product, designed and built solo.
+          DesignOS, OKRs, and Gantt are enterprise cases from Appfire and
+          BigPicture. Open a card for the story, screens, and what I learned.
+        </p>
+        <p className="mt-2 text-xs leading-relaxed text-muted sm:text-[13px]">
+          Client and employer work is anonymized: brands and names are created
+          for presentation.
         </p>
       </div>
 
@@ -206,40 +236,69 @@ export function SelectedWork({ projects, onOpen }: Props) {
         })}
       </div>
 
-      <div className="grid auto-rows-[240px] grid-cols-1 gap-4 md:grid-cols-2 md:auto-rows-[200px] lg:grid-cols-12 lg:auto-rows-[200px] lg:gap-5">
-        {visible.map((project, index) => {
-          const isLast = index === visible.length - 1;
-          const halfCount =
-            filter === "all" ? Math.max(visible.length - 1, 0) : visible.length;
-          const mdOrphan =
-            isLast &&
-            halfCount % 2 === 1 &&
-            !(filter === "all" && index === 0 && visible.length === 1);
+      {filter === "all" ? (
+        <>
+          {lead.length > 0 ? (
+            <div className={GRID_CLASS}>
+              {lead.map((project, index) => (
+                <ProjectCard
+                  key={project.slug}
+                  project={project}
+                  onOpen={onOpen}
+                  featured={index === 0}
+                  spanClass={spanClassFor(allSpans[index] ?? 4, {
+                    mdFull: mdFullFor(index, lead.length, true),
+                  })}
+                />
+              ))}
+            </div>
+          ) : null}
 
-          let spanClass: string;
-          if (filter === "all") {
-            const cols = allSpans[index] ?? 4;
-            spanClass = spanClassFor(cols, {
-              mdFull: index === 0 || mdOrphan,
-            });
-          } else {
-            const oddFilterOrphan = visible.length % 2 === 1 && isLast;
-            spanClass = oddFilterOrphan
-              ? "md:col-span-2 lg:col-span-12 lg:row-span-2"
-              : "md:col-span-1 lg:col-span-6 lg:row-span-2";
-          }
-
-          return (
-            <ProjectCard
-              key={project.slug}
-              project={project}
-              onOpen={onOpen}
-              featured={filter === "all" && index === 0}
-              spanClass={spanClass}
-            />
-          );
-        })}
-      </div>
+          {rest.length > 0 ? (
+            <div className="space-y-5 pt-4">
+              <div className="max-w-2xl">
+                <h3 className="subsection-title">More product design work</h3>
+                <p className="text-sm leading-relaxed text-muted sm:text-[15px]">
+                  Mostly freelance client projects since 2021: mobile apps,
+                  desktop products, and web. Anonymized, with brands and names
+                  created for presentation.
+                </p>
+              </div>
+              <div className={GRID_CLASS}>
+                {rest.map((project, index) => (
+                  <ProjectCard
+                    key={project.slug}
+                    project={project}
+                    onOpen={onOpen}
+                    spanClass={spanClassFor(restSpans[index] ?? 4, {
+                      mdFull: mdFullFor(index, rest.length, false),
+                    })}
+                  />
+                ))}
+              </div>
+            </div>
+          ) : null}
+        </>
+      ) : (
+        <div className={GRID_CLASS}>
+          {visible.map((project, index) => {
+            const oddFilterOrphan =
+              visible.length % 2 === 1 && index === visible.length - 1;
+            return (
+              <ProjectCard
+                key={project.slug}
+                project={project}
+                onOpen={onOpen}
+                spanClass={
+                  oddFilterOrphan
+                    ? "md:col-span-2 lg:col-span-12 lg:row-span-2"
+                    : "md:col-span-1 lg:col-span-6 lg:row-span-2"
+                }
+              />
+            );
+          })}
+        </div>
+      )}
 
       {visible.length === 0 ? (
         <p className="mt-2 text-sm text-muted">No projects match this filter.</p>

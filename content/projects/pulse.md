@@ -80,7 +80,6 @@ Empty: “Grant Health permissions when you’re ready.” Error: “Couldn’t 
 Tokens: mist surfaces, lavender accent, xl radius. Components: SnapshotCard, CheckInSheet, SoftChart, SuggestionPill, WindDownList. Pattern: notice → tiny input → one action.
 
 ### Outcomes & learnings
-- Exploration of soft mobile craft, habit UX ethics, and inclusive health-adjacent design.
+- Focus: soft mobile craft, habit UX ethics, and inclusive health-adjacent design.
 - Learning: shame-free copy and streak absence change whether people reopen the app after a bad week.
 - Next if productized: real HealthKit, Focus integration, clinician-safe copy review.
-- Hiring signal: wellness UX that protects dignity.

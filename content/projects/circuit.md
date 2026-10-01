@@ -77,7 +77,6 @@ Empty: “No deploys in range. Widen window.” Lag: “Live metrics lagging.”
 Tokens: void canvas, signal colors, mono xs. Components: TimelineTrack, DeployPin, SignalBand, CmdK, BlastRadiusCard, SecretsRow. Pattern: correlate → diagnose → reversible action.
 
 ### Outcomes & learnings
-- Exploration of dense developer-tool craft, systems thinking, and keyboard UX.
+- Focus: dense developer-tool craft, systems thinking, and keyboard UX.
 - Learning: blast-radius language turns rollback from a dare into a decision.
 - Next if productized: real log deep-links, multi-env switcher, SLO burn alerts.
-- Hiring signal: dark dense UI that stays operable under incident stress.

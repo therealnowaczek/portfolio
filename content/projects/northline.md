@@ -56,7 +56,7 @@ RevOps can see revenue and burn, but not which AI workloads, infra tiers, discou
 3. **Trade off dashboard shapes** - Mega-widget walls lose the exception. Story UIs are too slow for daily ops. Chose dense table + drawer + cited explain panel.
 4. **Quiet visual system** - Neutral canvas, teal for interactive and positive delta only. Status via icon + text. Compact density as default for RevOps.
 5. **Prototype the trust edges** - Overview through empty connect: special attention to confidence chips, undo windows, and “estimated vs booked” language.
-6. **Guard the copy** - Biggest risk: estimated savings read as guaranteed cash. Exploration keeps estimates labeled and actions reversible.
+6. **Guard the copy** - Biggest risk: estimated savings read as guaranteed cash. The design keeps estimates labeled and actions reversible.
 
 ### Key decisions
 - **Leak-first list** over a KPI-hero wall, margin problems are exceptions.
@@ -78,7 +78,6 @@ Empty: “No leaks above threshold.” Delay: “Live feed delayed: last sync 14
 Tokens: accent teal, delta pos/neg, dense spacing, tabular type. Components: DataTable compact, LeakRow, ConfidenceChip, CitePanel, SoftConfirm, RulesEditor. Pattern: anomaly → local action → undo.
 
 ### Outcomes & learnings
-- Exploration of AI + dense B2B SaaS ops UX with trust and a11y as first-class constraints.
+- Focus: AI + dense B2B SaaS ops UX with trust and a11y as first-class constraints.
 - Learning: lineage and undo matter more than clever chat for finance-adjacent AI.
 - Next if productized: real invoice connectors, role-based leak visibility, board-pack export.
-- Hiring signal: end-to-end product design for profitability systems.

@@ -46,7 +46,7 @@ Designers and engineers disagree because the “source of truth” is a forgotte
 
 **Constraints**
 - Docs web: MDX-like content model assumed
-- Timeboxed; fictional component library
+- Timeboxed engagement; component names anonymized
 - No claim that a shipped system named Atlas exists in production
 
 ### Process
@@ -77,7 +77,6 @@ Empty: “No matches. Try token names.” Error: “Playground runtime failed.�
 Meta-DS for the docs site: DocShell, PropTable, PlaygroundFrame, DoDont, TokenSwatch, ThemeStudio, VersionSelect. Pattern: teach → try → copy → contribute.
 
 ### Outcomes & learnings
-- Exploration of design-systems thinking, docs UX, and the designer–engineer bridge.
+- Focus: design-systems thinking, docs UX, and the designer–engineer bridge.
 - Learning: theme studio and foundations reduce “which gray is correct?” more than another Button variant.
 - Next if productized: real package wiring, visual regression embeds, RFC workflow.
-- Hiring signal: docs as a product, not a dumping ground.

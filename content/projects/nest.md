@@ -79,7 +79,6 @@ Empty: “No pros in range. Widen radius.” Error: “Payment method failed. Re
 Shared: PriceBreakdown, TrustBadge, ProCard, SlotPicker, TrackingMap. Platform shells differ. Pattern: search → trust → transparent total → request → track.
 
 ### Outcomes & learnings
-- Exploration of multi-platform marketplace UX, trust design, and fee transparency.
+- Focus: multi-platform marketplace UX, trust design, and fee transparency.
 - Learning: verification labels need expandable meaning or they become decorative lies.
 - Next if productized: pro onboarding, dispute flow, real maps performance.
-- Hiring signal: two-sided thinking with seeker-path craft across phone and desktop.

@@ -25,10 +25,12 @@ const NAV: NavItem[] = [
   { id: "about", label: "About" },
   { id: "portfolio", label: "Portfolio" },
   { id: "impact", label: "Impact" },
+  { id: "fit", label: "Role fit" },
   { id: "experience", label: "Experience" },
   { id: "expertise", label: "Skills" },
   { id: "leadership", label: "Leadership" },
-  { id: "process", label: "Process" },
+  { id: "process", label: "AI & process" },
+  { id: "connect", label: "Contact" },
 ];
 
 /** Legacy share URLs → anonymized gallery slugs */
@@ -113,18 +115,23 @@ export function PortfolioShell({ projects }: Props) {
           <SideNav items={NAV} />
         </div>
         <main id="main" className="mt-10 min-w-0 sm:mt-14">
-          {/* 1. Who: intro copy + role chapters (scroll-spy stays Intro) */}
-          <div id="about" className="min-w-0 max-w-full scroll-mt-36 space-y-10 sm:space-y-12">
+          {/* 1. Who: intro copy, proof numbers, and CTAs */}
+          <div id="about" className="min-w-0 max-w-full scroll-mt-36">
             <Intro />
-            <RoleFit />
           </div>
 
+          {/* 2. Proof: work first, then numbers, then role fit */}
           <div id="portfolio" className="section-rule scroll-mt-36">
             <SelectedWork projects={projects} onOpen={open} />
           </div>
 
           <div id="impact" className="section-rule scroll-mt-36">
             <Impact />
+          </div>
+
+          <div id="fit" className="section-rule scroll-mt-36">
+            <h2 className="section-title">Role fit</h2>
+            <RoleFit />
           </div>
 
           <div id="experience" className="section-rule scroll-mt-36">
@@ -144,7 +151,7 @@ export function PortfolioShell({ projects }: Props) {
             <Process />
           </div>
 
-          <div id="connect" className="mt-16 scroll-mt-36 sm:mt-20">
+          <div id="connect" className="section-rule scroll-mt-36">
             <Footer />
           </div>
         </main>

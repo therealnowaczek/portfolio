@@ -187,19 +187,11 @@ export function ProjectModal({
                     <span className="pill">{project.role}</span>
                     <span className="pill">{project.timeline}</span>
                   </div>
-                </div>
-                <div
-                  className="flex items-center gap-2 rounded-[8px] border border-border px-3 py-2"
-                  title="Project accent"
-                >
-                  <span
-                    className="h-5 w-5 rounded-full border border-border"
-                    style={{ background: project.accent }}
-                    aria-hidden
-                  />
-                  <span className="text-xs tabular-nums text-muted">
-                    {project.accent}
-                  </span>
+                  {project.slug !== "costradar" ? (
+                    <p className="mt-3 text-xs leading-relaxed text-muted">
+                      Anonymized: brand and names are created for presentation.
+                    </p>
+                  ) : null}
                 </div>
               </div>
             </header>
@@ -211,6 +203,22 @@ export function ProjectModal({
               <p className="max-w-3xl text-[15px] leading-relaxed text-foreground-secondary">
                 <RichText>{caseStudy.snapshot}</RichText>
               </p>
+            </section>
+
+            <section aria-labelledby="outcomes-heading">
+              <h3 id="outcomes-heading" className="section-title">
+                Outcome &amp; learnings
+              </h3>
+              <ul className="space-y-2">
+                {caseStudy.outcomes.map((o) => (
+                  <li
+                    key={o}
+                    className="rounded-[8px] border border-border px-4 py-2.5 text-sm leading-relaxed text-foreground-secondary"
+                  >
+                    {o}
+                  </li>
+                ))}
+              </ul>
             </section>
 
             <section aria-labelledby="problem-heading" className="space-y-3">
@@ -350,41 +358,13 @@ export function ProjectModal({
 
             <section aria-labelledby="ds-heading" className="space-y-3">
               <h3 id="ds-heading" className="section-title">
-                Design system notes
+                Design system &amp; stack
               </h3>
               <p className="max-w-3xl text-[15px] leading-relaxed text-foreground-secondary">
                 {caseStudy.designSystem}
               </p>
             </section>
 
-            <section aria-labelledby="outcomes-heading">
-              <h3 id="outcomes-heading" className="section-title">
-                Outcomes &amp; learnings
-              </h3>
-              <ul className="space-y-2">
-                {caseStudy.outcomes.map((o) => (
-                  <li
-                    key={o}
-                    className="rounded-[8px] border border-border px-4 py-2.5 text-sm leading-relaxed text-foreground-secondary"
-                  >
-                    {o}
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            <section aria-labelledby="signals-heading">
-              <h3 id="signals-heading" className="section-title">
-                Portfolio signals
-              </h3>
-              <ul className="flex flex-wrap gap-2">
-                {project.portfolioSignals.map((s) => (
-                  <li key={s} className="pill">
-                    {s}
-                  </li>
-                ))}
-              </ul>
-            </section>
           </div>
 
           <div className="relative z-20 flex shrink-0 flex-wrap items-center justify-end gap-2 border-t border-border bg-white px-4 py-3 sm:px-6">

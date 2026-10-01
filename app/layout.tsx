@@ -15,13 +15,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(PROFILE_URL),
   authors: [{ name: SITE.name, url: PROFILE_URL }],
   keywords: [
-    "Senior UX Manager",
     "Head of Design",
-    "Product Designer",
+    "Senior UX Manager",
+    "Lead Product Designer",
     "UX Leader",
+    "AI UX",
+    "Design Engineering",
     "Design Ops",
     "Design Systems",
-    "AI UX",
     "Enterprise SaaS",
     "BigPicture",
     "Appfire",
@@ -35,6 +36,20 @@ export const metadata: Metadata = {
     username: "therealnowaczek",
     url: PROFILE_URL,
     locale: "en_US",
+    images: [
+      {
+        url: `${PROFILE_URL}og.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Marcin Nowak · Head of Design · Senior UX Manager · Lead Product Designer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE.title,
+    description: SITE.description,
+    images: [`${PROFILE_URL}og.jpg`],
   },
   alternates: {
     canonical: PROFILE_URL,

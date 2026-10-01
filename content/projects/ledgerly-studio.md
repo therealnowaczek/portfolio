@@ -71,7 +71,6 @@ Empty: “No experiments yet. Write your first hypothesis.” Delay: “Stats en
 Tokens: win emerald, lose rose, tabular type. Components: ExperimentRow, HypothesisForm, VariantFrame, MetricPair, DecisionModal. Pattern: ask → variant → read guardrails → decide.
 
 ### Outcomes & learnings
-- Exploration of growth experimentation literacy, metrics thinking, and designer-in-the-loop A/B UX.
+- Focus: growth experimentation literacy, metrics thinking, and designer-in-the-loop A/B UX.
 - Learning: inconclusive and guardrails do more for decision quality than prettier winner banners.
 - Next if productized: real stats engine, design-tool embeds, rollout checklist.
-- Hiring signal: experimentation UX that respects uncertainty.

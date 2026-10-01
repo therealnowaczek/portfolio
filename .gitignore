@@ -47,3 +47,7 @@ scripts/project-assets.json
 scripts/stitch-asset-map.ts
 scripts/stitch-screen-ids.json
 content/stitch-*.md
+
+# local design scratch
+.tmp-gantt-final/
+.tmp-gantt-review/

@@ -26,10 +26,10 @@ const PUBLIC = path.join(process.cwd(), "public");
 const CASES = path.join(process.cwd(), "content", "projects");
 
 function resolveAsset(slug: string, name: string): string | null {
-  for (const ext of ["jpg", "jpeg", "png", "webp", "svg"]) {
+  for (const ext of ["webp", "jpg", "jpeg", "png", "svg"]) {
     const disk = path.join(PUBLIC, "projects", slug, `${name}.${ext}`);
     if (fs.existsSync(disk)) {
-      return withBasePath(`/projects/${slug}/${name}.${ext}?v=phone1`);
+      return withBasePath(`/projects/${slug}/${name}.${ext}?v=webp1`);
     }
   }
   return null;

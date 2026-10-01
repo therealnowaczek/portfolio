@@ -37,7 +37,7 @@ export function Process() {
     <section aria-labelledby="process-heading" className="space-y-10">
       <div className="max-w-2xl space-y-3">
         <h2 id="process-heading" className="section-title">
-          Process
+          AI &amp; process
         </h2>
       </div>
 

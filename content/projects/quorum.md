@@ -79,7 +79,6 @@ Empty: “No partners yet. Invite your first reseller.” Error: “Invite email
 Tokens: indigo accent, risk colors. Components: PartnerRow, RoleCard, RiskChip, ChecklistItem, DiffReview, AuditEvent. Pattern: invite → scoped role → activate → audit.
 
 ### Outcomes & learnings
-- Exploration of B2B lifecycle, permissions systems thinking, and enterprise clarity.
+- Focus: B2B lifecycle, permissions systems thinking, and enterprise clarity.
 - Learning: activation checklists convert “invited” into “useful” better than longer permission docs.
 - Next if productized: SCIM mapping, custom roles, bulk invites.
-- Hiring signal: least-privilege UX that partner managers can actually run.

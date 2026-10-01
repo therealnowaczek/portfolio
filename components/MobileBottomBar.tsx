@@ -3,19 +3,6 @@
 import { withBasePath } from "@/lib/base-path";
 import { SITE } from "@/lib/cv";
 
-function IconPhone() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path
-        d="M6.6 3.2c.4-.4 1-.5 1.5-.3l2.2 1c.5.2.8.7.8 1.2v2.2c0 .4-.2.8-.6 1L8.8 9.7c1.2 2.4 3.1 4.3 5.5 5.5l1.4-1.7c.2-.4.6-.6 1-.6h2.2c.5 0 1 .3 1.2.8l1 2.2c.2.5.1 1.1-.3 1.5l-1.4 1.4c-.4.4-1 .6-1.6.5C10.6 19.4 4.6 13.4 3.7 6.4c-.1-.6.1-1.2.5-1.6L6.6 3.2Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 function IconMail() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -68,7 +55,6 @@ function IconCv() {
 }
 
 const actions = [
-  { href: SITE.phoneHref, label: "Call", icon: <IconPhone /> },
   { href: `mailto:${SITE.email}`, label: "Email", icon: <IconMail /> },
   {
     href: SITE.linkedin,
