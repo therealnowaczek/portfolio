@@ -12,13 +12,13 @@ export function Impact() {
         </p>
       </div>
 
-      <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <dl className="grid gap-4 grid-cols-2 lg:grid-cols-5">
         {IMPACT_METRICS.map((metric) => (
           <div
             key={metric.label}
             className="rounded-[8px] bg-surface px-4 py-4"
           >
-            <dt className="text-2xl font-semibold tracking-tight text-accent tabular-nums">
+            <dt className="text-xl font-semibold tracking-tight text-accent tabular-nums sm:text-2xl">
               {metric.value}
             </dt>
             <dd className="mt-1.5 text-sm leading-snug text-foreground-secondary">

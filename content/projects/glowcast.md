@@ -75,6 +75,7 @@ Empty: “No lives in this niche. Try Live now.” Error: “Gift didn’t send.
 Tokens: charcoal void, coral primary, amber secondary, mint LIVE. Components: LiveNowCard, RoomChrome, GiftTray, GiftConfirmSheet, MatchConsentBridge. Pattern: discover → watch → gift with receipt → optional Match with consent.
 
 ### Outcomes & learnings
+- **Result:** a satisfied client.
 - Prototype target: viewers reach a live room from Discover in under three taps without confusion about what is live now.
 - Prototype target: gift confirm reduces accidental spend regret versus one-tap send (to validate in moderated tests).
 - Prototype target: Match consent copy is understood before connect; exit remains one tap.

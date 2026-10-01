@@ -77,6 +77,7 @@ Empty: “No live rooms. Start one.” Error: “Mic permission denied.” Succe
 Tokens: void, violet accent, speakGlow with solid fallback. Components: RoomCard, StageGrid, HandQueue, ReactionRail, SafetySheet, HostStudio. Pattern: enter → role-aware participate → exit cleanly.
 
 ### Outcomes & learnings
+- **Result:** a satisfied client.
 - Focus: expressive mobile brand systems, live social UX, and safety affordances.
 - Learning: role clarity is moderation UX, not just a badge color.
 - Next if productized: captions depth, report flow, network degradation states.

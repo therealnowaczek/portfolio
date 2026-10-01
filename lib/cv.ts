@@ -42,7 +42,7 @@ export const INTRO_SUBLINE =
 
 /** Proof first, then the titles a recruiter or ATS will match. */
 export const INTRO_PARAGRAPHS = [
-  "Senior UX Manager at Appfire, co-leading 35+ designers, researchers, and writers across BigPicture, 7pace, and AI workstreams. Before that, Head of Design at SoftwarePlant: I grew the team to 16+ and carried it through the Appfire acquisition. Through all of it I stayed hands-on as lead designer behind BigPicture's OKRs, Gantt, and Financials.",
+  "Senior UX Manager at Appfire, co-leading 35+ designers, researchers, and writers (14 reporting to me directly) across BigPicture, 7pace, and AI workstreams. Before that, Head of Design at SoftwarePlant: I grew the team to 16+ and carried it through the Appfire acquisition. Through all of it I stayed hands-on as lead designer behind BigPicture's OKRs, Gantt, and Financials.",
   "AI is how I work now, not a slide: agentic workflows and design-to-code rolled out across a UX org, and CostRadar.ai, an early-stage profitability product I designed and built solo, where the AI proposes and you approve.",
 ];
 
@@ -56,7 +56,7 @@ export type HeroStat = {
 
 /** Scale and scope only. Product outcomes live in the Impact section. */
 export const HERO_STATS: HeroStat[] = [
-  { value: "35+", label: "designers, researchers, and writers co-led at Appfire" },
+  { value: "35+", label: "designers, researchers, and writers co-led at Appfire, 14 reporting to me directly" },
   { value: "16+", label: "design team built as Head of Design, carried through an acquisition" },
   { value: "15 yrs", label: "designing digital products, from a public broadcaster to an Atlassian Marketplace best-seller" },
   { value: "Live", label: "an AI product I designed and built solo: CostRadar.ai (early-stage)" },
@@ -78,7 +78,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     role: "Senior UX Manager",
     company: "Appfire",
     blurb:
-      "After the acquisition my scope grew from one team to a multi-product org: I co-led 35+ designers, researchers, and writers across BigPicture, 7pace, and AI workstreams, up from the 16+ team I had led as Head of Design. Ran design ops, estimation, Figma standards, research ops, and AI rollout, and stayed hands-on in BigPicture design. BigPicture team outcomes (see Impact): +47% OKR adoption, financial-module adoption 53% to 84% in 3 months, 58% fewer unclear financial reports.",
+      "After the acquisition my scope grew from one team to a multi-product org: I co-led 35+ designers, researchers, and writers (14 direct reports) across BigPicture, 7pace, and AI workstreams, up from the 16+ team I had led as Head of Design. Ran design ops, estimation, Figma standards, research ops, and AI rollout, and stayed hands-on in BigPicture design. BigPicture team outcomes (see Impact): +47% OKR adoption, financial-module adoption 53% to 84% in 3 months, 58% fewer unclear financial reports.",
   },
   {
     years: "2021 - Present",
@@ -258,7 +258,7 @@ export const FIT_ROLES: FitRole[] = [
     pitch:
       "A design function that product and engineering can plan around, led by someone who still picks up the hard problems.",
     proof: [
-      { text: "Co-led 35+ people across a multi-product org", slug: "designos" },
+      { text: "Co-led 35+ people (14 direct reports) across a multi-product org", slug: "designos" },
       { text: "Grew a team to 16+ and held the hiring bar through an acquisition" },
     ],
   },
@@ -358,7 +358,7 @@ export const LEADERSHIP_PILLARS: LeadershipPillar[] = [
   },
   {
     title: "Craft and delivery, coached together",
-    body: "Weekly 1:1s on problem framing and trade-offs, reviews that raise interaction quality, and growth paths tied to what the product needs next. With 35+ people at Appfire, mentorship had to be a weekly practice, not a workshop.",
+    body: "Weekly 1:1s on problem framing and trade-offs, reviews that raise interaction quality, and growth paths tied to what the product needs next. With 35+ people at Appfire and 14 of them reporting to me directly, mentorship had to be a weekly practice, not a workshop.",
   },
   {
     title: "Ops that engineering can plan against",
@@ -398,10 +398,15 @@ export const IMPACT_METRICS: ImpactMetric[] = [
     label: "Finding information on the Gantt",
     area: "BigPicture Gantt · timed tasks, team outcome",
   },
+  {
+    value: "100%",
+    label: "Team adoption of DesignOS, across UX and the whole product trio",
+    area: "Appfire · DesignOS · design, product, engineering",
+  },
 ];
 
 export const IMPACT_NOTE =
-  "Product metrics are team outcomes of the BigPicture product team at Appfire (design, product, and engineering together), not individual attribution. I am glad to walk through baselines, measurement windows, and exactly what I owned in an interview.";
+  "The BigPicture metrics are team outcomes of the product team at Appfire (design, product, and engineering together), not individual attribution. DesignOS adoption is the org I co-led. I am glad to walk through baselines, measurement windows, and exactly what I owned in an interview.";
 
 export const CLOSING_CTA =
   "If you are building a design org that has to move faster without lowering the bar, or an AI product that has to earn trust before it earns autonomy, I would like to hear about it. Based in Poland, open to remote roles across the EU. Email is the fastest way to reach me.";

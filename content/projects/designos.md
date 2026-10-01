@@ -74,5 +74,6 @@ Empty: “No open briefs. Create intake or sync from Jira.” Trust: “Agent dr
 Quiet enterprise: cool-gray canvas, indigo accent only. Components: OpsNav, KpiRow, PipelineSteps, CompletenessChecklist, VelocityLane, ContributionReview, InsightCard, CraftGateModal. Pattern: status never color alone, dense tables keyboard-reachable.
 
 ### Outcomes & learnings
-- **What changed:** clearer planning for engineering, shared Figma standards, a research-ops habit, and fewer late redesigns on critical paths. These are qualitative outcomes from the org I co-led, not a measured study.
+- **100% team adoption**: not only the UX org, but the whole product trio (design, product, and engineering) works through DesignOS.
+- **What changed beyond adoption:** clearer planning for engineering, shared Figma standards, a research-ops habit, and fewer late redesigns on critical paths. These are qualitative outcomes from the org I co-led, not a measured study.
 - **Learning:** agents only earn trust when Craft and Ship stay human gates.

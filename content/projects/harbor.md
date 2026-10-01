@@ -77,6 +77,7 @@ Empty: “Link a card to see repayments.” Error: “Bank timeout. Try again: n
 Tokens: trust blue, money type scale, sheet spacing. Components: MoneyHero, PaySlider, DeltaPill, TrustFootnote, ConfirmSheet. Pattern: preview consequence → confirm → quiet success.
 
 ### Outcomes & learnings
+- **Result:** a satisfied client.
 - Focus: regulated-feel mobile fintech with HIG craft and trust microcopy.
 - Learning: consequence-before-commit reduces “did I just…?” moments more than longer help text.
 - Next if productized: multi-card allocation, biometric confirm, compliance review on suggestion language.

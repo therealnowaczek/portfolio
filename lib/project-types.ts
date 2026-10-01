@@ -8,6 +8,8 @@ export type ProjectMeta = {
   badge: string;
   /** When true, omitted from gallery and modal navigation (content may remain on disk). */
   hidden?: boolean;
+  /** Collapsed behind "Show more" in the unfiltered gallery. */
+  more?: boolean;
   status: ProjectStatus;
   role: string;
   platform: string;

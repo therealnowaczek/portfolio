@@ -180,10 +180,13 @@ export function SelectedWork({ projects, onOpen }: Props) {
     [visible],
   );
 
-  // Unfiltered view: lead cases first, the rest in a clearly labeled second block.
+  // Unfiltered view: lead cases first, then the rest. Weaker-fit work sits behind "Show more".
+  const [expanded, setExpanded] = useState(false);
   const split = filter === "all" ? leadCount(visible.map((p) => p.slug)) : 0;
   const lead = visible.slice(0, split);
-  const rest = visible.slice(split);
+  const allRest = visible.slice(split);
+  const hiddenCount = allRest.filter((p) => p.more).length;
+  const rest = expanded ? allRest : allRest.filter((p) => !p.more);
   const restSpans = useMemo(() => tileColumns(rest.length), [rest.length]);
 
   return (
@@ -203,7 +206,8 @@ export function SelectedWork({ projects, onOpen }: Props) {
           Four stories I would tell in an interview. Start with CostRadar: what
           should an AI agent be allowed to do with your ad budget? Then an org
           that stopped running on heroics, and two enterprise surfaces where
-          density was the whole problem.
+          density was the whole problem. Below them, freelance product design
+          since 2021, each engagement ending with a satisfied client.
         </p>
         <p className="mt-2 text-xs leading-relaxed text-muted sm:text-[13px]">
           Client and employer work is anonymized: brands and names are created
@@ -256,27 +260,30 @@ export function SelectedWork({ projects, onOpen }: Props) {
           ) : null}
 
           {rest.length > 0 ? (
-            <div className="space-y-5 pt-4">
-              <div className="max-w-2xl">
-                <h3 className="subsection-title">More product design work</h3>
-                <p className="text-sm leading-relaxed text-muted sm:text-[15px]">
-                  Mostly freelance client projects since 2021: mobile apps,
-                  desktop products, and web. Anonymized, with brands and names
-                  created for presentation.
-                </p>
-              </div>
-              <div className={GRID_CLASS}>
-                {rest.map((project, index) => (
-                  <ProjectCard
-                    key={project.slug}
-                    project={project}
-                    onOpen={onOpen}
-                    spanClass={spanClassFor(restSpans[index] ?? 4, {
-                      mdFull: mdFullFor(index, rest.length, false),
-                    })}
-                  />
-                ))}
-              </div>
+            <div className={GRID_CLASS}>
+              {rest.map((project, index) => (
+                <ProjectCard
+                  key={project.slug}
+                  project={project}
+                  onOpen={onOpen}
+                  spanClass={spanClassFor(restSpans[index] ?? 4, {
+                    mdFull: mdFullFor(index, rest.length, false),
+                  })}
+                />
+              ))}
+            </div>
+          ) : null}
+
+          {hiddenCount > 0 ? (
+            <div className="flex justify-center pt-1">
+              <button
+                type="button"
+                onClick={() => setExpanded((v) => !v)}
+                aria-expanded={expanded}
+                className="rounded-[8px] border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors duration-[160ms] hover:border-accent hover:text-accent"
+              >
+                {expanded ? "Show fewer projects" : `Show ${hiddenCount} more projects`}
+              </button>
             </div>
           ) : null}
         </>

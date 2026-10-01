@@ -77,6 +77,7 @@ Empty: “No matches. Try token names.” Error: “Playground runtime failed.�
 Meta-DS for the docs site: DocShell, PropTable, PlaygroundFrame, DoDont, TokenSwatch, ThemeStudio, VersionSelect. Pattern: teach → try → copy → contribute.
 
 ### Outcomes & learnings
+- **Result:** a satisfied client.
 - Focus: design-systems thinking, docs UX, and the designer–engineer bridge.
 - Learning: theme studio and foundations reduce “which gray is correct?” more than another Button variant.
 - Next if productized: real package wiring, visual regression embeds, RFC workflow.

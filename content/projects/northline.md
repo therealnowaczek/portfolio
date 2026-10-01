@@ -78,6 +78,7 @@ Empty: “No leaks above threshold.” Delay: “Live feed delayed: last sync 14
 Tokens: accent teal, delta pos/neg, dense spacing, tabular type. Components: DataTable compact, LeakRow, ConfidenceChip, CitePanel, SoftConfirm, RulesEditor. Pattern: anomaly → local action → undo.
 
 ### Outcomes & learnings
+- **Result:** a satisfied client.
 - Focus: AI + dense B2B SaaS ops UX with trust and a11y as first-class constraints.
 - Learning: lineage and undo matter more than clever chat for finance-adjacent AI.
 - Next if productized: real invoice connectors, role-based leak visibility, board-pack export.

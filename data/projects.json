@@ -232,7 +232,7 @@
       "Dense UX",
       "Web"
     ],
-    "order": 7,
+    "order": 9,
     "accent": "#A078FF",
     "styleLabel": "Violet deploy dense",
     "screens": [
@@ -255,6 +255,7 @@
   {
     "id": "05",
     "slug": "folio",
+    "more": true,
     "title": "Folio",
     "oneLiner": "Structured critique for designers, not empty likes",
     "badge": "Product design \u00b7 Android",
@@ -268,7 +269,7 @@
       "Editorial",
       "Social"
     ],
-    "order": 8,
+    "order": 14,
     "accent": "#B52603",
     "styleLabel": "Warm editorial",
     "screens": [
@@ -305,7 +306,7 @@
       "Enterprise",
       "Lifecycle"
     ],
-    "order": 9,
+    "order": 7,
     "accent": "#4F46E5",
     "styleLabel": "Enterprise clarity",
     "screens": [
@@ -329,6 +330,7 @@
   {
     "id": "07",
     "slug": "pulse",
+    "more": true,
     "title": "Pulse",
     "oneLiner": "A recovery companion with no punishing streaks",
     "badge": "Product design \u00b7 iOS",
@@ -342,7 +344,7 @@
       "Habit",
       "Health-adjacent"
     ],
-    "order": 10,
+    "order": 11,
     "accent": "#00685D",
     "styleLabel": "Soft teal recovery",
     "screens": [
@@ -379,7 +381,7 @@
       "Tokens",
       "Web"
     ],
-    "order": 11,
+    "order": 8,
     "accent": "#4F46E5",
     "styleLabel": "Indigo docs system",
     "screens": [
@@ -402,6 +404,7 @@
   {
     "id": "09",
     "slug": "nest",
+    "more": true,
     "title": "Nest",
     "oneLiner": "See price and fees before you chat with a local pro",
     "badge": "Product design \u00b7 Cross-platform",
@@ -415,7 +418,7 @@
       "Trust",
       "Booking"
     ],
-    "order": 12,
+    "order": 10,
     "accent": "#006B2C",
     "styleLabel": "Friendly utilitarian",
     "screens": [
@@ -439,6 +442,7 @@
   {
     "id": "15",
     "slug": "glowcast",
+    "more": true,
     "title": "Glowcast",
     "oneLiner": "Live video, gifts, and a consent-first path into 1:1",
     "badge": "Mobile product · Live entertainment",
@@ -452,7 +456,7 @@
       "Entertainment",
       "Safety"
     ],
-    "order": 13,
+    "order": 12,
     "accent": "#FF6B5B",
     "styleLabel": "Nightlife coral dark",
     "screens": [
@@ -473,6 +477,7 @@
   {
     "id": "10",
     "slug": "signal-rooms",
+    "more": true,
     "title": "Signal Rooms",
     "oneLiner": "Live audio rooms with clear stage roles and calm moderation",
     "badge": "Product design · iOS",
@@ -486,7 +491,7 @@
       "Dark expressive",
       "Social"
     ],
-    "order": 14,
+    "order": 13,
     "accent": "#B8F53A",
     "styleLabel": "Neon lime dark",
     "screens": [
@@ -509,6 +514,7 @@
   {
     "id": "11",
     "slug": "ledgerly-studio",
+    "more": true,
     "title": "Ledgerly Studio",
     "oneLiner": "Hypothesis first, guardrails visible, then ship or kill",
     "badge": "Product design \u00b7 Web",

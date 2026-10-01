@@ -79,6 +79,7 @@ Empty: “Your feed is quiet. Follow three craft accounts.” Error: “Upload f
 Tokens: warm paper, terracotta accent, display serif. Components: PieceCard, CritiqueChip, ComposerSheet, AnnotationLayer, RatioBadge. Pattern: show goals → critique on axes → thank.
 
 ### Outcomes & learnings
+- **Result:** a satisfied client.
 - Focus: community product craft, Android Material fluency, and editorial systems.
 - Learning: optional structure raises specificity without scaring off quick notes.
 - Next if productized: moderation queues, private critique circles, Figma embed.
