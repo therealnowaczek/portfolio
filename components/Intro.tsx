@@ -1,10 +1,4 @@
-import { withBasePath } from "@/lib/base-path";
-import {
-  HERO_STATS,
-  INTRO_HEADLINE,
-  INTRO_PARAGRAPHS,
-  SITE,
-} from "@/lib/cv";
+import { HERO_STATS, INTRO_HEADLINE, INTRO_PARAGRAPHS } from "@/lib/cv";
 import { RichText } from "./RichText";
 
 export function Intro() {
@@ -23,28 +17,6 @@ export function Intro() {
               <RichText>{p}</RichText>
             </p>
           ))}
-        </div>
-
-        <div className="flex flex-wrap items-center gap-3 pt-2">
-          <a
-            href="#portfolio"
-            className="inline-flex h-10 items-center rounded-[8px] bg-accent px-4 text-sm font-semibold !text-white transition-opacity duration-[160ms] ease-out hover:opacity-90"
-          >
-            See selected work
-          </a>
-          <a
-            href={withBasePath(SITE.cvPdf)}
-            download={SITE.cvFilename}
-            className="inline-flex h-10 items-center rounded-[8px] border border-border px-4 text-sm font-medium text-foreground transition-colors duration-[160ms] ease-out hover:border-accent hover:text-accent"
-          >
-            Download CV
-          </a>
-          <a
-            href={`mailto:${SITE.email}`}
-            className="inline-flex h-10 items-center px-1 text-sm font-medium text-accent underline decoration-accent/35 underline-offset-[3px] transition-colors duration-[160ms] ease-out hover:decoration-accent"
-          >
-            Email me
-          </a>
         </div>
       </div>
 
