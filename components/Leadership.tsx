@@ -1,4 +1,9 @@
-import { LEADERSHIP_HEADLINE, LEADERSHIP_PILLARS } from "@/lib/cv";
+import {
+  LEADERSHIP_HEADLINE,
+  LEADERSHIP_PILLARS,
+  LEADERSHIP_STORY,
+} from "@/lib/cv";
+import { RichText } from "./RichText";
 import { CaseLinkButton } from "./CaseLinkButton";
 
 type Props = {
@@ -14,6 +19,9 @@ export function Leadership({ onOpen }: Props) {
         </h2>
         <p className="text-lg font-medium leading-snug tracking-tight text-foreground-secondary sm:text-xl">
           {LEADERSHIP_HEADLINE}
+        </p>
+        <p className="mt-4 border-l-2 border-accent/40 pl-4 text-[15px] leading-relaxed text-foreground-secondary sm:text-base">
+          <RichText>{LEADERSHIP_STORY}</RichText>
         </p>
       </div>
 
