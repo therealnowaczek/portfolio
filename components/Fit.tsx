@@ -36,7 +36,7 @@ export function Fit({ onOpen }: Props) {
             <p className="mt-2 text-sm leading-relaxed text-foreground-secondary">
               {role.pitch}
             </p>
-            <ul className="mt-5 divide-y divide-border border-y border-border">
+            <ul className="mt-5 divide-y divide-border">
               {role.proof.map((p) => {
                 const row = "flex w-full items-start gap-3 py-3 text-left text-[13px] leading-snug";
                 return (
