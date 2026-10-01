@@ -11,11 +11,6 @@ export type EducationItem = {
   detail: string;
 };
 
-export type NarrativeBlock = {
-  title: string;
-  body: string;
-};
-
 export const PROFILE_URL = "https://therealnowaczek.github.io/portfolio/";
 
 /** Phone stays on the CV PDF only: keeps bots and spam off the public page. */
@@ -38,28 +33,37 @@ export const SITE = {
     "Head of Design and Senior UX Manager based in Poland, open to remote roles in the EU. Co-led a 35+ person UX org at Appfire (BigPicture, 7pace, design ops, research ops). Still hands-on as a Lead Product Designer, and builds with AI: founder of CostRadar.ai, an early-stage profitability product with an Approve-gated AI agent.",
 };
 
+/** Hook: leadership claim, then the tension that makes people scroll. */
 export const INTRO_HEADLINE =
-  "I lead UX for complex enterprise products, put AI to work in the process, and still design hands-on.";
+  "I build design teams that ship, and I still design the hard parts myself.";
+
+export const INTRO_SUBLINE =
+  "Lately that includes an AI agent that is only allowed to act after you say yes.";
 
 /** Proof first, then the titles a recruiter or ATS will match. */
 export const INTRO_PARAGRAPHS = [
-  "Most recently Senior UX Manager at Appfire, where I co-led 35+ designers, researchers, and writers across BigPicture, 7pace, and AI workstreams. Before that, Head of Design at SoftwarePlant: I grew the team to 16+ and carried it through the Appfire acquisition. I am still hands-on: lead designer behind BigPicture's OKRs, Gantt, and Financials.",
-  "AI is part of how I work, not a slide. I rolled out agentic workflows and design-to-code across a UX org, and I built CostRadar.ai myself: an early-stage profitability product with an AI agent that only acts after you Approve.",
-  "I am looking for Head of Design or Senior UX Manager roles where I stay close to the craft, or Lead Product Designer roles with real scope over AI products and design systems. Remote, EU.",
+  "Senior UX Manager at Appfire, co-leading 35+ designers, researchers, and writers across BigPicture, 7pace, and AI workstreams. Before that, Head of Design at SoftwarePlant: I grew the team to 16+ and carried it through the Appfire acquisition. Through all of it I stayed hands-on as lead designer behind BigPicture's OKRs, Gantt, and Financials.",
+  "AI is how I work now, not a slide: agentic workflows and design-to-code rolled out across a UX org, and CostRadar.ai, an early-stage profitability product I designed and built solo, where the AI proposes and you approve.",
 ];
+
+export const INTRO_LOOKING_FOR =
+  "Looking for: Head of Design or Senior UX Manager roles where I stay close to the craft, or Lead Product Designer roles with real scope over AI products and design systems. Remote, EU.";
 
 export type HeroStat = {
   value: string;
   label: string;
 };
 
-/** Shown under the intro. Team outcomes are footnoted in the Impact section. */
+/** Scale and scope only. Product outcomes live in the Impact section. */
 export const HERO_STATS: HeroStat[] = [
   { value: "35+", label: "designers, researchers, and writers co-led at Appfire" },
-  { value: "53→84%", label: "financial module adoption in 3 months (team outcome)" },
-  { value: "+47%", label: "leadership teams using OKRs (team outcome)" },
-  { value: "Live", label: "CostRadar.ai: early-stage product, built solo, AI agent behind Approve" },
+  { value: "16+", label: "design team built as Head of Design, carried through an acquisition" },
+  { value: "15 yrs", label: "designing digital products, from a public broadcaster to an Atlassian Marketplace best-seller" },
+  { value: "Live", label: "an AI product I designed and built solo: CostRadar.ai (early-stage)" },
 ];
+
+export const EXPERIENCE_INTRO =
+  "From a public broadcaster's web team to an Atlassian Marketplace best-seller, and now to an AI product I am building alone.";
 
 export const EXPERIENCE: ExperienceItem[] = [
   {
@@ -226,107 +230,58 @@ export const PERSON_JSON_LD = {
   },
 };
 
-export type RoleLens = {
-  id: string;
-  label: string;
-  group: "career" | "specialist";
-  eyebrow: string;
-  headline: string;
-  pitch: string;
-  proof: string[];
-  ninetyDays: string[];
-  keywords: string[];
+/** Where I would be useful: three static cards; proofs link to the case behind the claim. */
+export type FitProof = {
+  text: string;
+  /** Opens this project's case study when present. */
+  slug?: string;
 };
 
-export const ROLE_LENS_GROUPS = [
-  {
-    id: "career" as const,
-    title: "Roles I am targeting",
-  },
-  {
-    id: "specialist" as const,
-    title: "Runs through both",
-  },
-];
+export type FitRole = {
+  id: string;
+  title: string;
+  tag: string;
+  preferred?: boolean;
+  pitch: string;
+  proof: FitProof[];
+};
 
-/** Three lenses, each with distinct proof: lead, build, and AI. */
-export const ROLE_LENSES: RoleLens[] = [
+export const FIT_INTRO =
+  "Three seats where the same story pays off. Every proof links to the case behind it.";
+
+export const FIT_ROLES: FitRole[] = [
   {
     id: "leader",
-    label: "Head of Design / UX Manager",
-    group: "career",
-    eyebrow: "Preferred · Function owner · Hands-on leader",
-    headline: "Build a design function that product and engineering can plan around, and stay close enough to the craft to raise the bar myself.",
+    title: "Head of Design / Senior UX Manager",
+    tag: "Preferred",
+    preferred: true,
     pitch:
-      "I grew the SoftwarePlant design team to 16+ as Head of Design, then co-led 35+ designers, researchers, and writers at Appfire across BigPicture, 7pace, and AI workstreams. I coach seniors, set hiring bars and standards, and still pick up the hard design problems when the roadmap needs it.",
+      "A design function that product and engineering can plan around, led by someone who still picks up the hard problems.",
     proof: [
-      "Grew and led 16+ designers, researchers, and writers, then co-led 35+ after the Appfire acquisition",
-      "Integrated craft, process, and culture after the acquisition: shared intake, estimation, Figma standards, and research ops (see DesignOS)",
-      "Design-system standards for Atlassian Marketplace products; Design Ops and Design Systems are part of this seat, not separate hats",
-    ],
-    ninetyDays: [
-      "Review team health, hiring gaps, and quality bars; clarify ownership and critique across squads",
-      "Agree an operating rhythm with product and engineering leads, including how AI is used and reviewed",
-      "Make one portfolio-wide standard durable (system, critique, or intake) and raise the bar on 2-3 critical journeys",
-    ],
-    keywords: [
-      "Head of Design",
-      "Senior UX Manager",
-      "Design Ops",
-      "Design Systems",
-      "Hiring & mentorship",
+      { text: "Co-led 35+ people across a multi-product org", slug: "designos" },
+      { text: "Grew a team to 16+ and held the hiring bar through an acquisition" },
     ],
   },
   {
     id: "product",
-    label: "Lead Product Designer+",
-    group: "career",
-    eyebrow: "Hands-on · Complex product · Scope beyond the screen",
-    headline: "Own the hardest surface end to end: dense enterprise UX that stays clear under load.",
+    title: "Lead Product Designer+",
+    tag: "Also targeting",
     pitch:
-      "I still design. As lead designer on BigPicture I owned financials, OKRs, and Gantt from discovery to delivery. Hierarchy, retrieval speed, and trust states are the craft. I set direction for the squad and the system around it.",
+      "The hardest surface owned end to end: dense enterprise UX that stays clear under load, plus the system around it.",
     proof: [
-      "OKRs and Gantt cases: hierarchy and dense planning under cognitive load",
-      "Financials: financial-module adoption 53% to 84% in 3 months and 58% fewer unclear reports (team outcomes)",
-      "CostRadar.ai: true-net ledger and Approve-gated AI designed and built end to end",
-    ],
-    ninetyDays: [
-      "Map the critical journey and the decision moments that matter most",
-      "Ship a validated slice with engineering: states, empty paths, performance",
-      "Leave patterns and components the squad can extend without me",
-    ],
-    keywords: [
-      "Lead Product Designer",
-      "Staff-level scope",
-      "Complex product UX",
-      "Information architecture",
-      "Enterprise SaaS",
+      { text: "Hierarchy under cognitive load: leadership OKRs", slug: "okrs" },
+      { text: "Retrieval speed as a design constraint: program Gantt", slug: "gantt" },
     ],
   },
   {
     id: "ai",
-    label: "AI UX / Design Engineering",
-    group: "specialist",
-    eyebrow: "In the workflow · Shipped · Trust before autonomy",
-    headline: "AI in working software and in the design process, with craft and Approve gates intact.",
+    title: "AI UX / Design Engineering",
+    tag: "Runs through both",
     pitch:
-      "I rolled out agentic workflows and design-to-code across a UX org, then built CostRadar.ai solo to test the stack on my own product: true-net ledger, savings tracker, and an AI Profit Agent that only acts after Approve. It is early-stage (28 freemium users and one design partner, no paying customers yet), and I learn from real usage.",
+      "AI that earns trust: agents that propose, people who approve, and a designer who can build it.",
     proof: [
-      "CostRadar.ai is live: React, Supabase, and LLM agents. I designed and built it",
-      "Approve before writes, quiet hours, grounded findings: trust patterns for agents that touch money",
-      "AI rollout at Appfire with human review and design-system integrity (DesignOS agentic loop)",
-    ],
-    ninetyDays: [
-      "Map where agents speed discovery versus where craft must stay human",
-      "Pilot an agentic loop on one surface with clear quality gates",
-      "Write playbooks so seniors can coach the practice",
-    ],
-    keywords: [
-      "AI UX",
-      "Design Engineering",
-      "Human-in-the-loop",
-      "Cursor",
-      "Design-to-code",
+      { text: "An agent that only acts after Approve, built solo", slug: "costradar" },
+      { text: "A human-gated AI loop across a UX org", slug: "designos" },
     ],
   },
 ];
@@ -370,81 +325,45 @@ export const AGENTIC_PIPELINE: PipelineStep[] = [
   },
 ];
 
+export const PROCESS_HEADLINE =
+  "AI drafts. People own the frame, the craft, and the ship call.";
+
 export const PROCESS_INTRO =
-  "I frame the problem, prototype against real constraints, and pair early with engineering on states and performance. The loop below is how I run that, with AI in the middle for speed and craft at the gates.";
+  "That is the loop I rolled out across a UX org, and the rule behind the Approve button in CostRadar. Cursor and Claude help me cover more ground before a review, not after the call is already made.";
 
-export const PROCESS_SPLIT = [
-  {
-    title: "Where AI speeds things up",
-    body: "Exploration, drafts, and synthesis. Cursor and Claude help me cover more ground before a review, not after the call is already made.",
-  },
-  {
-    title: "Where craft still decides",
-    body: "Problem framing, quality bars, accessibility, and system integrity. The test I use: what decision does this artifact unlock next week?",
-  },
-] as const;
+export type CaseLink = {
+  label: string;
+  title: string;
+  slug: string;
+};
 
-export const LEADERSHIP_INTRO =
-  "I coach craft and delivery together so quality holds as the team grows. Empathy and high bars both matter; standards have to travel without the same few seniors doing heroics every time.";
-
-export const LEADERSHIP_PILLARS = [
-  {
-    title: "Craft and delivery, coached together",
-    body: "1:1s on problem framing, reviews that raise interaction quality, and growth paths tied to what the product needs. At Appfire, co-leading 35+ designers, researchers, and writers meant mentorship as weekly practice, not a one-off workshop.",
-  },
-  {
-    title: "Hiring bars that survive the merge",
-    body: "As Head of Design at SoftwarePlant I grew a 16+ person team with clear hiring bars, design-system standards, and delivery rules. Those bars still held after the Appfire acquisition, when craft had to scale across products like BigPicture and 7pace.",
-  },
-  {
-    title: "Critique culture that travels",
-    body: "Shared intake, clearer decision rights, and critique that seniors can run without me in the room. Post-acquisition, the job was integrating craft, process, and culture so UX stayed aligned from sprint planning through executive reporting.",
-  },
-] as const;
-
-export const LEADERSHIP_PRACTICES = [
-  {
-    step: "1:1s",
-    detail: "Problem framing · trade-offs",
-    beat: "Weekly coaching on the hard calls: scope, craft, and how to unblock the squad.",
-  },
-  {
-    step: "Critique",
-    detail: "Interaction quality · system fit",
-    beat: "Reviews that raise the bar and leave designers owning the next pass.",
-  },
-  {
-    step: "Growth paths",
-    detail: "Tied to product needs",
-    beat: "Seniority and scope follow roadmap gaps, not generic competency grids.",
-  },
-  {
-    step: "Design ops",
-    detail: "Intake · estimation · research ops",
-    beat: "Figma standards, Dovetail rhythms, and estimation that product and engineering can plan around.",
-  },
-] as const;
-
-/** Folded into LEADERSHIP_PILLARS; kept for NarrativeBlock consumers. */
-export const MENTORING: NarrativeBlock[] = [
-  {
-    title: LEADERSHIP_PILLARS[0].title,
-    body: LEADERSHIP_PILLARS[0].body,
-  },
+export const PROCESS_LINKS: CaseLink[] = [
+  { label: "See it in a product", title: "CostRadar.ai", slug: "costradar" },
+  { label: "See it in an org", title: "DesignOS", slug: "designos" },
 ];
 
-export const BUSINESS_IMPACT: NarrativeBlock[] = [
+export const LEADERSHIP_HEADLINE =
+  "A design org is only as good as what holds when I am not in the room.";
+
+export type LeadershipPillar = {
+  title: string;
+  body: string;
+  caseLink?: { label: string; slug: string };
+};
+
+export const LEADERSHIP_PILLARS: LeadershipPillar[] = [
   {
-    title: "Enterprise modules people actually used",
-    body: "On BigPicture, design was judged by whether finance and PMs trusted what they saw, and whether leadership teams stuck with the workflows. OKRs, Financials, and Gantt were treated as product problems: adoption, support clarity, and speed of finding answers, not visual polish. The metrics above are the outcomes of that bar.",
+    title: "Hiring bars that survived an acquisition",
+    body: "At SoftwarePlant I grew the team to 16+ with clear hiring bars, design-system standards, and delivery rules. After Appfire acquired us, those bars had to hold across products like BigPicture and 7pace. They did.",
   },
   {
-    title: "Scale without diluting craft",
-    body: "Those results needed a team that could keep the same bar as the portfolio grew. As Head of Design at SoftwarePlant I built a 16+ person craft org. After the Appfire acquisition I co-led 35+ designers, researchers, and writers across BigPicture, 7pace, and AI workstreams, with shared intake, estimation, research ops, and design-system rules so quality did not become the bottleneck.",
+    title: "Craft and delivery, coached together",
+    body: "Weekly 1:1s on problem framing and trade-offs, reviews that raise interaction quality, and growth paths tied to what the product needs next. With 35+ people at Appfire, mentorship had to be a weekly practice, not a workshop.",
   },
   {
-    title: "The same bar, shipped alone",
-    body: "CostRadar.ai is the founder-side of that story. I designed and engineered a live profitability product end-to-end: true-net P&L, savings tracking, and an AI Profit Agent that only acts after Approve. It is early: 28 freemium users and one design partner, no paying customers yet. What I can show is the product, the decisions behind it, and what real usage is teaching me.",
+    title: "Ops that engineering can plan against",
+    body: "Intake with completeness scoring, velocity-based estimation, Figma standards, and research ops turned UX from local heroics into something engineering could schedule.",
+    caseLink: { label: "Read the DesignOS case", slug: "designos" },
   },
 ];
 
@@ -454,6 +373,9 @@ export type ImpactMetric = {
   /** Where it happened, so the number is never free-floating. */
   area: string;
 };
+
+export const IMPACT_INTRO =
+  "On BigPicture, design was judged by whether finance teams and PMs trusted what they saw and whether leadership teams stuck with the workflow. These are the results.";
 
 export const IMPACT_METRICS: ImpactMetric[] = [
   {
@@ -476,20 +398,10 @@ export const IMPACT_METRICS: ImpactMetric[] = [
     label: "Finding information on the Gantt",
     area: "BigPicture Gantt · timed tasks, team outcome",
   },
-  {
-    value: "16+",
-    label: "Design team grown as Head of Design",
-    area: "SoftwarePlant · leadership",
-  },
-  {
-    value: "35+",
-    label: "UX people co-led at Appfire",
-    area: "Appfire · leadership",
-  },
 ];
 
 export const IMPACT_NOTE =
   "Product metrics are team outcomes of the BigPicture product team at Appfire (design, product, and engineering together), not individual attribution. I am glad to walk through baselines, measurement windows, and exactly what I owned in an interview.";
 
 export const CLOSING_CTA =
-  "Thanks for reading. I am based in Poland and open to remote roles across the EU: Head of Design or Senior UX Manager (hands-on), or Lead Product Designer on AI-heavy products. Email is the fastest way to reach me.";
+  "If you are building a design org that has to move faster without lowering the bar, or an AI product that has to earn trust before it earns autonomy, I would like to hear about it. Based in Poland, open to remote roles across the EU. Email is the fastest way to reach me.";

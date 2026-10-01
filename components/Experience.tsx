@@ -1,4 +1,4 @@
-import { EDUCATION, EXPERIENCE } from "@/lib/cv";
+import { EDUCATION, EXPERIENCE, EXPERIENCE_INTRO } from "@/lib/cv";
 import { RichText } from "./RichText";
 
 export function Experience() {
@@ -8,6 +8,9 @@ export function Experience() {
         <h2 id="experience-heading" className="section-title">
           Experience
         </h2>
+        <p className="mb-6 max-w-2xl text-sm leading-relaxed text-muted sm:text-[15px]">
+          {EXPERIENCE_INTRO}
+        </p>
         <ol className="space-y-6">
           {EXPERIENCE.map((item) => (
             <li

@@ -1,4 +1,10 @@
-import { HERO_STATS, INTRO_HEADLINE, INTRO_PARAGRAPHS } from "@/lib/cv";
+import {
+  HERO_STATS,
+  INTRO_HEADLINE,
+  INTRO_LOOKING_FOR,
+  INTRO_PARAGRAPHS,
+  INTRO_SUBLINE,
+} from "@/lib/cv";
 import { RichText } from "./RichText";
 
 export function Intro() {
@@ -7,17 +13,23 @@ export function Intro() {
       <div className="max-w-3xl space-y-4">
         <h2
           id="intro-heading"
-          className="text-xl font-medium tracking-tight text-foreground-secondary sm:text-2xl"
+          className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
         >
           {INTRO_HEADLINE}
         </h2>
-        <div className="space-y-4 text-[15px] leading-relaxed text-foreground-secondary sm:text-base">
+        <p className="text-lg font-medium tracking-tight text-accent sm:text-xl">
+          {INTRO_SUBLINE}
+        </p>
+        <div className="space-y-4 pt-2 text-[15px] leading-relaxed text-foreground-secondary sm:text-base">
           {INTRO_PARAGRAPHS.map((p) => (
             <p key={p.slice(0, 40)}>
               <RichText>{p}</RichText>
             </p>
           ))}
         </div>
+        <p className="border-l-2 border-accent/40 pl-3 text-sm leading-relaxed text-muted sm:text-[15px]">
+          {INTRO_LOOKING_FOR}
+        </p>
       </div>
 
       <dl className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">

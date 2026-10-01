@@ -1,22 +1,18 @@
-import { BUSINESS_IMPACT, IMPACT_METRICS, IMPACT_NOTE } from "@/lib/cv";
-import { RichText } from "./RichText";
+import { IMPACT_INTRO, IMPACT_METRICS, IMPACT_NOTE } from "@/lib/cv";
 
 export function Impact() {
   return (
     <section aria-labelledby="impact-heading" className="space-y-8">
       <div>
         <h2 id="impact-heading" className="section-title">
-          Business Impact
+          Impact
         </h2>
         <p className="max-w-2xl text-sm leading-relaxed text-muted sm:text-[15px]">
-          Design work that moved adoption and clarity on{" "}
-          <RichText>BigPicture</RichText> at <RichText>Appfire</RichText>,
-          then the same outcome bar applied end-to-end on{" "}
-          <RichText>CostRadar.ai</RichText>.
+          {IMPACT_INTRO}
         </p>
       </div>
 
-      <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {IMPACT_METRICS.map((metric) => (
           <div
             key={metric.label}
@@ -38,19 +34,6 @@ export function Impact() {
       <p className="max-w-3xl border-l-2 border-accent/40 pl-3 text-xs leading-relaxed text-muted sm:text-[13px]">
         {IMPACT_NOTE}
       </p>
-
-      <div className="space-y-6">
-        {BUSINESS_IMPACT.map((block) => (
-          <article key={block.title} className="max-w-3xl">
-            <h3 className="text-sm font-semibold text-foreground-secondary">
-              {block.title}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted sm:text-[15px]">
-              <RichText>{block.body}</RichText>
-            </p>
-          </article>
-        ))}
-      </div>
     </section>
   );
 }

@@ -198,7 +198,7 @@ export function ProjectModal({
 
             <section aria-labelledby="snapshot-heading" className="space-y-3">
               <h3 id="snapshot-heading" className="section-title">
-                Snapshot
+                What it is
               </h3>
               <p className="max-w-3xl text-[15px] leading-relaxed text-foreground-secondary">
                 <RichText>{caseStudy.snapshot}</RichText>

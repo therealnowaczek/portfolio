@@ -14,7 +14,7 @@ import { Leadership } from "./Leadership";
 import { MobileBottomBar } from "./MobileBottomBar";
 import { Process } from "./Process";
 import { ProjectModal } from "./ProjectModal";
-import { RoleFit } from "./RoleFit";
+import { Fit } from "./Fit";
 import { SideNav, type NavItem } from "./SideNav";
 
 type Props = {
@@ -23,13 +23,11 @@ type Props = {
 
 const NAV: NavItem[] = [
   { id: "about", label: "About" },
-  { id: "portfolio", label: "Portfolio" },
+  { id: "portfolio", label: "Work" },
   { id: "impact", label: "Impact" },
-  { id: "fit", label: "Role fit" },
-  { id: "experience", label: "Experience" },
-  { id: "expertise", label: "Skills" },
   { id: "leadership", label: "Leadership" },
   { id: "process", label: "AI & process" },
+  { id: "experience", label: "Experience" },
   { id: "connect", label: "Contact" },
 ];
 
@@ -115,12 +113,11 @@ export function PortfolioShell({ projects }: Props) {
           <SideNav items={NAV} />
         </div>
         <main id="main" className="mt-10 min-w-0 sm:mt-14">
-          {/* 1. Who: intro copy, proof numbers, and CTAs */}
+          {/* Story arc: hook -> proof in work -> results -> how I lead -> how I use AI -> path -> close */}
           <div id="about" className="min-w-0 max-w-full scroll-mt-36">
             <Intro />
           </div>
 
-          {/* 2. Proof: work first, then numbers, then role fit */}
           <div id="portfolio" className="section-rule scroll-mt-36">
             <SelectedWork projects={projects} onOpen={open} />
           </div>
@@ -129,9 +126,12 @@ export function PortfolioShell({ projects }: Props) {
             <Impact />
           </div>
 
-          <div id="fit" className="section-rule scroll-mt-36">
-            <h2 className="section-title">Role fit</h2>
-            <RoleFit />
+          <div id="leadership" className="section-rule scroll-mt-36">
+            <Leadership onOpen={open} />
+          </div>
+
+          <div id="process" className="section-rule scroll-mt-36">
+            <Process onOpen={open} />
           </div>
 
           <div id="experience" className="section-rule scroll-mt-36">
@@ -142,16 +142,8 @@ export function PortfolioShell({ projects }: Props) {
             <ExpertiseTools />
           </div>
 
-          {/* 5. How they lead & operate: for manager/director scope */}
-          <div id="leadership" className="section-rule scroll-mt-36">
-            <Leadership />
-          </div>
-
-          <div id="process" className="section-rule scroll-mt-36">
-            <Process />
-          </div>
-
-          <div id="connect" className="section-rule scroll-mt-36">
+          <div id="connect" className="section-rule scroll-mt-36 space-y-12">
+            <Fit onOpen={open} />
             <Footer />
           </div>
         </main>

@@ -191,7 +191,7 @@ export function SelectedWork({ projects, onOpen }: Props) {
       <div className="max-w-2xl">
         <div className="mb-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <h2 id="work-heading" className="section-title mb-0">
-            Portfolio
+            Selected work
           </h2>
           {filter !== "all" ? (
             <p className="text-sm text-muted">
@@ -200,9 +200,10 @@ export function SelectedWork({ projects, onOpen }: Props) {
           ) : null}
         </div>
         <p className="text-sm leading-relaxed text-muted sm:text-[15px]">
-          CostRadar.ai is my own early-stage product, designed and built solo.
-          DesignOS, OKRs, and Gantt are enterprise cases from Appfire and
-          BigPicture. Open a card for the story, screens, and what I learned.
+          Four stories I would tell in an interview. Start with CostRadar: what
+          should an AI agent be allowed to do with your ad budget? Then an org
+          that stopped running on heroics, and two enterprise surfaces where
+          density was the whole problem.
         </p>
         <p className="mt-2 text-xs leading-relaxed text-muted sm:text-[13px]">
           Client and employer work is anonymized: brands and names are created
