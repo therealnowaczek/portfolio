@@ -10,7 +10,7 @@ import { RichText } from "./RichText";
 export function Intro() {
   return (
     <section aria-labelledby="intro-heading">
-      <div className="max-w-5xl space-y-4">
+      <div className="max-w-4xl space-y-4">
         <h2
           id="intro-heading"
           className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
