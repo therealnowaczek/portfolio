@@ -203,11 +203,10 @@ export function SelectedWork({ projects, onOpen }: Props) {
           ) : null}
         </div>
         <p className="text-sm leading-relaxed text-muted sm:text-[15px]">
-          Four projects I talk about most. CostRadar: an AI agent I built to
-          hunt for margin leaks. DesignOS: a UX org that stopped running on
-          heroics. Then two BigPicture surfaces where density was the whole
-          problem. Below them, freelance product design since 2021, each
-          ending with a satisfied client.
+          A product I built with an AI agent that hunts for margin leaks, an
+          org that stopped running on heroics, and two BigPicture surfaces
+          where density was the whole problem. Below them, freelance product
+          design since 2021, each ending with a satisfied client.
         </p>
         <p className="mt-2 text-xs leading-relaxed text-muted sm:text-[13px]">
           Client and employer work is anonymized, so brands and names are
