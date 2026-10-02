@@ -22,6 +22,24 @@ type Props = {
   onNavigate: (slug: string) => void;
 };
 
+function NumberedList({ items }: { items: string[] }) {
+  return (
+    <ol className="mt-3 space-y-2.5">
+      {items.map((item, i) => (
+        <li
+          key={item}
+          className="grid grid-cols-[1.5rem_1fr] gap-x-2.5 text-[15px] leading-relaxed text-foreground-secondary"
+        >
+          <span className="text-[11px] font-semibold tabular-nums text-accent">
+            {String(i + 1).padStart(2, "0")}
+          </span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 export function ProjectModal({
   project,
   prev,
@@ -211,16 +229,7 @@ export function ProjectModal({
                 >
                   Results
                 </h3>
-                <ul className="mt-3 space-y-2.5">
-                  {caseStudy.outcomes.map((o) => (
-                    <li
-                      key={o}
-                      className="text-[15px] leading-relaxed text-foreground-secondary"
-                    >
-                      {o}
-                    </li>
-                  ))}
-                </ul>
+                <NumberedList items={caseStudy.outcomes} />
               </section>
             ) : null}
 
@@ -249,11 +258,7 @@ export function ProjectModal({
                     >
                       Goals
                     </h3>
-                    <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-foreground-secondary">
-                      {caseStudy.goals.map((g) => (
-                        <li key={g}>{g}</li>
-                      ))}
-                    </ul>
+                    <NumberedList items={caseStudy.goals} />
                   </div>
                 ) : null}
                 {caseStudy.constraints.length > 0 ? (
@@ -261,11 +266,7 @@ export function ProjectModal({
                     <h3 className="text-sm font-semibold tracking-tight text-foreground">
                       Limits
                     </h3>
-                    <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-foreground-secondary">
-                      {caseStudy.constraints.map((c) => (
-                        <li key={c}>{c}</li>
-                      ))}
-                    </ul>
+                    <NumberedList items={caseStudy.constraints} />
                   </div>
                 ) : null}
               </section>
@@ -310,11 +311,7 @@ export function ProjectModal({
                 >
                   Decisions
                 </h3>
-                <ul className="mt-3 space-y-2.5 text-[15px] leading-relaxed text-foreground-secondary">
-                  {caseStudy.decisions.map((d) => (
-                    <li key={d}>{d}</li>
-                  ))}
-                </ul>
+                <NumberedList items={caseStudy.decisions} />
               </section>
             ) : null}
 
