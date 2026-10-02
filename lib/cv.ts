@@ -30,7 +30,7 @@ export const SITE = {
   tvpParlament: "https://tvpparlament.pl",
   tvp3: "https://regiony.tvp.pl/",
   description:
-    "Head of Design and Senior UX Manager based in Poland, open to remote roles in the EU. Co-led a 35+ person UX org at Appfire (BigPicture, 7pace, design ops, research ops). Also works as a Lead Product Designer, and builds with AI: founder of CostRadar.ai, an early-stage profitability product with an Approve-gated AI agent.",
+    "Head of Design and Senior UX Manager based in Poland. Co-led a 35+ person UX org at Appfire (BigPicture, 7pace, design ops, research ops). Also works as a Lead Product Designer, and builds with AI: founder of CostRadar.ai, an early-stage profitability product with an Approve-gated AI agent.",
 };
 
 /** Hook: leadership claim, then the tension that makes people scroll. */
@@ -47,7 +47,7 @@ export const INTRO_PARAGRAPHS = [
 ];
 
 export const INTRO_LOOKING_FOR =
-  "Now looking for Head of Design or Senior UX Manager roles with a team and a product to own, or Lead Product Designer roles with real scope over AI products and design systems. Remote, EU.";
+  "Now looking for Head of Design or Senior UX Manager roles with a team and a product to own, or Lead Product Designer roles with real scope over AI products and design systems.";
 
 export type HeroStat = {
   value: string;
@@ -412,4 +412,4 @@ export const IMPACT_NOTE =
   "The BigPicture metrics are team outcomes from the product team at Appfire (design, product, and engineering together), not individual attribution. DesignOS adoption is the org I co-led. I'm happy to walk through baselines, measurement windows, and exactly what I owned in an interview.";
 
 export const CLOSING_CTA =
-  "If you're building a design org that has to move faster without lowering the bar, or an AI product that has to earn trust before it earns autonomy, I'd love to hear about it. I'm based in Poland and open to remote roles across the EU. Email is the fastest way to reach me.";
+  "If you're building a design org that has to move faster without lowering the bar, or an AI product that has to earn trust before it earns autonomy, I'd love to hear about it. I'm based in Poland. Email is the fastest way to reach me.";
