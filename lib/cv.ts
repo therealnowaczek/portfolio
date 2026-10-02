@@ -30,24 +30,24 @@ export const SITE = {
   tvpParlament: "https://tvpparlament.pl",
   tvp3: "https://regiony.tvp.pl/",
   description:
-    "Head of Design and Senior UX Manager based in Poland, open to remote roles in the EU. Co-led a 35+ person UX org at Appfire (BigPicture, 7pace, design ops, research ops). Still hands-on as a Lead Product Designer, and builds with AI: founder of CostRadar.ai, an early-stage profitability product with an Approve-gated AI agent.",
+    "Head of Design and Senior UX Manager based in Poland, open to remote roles in the EU. Co-led a 35+ person UX org at Appfire (BigPicture, 7pace, design ops, research ops). Also works as a Lead Product Designer, and builds with AI: founder of CostRadar.ai, an early-stage profitability product with an Approve-gated AI agent.",
 };
 
 /** Hook: leadership claim, then the tension that makes people scroll. */
 export const INTRO_HEADLINE =
-  "I build design teams that ship, and I still design the hard parts myself.";
+  "I lead design teams, and I take products from first question to shipped.";
 
 export const INTRO_SUBLINE =
-  "Lately that includes an AI agent that is only allowed to act after you say yes.";
+  "Most recently: an AI product I designed and built solo, where the agent acts only after you say yes.";
 
 /** Proof first, then the titles a recruiter or ATS will match. */
 export const INTRO_PARAGRAPHS = [
-  "Senior UX Manager at Appfire, co-leading 35+ designers, researchers, and writers (14 reporting to me directly) across BigPicture, 7pace, and AI workstreams. Before that, Head of Design at SoftwarePlant: I grew the team to 16+ and carried it through the Appfire acquisition. Through all of it I stayed hands-on as lead designer behind BigPicture's OKRs, Gantt, and Financials.",
+  "Senior UX Manager at Appfire, co-leading 35+ designers, researchers, and writers (14 reporting to me directly) across BigPicture, 7pace, and AI workstreams. Before that, Head of Design at SoftwarePlant: I grew the team to 16+ and carried it through the Appfire acquisition. Through all of it I was also the lead designer behind BigPicture's OKRs, Gantt, and Financials.",
   "AI is how I work now, not a slide: agentic workflows and design-to-code rolled out across a UX org, and CostRadar.ai, an early-stage profitability product I designed and built solo, where the AI proposes and you approve.",
 ];
 
 export const INTRO_LOOKING_FOR =
-  "Looking for: Head of Design or Senior UX Manager roles where I stay close to the craft, or Lead Product Designer roles with real scope over AI products and design systems. Remote, EU.";
+  "Looking for: Head of Design or Senior UX Manager roles with a team and a product to own, or Lead Product Designer roles with real scope over AI products and design systems. Remote, EU.";
 
 export type HeroStat = {
   value: string;
@@ -78,7 +78,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     role: "Senior UX Manager",
     company: "Appfire",
     blurb:
-      "After the acquisition my scope grew from one team to a multi-product org: I co-led 35+ designers, researchers, and writers (14 direct reports) across BigPicture, 7pace, and AI workstreams, up from the 16+ team I had led as Head of Design. Ran design ops, estimation, Figma standards, research ops, and AI rollout, and stayed hands-on in BigPicture design. BigPicture team outcomes (see Impact): +47% OKR adoption, financial-module adoption 53% to 84% in 3 months, 58% fewer unclear financial reports.",
+      "After the acquisition my scope grew from one team to a multi-product org: I co-led 35+ designers, researchers, and writers (14 direct reports) across BigPicture, 7pace, and AI workstreams, up from the 16+ team I had led as Head of Design. Ran design ops, estimation, Figma standards, research ops, and AI rollout, and kept leading design on BigPicture itself. BigPicture team outcomes (see Impact): +47% OKR adoption, financial-module adoption 53% to 84% in 3 months, 58% fewer unclear financial reports.",
   },
   {
     years: "2021 - Present",
@@ -256,7 +256,7 @@ export const FIT_ROLES: FitRole[] = [
     tag: "Preferred",
     preferred: true,
     pitch:
-      "A design function that product and engineering can plan around, led by someone who still picks up the hard problems.",
+      "A design function that product and engineering can plan around, led by someone who also owns the hardest product problems.",
     proof: [
       { text: "Co-led 35+ people (14 direct reports) across a multi-product org", slug: "designos" },
       { text: "Grew a team to 16+ and held the hiring bar through an acquisition" },

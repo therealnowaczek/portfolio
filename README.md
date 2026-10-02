@@ -1,6 +1,6 @@
 # Marcin Nowak · Portfolio
 
-Personal portfolio: a one-page CV-matched site with selected product case studies. Positioning: Head of Design / Senior UX Manager (hands-on), Lead Product Designer, with AI in the workflow.
+Personal portfolio: a one-page CV-matched site with selected product case studies. Positioning: Head of Design / Senior UX Manager , Lead Product Designer, with AI in the workflow.
 
 Live: https://therealnowaczek.github.io/portfolio/
 
