@@ -35,19 +35,19 @@ export const SITE = {
 
 /** Hook: leadership claim, then the tension that makes people scroll. */
 export const INTRO_HEADLINE =
-  "I lead design teams, and I take products from first question to shipped.";
+  "I lead design teams, and I love taking a product from the first question all the way to shipped.";
 
 export const INTRO_SUBLINE =
-  "Most recently: an AI product I designed and built solo, where the agent acts only after you say yes.";
+  "Most recently that meant building an AI product on my own, where the agent only acts after you say yes.";
 
 /** Proof first, then the titles a recruiter or ATS will match. */
 export const INTRO_PARAGRAPHS = [
-  "Senior UX Manager at Appfire, co-leading 35+ designers, researchers, and writers (14 reporting to me directly) across BigPicture, 7pace, and AI workstreams. Before that, Head of Design at SoftwarePlant: I grew the team to 16+ and carried it through the Appfire acquisition. Through all of it I was also the lead designer behind BigPicture's OKRs, Gantt, and Financials.",
-  "AI is how I work now, not a slide: agentic workflows and design-to-code rolled out across a UX org, and CostRadar.ai, an early-stage profitability product I designed and built solo, where the AI proposes and you approve.",
+  "I'm a Senior UX Manager at Appfire, co-leading 35+ designers, researchers, and writers (14 report to me directly) across BigPicture, 7pace, and our AI workstreams. Before that I was Head of Design at SoftwarePlant, where I grew the team to 16+ and walked it through the Appfire acquisition. Along the way I was also the lead designer behind BigPicture's OKRs, Gantt, and Financials.",
+  "AI is part of how I work every day. I rolled out agentic workflows and design-to-code across a UX org, and I designed and built CostRadar.ai on my own: an early-stage profitability product where the AI proposes and you approve.",
 ];
 
 export const INTRO_LOOKING_FOR =
-  "Looking for: Head of Design or Senior UX Manager roles with a team and a product to own, or Lead Product Designer roles with real scope over AI products and design systems. Remote, EU.";
+  "I'm looking for Head of Design or Senior UX Manager roles with a team and a product to own, or Lead Product Designer roles with real scope over AI products and design systems. Remote, EU.";
 
 export type HeroStat = {
   value: string;
@@ -57,13 +57,13 @@ export type HeroStat = {
 /** Scale and scope only. Product outcomes live in the Impact section. */
 export const HERO_STATS: HeroStat[] = [
   { value: "35+", label: "designers, researchers, and writers co-led at Appfire, 14 reporting to me directly" },
-  { value: "16+", label: "design team built as Head of Design, carried through an acquisition" },
+  { value: "16+", label: "design team I grew as Head of Design and carried through an acquisition" },
   { value: "15 yrs", label: "designing digital products, from a public broadcaster to an Atlassian Marketplace best-seller" },
   { value: "Live", label: "an AI product I designed and built solo: CostRadar.ai (early-stage)" },
 ];
 
 export const EXPERIENCE_INTRO =
-  "From a public broadcaster's web team to an Atlassian Marketplace best-seller, and now to an AI product I am building alone.";
+  "From a public broadcaster's web team to an Atlassian Marketplace best-seller, and now to an AI product I'm building on my own.";
 
 export const EXPERIENCE: ExperienceItem[] = [
   {
@@ -71,21 +71,21 @@ export const EXPERIENCE: ExperienceItem[] = [
     role: "Founder & AI Design Engineer",
     company: "CostRadar.ai",
     blurb:
-      "Independent founder. Live, early-stage profitability product for multi-channel e-commerce (costradar.ai): 28 freemium users and one design partner so far, no paying customers yet. I designed and built it solo: true-net ledger, savings tracker, and an AI Profit Agent that only changes things after you Approve.",
+      "Independent founder. A live, early-stage profitability product for multi-channel e-commerce (costradar.ai), with 28 freemium users and one design partner so far, and no paying customers yet. I designed and built it on my own: a true-net ledger, a savings tracker, and an AI Profit Agent that only changes things after you Approve.",
   },
   {
     years: "2023 - 2026",
     role: "Senior UX Manager",
     company: "Appfire",
     blurb:
-      "After the acquisition my scope grew from one team to a multi-product org: I co-led 35+ designers, researchers, and writers (14 direct reports) across BigPicture, 7pace, and AI workstreams, up from the 16+ team I had led as Head of Design. Ran design ops, estimation, Figma standards, research ops, and AI rollout, and kept leading design on BigPicture itself. BigPicture team outcomes (see Impact): +47% OKR adoption, financial-module adoption 53% to 84% in 3 months, 58% fewer unclear financial reports.",
+      "After the acquisition my scope grew from one team to a multi-product org. I co-led 35+ designers, researchers, and writers (14 direct reports) across BigPicture, 7pace, and AI workstreams, up from the 16+ team I'd led as Head of Design. I ran design ops, estimation, Figma standards, research ops, and the AI rollout, and kept leading design on BigPicture itself. Team outcomes on BigPicture (see Impact): +47% OKR adoption, financial-module adoption up from 53% to 84% in 3 months, and 58% fewer unclear financial reports.",
   },
   {
     years: "2021 - Present",
     role: "Freelance Product Designer",
     company: "Independent (alongside staff roles)",
     blurb:
-      "Product design for mobile apps, desktop products, and web, from framing and UI through delivery. Most of the client work in this portfolio comes from here and is anonymized: brands and names are created for presentation.",
+      "Product design for mobile apps, desktop products, and the web, from framing and UI through delivery. Most of the client work in this portfolio comes from here. It's anonymized, so brands and names are created for presentation.",
   },
   {
     years: "2019 - 2023",
@@ -179,7 +179,7 @@ export const TOOL_GROUPS: SkillGroup[] = [
   },
   {
     title: "AI & build",
-    blurb: "Stack I ship with.",
+    blurb: "What I build with.",
     accent: true,
     items: [
       "Cursor",
@@ -247,7 +247,7 @@ export type FitRole = {
 };
 
 export const FIT_INTRO =
-  "Three seats where the same story pays off. Every proof links to the case behind it.";
+  "Three roles where I can help most. Each example links to the case behind it.";
 
 export const FIT_ROLES: FitRole[] = [
   {
@@ -256,7 +256,7 @@ export const FIT_ROLES: FitRole[] = [
     tag: "Preferred",
     preferred: true,
     pitch:
-      "A design function that product and engineering can plan around, led by someone who also owns the hardest product problems.",
+      "A design team that product and engineering can plan around, with a lead who is happy to own the hardest product problems too.",
     proof: [
       { text: "Co-led 35+ people (14 direct reports) across a multi-product org", slug: "designos" },
       { text: "Grew a team to 16+ and held the hiring bar through an acquisition" },
@@ -267,7 +267,7 @@ export const FIT_ROLES: FitRole[] = [
     title: "Lead Product Designer+",
     tag: "Also targeting",
     pitch:
-      "The hardest surface owned end to end: dense enterprise UX that stays clear under load, plus the system around it.",
+      "One hard surface, owned end to end: dense enterprise UX that stays clear under load, and the design system around it.",
     proof: [
       { text: "Hierarchy under cognitive load: leadership OKRs", slug: "okrs" },
       { text: "Retrieval speed as a design constraint: program Gantt", slug: "gantt" },
@@ -296,17 +296,17 @@ export const AGENTIC_PIPELINE: PipelineStep[] = [
   {
     step: "Sense",
     detail: "Research ops · signals · intake",
-    beat: "Gather what matters before anyone opens Figma: support themes, usage, constraints, the real ask.",
+    beat: "Gather what matters before anyone opens Figma: support themes, usage, constraints, and the real ask.",
   },
   {
     step: "Frame",
     detail: "Problem · constraints · bets",
-    beat: "Name the decision, the constraints, and the bet. If the frame is wrong, speed only ships the wrong thing faster.",
+    beat: "Name the decision, the constraints, and the bet. If the frame is wrong, speed just ships the wrong thing faster.",
   },
   {
     step: "Agent",
     detail: "Explore · synthesize · draft",
-    beat: "AI covers ground: variants, flows, edge cases. I keep the problem frame and throw out what doesn’t earn a review.",
+    beat: "AI covers the ground: variants, flows, edge cases. I keep the frame and drop whatever doesn’t earn a review.",
   },
   {
     step: "Craft",
@@ -316,20 +316,20 @@ export const AGENTIC_PIPELINE: PipelineStep[] = [
   {
     step: "Ship",
     detail: "Design-to-code · real product",
-    beat: "Pair early on states and performance. The artifact isn’t a deck; it’s UI that lands in the product.",
+    beat: "Pair with engineers early on states and performance. The deliverable isn’t a deck, it’s UI that lands in the product.",
   },
   {
     step: "Learn",
     detail: "KPIs · benchmarks · loops",
-    beat: "What decision did this unlock next week, and what do we measure so the next loop starts smarter?",
+    beat: "Which decision did this unlock for next week, and what do we measure so the next loop starts smarter?",
   },
 ];
 
 export const PROCESS_HEADLINE =
-  "AI drafts. People own the frame, the craft, and the ship call.";
+  "AI does the drafting. People own the frame, the craft, and the call to ship.";
 
 export const PROCESS_INTRO =
-  "That is the loop I rolled out across a UX org, and the rule behind the Approve button in CostRadar. Cursor and Claude help me cover more ground before a review, not after the call is already made.";
+  "This is the loop I rolled out across a UX org, and the rule behind the Approve button in CostRadar. Cursor and Claude help me cover more ground before a review, never after the call has already been made.";
 
 export type CaseLink = {
   label: string;
@@ -346,7 +346,7 @@ export const LEADERSHIP_HEADLINE =
   "We lost our VP and two fellow Senior Managers, and the team was cut in half. The 14 people who stayed now reported to me.";
 
 export const LEADERSHIP_STORY =
-  "The projects could not pause, so I held three things at once: continuity on BigPicture, 7pace, and the AI workstreams; the decisions a leadership team used to share; and a team that had just lost half of itself. Critique, intake, and the calls with product and engineering all ran through me. That is the part of leadership no org chart shows, and the part I trust myself with most.";
+  "The projects couldn't pause, so I held three things at once: continuity on BigPicture, 7pace, and the AI workstreams; the decisions a leadership team used to share; and a team that had just lost half of itself. Critique, intake, and every call with product and engineering ran through me. It's the part of leadership no org chart shows, and the part I trust myself with most.";
 
 export type LeadershipPillar = {
   title: string;
@@ -357,15 +357,15 @@ export type LeadershipPillar = {
 export const LEADERSHIP_PILLARS: LeadershipPillar[] = [
   {
     title: "Hiring bars that survived an acquisition",
-    body: "At SoftwarePlant I grew the team to 16+ with clear hiring bars, design-system standards, and delivery rules. After Appfire acquired us, those bars had to hold across products like BigPicture and 7pace. They did.",
+    body: "At SoftwarePlant I grew the team to 16+ with clear hiring bars, design-system standards, and delivery rules. When Appfire acquired us, those bars had to hold across products like BigPicture and 7pace. They did.",
   },
   {
     title: "Craft and delivery, coached together",
-    body: "Weekly 1:1s on problem framing and trade-offs, reviews that raise interaction quality, and growth paths tied to what the product needs next. Once 14 people reported to me directly, that coaching had to be a weekly practice.",
+    body: "Weekly 1:1s on problem framing and trade-offs, reviews that raise interaction quality, and growth paths tied to what the product needs next. With 14 people reporting to me directly, coaching had to become a weekly habit, not a nice-to-have.",
   },
   {
     title: "Ops that engineering can plan against",
-    body: "Intake with completeness scoring, velocity-based estimation, Figma standards, and research ops turned UX from local heroics into something engineering could schedule.",
+    body: "Intake with completeness scoring, velocity-based estimation, Figma standards, and research ops turned UX from local heroics into something engineering could plan around.",
     caseLink: { label: "Read the DesignOS case", slug: "designos" },
   },
 ];
@@ -378,7 +378,7 @@ export type ImpactMetric = {
 };
 
 export const IMPACT_INTRO =
-  "On BigPicture, design was judged by whether finance teams and PMs trusted what they saw and whether leadership teams stuck with the workflow. These are the results.";
+  "On BigPicture, design worked when finance teams and PMs trusted what they saw and leadership teams kept using the workflow. Here is how that played out.";
 
 export const IMPACT_METRICS: ImpactMetric[] = [
   {
@@ -409,7 +409,7 @@ export const IMPACT_METRICS: ImpactMetric[] = [
 ];
 
 export const IMPACT_NOTE =
-  "The BigPicture metrics are team outcomes of the product team at Appfire (design, product, and engineering together), not individual attribution. DesignOS adoption is the org I co-led. I am glad to walk through baselines, measurement windows, and exactly what I owned in an interview.";
+  "The BigPicture metrics are team outcomes from the product team at Appfire (design, product, and engineering together), not individual attribution. DesignOS adoption is the org I co-led. I'm happy to walk through baselines, measurement windows, and exactly what I owned in an interview.";
 
 export const CLOSING_CTA =
-  "If you are building a design org that has to move faster without lowering the bar, or an AI product that has to earn trust before it earns autonomy, I would like to hear about it. Based in Poland, open to remote roles across the EU. Email is the fastest way to reach me.";
+  "If you're building a design org that has to move faster without lowering the bar, or an AI product that has to earn trust before it earns autonomy, I'd love to hear about it. I'm based in Poland and open to remote roles across the EU. Email is the fastest way to reach me.";

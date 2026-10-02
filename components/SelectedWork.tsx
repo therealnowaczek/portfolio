@@ -203,15 +203,16 @@ export function SelectedWork({ projects, onOpen }: Props) {
           ) : null}
         </div>
         <p className="text-sm leading-relaxed text-muted sm:text-[15px]">
-          Four stories I would tell in an interview. Start with CostRadar: what
-          should an AI agent be allowed to do with your ad budget? Then an org
-          that stopped running on heroics, and two enterprise surfaces where
-          density was the whole problem. Below them, freelance product design
-          since 2021, each engagement ending with a satisfied client.
+          Four stories I would happily tell in an interview. Start with
+          CostRadar: what should an AI agent be allowed to do with your ad
+          budget? Then an org that stopped running on heroics, and two
+          enterprise surfaces where density was the whole problem. Below them
+          is my freelance product design since 2021, and every engagement
+          ended with a satisfied client.
         </p>
         <p className="mt-2 text-xs leading-relaxed text-muted sm:text-[13px]">
-          Client and employer work is anonymized: brands and names are created
-          for presentation.
+          Client and employer work is anonymized, so brands and names are
+          created for presentation.
         </p>
       </div>
 

@@ -8,7 +8,7 @@ export function Fit({ onOpen }: Props) {
     <section aria-labelledby="fit-heading" className="space-y-6">
       <div className="max-w-2xl">
         <h2 id="fit-heading" className="section-title">
-          Where I would be useful
+          Where I can help
         </h2>
         <p className="text-sm leading-relaxed text-muted sm:text-[15px]">
           {FIT_INTRO}
