@@ -22,14 +22,6 @@ type Props = {
   onNavigate: (slug: string) => void;
 };
 
-function MetaLine({ project }: { project: Project }) {
-  return (
-    <p className="mt-3 text-sm text-muted">
-      {[project.platform, project.role, project.timeline].join(" · ")}
-    </p>
-  );
-}
-
 export function ProjectModal({
   project,
   prev,
@@ -165,40 +157,49 @@ export function ProjectModal({
                   />
                 )}
               </div>
-              <div>
+              <div className="max-w-3xl">
                 <h2
                   id={titleId}
                   className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
                 >
                   {project.title}
                 </h2>
-                <p className="mt-2 max-w-3xl text-[15px] leading-relaxed text-foreground-secondary sm:text-base">
-                  {project.oneLiner}
+                <p className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted">
+                  <span>
+                    {[project.platform, project.role, project.timeline].join(
+                      " · ",
+                    )}
+                  </span>
+                  {project.slug === "costradar" ? (
+                    <>
+                      <span aria-hidden className="text-border">
+                        ·
+                      </span>
+                      <a
+                        href="https://costradar.ai"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-accent underline-offset-2 hover:underline"
+                      >
+                        costradar.ai
+                      </a>
+                    </>
+                  ) : null}
                 </p>
-                {project.slug === "costradar" ? (
-                  <p className="mt-2 text-sm text-muted">
-                    Live at{" "}
-                    <a
-                      href="https://costradar.ai"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-medium text-accent underline-offset-2 hover:underline"
-                    >
-                      costradar.ai
-                    </a>
-                  </p>
-                ) : null}
-                <MetaLine project={project} />
                 {project.slug !== "costradar" ? (
                   <p className="mt-2 text-xs text-muted">
                     Anonymized for presentation: brand and names are invented.
                   </p>
                 ) : null}
                 {caseStudy.snapshot ? (
-                  <p className="mt-5 max-w-3xl text-[15px] leading-relaxed text-foreground-secondary sm:text-base">
+                  <p className="mt-5 text-[15px] leading-relaxed text-foreground-secondary sm:text-base">
                     <RichText>{caseStudy.snapshot}</RichText>
                   </p>
-                ) : null}
+                ) : (
+                  <p className="mt-5 text-[15px] leading-relaxed text-foreground-secondary sm:text-base">
+                    {project.oneLiner}
+                  </p>
+                )}
               </div>
             </header>
 
