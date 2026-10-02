@@ -28,7 +28,7 @@ function NumberedList({ items }: { items: string[] }) {
       {items.map((item, i) => (
         <li
           key={item}
-          className="grid grid-cols-[1.5rem_1fr] gap-x-2.5 text-[15px] leading-relaxed text-foreground-secondary"
+          className="grid grid-cols-[1.5rem_1fr] items-baseline gap-x-2.5 text-[15px] leading-relaxed text-foreground-secondary"
         >
           <span className="text-[11px] font-semibold tabular-nums text-accent">
             {String(i + 1).padStart(2, "0")}
