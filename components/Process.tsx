@@ -39,18 +39,18 @@ export function Process({ onOpen }: Props) {
   }, []);
 
   return (
-    <section aria-labelledby="process-heading" className="max-w-3xl space-y-6">
-      <div>
-        <h2 id="process-heading" className="section-title">
-          AI &amp; process
-        </h2>
-        <p className="text-xl font-semibold leading-snug tracking-tight text-foreground sm:text-2xl">
-          {PROCESS_HEADLINE}
-        </p>
-        <p className="mt-4 text-[15px] leading-relaxed text-foreground-secondary sm:text-base">
+    <section aria-labelledby="process-heading" className="space-y-6">
+      <h2 id="process-heading" className="section-title">
+        AI &amp; process
+      </h2>
+      <p className="text-xl font-semibold leading-snug tracking-tight text-foreground sm:text-2xl">
+        {PROCESS_HEADLINE}
+      </p>
+      <div className="max-w-3xl space-y-4">
+        <p className="text-[15px] leading-relaxed text-foreground-secondary sm:text-base">
           {PROCESS_INTRO}
         </p>
-        <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+        <div className="flex flex-wrap gap-x-6 gap-y-2">
           {PROCESS_LINKS.map((link) => (
             <CaseLinkButton key={link.slug} slug={link.slug} onOpen={onOpen}>
               {link.title}
@@ -59,7 +59,7 @@ export function Process({ onOpen }: Props) {
         </div>
       </div>
 
-      <ol ref={listRef} className="space-y-4 border-t border-border pt-6">
+      <ol ref={listRef} className="max-w-3xl space-y-4 border-t border-border pt-6">
         {AGENTIC_PIPELINE.map((node, i) => (
           <li
             key={node.step}
