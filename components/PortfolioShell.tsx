@@ -16,6 +16,7 @@ import { Process } from "./Process";
 import { ProjectModal } from "./ProjectModal";
 import { Fit } from "./Fit";
 import { SideNav, type NavItem } from "./SideNav";
+import { Reveal } from "./Reveal";
 
 type Props = {
   projects: Project[];
@@ -115,7 +116,9 @@ export function PortfolioShell({ projects }: Props) {
         <main id="main" className="mt-10 min-w-0 sm:mt-14">
           {/* Story arc: hook -> proof in work -> results -> how I lead -> how I use AI -> path -> close */}
           <div id="about" className="min-w-0 max-w-full scroll-mt-36">
-            <Intro />
+            <Reveal eager>
+              <Intro />
+            </Reveal>
           </div>
 
           <div id="portfolio" className="section-rule scroll-mt-36">
@@ -123,28 +126,42 @@ export function PortfolioShell({ projects }: Props) {
           </div>
 
           <div id="impact" className="section-rule scroll-mt-36">
-            <Impact />
+            <Reveal>
+              <Impact />
+            </Reveal>
           </div>
 
           <div id="leadership" className="section-rule scroll-mt-36">
-            <Leadership onOpen={open} />
+            <Reveal>
+              <Leadership onOpen={open} />
+            </Reveal>
           </div>
 
           <div id="process" className="section-rule scroll-mt-36">
-            <Process onOpen={open} />
+            <Reveal>
+              <Process onOpen={open} />
+            </Reveal>
           </div>
 
           <div id="experience" className="section-rule scroll-mt-36">
-            <Experience />
+            <Reveal>
+              <Experience />
+            </Reveal>
           </div>
 
           <div id="expertise" className="section-rule scroll-mt-36">
-            <ExpertiseTools />
+            <Reveal>
+              <ExpertiseTools />
+            </Reveal>
           </div>
 
           <div id="connect" className="section-rule scroll-mt-36 space-y-12">
-            <Fit onOpen={open} />
-            <Footer />
+            <Reveal>
+              <Fit onOpen={open} />
+            </Reveal>
+            <Reveal delay={80}>
+              <Footer />
+            </Reveal>
           </div>
         </main>
       </div>

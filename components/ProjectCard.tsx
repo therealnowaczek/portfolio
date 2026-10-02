@@ -10,9 +10,19 @@ type Props = {
   onOpen: (slug: string) => void;
   spanClass: string;
   featured?: boolean;
+  /** When set, card plays a staggered entrance. */
+  reveal?: boolean;
+  revealDelayMs?: number;
 };
 
-export function ProjectCard({ project, onOpen, spanClass, featured = false }: Props) {
+export function ProjectCard({
+  project,
+  onOpen,
+  spanClass,
+  featured = false,
+  reveal,
+  revealDelayMs = 0,
+}: Props) {
   const activate = () => onOpen(project.slug);
 
   const onKeyDown = (e: KeyboardEvent<HTMLElement>) => {
@@ -22,6 +32,13 @@ export function ProjectCard({ project, onOpen, spanClass, featured = false }: Pr
     }
   };
 
+  const revealClass =
+    reveal === undefined
+      ? ""
+      : reveal
+        ? "reveal-item reveal-item-in"
+        : "reveal-item";
+
   return (
     <article
       role="button"
@@ -30,10 +47,13 @@ export function ProjectCard({ project, onOpen, spanClass, featured = false }: Pr
       aria-label={`Open project: ${project.title}`}
       onClick={activate}
       onKeyDown={onKeyDown}
-      className={`group relative min-h-[240px] cursor-pointer overflow-hidden rounded-[10px] border border-transparent bg-white outline-none transition-all duration-[160ms] ease-out hover:-translate-y-0.5 hover:border-accent/40 focus-visible:border-accent md:min-h-0 ${spanClass}`}
+      className={`group relative min-h-[240px] cursor-pointer overflow-hidden rounded-[10px] border border-transparent bg-white outline-none transition-[transform,border-color,box-shadow] duration-[220ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:border-accent/40 focus-visible:border-accent md:min-h-0 ${spanClass} ${revealClass}`}
       style={
         {
           ["--project-accent" as string]: project.accent,
+          ...(reveal !== undefined
+            ? { ["--reveal-item-delay" as string]: `${revealDelayMs}ms` }
+            : null),
         }
       }
     >
@@ -42,7 +62,7 @@ export function ProjectCard({ project, onOpen, spanClass, featured = false }: Pr
           <ProjectImage
             src={project.coverPath}
             alt={`${project.title} cover`}
-            className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-[220ms] ease-out group-hover:scale-[1.03]"
+            className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-[320ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
           />
         ) : (
           <ProjectPlaceholder

@@ -10,7 +10,10 @@
   --border: #e5e7eb;
   --radius: 8px;
   --motion: 160ms;
+  --motion-reveal: 420ms;
   --ease: ease-out;
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+  --reveal-delay: 0ms;
 }
 
 @theme inline {
@@ -125,6 +128,56 @@ a {
   font-size: 0.8125rem;
   line-height: 1.2;
   padding: 0.35rem 0.7rem;
+}
+
+/* One-shot section / block entrance */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+  transition:
+    opacity var(--motion-reveal) var(--ease-out-expo),
+    transform var(--motion-reveal) var(--ease-out-expo);
+  transition-delay: var(--reveal-delay);
+  will-change: opacity, transform;
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.reveal-item {
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+}
+
+.reveal-item-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  animation: reveal-up var(--motion-reveal) var(--ease-out-expo) both;
+  animation-delay: var(--reveal-item-delay, 0ms);
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none !important;
+    will-change: auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -7,6 +7,7 @@ import {
   type FilterId,
   type Project,
 } from "@/lib/project-types";
+import { useInView } from "@/lib/use-in-view";
 import { ProjectCard } from "./ProjectCard";
 
 type Props = {
@@ -169,6 +170,7 @@ function mdFullFor(index: number, length: number, hasFeaturedFirst: boolean) {
 
 export function SelectedWork({ projects, onOpen }: Props) {
   const [filter, setFilter] = useState<FilterId>("all");
+  const [sectionRef, shown] = useInView<HTMLElement>();
 
   const visible = useMemo(
     () => projects.filter((p) => matchesFilter(p, filter)),
@@ -190,8 +192,14 @@ export function SelectedWork({ projects, onOpen }: Props) {
   const restSpans = useMemo(() => tileColumns(rest.length), [rest.length]);
 
   return (
-    <section aria-labelledby="work-heading" className="space-y-8">
-      <div className="max-w-2xl">
+    <section
+      ref={sectionRef}
+      aria-labelledby="work-heading"
+      className="space-y-8"
+    >
+      <div
+        className={`max-w-2xl reveal ${shown ? "reveal-in" : ""}`}
+      >
         <div className="mb-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <h2 id="work-heading" className="section-title mb-0">
             Selected work
@@ -250,6 +258,8 @@ export function SelectedWork({ projects, onOpen }: Props) {
                   project={project}
                   onOpen={onOpen}
                   featured={index === 0}
+                  reveal={shown}
+                  revealDelayMs={40 + Math.min(index, 7) * 55}
                   spanClass={spanClassFor(allSpans[index] ?? 4, {
                     mdFull: mdFullFor(index, lead.length, true),
                   })}
@@ -265,6 +275,8 @@ export function SelectedWork({ projects, onOpen }: Props) {
                   key={project.slug}
                   project={project}
                   onOpen={onOpen}
+                  reveal={shown}
+                  revealDelayMs={40 + Math.min(lead.length + index, 10) * 55}
                   spanClass={spanClassFor(restSpans[index] ?? 4, {
                     mdFull: mdFullFor(index, rest.length, false),
                   })}
@@ -296,6 +308,8 @@ export function SelectedWork({ projects, onOpen }: Props) {
                 key={project.slug}
                 project={project}
                 onOpen={onOpen}
+                reveal={shown}
+                revealDelayMs={40 + index * 55}
                 spanClass={
                   oddFilterOrphan
                     ? "md:col-span-2 lg:col-span-12 lg:row-span-2"

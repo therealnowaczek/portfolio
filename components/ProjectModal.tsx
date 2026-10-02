@@ -62,6 +62,8 @@ export function ProjectModal({
   const isPhoneCover = /ios|android/i.test(project.platform);
 
   const bodyRef = useRef<HTMLDivElement>(null);
+  const [entered, setEntered] = useState(false);
+  const [exiting, setExiting] = useState(false);
 
   useEffect(() => {
     const prevOverflow = document.body.style.overflow;
@@ -74,15 +76,40 @@ export function ProjectModal({
   }, [project.slug]);
 
   useEffect(() => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) {
+      setEntered(true);
+      return;
+    }
+    setEntered(false);
+    const id = requestAnimationFrame(() => {
+      requestAnimationFrame(() => setEntered(true));
+    });
+    return () => cancelAnimationFrame(id);
+  }, []);
+
+  const requestClose = useCallback(() => {
+    if (exiting) return;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) {
+      onClose();
+      return;
+    }
+    setExiting(true);
+    setEntered(false);
+    window.setTimeout(onClose, 220);
+  }, [exiting, onClose]);
+
+  useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         if (lightbox) setLightbox(null);
-        else onClose();
+        else requestClose();
       }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [lightbox, onClose]);
+  }, [lightbox, requestClose]);
 
   const trapFocus = useCallback((e: KeyboardEvent) => {
     if (e.key !== "Tab" || !panelRef.current) return;
@@ -107,13 +134,17 @@ export function ProjectModal({
   }, [trapFocus]);
 
   const onBackdrop = (e: MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) onClose();
+    if (e.target === e.currentTarget) requestClose();
   };
+
+  const openClass = entered && !exiting;
 
   return (
     <>
       <div
-        className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-black/40 p-3 sm:p-6"
+        className={`fixed inset-0 z-50 flex items-center justify-center overflow-hidden p-3 transition-colors duration-[220ms] ease-[cubic-bezier(0.22,1,0.36,1)] sm:p-6 ${
+          openClass ? "bg-black/40" : "bg-black/0"
+        }`}
         role="presentation"
         onClick={onBackdrop}
       >
@@ -122,7 +153,11 @@ export function ProjectModal({
           role="dialog"
           aria-modal="true"
           aria-labelledby={titleId}
-          className="relative flex max-h-[min(960px,calc(100vh-1.5rem))] w-full max-w-[min(1240px,calc(100vw-1.5rem))] flex-col overflow-hidden rounded-[10px] border border-border bg-white shadow-xl outline-none sm:max-h-[calc(100vh-2.5rem)]"
+          className={`relative flex max-h-[min(960px,calc(100vh-1.5rem))] w-full max-w-[min(1240px,calc(100vw-1.5rem))] flex-col overflow-hidden rounded-[10px] border border-border bg-white shadow-xl outline-none transition-[opacity,transform] duration-[280ms] ease-[cubic-bezier(0.22,1,0.36,1)] sm:max-h-[calc(100vh-2.5rem)] ${
+            openClass
+              ? "translate-y-0 opacity-100"
+              : "translate-y-3 opacity-0"
+          }`}
         >
           <div className="relative z-20 flex shrink-0 items-center justify-between gap-3 border-b border-border bg-white px-4 py-3 sm:px-6">
             <p className="truncate text-sm font-medium text-foreground">
@@ -131,7 +166,7 @@ export function ProjectModal({
             <button
               ref={closeRef}
               type="button"
-              onClick={onClose}
+              onClick={requestClose}
               aria-label="Close"
               className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-[8px] text-muted transition-colors duration-[160ms] hover:bg-surface hover:text-foreground"
             >
@@ -332,7 +367,7 @@ export function ProjectModal({
                       <button
                         key={item.title}
                         type="button"
-                        className="group overflow-hidden rounded-[8px] border border-border text-left transition-colors duration-[160ms] hover:border-foreground/20"
+                        className="group overflow-hidden rounded-[8px] border border-border text-left transition-[border-color,transform] duration-[220ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:border-foreground/20"
                         onClick={() => setLightbox({ src, title: item.title })}
                       >
                         {src ? (
