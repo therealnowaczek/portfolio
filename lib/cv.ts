@@ -343,10 +343,10 @@ export const PROCESS_LINKS: CaseLink[] = [
 ];
 
 export const LEADERSHIP_HEADLINE =
-  "I ran the design org when it was half the size and missing its VP layer.";
+  "Leadership is making other people better at shipping, not collecting credit for the ship.";
 
 export const LEADERSHIP_STORY =
-  "Fourteen people reported to me. BigPicture, 7pace, and the AI workstreams still needed weekly decisions, so I took on what a leadership team used to share: critique, intake, and every call with product and engineering. Continuity for the products, a clear bar for what shipped, and a team that needed steady ground. That stretch is the part of leadership no org chart shows, and the part I trust myself with most.";
+  "I care about clear bars, honest feedback, and a team that can decide without waiting for me in the room. Over the years I've seen the full range: growing a team, walking it through an acquisition, co-leading 35+ people, coaching when fourteen reported to me directly, and the messy stretches when the org chart stopped matching reality. That is why I trust the basics: hire well, coach weekly, make ops boring, and stay close enough to the craft that the bar is real.";
 
 export type LeadershipPillar = {
   title: string;
