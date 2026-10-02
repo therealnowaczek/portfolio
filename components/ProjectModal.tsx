@@ -284,7 +284,7 @@ export function ProjectModal({
                   {caseStudy.process.map((step) => (
                     <li
                       key={step.n}
-                      className="grid grid-cols-[1.75rem_1fr] gap-x-3"
+                      className="grid grid-cols-[1.75rem_1fr] items-baseline gap-x-3"
                     >
                       <span className="text-[11px] font-semibold tabular-nums text-accent">
                         {String(step.n).padStart(2, "0")}
