@@ -38,12 +38,12 @@ export const INTRO_HEADLINE =
   "I lead design teams, and I love taking a product from the first question all the way to shipped.";
 
 export const INTRO_SUBLINE =
-  "Most recently that meant building an AI product on my own, where the agent only acts after you say yes.";
+  "I also orchestrate AI: agents do the legwork across research, design, and code, and people steer.";
 
 /** Proof first, then the titles a recruiter or ATS will match. */
 export const INTRO_PARAGRAPHS = [
   "I'm a Senior UX Manager at Appfire, co-leading 35+ designers, researchers, and writers (14 report to me directly) across BigPicture, 7pace, and our AI workstreams. Before that I was Head of Design at SoftwarePlant, where I grew the team to 16+ and walked it through the Appfire acquisition. Along the way I was also the lead designer behind BigPicture's OKRs, Gantt, and Financials.",
-  "AI is part of how I work every day. I rolled out agentic workflows and design-to-code across a UX org, and I designed and built CostRadar.ai on my own: an early-stage profitability product where the AI proposes and you approve.",
+  "AI is part of how I work every day. I rolled out agentic workflows and design-to-code across a UX org, and I designed and built CostRadar.ai on my own: an early-stage profitability product where an AI agent hunts for margin leaks, cites its sources, and prepares a reversible fix for you to approve.",
 ];
 
 export const INTRO_LOOKING_FOR =
@@ -278,10 +278,10 @@ export const FIT_ROLES: FitRole[] = [
     title: "AI UX / Design Engineering",
     tag: "Runs through both",
     pitch:
-      "AI that earns trust: agents that propose, people who approve, and a designer who can build it.",
+      "Agents that do the legwork, people who steer, and a designer who can build all of it.",
     proof: [
-      { text: "An agent that only acts after Approve, built solo", slug: "costradar" },
-      { text: "A human-gated AI loop across a UX org", slug: "designos" },
+      { text: "An AI agent that finds margin leaks and prepares the fix, built on my own", slug: "costradar" },
+      { text: "Agentic workflows rolled out across a UX org", slug: "designos" },
     ],
   },
 ];
