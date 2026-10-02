@@ -343,10 +343,10 @@ export const PROCESS_LINKS: CaseLink[] = [
 ];
 
 export const LEADERSHIP_HEADLINE =
-  "We lost our VP and two fellow Senior Managers, and the team was cut in half. The 14 people who stayed now reported to me.";
+  "I ran the design org when it was half the size and missing its VP layer.";
 
 export const LEADERSHIP_STORY =
-  "The projects couldn't pause, so I held three things at once: continuity on BigPicture, 7pace, and the AI workstreams; the decisions a leadership team used to share; and a team that had just lost half of itself. Critique, intake, and every call with product and engineering ran through me. It's the part of leadership no org chart shows, and the part I trust myself with most.";
+  "Fourteen people reported to me. BigPicture, 7pace, and the AI workstreams still needed weekly decisions, so I took on what a leadership team used to share: critique, intake, and every call with product and engineering. Continuity for the products, a clear bar for what shipped, and a team that needed steady ground. That stretch is the part of leadership no org chart shows, and the part I trust myself with most.";
 
 export type LeadershipPillar = {
   title: string;
