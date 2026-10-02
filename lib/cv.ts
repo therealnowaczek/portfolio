@@ -35,10 +35,10 @@ export const SITE = {
 
 /** Hook: leadership claim, then the tension that makes people scroll. */
 export const INTRO_HEADLINE =
-  "I lead design teams, and I love taking a product from the first question all the way to shipped.";
+  "I lead design teams and orchestrate AI.";
 
 export const INTRO_SUBLINE =
-  "I also orchestrate AI: agents do the legwork across research, design, and code, and people steer.";
+  "Agents do the legwork across research, design, and code. People steer. Products ship.";
 
 /** Proof first, then the titles a recruiter or ATS will match. */
 export const INTRO_PARAGRAPHS = [
