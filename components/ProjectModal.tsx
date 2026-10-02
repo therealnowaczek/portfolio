@@ -28,7 +28,7 @@ function NumberedList({ items }: { items: string[] }) {
       {items.map((item, i) => (
         <li
           key={item}
-          className="grid grid-cols-[1.5rem_1fr] items-baseline gap-x-2.5 text-[15px] leading-relaxed text-foreground-secondary"
+          className="grid grid-cols-[1.35rem_1fr] items-baseline gap-x-2 text-[15px] leading-relaxed text-foreground-secondary"
         >
           <span className="text-[11px] font-semibold tabular-nums text-accent">
             {String(i + 1).padStart(2, "0")}
@@ -284,7 +284,7 @@ export function ProjectModal({
                   {caseStudy.process.map((step) => (
                     <li
                       key={step.n}
-                      className="grid grid-cols-[1.75rem_1fr] items-baseline gap-x-3"
+                      className="grid grid-cols-[1.5rem_1fr] items-baseline gap-x-2"
                     >
                       <span className="text-[11px] font-semibold tabular-nums text-accent">
                         {String(step.n).padStart(2, "0")}
