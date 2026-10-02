@@ -42,12 +42,12 @@ export const INTRO_SUBLINE =
 
 /** Proof first, then the titles a recruiter or ATS will match. */
 export const INTRO_PARAGRAPHS = [
-  "I'm a Senior UX Manager at Appfire, co-leading 35+ designers, researchers, and writers (14 report to me directly) across BigPicture, 7pace, and our AI workstreams. Before that I was Head of Design at SoftwarePlant, where I grew the team to 16+ and walked it through the Appfire acquisition. Along the way I was also the lead designer behind BigPicture's OKRs, Gantt, and Financials.",
+  "Until 2026 I was a Senior UX Manager at Appfire, where I co-led 35+ designers, researchers, and writers (14 reported to me directly) across BigPicture, 7pace, and our AI workstreams. Before that I was Head of Design at SoftwarePlant, where I grew the team to 16+ and walked it through the Appfire acquisition. Along the way I was also the lead designer behind BigPicture's OKRs, Gantt, and Financials.",
   "AI is part of how I work every day. I rolled out agentic workflows and design-to-code across a UX org, and I designed and built CostRadar.ai on my own: an early-stage profitability product where an AI agent hunts for margin leaks, cites its sources, and prepares a reversible fix for you to approve.",
 ];
 
 export const INTRO_LOOKING_FOR =
-  "I'm looking for Head of Design or Senior UX Manager roles with a team and a product to own, or Lead Product Designer roles with real scope over AI products and design systems. Remote, EU.";
+  "Now looking for Head of Design or Senior UX Manager roles with a team and a product to own, or Lead Product Designer roles with real scope over AI products and design systems. Remote, EU.";
 
 export type HeroStat = {
   value: string;
