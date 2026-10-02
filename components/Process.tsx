@@ -39,59 +39,46 @@ export function Process({ onOpen }: Props) {
   }, []);
 
   return (
-    <section aria-labelledby="process-heading" className="space-y-8">
-      <div className="max-w-3xl space-y-3">
+    <section aria-labelledby="process-heading" className="max-w-3xl space-y-6">
+      <div>
         <h2 id="process-heading" className="section-title">
           AI &amp; process
         </h2>
-        <p className="text-lg font-medium leading-snug tracking-tight text-foreground-secondary sm:text-xl">
+        <p className="text-xl font-semibold leading-snug tracking-tight text-foreground sm:text-2xl">
           {PROCESS_HEADLINE}
         </p>
-        <p className="text-[15px] leading-relaxed text-muted sm:text-base">
+        <p className="mt-4 text-[15px] leading-relaxed text-foreground-secondary sm:text-base">
           {PROCESS_INTRO}
         </p>
-        <div className="flex flex-wrap gap-x-8 gap-y-3 pt-1">
+        <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
           {PROCESS_LINKS.map((link) => (
-            <div key={link.slug} className="flex flex-col gap-1">
-              <span className="text-[11px] font-semibold uppercase tracking-[0.06em] text-muted">
-                {link.label}
-              </span>
-              <CaseLinkButton slug={link.slug} onOpen={onOpen}>
-                {link.title}
-              </CaseLinkButton>
-            </div>
+            <CaseLinkButton key={link.slug} slug={link.slug} onOpen={onOpen}>
+              {link.title}
+            </CaseLinkButton>
           ))}
         </div>
       </div>
 
-      <ol
-        ref={listRef}
-        className="relative grid gap-0 sm:grid-cols-2 lg:grid-cols-3"
-      >
+      <ol ref={listRef} className="space-y-4 border-t border-border pt-6">
         {AGENTIC_PIPELINE.map((node, i) => (
           <li
             key={node.step}
-            className={`relative pt-5 pb-8 pr-4 transition-[opacity,transform] duration-500 ease-out sm:pr-6 ${
-              visible ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+            className={`grid grid-cols-[2rem_6.5rem_1fr] items-baseline gap-x-3 transition-[opacity,transform] duration-500 ease-out sm:grid-cols-[2rem_7.5rem_1fr] ${
+              visible ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
             }`}
             style={{
-              transitionDelay: visible ? `${i * 55}ms` : "0ms",
+              transitionDelay: visible ? `${i * 40}ms` : "0ms",
             }}
           >
-            <div className="grid grid-cols-[1.5rem_1fr] items-baseline gap-x-2.5">
-              <span className="text-[11px] font-semibold tabular-nums text-accent">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <span className="text-base font-semibold tracking-tight text-foreground-secondary sm:text-lg">
-                {node.step}
-              </span>
-              <p className="col-start-2 mt-1.5 text-[11px] font-medium uppercase tracking-[0.04em] text-muted">
-                {node.detail}
-              </p>
-              <p className="col-start-2 mt-2.5 max-w-sm text-sm leading-relaxed text-muted sm:text-[15px]">
-                {node.beat}
-              </p>
-            </div>
+            <span className="text-[11px] font-semibold tabular-nums text-accent">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <span className="text-sm font-semibold tracking-tight text-foreground sm:text-[15px]">
+              {node.step}
+            </span>
+            <p className="text-sm leading-relaxed text-muted sm:text-[15px]">
+              {node.beat}
+            </p>
           </li>
         ))}
       </ol>

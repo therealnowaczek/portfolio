@@ -296,40 +296,40 @@ export const AGENTIC_PIPELINE: PipelineStep[] = [
   {
     step: "Sense",
     detail: "Research ops · signals · intake",
-    beat: "Gather what matters before anyone opens Figma: support themes, usage, constraints, and the real ask.",
+    beat: "Support themes, usage, constraints, and the real ask, before anyone opens Figma.",
   },
   {
     step: "Frame",
     detail: "Problem · constraints · bets",
-    beat: "Name the decision, the constraints, and the bet. If the frame is wrong, speed just ships the wrong thing faster.",
+    beat: "Name the decision, the constraints, and the bet. Wrong frame means wrong ship, just faster.",
   },
   {
     step: "Agent",
     detail: "Explore · synthesize · draft",
-    beat: "AI covers the ground: variants, flows, edge cases. I keep the frame and drop whatever doesn’t earn a review.",
+    beat: "Variants, flows, edge cases. I keep the frame and drop what doesn’t earn a review.",
   },
   {
     step: "Craft",
     detail: "Human judgment · system integrity",
-    beat: "Quality bars, accessibility, and the design system stay non-negotiable. Judgment is the product.",
+    beat: "Quality bars, accessibility, and the design system stay non-negotiable.",
   },
   {
     step: "Ship",
     detail: "Design-to-code · real product",
-    beat: "Pair with engineers early on states and performance. The deliverable isn’t a deck, it’s UI that lands in the product.",
+    beat: "Pair early on states and performance. The deliverable is UI in the product, not a deck.",
   },
   {
     step: "Learn",
     detail: "KPIs · benchmarks · loops",
-    beat: "Which decision did this unlock for next week, and what do we measure so the next loop starts smarter?",
+    beat: "What decision did this unlock, and what do we measure next?",
   },
 ];
 
 export const PROCESS_HEADLINE =
-  "AI does the drafting. People own the frame, the craft, and the call to ship.";
+  "AI covers the ground. People own the frame, the craft, and the call to ship.";
 
 export const PROCESS_INTRO =
-  "This is the loop I rolled out across a UX org, and the rule behind the Approve button in CostRadar. Cursor and Claude help me cover more ground before a review, never after the call has already been made.";
+  "The same loop I rolled out across a UX org, and the one behind CostRadar. Cursor and Claude help me cover more ground before a review, never after the call is already made.";
 
 export type CaseLink = {
   label: string;
