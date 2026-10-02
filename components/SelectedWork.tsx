@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type CSSProperties } from "react";
 import {
   FILTERS,
   matchesFilter,
@@ -225,7 +225,12 @@ export function SelectedWork({ projects, onOpen }: Props) {
       <div
         role="tablist"
         aria-label="Filter projects"
-        className="flex w-full min-w-0 max-w-full gap-1.5 overflow-x-auto overscroll-x-contain pb-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className={`flex w-full min-w-0 max-w-full gap-1.5 overflow-x-auto overscroll-x-contain pb-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden reveal ${shown ? "reveal-in" : ""}`}
+        style={
+          shown
+            ? ({ ["--reveal-delay" as string]: "60ms" } as CSSProperties)
+            : undefined
+        }
       >
         {FILTERS.map((f) => {
           const active = filter === f.id;
