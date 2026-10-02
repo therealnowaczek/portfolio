@@ -73,8 +73,6 @@ Hiring a cleaner, repair pro, or tutor still fragments across chats and Facebook
 6. **Desktop Web Results & Booking Drawer**: Results with booking without leaving search context. Proves desktop efficiency.
 7. **Desktop Web Results (Full Map & List)**: Full-bleed map + list for spatial browse. Proves web-native density.
 
-Empty: “No pros in range. Widen radius.” Error: “Payment method failed. Request not sent.” Success: “Request sent · usually replies in 2h.”
-
 ### Design system notes
 Shared: PriceBreakdown, TrustBadge, ProCard, SlotPicker, TrackingMap. Platform shells differ. Pattern: search → trust → transparent total → request → track.
 

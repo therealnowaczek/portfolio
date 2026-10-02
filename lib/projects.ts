@@ -93,19 +93,20 @@ function parseNumbered(block: string): ProcessStep[] {
   return steps;
 }
 
+const STATE_COPY_RE =
+  /^(Empty|Error|Success|Delay|Lag|Stale|Trust)\s*:/i;
+
 function parseSolution(block: string): { items: SolutionItem[]; notes: string } {
   const items: SolutionItem[] = [];
-  const notes: string[] = [];
   for (const line of block.split("\n")) {
     const trimmed = line.trim();
+    if (STATE_COPY_RE.test(trimmed)) continue;
     const m = trimmed.match(/^(\d+)\.\s+\*\*(.+?)\*\*\s*[-–—:]\s*(.+)$/);
     if (m) {
       items.push({ title: m[2], text: stripMd(m[3]) });
-      continue;
     }
-    if (trimmed && !trimmed.startsWith("#")) notes.push(stripMd(trimmed));
   }
-  return { items, notes: notes.join(" ") };
+  return { items, notes: "" };
 }
 
 function extractSection(body: string, heading: string): string {

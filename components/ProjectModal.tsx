@@ -22,6 +22,14 @@ type Props = {
   onNavigate: (slug: string) => void;
 };
 
+function MetaLine({ project }: { project: Project }) {
+  return (
+    <p className="mt-3 text-sm text-muted">
+      {[project.platform, project.role, project.timeline].join(" · ")}
+    </p>
+  );
+}
+
 export function ProjectModal({
   project,
   prev,
@@ -38,7 +46,6 @@ export function ProjectModal({
   } | null>(null);
 
   const caseStudy = project.caseStudy;
-  // Pure phone apps (Harbor, Folio, …). Nest is mixed; frames come from image ratio.
   const isPhoneProject =
     /ios|android/i.test(project.platform) &&
     !/web\s*desktop|desktop\s*web/i.test(project.platform);
@@ -158,213 +165,221 @@ export function ProjectModal({
                   />
                 )}
               </div>
-              <div className="flex flex-wrap items-start justify-between gap-4">
-                <div>
-                  <h2
-                    id={titleId}
-                    className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
-                  >
-                    {project.title}
-                  </h2>
-                  <p className="mt-2 max-w-2xl text-[15px] text-muted sm:text-base">
-                    {project.oneLiner}
+              <div>
+                <h2
+                  id={titleId}
+                  className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
+                >
+                  {project.title}
+                </h2>
+                <p className="mt-2 max-w-3xl text-[15px] leading-relaxed text-foreground-secondary sm:text-base">
+                  {project.oneLiner}
+                </p>
+                {project.slug === "costradar" ? (
+                  <p className="mt-2 text-sm text-muted">
+                    Live at{" "}
+                    <a
+                      href="https://costradar.ai"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-accent underline-offset-2 hover:underline"
+                    >
+                      costradar.ai
+                    </a>
                   </p>
-                  {project.slug === "costradar" ? (
-                    <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
-                      Live product:{" "}
-                      <a
-                        href="https://costradar.ai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-medium text-accent underline-offset-2 hover:underline"
-                      >
-                        costradar.ai
-                      </a>
-                    </p>
-                  ) : null}
-                  <div className="mt-3 flex flex-wrap items-center gap-2 text-sm text-muted">
-                    <span className="pill">{project.platform}</span>
-                    <span className="pill">{project.role}</span>
-                    <span className="pill">{project.timeline}</span>
-                  </div>
-                  {project.slug !== "costradar" ? (
-                    <p className="mt-3 text-xs leading-relaxed text-muted">
-                      Anonymized: brand and names are created for presentation.
-                    </p>
-                  ) : null}
-                </div>
+                ) : null}
+                <MetaLine project={project} />
+                {project.slug !== "costradar" ? (
+                  <p className="mt-2 text-xs text-muted">
+                    Anonymized for presentation: brand and names are invented.
+                  </p>
+                ) : null}
+                {caseStudy.snapshot ? (
+                  <p className="mt-5 max-w-3xl text-[15px] leading-relaxed text-foreground-secondary sm:text-base">
+                    <RichText>{caseStudy.snapshot}</RichText>
+                  </p>
+                ) : null}
               </div>
             </header>
 
-            <section aria-labelledby="snapshot-heading" className="space-y-3">
-              <h3 id="snapshot-heading" className="section-title">
-                What it is
-              </h3>
-              <p className="max-w-3xl text-[15px] leading-relaxed text-foreground-secondary">
-                <RichText>{caseStudy.snapshot}</RichText>
-              </p>
-            </section>
+            {caseStudy.outcomes.length > 0 ? (
+              <section aria-labelledby="outcomes-heading" className="max-w-3xl">
+                <h3
+                  id="outcomes-heading"
+                  className="text-sm font-semibold tracking-tight text-foreground"
+                >
+                  Results
+                </h3>
+                <ul className="mt-3 space-y-2.5">
+                  {caseStudy.outcomes.map((o) => (
+                    <li
+                      key={o}
+                      className="text-[15px] leading-relaxed text-foreground-secondary"
+                    >
+                      {o}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ) : null}
 
-            <section aria-labelledby="outcomes-heading">
-              <h3 id="outcomes-heading" className="section-title">
-                Outcome &amp; learnings
-              </h3>
-              <ul className="space-y-2">
-                {caseStudy.outcomes.map((o) => (
-                  <li
-                    key={o}
-                    className="rounded-[8px] border border-border px-4 py-2.5 text-sm leading-relaxed text-foreground-secondary"
-                  >
-                    {o}
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            <section aria-labelledby="problem-heading" className="space-y-3">
-              <h3 id="problem-heading" className="section-title">
+            <section aria-labelledby="problem-heading" className="max-w-3xl space-y-3">
+              <h3
+                id="problem-heading"
+                className="text-sm font-semibold tracking-tight text-foreground"
+              >
                 Problem
               </h3>
-              <p className="max-w-3xl text-[15px] leading-relaxed text-foreground-secondary">
+              <p className="text-[15px] leading-relaxed text-foreground-secondary sm:text-base">
                 <RichText>{caseStudy.problem}</RichText>
               </p>
             </section>
 
-            <section aria-labelledby="goals-heading">
-              <h3 id="goals-heading" className="section-title">
-                Goals &amp; constraints
-              </h3>
-              <div className="grid gap-6 sm:grid-cols-2">
-                <div>
-                  <h4 className="mb-2 text-sm font-semibold text-foreground">
-                    Goals
-                  </h4>
-                  <ul className="space-y-2 text-sm leading-relaxed text-muted">
-                    {caseStudy.goals.map((g) => (
-                      <li key={g} className="pl-3 border-l-2 border-border">
-                        {g}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="mb-2 text-sm font-semibold text-foreground">
-                    Constraints
-                  </h4>
-                  <ul className="space-y-2 text-sm leading-relaxed text-muted">
-                    {caseStudy.constraints.map((c) => (
-                      <li key={c} className="pl-3 border-l-2 border-border">
-                        {c}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </section>
-
-            <section aria-labelledby="process-heading">
-              <h3 id="process-heading" className="section-title">
-                Process
-              </h3>
-              <ol className="space-y-5">
-                {caseStudy.process.map((step) => (
-                  <li
-                    key={step.n}
-                    className="grid grid-cols-[2.25rem_1fr] items-baseline gap-x-4 sm:gap-x-5"
-                  >
-                    <span className="text-sm font-semibold tabular-nums text-accent">
-                      {String(step.n).padStart(2, "0")}
-                    </span>
-                    <div className="min-w-0">
-                      <p className="text-sm font-medium text-foreground">
-                        {step.label}
-                      </p>
-                      <p className="mt-1 text-sm leading-relaxed text-muted sm:text-[15px]">
-                        {step.text}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </section>
-
-            <section aria-labelledby="decisions-heading">
-              <h3 id="decisions-heading" className="section-title">
-                Key decisions
-              </h3>
-              <ul className="space-y-3">
-                {caseStudy.decisions.map((d) => (
-                  <li
-                    key={d}
-                    className="rounded-[8px] border border-border bg-surface/60 px-4 py-3 text-sm leading-relaxed text-foreground-secondary"
-                    style={{ borderLeftWidth: 3, borderLeftColor: project.accent }}
-                  >
-                    {d}
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            <section aria-labelledby="solution-heading">
-              <h3 id="solution-heading" className="section-title">
-                Solution
-              </h3>
-              <div className="grid gap-4 sm:grid-cols-3">
-                {caseStudy.solution.map((item, i) => {
-                  const src = project.screenPaths[i] ?? null;
-                  const defaultTall =
-                    isPhoneProject ||
-                    (project.slug === "nest" && i < 5);
-                  return (
-                    <button
-                      key={item.title}
-                      type="button"
-                      className="overflow-hidden rounded-[8px] border border-border text-left transition-shadow duration-[160ms] hover:shadow-md"
-                      onClick={() =>
-                        setLightbox({ src, title: item.title })
-                      }
+            {(caseStudy.goals.length > 0 || caseStudy.constraints.length > 0) && (
+              <section
+                aria-labelledby="goals-heading"
+                className="max-w-3xl grid gap-8 sm:grid-cols-2"
+              >
+                {caseStudy.goals.length > 0 ? (
+                  <div>
+                    <h3
+                      id="goals-heading"
+                      className="text-sm font-semibold tracking-tight text-foreground"
                     >
-                      {src ? (
-                        <ScreenFrame
-                          src={src}
-                          alt={item.title}
-                          defaultTall={defaultTall}
-                          variant="thumb"
-                        />
-                      ) : (
-                        <ProjectPlaceholder
-                          title={item.title}
-                          accent={project.accent}
-                          aspect={defaultTall ? "tall" : "video"}
-                          className="rounded-none"
-                        />
-                      )}
-                      <div className="space-y-1 p-3">
+                      Goals
+                    </h3>
+                    <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-foreground-secondary">
+                      {caseStudy.goals.map((g) => (
+                        <li key={g}>{g}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
+                {caseStudy.constraints.length > 0 ? (
+                  <div>
+                    <h3 className="text-sm font-semibold tracking-tight text-foreground">
+                      Limits
+                    </h3>
+                    <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-foreground-secondary">
+                      {caseStudy.constraints.map((c) => (
+                        <li key={c}>{c}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
+              </section>
+            )}
+
+            {caseStudy.process.length > 0 ? (
+              <section aria-labelledby="process-heading" className="max-w-3xl">
+                <h3
+                  id="process-heading"
+                  className="text-sm font-semibold tracking-tight text-foreground"
+                >
+                  How I worked
+                </h3>
+                <ol className="mt-4 space-y-4">
+                  {caseStudy.process.map((step) => (
+                    <li
+                      key={step.n}
+                      className="grid grid-cols-[1.75rem_1fr] gap-x-3"
+                    >
+                      <span className="text-[11px] font-semibold tabular-nums text-accent">
+                        {String(step.n).padStart(2, "0")}
+                      </span>
+                      <div>
                         <p className="text-sm font-semibold text-foreground">
-                          {item.title}
+                          {step.label}
                         </p>
-                        <p className="text-xs leading-relaxed text-muted">
-                          {item.text}
+                        <p className="mt-1 text-[15px] leading-relaxed text-muted">
+                          {step.text}
                         </p>
                       </div>
-                    </button>
-                  );
-                })}
-              </div>
-              {caseStudy.solutionNotes ? (
-                <p className="mt-4 text-sm text-muted">{caseStudy.solutionNotes}</p>
-              ) : null}
-            </section>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            ) : null}
 
-            <section aria-labelledby="ds-heading" className="space-y-3">
-              <h3 id="ds-heading" className="section-title">
-                Design system &amp; stack
-              </h3>
-              <p className="max-w-3xl text-[15px] leading-relaxed text-foreground-secondary">
-                {caseStudy.designSystem}
-              </p>
-            </section>
+            {caseStudy.decisions.length > 0 ? (
+              <section aria-labelledby="decisions-heading" className="max-w-3xl">
+                <h3
+                  id="decisions-heading"
+                  className="text-sm font-semibold tracking-tight text-foreground"
+                >
+                  Decisions
+                </h3>
+                <ul className="mt-3 space-y-2.5 text-[15px] leading-relaxed text-foreground-secondary">
+                  {caseStudy.decisions.map((d) => (
+                    <li key={d}>{d}</li>
+                  ))}
+                </ul>
+              </section>
+            ) : null}
 
+            {caseStudy.solution.length > 0 ? (
+              <section aria-labelledby="solution-heading">
+                <h3
+                  id="solution-heading"
+                  className="text-sm font-semibold tracking-tight text-foreground"
+                >
+                  Screens
+                </h3>
+                <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {caseStudy.solution.map((item, i) => {
+                    const src = project.screenPaths[i] ?? null;
+                    const defaultTall =
+                      isPhoneProject || (project.slug === "nest" && i < 5);
+                    return (
+                      <button
+                        key={item.title}
+                        type="button"
+                        className="group overflow-hidden rounded-[8px] border border-border text-left transition-colors duration-[160ms] hover:border-foreground/20"
+                        onClick={() => setLightbox({ src, title: item.title })}
+                      >
+                        {src ? (
+                          <ScreenFrame
+                            src={src}
+                            alt={item.title}
+                            defaultTall={defaultTall}
+                            variant="thumb"
+                          />
+                        ) : (
+                          <ProjectPlaceholder
+                            title={item.title}
+                            accent={project.accent}
+                            aspect={defaultTall ? "tall" : "video"}
+                            className="rounded-none"
+                          />
+                        )}
+                        <div className="space-y-1 p-3">
+                          <p className="text-sm font-semibold text-foreground">
+                            {item.title}
+                          </p>
+                          <p className="text-sm leading-relaxed text-muted">
+                            {item.text}
+                          </p>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </section>
+            ) : null}
+
+            {caseStudy.designSystem ? (
+              <section aria-labelledby="ds-heading" className="max-w-3xl">
+                <h3
+                  id="ds-heading"
+                  className="text-sm font-semibold tracking-tight text-foreground"
+                >
+                  Built with
+                </h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-muted">
+                  {caseStudy.designSystem}
+                </p>
+              </section>
+            ) : null}
           </div>
 
           <div className="relative z-20 flex shrink-0 flex-wrap items-center justify-end gap-2 border-t border-border bg-white px-4 py-3 sm:px-6">

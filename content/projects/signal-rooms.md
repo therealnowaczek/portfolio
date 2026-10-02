@@ -71,8 +71,6 @@ People miss serendipitous conversation but hate Zoom formality and open-mic chao
 5. **Schedule Room: Plan Hangout**: Create/schedule flow for hosts. Proves intentional community building.
 6. **Profile: Host Studio & Replays**: Host identity and replay access. Proves continuity after the live moment.
 
-Empty: “No live rooms. Start one.” Error: “Mic permission denied.” Success: “You’re on stage · mute anytime.”
-
 ### Design system notes
 Tokens: void, violet accent, speakGlow with solid fallback. Components: RoomCard, StageGrid, HandQueue, ReactionRail, SafetySheet, HostStudio. Pattern: enter → role-aware participate → exit cleanly.
 

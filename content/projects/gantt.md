@@ -69,8 +69,6 @@ Program managers lived in Gantt views that looked powerful and felt slow. Findin
 5. **Task detail drawer**: Issue fields, dependencies, and actions without losing the chart.
 6. **Search jump & highlight**: Query jumps and rings the bar, with next and previous matches.
 
-Empty: “No tasks match these filters. Clear filters or expand the program scope.” Sync delay: “Timeline sync delayed. Dates may be outdated.”
-
 ### Design system notes
 Quiet enterprise blue on cool gray. Components: GanttShell, WbsGrid, TimelineCanvas, TodayLine, DependencyPath, BaselineGhost, DetailDrawer, SearchJump. Keyboard: J/K rows, D dependencies, / search, ⌘± zoom, Esc clear.
 

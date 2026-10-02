@@ -71,8 +71,6 @@ After a deploy, engineers bounce between CI, logs, and status pages to answer �
 5. **Logs & Traces Explorer**: Queryable depth for bisecting a bad release. Proves power-user diagnosis.
 6. **Environment Variables & Secrets**: Controlled secrets UX with reveal/audit cues. Proves safe config craft.
 
-Empty: “No deploys in range. Widen window.” Lag: “Live metrics lagging.” Success: “Rollback initiated · tracking health.”
-
 ### Design system notes
 Tokens: void canvas, signal colors, mono xs. Components: TimelineTrack, DeployPin, SignalBand, CmdK, BlastRadiusCard, SecretsRow. Pattern: correlate → diagnose → reversible action.
 

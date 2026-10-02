@@ -73,8 +73,6 @@ Partner managers lose days to “who can see what” threads after a reseller jo
 6. **API & Webhooks: Developer Gateway**: Integration surface for partner platforms. Proves lifecycle beyond the UI wizard.
 7. **Audit Trail: Activity Log**: Who changed what, when. Proves enterprise trust.
 
-Empty: “No partners yet. Invite your first reseller.” Error: “Invite email bounced.” Success: “Partner invited · checklist ready.”
-
 ### Design system notes
 Tokens: indigo accent, risk colors. Components: PartnerRow, RoleCard, RiskChip, ChecklistItem, DiffReview, AuditEvent. Pattern: invite → scoped role → activate → audit.
 

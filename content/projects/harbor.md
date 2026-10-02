@@ -71,8 +71,6 @@ Borrowers understand the minimum due, not the interest trajectory or the emotion
 5. **Harbor Insights**: Interest trajectory and plain-language education. Proves insight without upsell.
 6. **Harbor Settings**: Reminders and linked-card controls. Proves control without cluttering Home.
 
-Empty: “Link a card to see repayments.” Error: “Bank timeout. Try again: nothing was charged.” Success: “Payment scheduled for Fri 09:00.”
-
 ### Design system notes
 Tokens: trust blue, money type scale, sheet spacing. Components: MoneyHero, PaySlider, DeltaPill, TrustFootnote, ConfirmSheet. Pattern: preview consequence → confirm → quiet success.
 

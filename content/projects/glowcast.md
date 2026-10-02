@@ -69,8 +69,6 @@ Cold-start live apps bury faces under chat and gift spam, or push Match into awk
 3. **Gift Confirm Sheet**: Cost, recipient, balance preview before send. Proves consequence-before-commit.
 4. **Match Consent Bridge**: Mutual consent copy and clear exit before 1:1. Proves safer Match entry.
 
-Empty: “No lives in this niche. Try Live now.” Error: “Gift didn’t send. Nothing charged.” Success: “Gift sent to Elena.”
-
 ### Design system notes
 Tokens: charcoal void, coral primary, amber secondary, mint LIVE. Components: LiveNowCard, RoomChrome, GiftTray, GiftConfirmSheet, MatchConsentBridge. Pattern: discover → watch → gift with receipt → optional Match with consent.
 

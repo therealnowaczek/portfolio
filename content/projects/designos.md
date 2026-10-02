@@ -68,8 +68,6 @@ Demand arrived in Slack. Estimates lived in people’s heads. Figma libraries an
 5. **Research ops library**: Insights tagged to products and decisions, for reuse before re-research.
 6. **Agentic loop workspace**: Agent drafts with confidence and citations; Craft approves, edits, or rejects before Ship.
 
-Empty: “No open briefs. Create intake or sync from Jira.” Trust: “Agent drafts require human Craft review.”
-
 ### Design system notes
 Quiet enterprise: cool-gray canvas, indigo accent only. Components: OpsNav, KpiRow, PipelineSteps, CompletenessChecklist, VelocityLane, ContributionReview, InsightCard, CraftGateModal. Pattern: status never color alone, dense tables keyboard-reachable.
 

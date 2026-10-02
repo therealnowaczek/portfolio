@@ -72,8 +72,6 @@ RevOps can see revenue and burn, but not which AI workloads, infra tiers, discou
 5. **Autonomous Rules & Guardrails**: Threshold rules with scope, quiet hours, and confirm-before-write. Proves supervised automation.
 6. **Empty State: Connect Store**: First-run connect path without fake data theater. Proves honest onboarding.
 
-Empty: “No leaks above threshold.” Delay: “Live feed delayed: last sync 14:02.” Success: “Tier paused · undo 30s.”
-
 ### Design system notes
 Tokens: accent teal, delta pos/neg, dense spacing, tabular type. Components: DataTable compact, LeakRow, ConfidenceChip, CitePanel, SoftConfirm, RulesEditor. Pattern: anomaly → local action → undo.
 

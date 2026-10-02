@@ -73,8 +73,6 @@ Designers want feedback that improves the work. Discord and social feeds give em
 6. **Critiques & Activity**: Given/received loop and notifications. Proves the community ritual.
 7. **Profile: Maya Lin**: Work, critique ratio, craft identity. Proves contribution over vanity metrics.
 
-Empty: “Your feed is quiet. Follow three craft accounts.” Error: “Upload failed. Draft saved.” Success: “Critique sent.”
-
 ### Design system notes
 Tokens: warm paper, terracotta accent, display serif. Components: PieceCard, CritiqueChip, ComposerSheet, AnnotationLayer, RatioBadge. Pattern: show goals → critique on axes → thank.
 

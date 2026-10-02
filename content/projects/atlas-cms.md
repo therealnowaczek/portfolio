@@ -71,8 +71,6 @@ Designers and engineers disagree because the “source of truth” is a forgotte
 5. **Components / Button**: Spec, playground, do/don’t, a11y. Proves component depth.
 6. **Components / Input**: Form control patterns and states. Proves the system beyond one hero component.
 
-Empty: “No matches. Try token names.” Error: “Playground runtime failed.” Success: “Snippet copied.”
-
 ### Design system notes
 Meta-DS for the docs site: DocShell, PropTable, PlaygroundFrame, DoDont, TokenSwatch, ThemeStudio, VersionSelect. Pattern: teach → try → copy → contribute.
 

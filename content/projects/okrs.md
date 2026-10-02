@@ -66,8 +66,6 @@ Strategy lived in slides and execution lived in issue trackers. Mid-quarter, lea
 4. **At-risk / stale health**: Filters with next actions, and a calm healthy state.
 5. **Empty first-run hierarchy**: Onboarding steps without illustration clutter.
 
-Empty: “No goals this quarter. Create a goal or import from CSV.” Stale: “KR not updated in 21 days. Owners notified.”
-
 ### Design system notes
 Quiet enterprise blue. Components: GoalTree, KrRow, ProgressProvenance, RitualPanel, HealthFilter, FirstRunSteps. Tree keyboard: arrows expand and collapse, aria-level aware.
 

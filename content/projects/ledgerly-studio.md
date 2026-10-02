@@ -65,8 +65,6 @@ Growth teams lose signal when experiment setup, design variants, and analytics l
 2. **Experiment Detail**: Hypothesis, variants, run context, decision actions. Proves discipline before ship/kill.
 3. **Metric Library**: Primary + guardrail metrics as shared vocabulary. Proves decision hygiene.
 
-Empty: “No experiments yet. Write your first hypothesis.” Delay: “Stats engine delayed.” Success: “Marked shipped · flagged for rollout.”
-
 ### Design system notes
 Tokens: win emerald, lose rose, tabular type. Components: ExperimentRow, HypothesisForm, VariantFrame, MetricPair, DecisionModal. Pattern: ask → variant → read guardrails → decide.
 

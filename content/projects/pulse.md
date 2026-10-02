@@ -74,8 +74,6 @@ People track steps and sleep in different apps, then feel judged by red rings. P
 6. **Evening Wind-down**: Calendar-aware wind-down prompts. Proves recovery timing craft.
 7. **Profile & Devices**: Permissions and device links when ready. Proves privacy-forward setup.
 
-Empty: “Grant Health permissions when you’re ready.” Error: “Couldn’t sync sleep. Enter manually.” Success: “Check-in saved.”
-
 ### Design system notes
 Tokens: mist surfaces, lavender accent, xl radius. Components: SnapshotCard, CheckInSheet, SoftChart, SuggestionPill, WindDownList. Pattern: notice → tiny input → one action.
 
