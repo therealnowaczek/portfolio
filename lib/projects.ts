@@ -29,7 +29,7 @@ function resolveAsset(slug: string, name: string): string | null {
   for (const ext of ["webp", "jpg", "jpeg", "png", "svg"]) {
     const disk = path.join(PUBLIC, "projects", slug, `${name}.${ext}`);
     if (fs.existsSync(disk)) {
-      return withBasePath(`/projects/${slug}/${name}.${ext}?v=webp1`);
+      return withBasePath(`/projects/${slug}/${name}.${ext}?v=webp2`);
     }
   }
   return null;
