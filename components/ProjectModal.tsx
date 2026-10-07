@@ -367,22 +367,24 @@ export function ProjectModal({
                       <button
                         key={item.title}
                         type="button"
-                        className="group overflow-hidden rounded-[8px] border border-border text-left transition-[border-color,transform] duration-[220ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:border-foreground/20"
+                        className="group flex h-full flex-col items-stretch overflow-hidden rounded-[8px] border border-border text-left transition-[border-color,transform] duration-[220ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:border-foreground/20"
                         onClick={() => setLightbox({ src, title: item.title })}
                       >
                         {src ? (
-                          <ScreenFrame
-                            src={src}
-                            alt={item.title}
-                            defaultTall={defaultTall}
-                            variant="thumb"
-                          />
+                          <div className="shrink-0">
+                            <ScreenFrame
+                              src={src}
+                              alt={item.title}
+                              defaultTall={defaultTall}
+                              variant="thumb"
+                            />
+                          </div>
                         ) : (
                           <ProjectPlaceholder
                             title={item.title}
                             accent={project.accent}
                             aspect={defaultTall ? "tall" : "video"}
-                            className="rounded-none"
+                            className="shrink-0 rounded-none"
                           />
                         )}
                         <div className="space-y-1 p-3">
