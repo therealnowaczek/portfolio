@@ -191,25 +191,7 @@ export function ProjectModal({
             ref={bodyRef}
             className="min-h-0 flex-1 space-y-10 overflow-y-auto overscroll-contain px-4 py-6 sm:px-8 sm:py-8"
           >
-            <header className="space-y-4">
-              <div className="overflow-hidden rounded-[8px] border border-border bg-surface">
-                {project.coverPath ? (
-                  <ScreenFrame
-                    src={project.coverPath}
-                    alt={`${project.title} cover`}
-                    defaultTall={isPhoneCover}
-                    variant="cover"
-                    priority
-                  />
-                ) : (
-                  <ProjectPlaceholder
-                    title={project.title}
-                    accent={project.accent}
-                    aspect="video"
-                    className="rounded-none"
-                  />
-                )}
-              </div>
+            <header className="space-y-6">
               <div className="max-w-3xl">
                 <h2
                   id={titleId}
@@ -252,6 +234,24 @@ export function ProjectModal({
                   <p className="mt-5 text-[15px] leading-relaxed text-foreground-secondary sm:text-base">
                     {project.oneLiner}
                   </p>
+                )}
+              </div>
+              <div className="overflow-hidden rounded-[8px] border border-border bg-surface">
+                {project.coverPath ? (
+                  <ScreenFrame
+                    src={project.coverPath}
+                    alt={`${project.title} cover`}
+                    defaultTall={isPhoneCover}
+                    variant="cover"
+                    priority
+                  />
+                ) : (
+                  <ProjectPlaceholder
+                    title={project.title}
+                    accent={project.accent}
+                    aspect="video"
+                    className="rounded-none"
+                  />
                 )}
               </div>
             </header>
