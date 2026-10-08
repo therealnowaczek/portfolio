@@ -33,16 +33,16 @@ export const SITE = {
     "Head of Design and Senior UX Manager based in Poland. Co-led a 35+ person UX org at Appfire (BigPicture, 7pace, design ops, research ops). Also works as a Lead Product Designer, and builds with AI: founder of CostRadar.ai, an early-stage profitability product with an Approve-gated AI agent.",
 };
 
-/** Hook: leadership claim, then the tension that makes people scroll. */
+/** Hook: design it, build it, then the team and the agents. */
 export const INTRO_HEADLINE =
-  "I lead design teams and orchestrate AI.";
+  "I design the product. Then I build it.";
 
 export const INTRO_SUBLINE =
-  "Agents do the legwork across research, design, and code. People steer. Products ship.";
+  "I lead the team and orchestrate the AI. Agents do the legwork. People steer. It ships.";
 
 /** Proof first, then the titles a recruiter or ATS will match. */
 export const INTRO_PARAGRAPHS = [
-  "Until 2026 I was a Senior UX Manager at Appfire, where I co-led 35+ designers, researchers, and writers (14 reported to me directly) across BigPicture, 7pace, and our AI workstreams. Before that I was Head of Design at SoftwarePlant, where I grew the team to 16+ and walked it through the Appfire acquisition. Along the way I was also the lead designer behind BigPicture's OKRs, Gantt, and Financials.",
+  "Until 2026 I was a Senior UX Manager at Appfire, where I co-led 35+ designers, researchers, and writers (14 reported to me directly) across BigPicture, 7pace, and our AI workstreams. Before that I was Head of Design at SoftwarePlant, where I grew the team to 16+ and walked it through the Appfire acquisition. Along the way I was the lead product designer behind BigPicture's OKRs, Gantt, and Financials.",
   "AI is part of how I work every day. I rolled out agentic workflows and design-to-code across a UX org, and I designed and built CostRadar.ai on my own: an early-stage profitability product where an AI agent hunts for margin leaks, cites its sources, and prepares a reversible fix for you to approve.",
 ];
 
