@@ -33,16 +33,16 @@ export const SITE = {
     "Head of Design and Senior UX Manager based in Poland. Co-led a 35+ person UX org at Appfire (BigPicture, 7pace, design ops, research ops). Also works as a Lead Product Designer, and builds with AI: founder of CostRadar.ai, an early-stage profitability product with an Approve-gated AI agent.",
 };
 
-/** Hook: design it, build it, then the team and the agents. */
+/** Short role claim; longer line fills in craft, hands-on, and AI. */
 export const INTRO_HEADLINE =
-  "I design the product. Then I build it.";
+  "I lead product design.";
 
 export const INTRO_SUBLINE =
-  "I lead the team and orchestrate the AI. Agents do the legwork. People steer. It ships.";
+  "I grow and run design teams, stay hands-on on hard product problems, and use AI where it helps us move faster without lowering the bar.";
 
 /** Proof first, then the titles a recruiter or ATS will match. */
 export const INTRO_PARAGRAPHS = [
-  "Until 2026 I was a Senior UX Manager at Appfire, managing design across the portfolio: 35+ designers, researchers, and writers, 14 reporting to me directly. I focused on BigPicture, 7pace, and AI, then the scope widened to the whole portfolio. Before that I was Head of Design at SoftwarePlant, where I grew the team to 16+ and walked it through the Appfire acquisition. Along the way I was the lead product designer behind BigPicture, BigGantt, and BigTemplate.",
+  "Until mid 2026 I was a Senior UX Manager at Appfire, managing design across the portfolio: 35+ designers, researchers, and writers, 14 reporting to me directly. I focused on BigPicture, 7pace, and AI, then the scope widened to the whole portfolio. Before that I was Head of Design at SoftwarePlant, where I grew the team to 16+ and walked it through the Appfire acquisition. Along the way I was the lead product designer behind BigPicture, BigGantt, and BigTemplate.",
   "AI is part of how I work every day. I rolled out agentic workflows and design-to-code across a UX org, and I designed and built CostRadar.ai on my own: an early-stage profitability product where an AI agent hunts for margin leaks, cites its sources, and prepares a reversible fix for you to approve.",
 ];
 
@@ -278,7 +278,7 @@ export const FIT_ROLES: FitRole[] = [
     title: "AI UX / Design Engineering",
     tag: "Runs through both",
     pitch:
-      "Agents that do the legwork, people who steer, and a designer who can build all of it.",
+      "Agents in the workflow, people who decide, and a designer who can build all of it.",
     proof: [
       { text: "An AI agent that finds margin leaks and prepares the fix, built on my own", slug: "costradar" },
       { text: "Agentic workflows rolled out across a UX org", slug: "designos" },
